@@ -1,17 +1,23 @@
 # Temario
 
-- [x] **[Introducción](00-00-introduccion.md)**
-  - [x] **[Sub tema introducción](00-01-Algoritmos.md)**
-- [ ] Tema 1
-  - [ ] Sub tema 1.1
-  - [ ] Sub tema 1.2
-  - [ ] Sub tema 1.3
-- [ ] Tema 2
-- [ ] Tema 3
+- [x] [**Introducción**](https://github.com/mmasias/PRG1/blob/main/temario/00-introduccion.md)
+  - [ ] Algoritmos
+- [ ] Lenguajes de programación
+- [ ] Programación imperativa
+  - [ ] Salida por consola
+  - [ ] Variables
+  - [ ] Entrada por consola
+- [ ] Programación estructurada
+  - [ ] Estructuras de control
+    - [ ] Alternativas
+    - [ ] Repetitivas
+  - [ ] Variables++
+  - [ ] Métodos estáticos
+- [ ] Introducción a la orientación a objetos
 
 ## Temario++
 
-- [x] Artículos varios recopilados en la [carpeta de documentos](/documentos/README.md).
+- [ ] Artículos varios
 
 ---
 
