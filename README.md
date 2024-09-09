@@ -4,7 +4,7 @@ Repo de materiales y proyectos de la asignatura **Programación I** del [Grado d
 
 ## Curso *[24][25]*
 
-- [Temario](temario/README.md)
+- Repo con el [temario](https://github.com/mmasias/PRG1)
   - [A día de hoy, deberíamos saber...](temario/aDiaDeHoy.md)
   - [Casos de uso](temario/casosDeUso/README.md)
   - [Ejercicios](temario/ejercicios/README.md)
@@ -31,6 +31,6 @@ Repo de materiales y proyectos de la asignatura **Programación I** del [Grado d
 
 NOTA: *Algunos enlaces podrían requerir **credenciales de acceso al campus** o a otros espacios colaborativos.*
 
-- Hoja de asistencia et-al
-- Libro de la asignatura
-- Este repo, versión de ediciones pasadas
+- [Hoja de asistencia et-al](https://docs.google.com/spreadsheets/d/1FsM1GnRFzQe0zcetTVmi7zsrLkx0iUEfCV3gNkwSSgY/edit?usp=sharing)
+- [Libros de la asignatura](https://campus.uneatlantico.es/mod/folder/view.php?id=58479)
+- Este repo, versión de ediciones pasadas: [[22][23]](https://github.com/mmasias/prg1-22-23) / [[23][24]](https://github.com/mmasias/23-24-prg1)
