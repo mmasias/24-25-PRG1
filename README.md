@@ -34,3 +34,6 @@ NOTA: *Algunos enlaces podrían requerir **credenciales de acceso al campus** o 
 - [Hoja de asistencia et-al](https://docs.google.com/spreadsheets/d/1FsM1GnRFzQe0zcetTVmi7zsrLkx0iUEfCV3gNkwSSgY/edit?usp=sharing)
 - [Libros de la asignatura](https://campus.uneatlantico.es/mod/folder/view.php?id=58479)
 - Este repo, versión de ediciones pasadas: [[22][23]](https://github.com/mmasias/prg1-22-23) / [[23][24]](https://github.com/mmasias/23-24-prg1)
+- [Repo **USantaTecla**, del Prof. Luis Fernández](https://github.com/USantaTecla-0-general/3-publicaciones)
+- Sitio oficial de Java: [Java](https://www.java.com/es/) / [JDK](https://jdk.java.net/)
+- [Diferencia entre ciencias de la computación e ingenieria de software](https://interestingengineering.com/culture/computer-science-vs-software-engineering-how-are-they-different)
