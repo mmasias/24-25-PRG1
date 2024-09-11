@@ -1,0 +1,10 @@
+@startwbs
+
++ CarpetaRaizDelUsuario
+++ CarpetaOrigen
++++_ Archivo1.txt
++++_ Archivo2.txt
++++_ Archivo3.txt
+++ CarpetaDestino
+
+@endwbs
