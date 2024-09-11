@@ -10,3 +10,8 @@
   - Naturaleza de las evaluaciones
 
 - Introducción: ¿Qué es el software?
+- Abstracción.
+- Fundamentos de conocimiento y complejidad.
+- Definición de Sistema, información, sistemas de información: sistemas complejos.
+- CRUD o el tratamiento de la información.
+- Consola (terminal o línea de comandos): Invocación, CRUD, limpieza. Reconocimiento de los elementos que aparecen en ella. Comandos, etc...
