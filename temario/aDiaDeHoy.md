@@ -8,7 +8,6 @@
     - Repo del curso 24-25
     - Repo de la asignatura
   - Naturaleza de las evaluaciones
-
 - Introducción: ¿Qué es el software?
 - Abstracción.
 - Fundamentos de conocimiento y complejidad.
