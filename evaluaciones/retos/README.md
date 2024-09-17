@@ -9,4 +9,4 @@ Los retos se irán proponiendo, habitualmente luego de una disertación teórica
 
 |Retos|
 |-|
-[Detalle del reto](/evaluaciones/retos/reto001.md)
+[CRUD@consola](/evaluaciones/retos/reto001.md)
