@@ -1,0 +1,17 @@
+@startwbs
+
++ **PRG1**
+ + Repo
+  + documentos
+  + **entregas**
+   + apellidoNombre
+    +_ archivo
+    +_ archivo
+    +_ ...
+  + evaluaciones
+  + images
+  + modelosUML
+  + temario
+
+
+@endwbs
