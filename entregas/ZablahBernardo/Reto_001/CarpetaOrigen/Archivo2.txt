@@ -1,1 +1,1 @@
-Texto Aleatorio Archivo 2 
+Cambio de texto en Archivo2 antes de cambiarlos a CarpetaDestino
