@@ -1,5 +1,7 @@
 # Reto 001: CRUD@Consola
 
+> Fecha de entrega: lunes 23, 23:59:59
+
 Resolver esto desde la consola.
 
 <div align=center>
@@ -19,3 +21,5 @@ En la carpeta de entregas de **su fork**:
 1. Modificar los textos de los archivos.
 1. Mover los archivos al destino.
 1. Modificar los textos de los archivos.
+
+**FUNDAMENTAL:** Cada paso con su commit.
