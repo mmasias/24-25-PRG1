@@ -1,1 +1,1 @@
-Cambio de texto en Archivo1 antes de cambiarlos a CarpetaDestino
+Modificacion de texto de Archivo1 en despues de moverlo a CarpetaDestino
