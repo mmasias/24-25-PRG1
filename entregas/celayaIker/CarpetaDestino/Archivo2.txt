@@ -1,1 +1,1 @@
-"Texto modificado para Archivo2" 
+"Texto modificado en CarpetaDestino para Archivo2" 
