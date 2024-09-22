@@ -1,1 +1,2 @@
+texto1 del archivo1
 texto2 del archivo1
