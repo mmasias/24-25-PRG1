@@ -1,1 +1,1 @@
-"Texto de ejemplo para Archivo2" 
+"Texto modificado para Archivo2" 
