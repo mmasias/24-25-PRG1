@@ -1,1 +1,2 @@
 texto1 archivo1
+texto2 archivo1
