@@ -1,2 +1,0 @@
-texto1 archivo3
-texto2 archivo3

@@ -1,3 +1,0 @@
-texto1 archivo2
-texto2 archivo2
-
