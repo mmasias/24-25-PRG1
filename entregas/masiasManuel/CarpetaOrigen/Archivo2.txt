@@ -1,1 +1,2 @@
-Contenido de Archivo2.txt
+Archivo2.txt: contenidos
+Modifico, modifico, modifico...

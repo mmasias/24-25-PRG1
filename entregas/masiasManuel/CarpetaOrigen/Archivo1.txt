@@ -1,1 +1,2 @@
-Contenido de Archivo1.txt
+El contenido de Archivo1.txt
+Modifico los textos!!!
