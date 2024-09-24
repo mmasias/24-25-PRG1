@@ -1,2 +1,4 @@
-Archivo2.txt: contenidos
+Archivo2.txt: contenidos, ahora en CarpetaDestino
+
 Modifico, modifico, modifico...
+Muevo y modifico.
