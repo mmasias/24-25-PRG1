@@ -9,7 +9,7 @@ class HolaMundo {
 
         edad = 12;
         dinero = 100;
-        nombre = "Alien PSM"
+        nombre = "Alien PSM";
         unChar = 'x';
 
         System.out.println(edad);
