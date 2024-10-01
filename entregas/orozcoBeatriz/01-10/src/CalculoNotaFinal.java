@@ -14,6 +14,8 @@ public class CalculoNotaFinal {
 
         double notaFinal = examenFinal * EXAMEN_FINAL_PONDERADO + examenParcial * EXAMEN_PARCIAL_PONDERADO + 
                     evaluacionContinua * EVALUACION_CONTINUA_PONDERADO + notaProfesor * NOTA_PROFESOR_PONDERADO;
+
+        System.out.println("Nota final =  " + notaFinal);
     }
     
 }
