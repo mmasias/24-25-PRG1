@@ -1,6 +1,7 @@
 
 import java.util.Scanner;
 
+
 class CalculaNotaFinal {
 
     public static void main(String[] args) {
