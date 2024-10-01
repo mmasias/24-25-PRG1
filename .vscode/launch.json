@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "NotaFinal",
+            "request": "launch",
+            "mainClass": "NotaFinal",
+            "projectName": "24-25-PRG1_7189d344"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
