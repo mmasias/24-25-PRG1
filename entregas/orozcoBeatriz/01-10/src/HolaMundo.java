@@ -9,5 +9,12 @@ class HolaMundo {
         dinero = 100;
         nombre = "Firibicundio";
         unChar = 'x';
+
+        System.out.println("Inicio: ");
+        System.out.println(edad);
+        System.out.println(dinero);
+        System.out.println(nombre);
+
+        System.out.println("Me llamo" + nombre + "tengo" + edad + "años y" + dinero + "euros");
     }
 }
