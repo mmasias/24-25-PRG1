@@ -11,6 +11,9 @@ public class CalculoNotaFinal {
         examenFinal = 9;
         evaluacionContinua = 6;
         notaProfesor = 5;
+
+        double notaFinal = examenFinal * EXAMEN_FINAL_PONDERADO + examenParcial * EXAMEN_PARCIAL_PONDERADO + 
+                    evaluacionContinua * EVALUACION_CONTINUA_PONDERADO + notaProfesor * NOTA_PROFESOR_PONDERADO;
     }
     
 }
