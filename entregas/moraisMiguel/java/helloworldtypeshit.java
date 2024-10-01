@@ -40,6 +40,8 @@ class HolaMundo{
 
         System.out.println("Milagrosamente, ya que inverti en bitcoin hace 15 años, ahora tengo la gran suma de " + dineroTrasBitcoin + " euros.");
 
+        System.out.println("=======================================================");
+
         /** valor de notas:
          * examen parcial  25%
          * examen final 50%
