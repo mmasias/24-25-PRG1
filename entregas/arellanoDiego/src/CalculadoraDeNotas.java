@@ -25,7 +25,7 @@ class CalculadoraDeNotas {
         notaParcial * examenParcialPonderado + evaluacionProfesor * evaluacionProfesorPonderado; 
 
 
-        System.out.println( notaFinal + "ES TU NOTA FINAL");
+        System.out.println( notaFinal + "ES TU NOTA FINAL 👍");
 
     
 
