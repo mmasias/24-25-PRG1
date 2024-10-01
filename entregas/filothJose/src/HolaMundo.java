@@ -1,4 +1,4 @@
-class HolaMundo (
+class HolaMundo {
     public static void main(String[] args) {
 
         System.out.println("Inicio");
@@ -13,7 +13,7 @@ class HolaMundo (
         nombre = "Firibricundio";
         unChar = 'x';
 
-        System.out.println("Me llamo" + nombre + ", tengo" + edad + " años y " + dinero + " euros ");
+        System.out.println("Me llamo" + nombre + ", tengo" + edad + " años y " + dinero + " euros " + unChar);
         
         dinero = dinero + 100;
 
@@ -21,10 +21,10 @@ class HolaMundo (
 
         dinero = dinero - 30;
 
-        System.out.println(" Y ahora tengo" + dinero + "euros")
+        System.out.println(" Y ahora tengo" + dinero + "euros");
 
 
     }
 
-    )
-)
+    
+}
