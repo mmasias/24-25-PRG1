@@ -13,7 +13,7 @@ public class Calcular_Nota_Final {
     evaluacionProfe = 3*5;
 
     double notaFinal = (examenFinal +evaluacionContinua + examenParcial +evaluacionProfe)/100;
-    System.out.println("Su nota final es "+notaFinal);
+    System.out.println("Su nota final es "+ notaFinal);
 
 }
 }
