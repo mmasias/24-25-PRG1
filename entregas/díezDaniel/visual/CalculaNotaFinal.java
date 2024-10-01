@@ -7,11 +7,6 @@ public class CalculaNotaFinal {
 
         double examenFinal, examenParcial, evalucaionContinua, notaProfesor;
 
-        double examenFinalPonderado = 0.5;
-        double examenParcialPonderado = 0.25;
-        double evalucaionContinuaPonderado = 0.2;
-        double notaProfesorPonderado = 0.05;
-
         System.out.println("Dime tu nota del examen final");
         examenFinal = scanner.nextDouble();
         System.out.println("Dime tu nota del examen parcial");
@@ -33,8 +28,8 @@ public class CalculaNotaFinal {
 
         double notaFinal;
 
-        notaFinal = examenFinal * examenFinalPonderado + examenParcial * examenParcialPonderado
-                + evalucaionContinua * evalucaionContinuaPonderado + notaProfesor * notaProfesorPonderado;
+        notaFinal = examenFinal * EF_PORCENTAJE + examenParcial * EP_PORCENTAJE
+                + evalucaionContinua * EC_PORCENTAJE + notaProfesor * EPR_PORCENTAJE;
 
         System.out.println("Nota final =" + notaFinal);
 
