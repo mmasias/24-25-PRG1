@@ -1,12 +1,18 @@
+import java.util.Scanner;
 public class CalculaNotaFinal {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
     
         double examenFinal, examenParcial, evaluacionContinua, evaluacionProfesor;
 
-        examenParcial = 7;
-        examenFinal = 8;
-        evaluacionContinua = 8;
-        evaluacionProfesor = 10;
+        System.out.println("Introduce la nota para el examen parcial: ");
+        examenParcial = scanner.nextDouble();
+        System.out.println("Introduce la nota para el examen final: ");
+        examenFinal = scanner.nextDouble();
+        System.out.println("Introduce la nota para la evaluacion continua: ");
+        evaluacionContinua = scanner.nextDouble();
+        System.out.println("Introduce la nota para la evaluacion del profesor: ");
+        evaluacionProfesor = scanner.nextDouble();
 
         final double EXAMEN_FINAL_PONDERADO = 0.5;
         final double EXAMEN_PARCIAL_PONDERADO = 0.25;
