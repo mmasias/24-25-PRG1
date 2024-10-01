@@ -1,14 +1,9 @@
 class HolaMundo {
     public static void main (String[] args) {
-        int edad;
-        double dinero;
-        String nombre;
-        char unChar;
-
-        edad = 12;
-        dinero = 100;
-        nombre = "Firibicundio";
-        unChar = 'x';
+        int edad = 12;
+        double dinero= 100;
+        String nombre = "Firibicundio";
+        char unChar = 'x';
 
         System.out.println("Inicio: ");
         System.out.println(edad);
