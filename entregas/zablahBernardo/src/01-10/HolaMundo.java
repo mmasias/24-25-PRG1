@@ -20,11 +20,9 @@ class HolaMundo {
         System.err.println(unChar);
 
         dinero = dinero + 100 ;
-
-        System.err.println("Ahora tengo " + dinero);
+        System.out.println("Ahora tengo " + dinero);
         dinero = dinero - 50 ;
-
-        System.err.println("Ahora tengo " + dinero);
+        System.out.println("Ahora tengo " + dinero);
 
     }
 }
