@@ -6,6 +6,11 @@ public class CalculoNotaFinal {
         final double EXAMEN_PARCIAL_PONDERADO = 0.25;
         final double EVALUACION_CONTINUA_PONDERADO = 0.2;
         final double NOTA_PROFESOR_PONDERADO = 0.05;
+
+        examenParcial = 7;
+        examenFinal = 9;
+        evaluacionContinua = 6;
+        notaProfesor = 5;
     }
     
 }
