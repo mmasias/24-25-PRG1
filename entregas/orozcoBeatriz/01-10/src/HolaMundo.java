@@ -1,5 +1,5 @@
 class HolaMundo {
-    public static vois main (String[] args) {
+    public static void main (String[] args) {
         int edad;
         double dinero;
         String nombre;
@@ -15,6 +15,12 @@ class HolaMundo {
         System.out.println(dinero);
         System.out.println(nombre);
 
-        System.out.println("Me llamo" + nombre + "tengo" + edad + "años y" + dinero + "euros");
-    }
+        System.out.println("Me llamo " + nombre + ", tengo " + edad + " años y " + dinero + " euros");
+        
+        dinero = 120;
+        System.out.println("Ahora tengo " + dinero + " euros");
+
+        dinero = 50;
+        System.out.println("Ahora tengo " + dinero + " euros");
+    }   
 }
