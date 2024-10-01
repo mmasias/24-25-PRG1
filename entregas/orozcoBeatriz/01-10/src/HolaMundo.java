@@ -4,5 +4,10 @@ class HolaMundo {
         double dinero;
         String nombre;
         char unChar;
+
+        edad = 12;
+        dinero = 100;
+        nombre = "Firibicundio";
+        unChar = 'x';
     }
 }
