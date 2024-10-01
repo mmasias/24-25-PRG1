@@ -13,10 +13,14 @@ public class CalculaNotaFinal {
     final double EVALUACION_CONTINUA_PONDERADO = 0.2;
     final double EVALUACION_PROFESOR_PONDERADO = 0.05;
 
-    examenFinal = 7;
-    examenParcial = 6;
-    evaluacionContinua = 9;
-    evalucionProfesor = 9;
+    System.err.println("Dime tu nota del examen Final");
+    examenFinal = scanner.nextDouble();
+    System.err.println("Dime tu nota del examen Parcial");
+    examenParcial = scanner.nextDouble();
+    System.err.println("Dime tu nota de evaluacion continua");
+    evaluacionContinua = scanner.nextDouble();
+    System.err.println("Dime tu nota de la evaluacion del profesor");
+    evalucionProfesor = scanner.nextDouble();
     
     double promedioNota;
     
@@ -26,6 +30,7 @@ public class CalculaNotaFinal {
                     + evalucionProfesor * EVALUACION_PROFESOR_PONDERADO);
 
     System.out.println("Nota final = " + promedioNota);
+    scanner.close();
+    
     }
-
 }
