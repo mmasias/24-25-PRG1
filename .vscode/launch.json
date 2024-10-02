@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RuletaDeLaSuerte",
+            "request": "launch",
+            "mainClass": "RuletaDeLaSuerte",
+            "projectName": "24-25-PRG1_7189d344"
+        },
+        {
+            "type": "java",
             "name": "NumeroAleatorio",
             "request": "launch",
             "mainClass": "NumeroAleatorio",
