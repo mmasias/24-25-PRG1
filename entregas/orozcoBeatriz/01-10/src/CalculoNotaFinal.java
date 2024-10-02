@@ -25,7 +25,8 @@ public class CalculoNotaFinal {
                     evaluacionContinua * EVALUACION_CONTINUA_PONDERADO + notaProfesor * NOTA_PROFESOR_PONDERADO;
 
         System.out.println("Nota final =  " + notaFinal);
-
+        
+        scanner.close();
         }
     }
     
