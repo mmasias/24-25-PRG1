@@ -20,3 +20,6 @@ class EjemploTernario {
 		veredicto = numeroDelUsuario != aleatorio ? "No adivino!" : "Adivino!";
 	
 		System.out.println(veredicto);
+		{
+			
+		}
