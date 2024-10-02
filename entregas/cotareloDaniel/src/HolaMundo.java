@@ -1,4 +1,4 @@
-public class daniel{
+public class HolaMundo{
     public static void main(String args[]){
         System.out.println("Hola Mundo");
         System.out.println("Adios Mundo Cruel");
@@ -17,14 +17,14 @@ public class daniel{
         System.out.println(dinero);
         System.out.println(nombre);
 
-        System.out.println("Me llamo" + nombre + "tengo" + edad + "años y" dinero + "euros")
+        System.out.println("Me llamo" + nombre + "tengo" + edad + "años y" + dinero + "euros");
 
         dinero = dinero + 100;
 
         System.out.println ("ahora tengo "+ dinero + " euros");
 
-        dinero + dinero = 50
+        dinero + dinero = 50;
 
-        System.out.println("ahora tengo "+ dinero + "euros")
+        System.out.println("ahora tengo "+ dinero + "euros");
     }
 }
