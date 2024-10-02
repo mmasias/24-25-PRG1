@@ -5,7 +5,7 @@ public static void main(String[]args){
     Scanner scanner =new Scanner(System.in);
 
     int minimo, maximo;
-}
+
     System.out.println("Nivel de la dificultad");
     System.out.println("Numero minimo");
     minimo = scanner.nextInt();
@@ -16,7 +16,7 @@ public static void main(String[]args){
 
     int numeroDelUsuario;
     System.out.println("Dime un numero entre "+minimo+" y "+maximo+"");
-    numeroDelUsuario = sacnner.nextInt();
+    numeroDelUsuario = scanner.nextInt();
     
     string veredicto;
     
@@ -26,5 +26,6 @@ public static void main(String[]args){
     scanner.close();
 
     }
+}
 
 
