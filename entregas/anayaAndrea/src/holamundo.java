@@ -34,31 +34,5 @@ def get_user_info( holaqtal ):
         System.out.println("Me llamo" 'Andrea' 'tengo' 20 'años y 10 euros');
 
 
-class CalcularNotafinal{
-
     
-    public static void main(String[] args) {
-        double examenFinal, examenParcial, evaluacionContinua, notaProfesor
-        
-        double notaExamenFinalPonderado = 0,5;
-        double notaEvContinuaPonderada = 0,25;
-        double notaExamenParcialPonderado = 0,2;
-        double notaProfesorPonderado = 0,05;
-
-        examenParcial = 8;
-        examenFinal = 9;
-        evaluacionContinua = 8;
-        notaProfesor = 8;
-
-        double notaFinal;
-        notaFinal = examenFinal * notaExamenFinalPonderado + 
-                    examenParcial * notaExamenParcialPonderado +
-                    evaluacionContinua * notaEvContinuaPonderada + 
-                    notaProfesor * notaProfesorPonderado/
-
-     
-        System.out.println("Nota Final = " + notaFinal);
-    }
-    
-    }
 
