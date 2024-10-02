@@ -21,6 +21,6 @@ class CalculaNotaFinal {
                     evaluacionContinua + 0.2 +
                     notaProfesor + 0.05;
 
-        System.out.println("Nota final = " + notaFinal);
+        System.out.println("Nota final = " + notaFinal); 
     }
 }    
