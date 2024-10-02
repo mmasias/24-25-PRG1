@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class matematicas{
 
     public static void main(String[] args){
