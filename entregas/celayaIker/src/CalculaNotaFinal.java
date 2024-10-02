@@ -27,5 +27,6 @@ public class CalculaNotaFinal {
                     evaluacionProfesor * EVALUACION_PROFESOR_PONDERADO;
 
         System.out.println("La nota final es: " + notaFinal);
+        scanner.close();
     }
 }
