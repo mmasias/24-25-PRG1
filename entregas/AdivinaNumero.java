@@ -11,6 +11,9 @@ public class AdivinaNumero {
         minimo = scanner.nextInt();
         System.out.println("Numero maximo");
         maximo = scanner.nextInt();
+        int aleatorio=(int)(Math.random()*(maximo-minimo));
+
+        
 
         
     }
