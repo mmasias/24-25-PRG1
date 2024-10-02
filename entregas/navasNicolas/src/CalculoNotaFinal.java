@@ -1,22 +1,30 @@
 import java.util.Scanner;
 
-public class MiNota {
+public class CalculoNotaFinal {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        double ex_final, ev_con, ex_par, ev_prof, nota_final;
+        double nota_examen_final_ponderada, nota_evaluacion_continua_ponderada, nota_examen_parcial_ponderada, nota_evaluacion_profesor_ponderada, nota_final;
         
-        System.out.println("Nota examen final: ");
-        ex_final = scanner.nextDouble() * 0.5;
-        System.out.println("Nota evaluacion continua: ");
-        ev_con = scanner.nextDouble() * 0.2;
-        System.out.println("Nota examen parcial: ");
-        ex_par = scanner.nextDouble() * 0.25;
-        System.out.println("Nota evaluacion profesor: ");
-        ev_prof = scanner.nextDouble() * 0.05;
+        final double PONDERACION_EXAMEN_FINAL = 0.5;
+        final double PONDERACION_EVALUACION_CONTINUA = 0.25;
+        final double PONDERACION_EXAMEN_PARCIAL = 0.2;
+        final double PONDERACION_EVALUACION_PROFESOR = 0.05;
 
-        nota_final = ex_final + ev_con + ex_par + ev_prof;
+        System.out.println("Nota examen final: ");
+        nota_examen_final_ponderada = scanner.nextDouble() * PONDERACION_EXAMEN_FINAL;
+
+        System.out.println("Nota evaluacion continua: ");
+        nota_evaluacion_continua_ponderada = scanner.nextDouble() * PONDERACION_EVALUACION_CONTINUA;
+        
+        System.out.println("Nota examen parcial: ");
+        nota_examen_parcial_ponderada = scanner.nextDouble() * PONDERACION_EXAMEN_PARCIAL;
+        
+        System.out.println("Nota evaluacion profesor: ");
+        nota_evaluacion_profesor_ponderada = scanner.nextDouble() * PONDERACION_EVALUACION_PROFESOR;
+
+        nota_final = nota_examen_final_ponderada  + nota_evaluacion_continua_ponderada + nota_examen_parcial_ponderada + nota_evaluacion_profesor_ponderada;
         
         if (nota_final > 10) {
             System.out.println("Introduce bien los valores por favor.");
@@ -29,7 +37,9 @@ public class MiNota {
         }
         else{
         System.out.println("¡Felicidades! Tu nota final es " + nota_final);
-        }  
+        }
+        
+        scanner.close();  
     }
 }
 
