@@ -5,12 +5,12 @@ class HolaMundo {
 
         System.out.println("Inicio");
 
-        // Creacion de variables
+        // Declaracion de variables
 
         int edad;
         double dinero;
         String nombre;
-        char UnChar;
+        char unChar;
 
         // Asignacion de valores a las variables
 
@@ -21,7 +21,7 @@ class HolaMundo {
 
         // Console output
 
-        System.out.println("Me llamo " + nombre + ", tengo " + edad + " año " + UnChar + " y tengo " + dinero + " euros.");
+        System.out.println("Me llamo " + nombre + ", tengo " + edad + " año " + unChar + " y tengo " + dinero + " euros.");
 
         dinero = dinero + 100;
         System.out.println("Ahora tengo " + dinero);
