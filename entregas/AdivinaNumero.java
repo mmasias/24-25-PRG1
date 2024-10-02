@@ -13,7 +13,24 @@ public class AdivinaNumero {
         maximo = scanner.nextInt();
         int aleatorio=(int)(Math.random()*(maximo-minimo));
 
-        
+        int numeroDelUsuario=0;
+
+        System.out.println("Dime un número entre "+minimo+" y "+maximo+ " inclusive");
+        numeroDelUsuario=scanner.nextInt();
+
+        boolean loAdivino;
+
+        System.out.println("El número es "+aleatorio);
+
+        loAdivino=numeroDelUsuario==aleatorio;
+        System.out.println(loAdivino);
+
+
+
+        //scanner.close();
+
+
+
 
         
     }
