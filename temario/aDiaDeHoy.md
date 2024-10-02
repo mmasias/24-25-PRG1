@@ -39,3 +39,17 @@
   - Salida por consola
   - Variables: tipos, declaración, inicialización
   - Entrada por consola: la clase Scanner.
+
+## Clean code
+
+- Nombres adecuados a las clases y variables. Nombre del archivo.
+- Orden del código, indentación, espacios.
+- No hemos visto comentarios.
+- ***Repito:*** no hemos visto comentarios.
+
+## Programación
+
+- Clase Math
+- Operadores de comparación.
+- Operador ternario.
+
