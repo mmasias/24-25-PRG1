@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CalculaNotaFinal {
+class CalculaNotaFinal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -31,5 +31,7 @@ public class CalculaNotaFinal {
                 evaluacionProfesor * EVALUACION_PROFESOR_PONDERADO;
 
         System.out.println("Nota final = " + notaFinal);
+
+        scanner.close();
     }
 }
