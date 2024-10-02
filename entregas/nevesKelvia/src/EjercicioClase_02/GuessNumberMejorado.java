@@ -1,3 +1,5 @@
+package EjercicioClase_02;
+
 import java.util.Scanner;
 
 class GuessNumberMejorado {
@@ -9,9 +11,9 @@ class GuessNumberMejorado {
         int minimum, maximum;
 
         System.out.println("Difficulty level");
-        
+
         System.out.println("Minimum number:");
-        
+
         minimum = scanner.nextInt();
 
         do {
@@ -24,7 +26,6 @@ class GuessNumberMejorado {
             }
         } while (maximum <= minimum);
 
-  
         int randomNumber = (int) (Math.random() * (maximum - minimum + 1) + minimum);
 
         int guessedNumber;
@@ -32,33 +33,27 @@ class GuessNumberMejorado {
         boolean guessedCorrectly = false;
 
         while (!guessedCorrectly) {
+
             System.out.println("Guess a number between " + minimum + " and " + maximum + " (inclusive):");
-            
+
             guessedNumber = scanner.nextInt();
 
-         
             if (guessedNumber < minimum || guessedNumber > maximum) {
 
-             System.out.println("The number is out of range, please try again.");
+                System.out.println("The number is out of range, please try again.");
 
-          } else {
-
-        if (guessedNumber == randomNum) {
-
-        System.out.println("You guessed it!");
-
-        guessedCorrectly = true;
-
-    } else {
-
-        System.out.println("Wrong guess. Try again.");
-    }
-}
-            if (guessedNumber == randomNumber) {
-                System.out.println("You guessed it!");
-                guessedCorrectly = true;
             } else {
-                System.out.println("Wrong guess. Try again.");
+
+                if (guessedNumber == randomNumber) {
+
+                    System.out.println("You guessed it!");
+
+                    guessedCorrectly = true;
+
+                } else {
+
+                    System.out.println("Wrong guess. Try again.");
+                }
             }
         }
         scanner.close();
