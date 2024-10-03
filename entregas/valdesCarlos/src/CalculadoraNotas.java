@@ -3,16 +3,21 @@ import java.util.Scanner;
 class CalculadoraNotas {
     public static void main(String[] args) {
 
-        try (Scanner scanner = new Scanner(System.in)) {
+         try(Scanner scanner = new Scanner(System.in)) {
             double examenFinal, examenParcial, evaluacionContinua, notaProfesor;
+
             System.out.println("Dime tu examen parcial: ");
             examenParcial = scanner.nextDouble();
+
             System.out.println("Dime tu examen final: ");
             examenFinal = scanner.nextDouble();
+
             System.out.println("Dime tu evaluacion continua: ");
             evaluacionContinua = scanner.nextDouble();
+
             System.out.println("Dime tu nota profesor: ");
             notaProfesor = scanner.nextDouble();
+
             final double EXAMEN_FINAL_PONDERADO = 0.5;
             final double EXAMEN_PARCIAL_PONDERADO = 0.25;
             final double EVALUACION_CONTINUA_PONDERADO = 0.2;
