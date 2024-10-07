@@ -10,5 +10,16 @@ public class AdivinaNota {
         final double EXAMEN_PARCIAL_PONDERADO = 0.25;
         final double EVALUACION_CONTINUA_PONDERADO = 0.2;
         final double NOTA_PROFESOR_PONDERADO = 0.05;
+    
+
+        System.out.println("Dime tu examen parcial: ");
+        examenParcial = scanner.nextDouble();
+        System.out.println("Dime tu examen final: ");
+        examenFinal = scanner.nextDouble();
+        System.out.println("Dime tu evaluacion continua: ");
+        evaluacionContinua = scanner.nextDouble();
+        System.out.println("Dime tu nota del profesor: ");
+        notaProfesor = scanner.nextDouble();
+
     }   
 }
