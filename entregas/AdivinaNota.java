@@ -21,5 +21,14 @@ public class AdivinaNota {
         System.out.println("Dime tu nota del profesor: ");
         notaProfesor = scanner.nextDouble();
 
+        double notaFinal = 0;
+        notaFinal = examenParcial * EXAMEN_PARCIAL_PONDERADO 
+        + examenFinal* EXAMEN_FINAL_PONDERADO +
+        evaluacionContinua*EVALUACION_CONTINUA_PONDERADO
+        +notaProfesor *NOTA_PROFESOR_PONDERADO ;
+
+        System.out.println("La nota final es: "+ notaFinal);
+
+
     }   
 }
