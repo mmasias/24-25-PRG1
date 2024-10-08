@@ -15,7 +15,7 @@ class AdivinarNumeroRandom {
 
         int numeroDelUsuario;
 
-        System.out.println("Dime un número entre "+minimo+" y "+maximo+" (inclusive)");
+        System.out.println("Dime un número entre "+minimo+" y "+maximo+" (incluido)");
 
         numeroDelUsuario = scanner.nextInt();   
         
