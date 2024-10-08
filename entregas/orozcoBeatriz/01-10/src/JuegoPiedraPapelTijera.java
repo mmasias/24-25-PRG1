@@ -41,16 +41,13 @@ public class JuegoPiedraPapelTijera {
         System.out.println("Elección del ordenador: " + eleccionRandom);
 
         String resultado;
-        resultado =  eleccion == randomNumber ? "Empate"
-        : eleccion == PIEDRA && randomNumber == PAPEL ? "Pierdes"
-        : eleccion == PIEDRA && randomNumber == TIJERA  ? "Ganas"
-        : eleccion == PAPEL && randomNumber == PIEDRA ? "Ganas"
-        : eleccion == PAPEL && randomNumber == TIJERA ? "Pierdes"
-        : eleccion == TIJERA && randomNumber == PIEDRA ? "Pierdes"
-        : eleccion == TIJERA && randomNumber == PAPEL ? "Ganas"
-        : "No hay resultado";
+        resultado =  (eleccion < 1 || eleccion > 3 || randomNumber < 1 || randomNumber > 3) ? "No hay resultado"
+        : eleccion == randomNumber ? "Empate"
+        : (eleccion == PIEDRA && randomNumber == PAPEL) || (eleccion == PAPEL && randomNumber == TIJERA) || 
+          (eleccion == TIJERA && randomNumber == PIEDRA) ? "Pierdes"
+        : "Ganas";
+
         System.out.println(resultado);
-    
         scanner.close();
     }
 }
