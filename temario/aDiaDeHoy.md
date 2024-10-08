@@ -29,3 +29,27 @@
 ## Git & GitHub
 
 - Repo (local y remoto), clon, fork, pull, push. Como saber si está al día y como sincronizarlo si no lo está.
+
+## Disciplina de programación
+
+- Por qué los lenguajes de programación
+- Clasificación de los lenguajes
+- JAVA
+  - Código fuente y compilación
+  - Salida por consola
+  - Variables: tipos, declaración, inicialización
+  - Entrada por consola: la clase Scanner.
+
+## Clean code
+
+- Nombres adecuados a las clases y variables. Nombre del archivo.
+- Orden del código, indentación, espacios.
+- No hemos visto comentarios.
+- ***Repito:*** no hemos visto comentarios.
+
+## Programación
+
+- Clase Math
+- Operadores de comparación.
+- Operador ternario.
+
