@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class NotaFinal {
+class Ejemplo {
     public static void main(String[] args) {
 
         // Variable declaration
