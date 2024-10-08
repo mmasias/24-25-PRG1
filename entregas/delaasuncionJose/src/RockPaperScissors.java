@@ -32,6 +32,8 @@ class RockPaperScissors {
 
         final String ERROR_VEREDICT = "|  > Please input a number within the range of 1 to 3                |";
 
+        final int ROCK = 1;
+        final int PAPER = 2;
         final int MINIMUM = 1;
         final int MAXIMUM = 3;
 
@@ -40,12 +42,12 @@ class RockPaperScissors {
         machineGuess = (int)(Math.random()*(MAXIMUM - MINIMUM + 1) + MINIMUM);
 
         userWord = error ? ERROR_VEREDICT
-        : userGuess == 1 ? "|  > The user has chosen ROCK                                        |"
-        : userGuess == 2 ? "|  > The user has chosen PAPER                                       |"
+        : userGuess == ROCK ? "|  > The user has chosen ROCK                                        |"
+        : userGuess == PAPER ? "|  > The user has chosen PAPER                                       |"
         : "|  > The user has chosen SCISSORS                                    |";
 
-        machineWord = machineGuess == 1 ? "|  > Machine has chosen ROCK                                         |"
-        : machineGuess == 2 ? "|  > Machine has chosen PAPER                                        |"
+        machineWord = machineGuess == ROCK ? "|  > Machine has chosen ROCK                                         |"
+        : machineGuess == PAPER ? "|  > Machine has chosen PAPER                                        |"
         : "|  > Machine has chosen SCISSORS                                     |";
 
         result = (userGuess-machineGuess+3)%3;
