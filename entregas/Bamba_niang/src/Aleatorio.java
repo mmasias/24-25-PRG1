@@ -17,9 +17,9 @@ class Aleatorio{
         System.out.println("Dime un numero entre "+minimo+" y "+maximo+" (inclusive)" );
         numeroDelusuario = scanner.nextInt();
 
-        String verdicto;
+        String veredicto;
         
-         verdicto = numeroDelusuario==aleatorio ? "adivino" : "no adivino";
+         veredicto = numeroDelusuario==aleatorio ? "Adivino" : "No adivino";
 
          System.out.println("verdicto");
 
