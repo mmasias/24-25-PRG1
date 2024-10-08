@@ -14,7 +14,7 @@ class HolaMundo{
         nombre = "Firibicundio";
         unChar = 'x';
 
-        System.out.println("Me llamo " + nombre + ", tengo " + edad + ", tengo " + dinero);
+        System.out.println("Me llamo " + nombre + ", tengo " + edad + ", tengo " + dinero + "hay" + unChar);
 
         dinero = dinero + 100;
 
