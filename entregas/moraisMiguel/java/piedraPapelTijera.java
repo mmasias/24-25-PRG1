@@ -28,14 +28,11 @@ class piedraPapelTijera{
 
         String descriptor;
         resultado = eleccion = eleccionUsuario ? EMPATE
-        : eleccion = 1 && eleccionUsuario = 2 ? GANASTE
-        : eleccion = 2 && eleccionUsuario = 3 ? GANASTE
-        : eleccion = 3 && eleccionUsuario = 1 ? GANASTE
-        : eleccion = 1 && eleccionUsuario = 3 ? PERDISTE
-        : eleccion = 2 && eleccionUsuario = 1 ? PERDISTE
-        : eleccion = 3 && eleccionUsuario = 2 ? PERDISTE
-        :
+        : (eleccion = 1 && eleccionUsuario = 2) ||(eleccion = 2 && eleccionUsuario = 3) || (eleccion = 3 && eleccionUsuario = 1) ? GANASTE
+        : (eleccion = 1 && eleccionUsuario = 3) ||(eleccion = 2 && eleccionUsuario = 1) ||(eleccion = 3 && eleccionUsuario = 2) ? PERDISTE
+        : "Error, jugada imposible.";
 
-        System.out.println(descriptor);
+
+        System.out.println(resultado);
     }
 }
