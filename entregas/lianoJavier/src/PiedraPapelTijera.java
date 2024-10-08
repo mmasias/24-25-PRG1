@@ -8,7 +8,7 @@ class PiedraPapelTijera {
                 Scanner input = new Scanner(System.in);
 
                 int jugadaDelRobotRaw;
-                // jugadaDelRobotRaw = 1; // prueba1
+                
                 jugadaDelRobotRaw = (int) (Math.random() * 3) + 1;
 
                 boolean robotSeleccionoPiedra;
@@ -42,19 +42,11 @@ class PiedraPapelTijera {
                 System.out.println("Por favor elija: ");
                 jugadaDelUsuarioRaw = input.nextInt();
 
-                boolean usuarioSeleccionoPapel;
-                boolean usuarioSeleccionoTijeras;
-                boolean usuarioSeleccionoPiedra;
-
-                usuarioSeleccionoPiedra = jugadaDelUsuarioRaw == 1;
-                usuarioSeleccionoPapel = jugadaDelUsuarioRaw == 2;
-                usuarioSeleccionoTijeras = jugadaDelUsuarioRaw == 3;
-
                 String jugadaDelUsuario;
 
-                jugadaDelUsuario = usuarioSeleccionoPapel ? "papel"
-                                : usuarioSeleccionoTijeras ? "tijeras"
-                                : usuarioSeleccionoPiedra ? "piedra"
+                jugadaDelUsuario = jugadaDelUsuarioRaw == 1 ? "papel"
+                                : jugadaDelUsuarioRaw == 2 ? "tijeras"
+                                : jugadaDelUsuarioRaw == 3 ? "piedra"
                                 : "Error: Elige un número entre 1 y 3.";
 
                 boolean jugadorSeleccionoPiedra;
@@ -67,10 +59,9 @@ class PiedraPapelTijera {
 
                 String resultado;
 
-                resultado = (jugadaDelUsuarioRaw == jugadaDelRobotRaw) ? "¡EMPATE!"
-                        : (jugadorSeleccionoPiedra && robotSeleccionoTijeras) || (jugadorSeleccionoPapel && robotSeleccionoPiedra) || (jugadorSeleccionoTijeras && robotSeleccionoPapel) ? "\u001B[32m ¡Has ganado!"
+                resultado = (jugadorSeleccionoPiedra && robotSeleccionoTijeras) || (jugadorSeleccionoPapel && robotSeleccionoPiedra) || (jugadorSeleccionoTijeras && robotSeleccionoPapel) ? "\u001B[32m ¡Has ganado!"
                         : (jugadorSeleccionoTijeras && robotSeleccionoPiedra) || (jugadorSeleccionoPiedra && robotSeleccionoPapel) || (jugadorSeleccionoPapel && robotSeleccionoTijeras) ? "\u001B[31m ¡Has perdido!"
-                        : "Error: No has escojido una jugada valida";
+                        : "¡EMPATE!";
 
                 String jugadaDelRobot;
 
