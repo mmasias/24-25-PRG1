@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class EjemploTernario {
+class EjemploTernario {}
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
@@ -20,6 +20,5 @@ class EjemploTernario {
 		veredicto = numeroDelUsuario != aleatorio ? "No adivino!" : "Adivino!";
 	
 		System.out.println(veredicto);
-		{
-			
+		
 		}
