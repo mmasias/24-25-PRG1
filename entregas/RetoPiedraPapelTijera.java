@@ -28,4 +28,19 @@ class RetoPiedraPapelTijera {
         System.out.println("La elección de la computadora fue: " + opciones[computadora - 1]);
     }
 
-   
+    // Función para determinar el resultado del juego
+    public static String determinarResultado(int jugador, int computadora) {
+        if (jugador == computadora) {
+            return "¡Es un empate!";
+        }
+
+        // Reglas del juego: Piedra (1) vence a Tijera (3), Tijera (3) vence a Papel (2), Papel (2) vence a Piedra (1)
+        if ((jugador == 1 && computadora == 3) || 
+            (jugador == 3 && computadora == 2) || 
+            (jugador == 2 && computadora == 1)) {
+            return "¡Felicidades, has ganado!";
+        } else {
+            return "Lo siento, has perdido.";
+        }
+    }
+}
