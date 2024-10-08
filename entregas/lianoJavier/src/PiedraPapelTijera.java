@@ -52,45 +52,37 @@ class PiedraPapelTijera {
 
                 String jugadaDelUsuario;
 
-                jugadaDelUsuario = usuarioSeleccionoPapel ? "Has escogido papel."
-                                : usuarioSeleccionoTijeras ? "Has escogido tijeras."
-                                                : usuarioSeleccionoPiedra ? "Has escogido piedra."
-                                                                : "Error: Elige un número entre 1 y 3.";
+                jugadaDelUsuario = usuarioSeleccionoPapel ? "papel"
+                                : usuarioSeleccionoTijeras ? "tijeras"
+                                : usuarioSeleccionoPiedra ? "piedra"
+                                : "Error: Elige un número entre 1 y 3.";
 
                 boolean jugadorSeleccionoPiedra;
                 boolean jugadorSeleccionoPapel;
                 boolean jugadorSeleccionoTijeras;
 
                 jugadorSeleccionoPiedra = jugadaDelUsuarioRaw == 1;
-                jugadorSeleccionoPapel = jugadaDelUsuarioRaw == 2;
+                jugadorSeleccionoPapel = jugadaDelUsuarioRaw == 2;     
                 jugadorSeleccionoTijeras = jugadaDelUsuarioRaw == 3;
 
                 String resultado;
 
                 resultado = (jugadaDelUsuarioRaw == jugadaDelRobotRaw) ? "¡EMPATE!"
-                                : (jugadorSeleccionoPiedra && robotSeleccionoTijeras)
-                                                || (jugadorSeleccionoPapel && robotSeleccionoPiedra)
-                                                || (jugadorSeleccionoTijeras && robotSeleccionoPapel)
-                                                                ? "\u001B[32m ¡Has ganado!"
-                                                                : (jugadorSeleccionoTijeras && robotSeleccionoPiedra)
-                                                                                || (jugadorSeleccionoPiedra
-                                                                                                && robotSeleccionoPapel)
-                                                                                || (jugadorSeleccionoPapel
-                                                                                                && robotSeleccionoTijeras)
-                                                                                                                ? "\u001B[31m ¡Has perdido!"
-                                                                                                                : "Error: No has escojido una jugada valida";
+                        : (jugadorSeleccionoPiedra && robotSeleccionoTijeras) || (jugadorSeleccionoPapel && robotSeleccionoPiedra) || (jugadorSeleccionoTijeras && robotSeleccionoPapel) ? "\u001B[32m ¡Has ganado!"
+                        : (jugadorSeleccionoTijeras && robotSeleccionoPiedra) || (jugadorSeleccionoPiedra && robotSeleccionoPapel) || (jugadorSeleccionoPapel && robotSeleccionoTijeras) ? "\u001B[31m ¡Has perdido!"
+                        : "Error: No has escojido una jugada valida";
 
                 String jugadaDelRobot;
 
-                jugadaDelRobot = robotSeleccionoPapel ? "Robotin ha sacado papel."
-                                : robotSeleccionoTijeras ? "Robotin ha sacado tijeras."
-                                                : "Robotin ha sacado piedra.";
+                jugadaDelRobot = robotSeleccionoPapel ? "papel"
+                        : robotSeleccionoTijeras ? "tijeras"
+                        : "piedra";
 
                 System.out.println("");
                 System.out.println("");
-                System.out.println(jugadaDelRobot);
+                System.out.println("Robotin ha sacado " + jugadaDelRobot + ".");
                 System.out.println("");
-                System.out.println(jugadaDelUsuario);
+                System.out.println("Has escogido " + jugadaDelUsuario + ".");
                 System.out.println("");
                 System.out.println(resultado);
 
