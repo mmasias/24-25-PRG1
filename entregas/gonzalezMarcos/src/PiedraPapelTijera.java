@@ -14,35 +14,35 @@ class PiedraPapelTijera {
 
     Scanner entrada = new Scanner(System.in);
     int eleccion;
-    System.out.println("Escoja su eleccion: ");
+    System.out.println("-----------------------");
+    System.out.println("Escoja su elección: ");
     System.out.println("1. Piedra ");
     System.out.println("2. Papel ");
     System.out.println("3. Tijera ");
+    System.out.println("-----------------------");
     eleccion = entrada.nextInt();
+    System.out.println("-----------------------");
 
     int aleatorio = (int)(Math.random()*(3-1)+1);
     
-    System.out.println("eleccion del contrincante = " + aleatorio);
+    String eleccionAleatoria;
+    eleccionAleatoria = (aleatorio == 1) ? "Piedra" : 
+                        (aleatorio == 2) ? "Papel" : 
+                        (aleatorio == 3) ? "Tijera" : "ERROR";
+    
+    System.out.println("Elección del contrincante = " + eleccionAleatoria);
 
-    String descriptor;
-        descriptor = eleccion < PIEDRA ? ERROR
-            : eleccion == PIEDRA && aleatorio == TIJERA ? GANAS
-            : eleccion  == PAPEL && aleatorio == PIEDRA ? GANAS
-            : eleccion == TIJERA && aleatorio == PAPEL ? GANAS
-            : eleccion == PIEDRA && aleatorio == PAPEL ? PIERDES
-            : eleccion == PAPEL && aleatorio == TIJERA ? PIERDES
-            : eleccion == TIJERA && aleatorio == PIEDRA ? PIERDES
-            : eleccion == PIEDRA && aleatorio == PIEDRA ? EMPATE
-            : eleccion == PAPEL && aleatorio == PAPEL ? EMPATE
-            : eleccion == TIJERA && aleatorio == TIJERA ? EMPATE
-            : eleccion > TIJERA ? ERROR : ERROR;
-
-    System.out.println("El resultado es: " + descriptor);
-
+    String resultado;
+        resultado = eleccion < PIEDRA ? ERROR
+            : eleccion == PIEDRA && aleatorio == TIJERA ||
+            eleccion  == PAPEL && aleatorio == PIEDRA ||
+            eleccion == TIJERA && aleatorio == PAPEL ? GANAS 
+            : eleccion == PIEDRA && aleatorio == PIEDRA ||
+            eleccion == PAPEL && aleatorio == PAPEL ||
+            eleccion == TIJERA && aleatorio == TIJERA ? EMPATE : PIERDES;
 
 
-
-
-
+    System.out.println("El resultado es: " + resultado);
+    System.out.println("-----------------------");
     }
 }
