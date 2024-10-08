@@ -48,13 +48,10 @@ class PiedraPapelTijera {
 
         resultado
                 = jugadaDelUsuarioRaw == jugadaDelRobotRaw ? "¡EMPATE!" 
-                : jugadorSeleccionoPiedra &&  robotSeleccionoPapel ? "¡Has perdido!" 
-                : jugadorSeleccionoPiedra && robotSeleccionoTijeras ? "¡Has ganado!" 
-                : jugadorSeleccionoPapel && robotSeleccionoPiedra ? "¡Has ganado!" 
-                : jugadorSeleccionoPapel && robotSeleccionoTijeras ? "¡Has perdido!" 
-                : jugadorSeleccionoTijeras && robotSeleccionoPiedra ? "¡Has perdido!" 
-                : jugadorSeleccionoTijeras &&  robotSeleccionoPapel ? "¡Has ganado!" 
-                : "Error: no has ingresado un número valido.";
+                : (jugadorSeleccionoPiedra && robotSeleccionoTijeras)
+                    || (jugadorSeleccionoPapel && robotSeleccionoPiedra)
+                    || (jugadorSeleccionoTijeras &&  robotSeleccionoPapel) ? "¡Has ganado!" 
+                :"¡Has perdido!";
 
 
         String jugadaDelRobot;
