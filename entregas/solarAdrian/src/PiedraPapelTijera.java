@@ -4,14 +4,14 @@ import java.util.Random;
     class PiedraPapelTijera {
         public static void main(String[] args){
 
-            final int Piedra = 1;
-            final int Papel = 2;
-            final int Tijera = 3;
+            final int PIEDRA = 1;
+            final int PAPEL = 2;
+            final int TIJERA = 3;
 
-            final String Mensaje_Empate = "Has empatado";
-            final String Mensaje_Victoria = "¡Ganaste!";
-            final String Mensaje_Derrota = "Perdiste";
-            final String Error = "Has introducido un valor incorrecto";
+            final String EMPATE = "Has empatado";
+            final String VICTORIA = "¡Ganaste!";
+            final String DERROTA = "Perdiste";
+            final String ERROR = "Has introducido un valor incorrecto";
            
             Scanner entrada = new Scanner(System.in);
             int elección;
@@ -33,13 +33,13 @@ import java.util.Random;
 
 
             String resultado; 
-                resultado = elección < Piedra ? Error
-                    : elección == Piedra && elecciónOrdenador == Tijera ||
-                    elección == Papel && elecciónOrdenador == Piedra ||
-                    elección == Tijera && elecciónOrdenador == Papel ? Mensaje_Victoria
-                    : elección == Piedra && elecciónOrdenador == Piedra ||
-                    elección == Papel && elecciónOrdenador == Papel ||
-                    elección == Tijera && elecciónOrdenador == Tijera ? Mensaje_Empate : Mensaje_Derrota;
+                resultado = elección < PIEDRA ? ERROR
+                    : elección == PIEDRA && elecciónOrdenador == TIJERA ||
+                    elección == PAPEL && elecciónOrdenador == PIEDRA ||
+                    elección == TIJERA && elecciónOrdenador == PAPEL ? VICTORIA
+                    : elección == PIEDRA && elecciónOrdenador == PIEDRA ||
+                    elección == PAPEL && elecciónOrdenador == PAPEL ||
+                    elección == TIJERA && elecciónOrdenador == TIJERA ? EMPATE : DERROTA;
                     
 
             System.out.println("Tu elección:" +elecciónUsuario);
