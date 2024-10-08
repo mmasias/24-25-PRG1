@@ -16,7 +16,7 @@ class RetoPiedraPapelTijera {
         System.out.println(determinarResultado(seleccionJugador, seleccionComputadora));
     }
 
-    // Función que genera una elección aleatoria para la computadora
+    // Función que genera una elección aleatoria para el ordenador
     public static int generarEleccionComputadora() {
         return (int)(Math.random() * 3) + 1;  // 1 para Piedra, 2 para Papel, 3 para Tijera
     }
@@ -38,7 +38,7 @@ class RetoPiedraPapelTijera {
         if ((jugador == 1 && computadora == 3) || 
             (jugador == 3 && computadora == 2) || 
             (jugador == 2 && computadora == 1)) {
-            return "¡Felicidades,has ganado!";
+            return "¡Felicidades,  has ganado!";
         } else {
             return "Lo siento, has perdido.";
         }
