@@ -37,7 +37,7 @@ class RockPaperScissors {
 
 
         error = userGuess > MAXIMUM || userGuess < MINIMUM;
-        machineGuess = (int)(Math.random()*((MAXIMUM+1)-MINIMUM)+MINIMUM);
+        machineGuess = (int)(Math.random()*(MAXIMUM - MINIMUM + 1) + MINIMUM);
 
         userWord = error ? ERROR_VEREDICT
         : userGuess == 1 ? "|  > The user has chosen ROCK                                        |"
