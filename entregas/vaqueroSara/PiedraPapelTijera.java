@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PiedraPapelTijera.java {
+public class PiedraPapelTijera {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -23,23 +23,23 @@ public class PiedraPapelTijera.java {
         int maximo = 3;
         int minimo = 1;
 
-        int compValue = (int) (Math.random() * (maximo - minimo) + minimo);
+        int computerValue = (int) (Math.random() * (maximo - minimo) + minimo);
 
-        String compChoice = (compValue == 1) ? "piedra"
-                : (compValue == 2) ? "papel"
-                        : (compValue == 3) ? "tijera" : "";
+        String computerChoice = (computerValue == 1) ? "piedra"
+                : (computerValue == 2) ? "papel"
+                        : (computerValue == 3) ? "tijera" : "";
 
         
         String result = 
-        (validOption.equals(piedra) && compChoice.equals(3)) || 
-        (validOption.equals(tijera) && compChoice.equals(2)) ||
-        (validOption.equals(papel) && compChoice.equals(1)) ? "Has ganado!" : 
+        (validOption.equals(piedra) && computerChoice.equals(tijera)) || 
+        (validOption.equals(tijera) && computerChoice.equals(papel)) ||
+        (validOption.equals(papel) && computerChoice.equals(piedra)) ? "Has ganado!" : 
 
-        (validOption.equals(compChoice)) ? "Empate!" :
+        (validOption.equals(computerChoice)) ? "Empate!" :
 
         "Perdiste...";
     
-        System.out.println("La computadora escogió "+compChoice+".");
+        System.out.println("La computadora escogió "+computerChoice+".");
         System.out.println(result);
 
         scanner.close();
