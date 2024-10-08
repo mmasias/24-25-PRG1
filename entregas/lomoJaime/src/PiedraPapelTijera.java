@@ -25,6 +25,7 @@ class PiedraPapelTijera{
          String primer_resultado = eleccion == 1 ? ELECIONPAPEL
             : eleccion == 2 ? ELECCIONPIEDRA
             : ELECCIONTIJERA;
+        System.out.println(primer_resultado);
              System.out.println("La eleccion de la maquina es " +maquina);
         String resultado = eleccion == maquina ? MENSAJE_EMPATE
                 : eleccion == 1 && maquina == 3 ? MENSAJE_PERDISTE
