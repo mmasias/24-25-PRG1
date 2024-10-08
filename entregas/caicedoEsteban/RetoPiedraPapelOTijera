@@ -21,7 +21,7 @@ public class PiedraPapelTijera {
         
         int eleccionComputadora = random.nextInt(3);
 
-        // Imprimir elecciones
+        
         System.out.println("Tú elegiste: " + (eleccionUsuario == PIEDRA ? "Piedra" : eleccionUsuario == PAPEL ? "Papel" : "Tijera"));
         System.out.println("La computadora eligió: " + (eleccionComputadora == PIEDRA ? "Piedra" : eleccionComputadora == PAPEL ? "Papel" : "Tijera"));
 
