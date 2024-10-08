@@ -23,13 +23,13 @@ class Reto002PiedraPapelTijera {
         System.out.println("La computadora ha elegido: " + computadora);
         System.out.println("Tú elegiste: " + eleccionJugador);
 
-        String veredictO;
-        veredictO = (jugador == numeroAleatorio) ? "Han quedado empate" :
+        String veredicto;
+        veredicto = (jugador == numeroAleatorio) ? "Han quedado empate" :
                 (jugador == Paper && numeroAleatorio == Piedra ||
                         jugador == Tijera && numeroAleatorio == Paper ||
                         jugador == Piedra && numeroAleatorio == Tijera) ? "Has ganado" : "Has perdido";
 
-        System.out.println(veredictO);
+        System.out.println(veredicto);
 
         scanner.close();
     }
