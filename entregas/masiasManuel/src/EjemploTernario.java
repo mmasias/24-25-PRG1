@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Ejemplo {
+class EjemploTernario {
     public static void main(String[] args) {
 
         final int MAXIMO = 10;
@@ -15,6 +15,6 @@ class Ejemplo {
         String respuesta = numeroAleatorio == entrada ? "Adivinó" : "No adivinó";
 
         System.out.println(respuesta);
-        entrada.close();
+        
     }
 }

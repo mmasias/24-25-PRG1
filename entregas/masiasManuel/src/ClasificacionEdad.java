@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class EjemploTernario2 {
+class ClasificacionEdad {
     public static void main(String[] args) {
 
         final int LIMITE_INFERIOR = 0;
@@ -26,12 +26,12 @@ class EjemploTernario2 {
 
         String descriptor;
         descriptor = edad < LIMITE_INFERIOR ? ERROR_DESCRIPCION
-                : edad <= PRIMERA_INFANCIA ? PRIMERA_INFANCIA_DESCRIPTOR
-                        : edad <= INFANCIA ? INFANCIA_DESCRIPTOR
-                                : edad <= ADOLESCENCIA ? ADOLESCENCIA_DESCRIPTOR
-                                        : edad < JUVENTUD ? JUVENTUD_DESCRIPTOR
-                                                : edad < ADULTEZ ? ADULTEZ_DESCRIPTOR
-                                                        : edad > LIMITE_SUPERIOR ? ERROR_DESCRIPCION : MAYOR_DESCRIPTOR;
+            : edad <= PRIMERA_INFANCIA ? PRIMERA_INFANCIA_DESCRIPTOR
+            : edad <= INFANCIA ? INFANCIA_DESCRIPTOR
+            : edad <= ADOLESCENCIA ? ADOLESCENCIA_DESCRIPTOR
+            : edad < JUVENTUD ? JUVENTUD_DESCRIPTOR
+            : edad < ADULTEZ ? ADULTEZ_DESCRIPTOR
+            : edad > LIMITE_SUPERIOR ? ERROR_DESCRIPCION : MAYOR_DESCRIPTOR;
 
         System.out.println("> " + descriptor);
         entrada.close();
