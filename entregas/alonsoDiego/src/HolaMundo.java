@@ -9,7 +9,7 @@ class HolaMundo {
 
         edad = 12;
         dinero = 100;
-        nombre = "Firibicundio"
+        nombre = "Firibicundio";
         unChar = 'x';
 
         System.out.println(edad);
