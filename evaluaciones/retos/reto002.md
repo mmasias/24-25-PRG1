@@ -1,9 +1,8 @@
 # Reto 002: Entrada/Variables/Salida
 
-Implemente el juego de piedra, papel, tijera
+Implemente el juego de piedra, papel, tijera; entre el usuario y el ordenador.
 
 > Fecha de entrega: martes 8, 23:59:59
-
 
 ```text
 PS C:\Users\manuel.masias\Downloads> java JuegoPiedraPapelTijeras
@@ -13,6 +12,7 @@ Elige: 1 para Piedra, 2 para Papel, 3 para Tijera
 Tu elección: Piedra
 Elección de la ordenador: Piedra
 Empate!
+
 PS C:\Users\manuel.masias\Downloads> java JuegoPiedraPapelTijeras
 Juguemos a Piedra, Papel o Tijera!
 Elige: 1 para Piedra, 2 para Papel, 3 para Tijera
@@ -20,6 +20,7 @@ Elige: 1 para Piedra, 2 para Papel, 3 para Tijera
 Tu elección: Tijera
 Elección de la ordenador: Papel
 ¡Ganaste!
+
 PS C:\Users\manuel.masias\Downloads> java JuegoPiedraPapelTijeras
 Juguemos a Piedra, Papel o Tijera!
 Elige: 1 para Piedra, 2 para Papel, 3 para Tijera
@@ -34,6 +35,7 @@ Elige: 1 para Piedra, 2 para Papel, 3 para Tijera
 Tu elección: Piedra
 Elección de la ordenador: Papel
 Perdiste.
+
 PS C:\Users\manuel.masias\Downloads>
 
 ```
