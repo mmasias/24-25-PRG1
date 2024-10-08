@@ -4,15 +4,15 @@ class RockPaperScissors {
     public static void main(String[] args) {
 
         System.out.println("+--------------------------------------------------------------------+");
-        System.out.println("|                                                                    |");
-        System.out.println("|                   Welcome to Rock-Paper-Scissors!                  |");
-        System.out.println("|                                                                    |");
-        System.out.println("|                  Get ready for a fun competition!                  |");
+        System.out.println("|      *                         *                                *  |");
+        System.out.println("|            *      Welcome to Rock-Paper-Scissors!     *            |");
+        System.out.println("|   *                                                                |");
+        System.out.println("|                  Get ready for a fun competition!             *    |");
         System.out.println("|          Choose your weapon wisely from the options below:         |");
-        System.out.println("|                                                                    |");
-        System.out.println("|       1.  Rock             - Crush those scissors!                 |");
+        System.out.println("|     *                                                              |");
+        System.out.println("|       1.  Rock       *     - Crush those scissors!      *          |");
         System.out.println("|       2.  Paper            - Wrap up that rock!                    |");
-        System.out.println("|       3.  Scissors         - Snip away that paper!                 |");
+        System.out.println("|   *   3.  Scissors         - Snip away that paper!            *    |");
         System.out.println("|                                                                    |");
         System.out.println("+--------------------------------------------------------------------+");
         System.out.print("|  > ");
