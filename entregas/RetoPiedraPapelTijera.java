@@ -25,7 +25,7 @@ class RetoPiedraPapelTijera {
     public static void mostrarElecciones(int jugador, int computadora) {
         String[] opciones = {"Piedra", "Papel", "Tijera"};
         System.out.println("Tu elección fue: " + opciones[jugador - 1]);
-        System.out.println("La elección de la computadora fue: " + opciones[computadora - 1]);
+        System.out.println("La elección del ordenador fue: " + opciones[computadora - 1]);
     }
 
     // Función para determinar el resultado del juego
