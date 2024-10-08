@@ -3,8 +3,6 @@ import java.util.Scanner;
 class RockPaperScissors {
     public static void main(String[] args) {
 
-        // Initial putput
-
         System.out.println("+--------------------------------------------------------------------+");
         System.out.println("|                                                                    |");
         System.out.println("|                   Welcome to Rock-Paper-Scissors!                  |");
@@ -19,7 +17,6 @@ class RockPaperScissors {
         System.out.println("+--------------------------------------------------------------------+");
         System.out.print("|  > ");
 
-        // Variable declaration
         
         Scanner scanner = new Scanner(System.in);
         
@@ -32,14 +29,12 @@ class RockPaperScissors {
         String machineWord;
         String veredict;
 
-        // Constants declaration
 
         final String ERROR_VEREDICT = "|  > Please input a number within the range of 1 to 3                |";
 
         final int MINIMUM = 1;
         final int MAXIMUM = 3;
 
-        // Calculation
 
         error = userGuess > MAXIMUM || userGuess < MINIMUM;
         machineGuess = (int)(Math.random()*((MAXIMUM+1)-MINIMUM)+MINIMUM);
@@ -60,7 +55,6 @@ class RockPaperScissors {
         :result == 1 ? "|  > The user has won                                                |" 
         : "|  > The machine has won                                             |";
 
-        // Console output
 
         System.out.println("|                                                                    |");
         System.out.println(userWord);
@@ -70,7 +64,6 @@ class RockPaperScissors {
         System.out.println("|                                                                    |");
         System.out.println("+--------------------------------------------------------------------+");
 
-        // Closing Scanner
 
         scanner.close();
     }
