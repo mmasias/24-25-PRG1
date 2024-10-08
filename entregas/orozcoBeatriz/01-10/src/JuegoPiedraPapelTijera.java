@@ -41,7 +41,8 @@ public class JuegoPiedraPapelTijera {
         System.out.println("Elección del ordenador: " + eleccionRandom);
 
         String resultado;
-        resultado =  (eleccion < 1 || eleccion > 3 || randomNumber < 1 || randomNumber > 3) ? "No hay resultado"
+        resultado =  (eleccion <= LIMITE_INFERIOR || eleccion >= LIMITE_SUPERIOR || 
+        randomNumber <= LIMITE_INFERIOR || randomNumber >= LIMITE_SUPERIOR) ? "No hay resultado"
         : eleccion == randomNumber ? "Empate"
         : (eleccion == PIEDRA && randomNumber == PAPEL) || (eleccion == PAPEL && randomNumber == TIJERA) || 
           (eleccion == TIJERA && randomNumber == PIEDRA) ? "Pierdes"
