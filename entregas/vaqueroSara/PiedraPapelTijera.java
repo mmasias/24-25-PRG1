@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class piedrapapeltijerajuego {
+public class PiedraPapelTijera.java {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
