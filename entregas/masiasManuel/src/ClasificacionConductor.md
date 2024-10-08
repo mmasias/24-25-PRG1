@@ -1,4 +1,4 @@
-# Clasificación de un conductor
+# [Clasificación de un conductor](ClasificacionConductor.java)
 
 <div align=center>
 
@@ -20,3 +20,27 @@
 - Se considera conductor experimentado entre 2 y 10 años después de obtener la licencia.
 - La edad de jubilación se considera a los 65 años.
 - Todos los conductores con licencia pueden conducir, independientemente de su clasificación.
+
+## Salida esperada
+
+```text
+┏[manuel]--[main ≡ ● ]
+┖[~/misRepos/[24][25]/24-25-PRG1]
+  java ClasificacionConductor
+
+Ingrese su edad:
+25
+¿Tiene licencia de conducir? (true/false):
+true
+Clasificación: Conductor experimentado. Puede conducir.
+
+┏[manuel]--[main ≡ ● ]
+┖[~/misRepos/[24][25]/24-25-PRG1]
+  java ClasificacionConductor
+
+Ingrese su edad:
+10
+¿Tiene licencia de conducir? (true/false):
+true
+Clasificación: Menor de edad, no puede conducir. No puede conducir.
+```
