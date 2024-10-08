@@ -1,0 +1,33 @@
+package entregas.caicedoEsteban;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class PiedraPapelTijera {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        String[] opciones = { "Piedra", "Papel", "Tijera" };
+        String[][] resultados = {
+                { "¡Empate!", "Perdiste :/", "¡Ganaste!" },
+                { "¡Ganaste!", "¡Empate!", "Perdiste :/" },
+                { "Perdiste :/", "¡Ganaste!", "Empate!" }
+        };
+
+        System.out.println("¡Juguemos Piedra, Papel o Tijera!");
+        System.out.println("Elige entre las siguientes opciones: 0 = Piedra, 1 = Papel, 2 = Tijera");
+
+        System.out.print("¿Qué elejiste?: ");
+        int eleccionUsuario = scanner.nextInt();
+
+        int eleccionComputadora = random.nextInt(3);
+
+        System.out.println("Tú elegiste: " + opciones[eleccionUsuario]);
+        System.out.println("La computadora eligió: " + opciones[eleccionComputadora]);
+
+        System.out.println(resultados[eleccionUsuario][eleccionComputadora]);
+
+        scanner.close();
+    }
+}
