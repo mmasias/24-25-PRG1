@@ -7,6 +7,8 @@ public class JuegoPiedraPapelTijeras {
         final int PIEDRA = 1;
         final int PAPEL = 2;
         final int TIJERAS = 3;
+        final int LIMITE_MINIMO = 1;
+        final int LIMITE_MAXIMO = 3;
 
         final String MENSAJE_EMPATE = ("Empate!");
         final String MENSAJE_HAS_GANADO = ("Has Ganado!");
@@ -14,15 +16,12 @@ public class JuegoPiedraPapelTijeras {
 
         int eleccionUsuario;
         int eleccionAleatoriaMaquina;
-        
-        final int MINIMO = 1;
-        final int MAXIMO = 3;
 
         System.out.println("Jueguemos a Piedra, Papel o Tijeras!");
         System.out.println("Elige: 1 para Piedra, 2 para Papel, 3 para Tijeras");
 
         eleccionUsuario = scanner.nextInt();
-        eleccionAleatoriaMaquina = (int) (Math.random() * (MAXIMO - MINIMO + 1) + MINIMO);
+        eleccionAleatoriaMaquina = (int) (Math.random() * (LIMITE_MAXIMO - LIMITE_MINIMO + 1) + LIMITE_MINIMO);
 
         String resultado = eleccionUsuario == eleccionAleatoriaMaquina ? MENSAJE_EMPATE
             : eleccionUsuario == PIEDRA && eleccionAleatoriaMaquina == PAPEL ? MENSAJE_HAS_PERDIDO
