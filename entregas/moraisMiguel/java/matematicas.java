@@ -2,7 +2,7 @@ class matematicas{
 
     public static void main(String[] args){
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new matematicas(System.in);
 
         final int MAXIMO = 10;
         final int MINIMO = 1;
