@@ -21,15 +21,15 @@ class piedraPapelTijera{
 
         scanner.close();
 
-        final int EMPATE = "Habeis escogido " + eleccion + ", termina empate.";
-        final int GANASTE = "Escogiste " + eleccionUsuario + " y yo escogi " + eleccion + ", tu ganas.";
-        final int PERDISTE = "Escogiste " + eleccionUsuario + " y yo escogi " + eleccion + ", tu pierdes.";
+        final String EMPATE = "Habeis escogido " + eleccion + ", termina empate.";
+        final String GANASTE = "Escogiste " + eleccionUsuario + " y yo escogi " + eleccion + ", tu ganas.";
+        final String PERDISTE = "Escogiste " + eleccionUsuario + " y yo escogi " + eleccion + ", tu pierdes.";
 
 
         String descriptor;
-        resultado = eleccion = eleccionUsuario ? EMPATE
-        : (eleccion = 1 && eleccionUsuario = 2) ||(eleccion = 2 && eleccionUsuario = 3) || (eleccion = 3 && eleccionUsuario = 1) ? GANASTE
-        : (eleccion = 1 && eleccionUsuario = 3) ||(eleccion = 2 && eleccionUsuario = 1) ||(eleccion = 3 && eleccionUsuario = 2) ? PERDISTE
+        String resultado = eleccion == eleccionUsuario ? EMPATE
+        : (eleccion == 1 && eleccionUsuario == 2) ||(eleccion == 2 && eleccionUsuario == 3) || (eleccion == 3 && eleccionUsuario == 1) ? GANASTE
+        : (eleccion == 1 && eleccionUsuario == 3) ||(eleccion == 2 && eleccionUsuario == 1) ||(eleccion == 3 && eleccionUsuario == 2) ? PERDISTE
         : "Error, jugada imposible.";
 
 
