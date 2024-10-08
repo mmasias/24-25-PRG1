@@ -19,15 +19,26 @@ class PiedraPapeloTijera {
         int aleatorio = (int) (Math.random() * 3);
 
         
-        String[] opciones = {"Piedra", "Papel", "Tijera"};
-        System.out.println("Tu elección: " + opciones[respuestaDelUsuario]);
-        System.out.println("Elección de la computadora: " + opciones[aleatorio]);
+        String opcionUsuario = (respuestaDelUsuario == 0) ? "Piedra" :
+                       (respuestaDelUsuario == 1) ? "Papel" :
+                       "Tijera";
+
+        String opcionComputadora = (aleatorio == 0) ? "Piedra" :
+                            (aleatorio == 1) ? "Papel" :
+                            "Tijera";
+
+        System.out.println("Tu elección: " + opcionUsuario);
+        System.out.println("Elección de la computadora: " + opcionComputadora);
+
 
         
         String resultado;
         resultado = (respuestaDelUsuario == aleatorio) ? "Empate!" :
+
                     (respuestaDelUsuario == Piedra && aleatorio == Tijera) || 
+
                     (respuestaDelUsuario == Papel && aleatorio == Piedra) || 
+
                     (respuestaDelUsuario == Tijera && aleatorio == Papel) ? "Ganaste!" : "Perdiste :";
 
         System.out.println(resultado);
