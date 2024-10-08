@@ -53,7 +53,7 @@ class RockPaperScissors {
         result = (userGuess-machineGuess+3)%3;
 
         veredict = error ? "|  > The game has concluded with no winner due to user failure       |"
-        : result == 0 ? "|  > El juego queda en empate                                        |"
+        : result == 0 ? "|  > The game is tied                                                |"
         :result == 1 ? "|  > The user has won                                                |" 
         : "|  > The machine has won                                             |";
 
