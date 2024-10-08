@@ -42,6 +42,7 @@ Ingrese una edad entre 0 y 100
 ┏[manuel]--[main ≡ ● ]
 ┖[~/misRepos/[24][25]/24-25-PRG1]
   java ClasificacionEdad
+
 Ingrese una edad entre 0 y 100
 101
 > Edad inválida
