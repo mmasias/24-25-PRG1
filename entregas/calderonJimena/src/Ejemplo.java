@@ -6,7 +6,7 @@ class Ejemplo{
 
         int minimo;
         int maximo;
-        System.err.println("--Nivel de dificultad--");
+        System.out.println("--Nivel de dificultad--");
         System.out.println("Numero minimo:");
         minimo = scanner.nextInt();
         System.out.println("Numero maximo:");
