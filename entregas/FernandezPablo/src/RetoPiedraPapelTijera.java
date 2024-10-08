@@ -10,7 +10,7 @@ class  RetoPiedraPapelTijera {
         System.out.println("Elige: 1= Piedra, 2= Papel, 3= Tijera");
         int eleccionDelUsuario = entrada.nextInt();
 
-        int aleatorio = (int)(Math.random() * (MAXIMO - MINIMO) + MINIMO);
+        int aleatorio = (int)(Math.random() * (MAXIMO - MINIMO + 1) + MINIMO);
 
         String resultado = (eleccionDelUsuario == aleatorio) ? "Empate" :
                            (eleccionDelUsuario == 1 && aleatorio == 3) ||
