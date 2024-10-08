@@ -6,7 +6,11 @@ class PiedraPapelTijera {
         
        final int MINIMO = 1;
        final int MAXIMO = 3; 
-        
+       
+       final int PIEDRA = 1;
+       final int PAPEL = 2;
+       final int TIJERA = 3;
+       
         
         System.out.println("Elige: 1= Piedra, 2= Papel, 3= Tijera:");
         int eleccionDelUsuario = scanner.nextInt();
@@ -16,16 +20,24 @@ class PiedraPapelTijera {
         
         
         String resultado = (eleccionDelUsuario == aleatorio) ? "Empate!" :
-                           (eleccionDelUsuario == 1 && aleatorio == 3) ? "Ganaste!" :
-                           (eleccionDelUsuario == 2 && aleatorio == 1) ? "Ganaste!" :
-                           (eleccionDelUsuario == 3 && aleatorio == 2) ? "Ganaste!" :
+                           (eleccionDelUsuario == PIEDRA && aleatorio == TIJERA) ? "Ganaste!" :
+                           (eleccionDelUsuario == PAPEL && aleatorio == PIEDRA) ? "Ganaste!" :
+                           (eleccionDelUsuario == TIJERA && aleatorio == PAPEL) ? "Ganaste!" :
                            "Perdiste!";
-        
-        
-        System.out.println("Tu elección: " + eleccionDelUsuario);
-        System.out.println("Elección de la maquina: " + aleatorio);
-        System.out.println(resultado);
 
+        
+        String eleccionUsuarioEnString = eleccionDelUsuario == PIEDRA ? "Piedra"
+                           : eleccionDelUsuario == PAPEL ? "Papel"
+                           : "Tijeras";
+           
+        String eleccionAleatoriaMaquinaEnString = (aleatorio == PIEDRA) ? "Piedra"
+                           : (aleatorio == PAPEL) ? "Papel"
+                           : "Tijeras";
+           
+        System.out.println("Tu eleccion es: " + eleccionUsuarioEnString);
+        System.out.println("La eleccion de la maquina es: " + eleccionAleatoriaMaquinaEnString);
+        System.out.println(resultado);
+           
         scanner.close();
     }
 }
