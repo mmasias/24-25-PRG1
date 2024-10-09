@@ -16,6 +16,7 @@ public class PiedraPapelTijera {
 
         int aleatorio = (int)((Math.random()*3)+1);
 
+<<<<<<< HEAD
         String resultado = "PERDISTE";
         if (resultado == aleatorio){
            resultado1 = "Empate";
@@ -26,6 +27,15 @@ public class PiedraPapelTijera {
             resultado = "GANASTE";
             }  
 
+=======
+-
++        String resultadoFinal;
++        resultadoFinal = (resultado == aleatorio) ? "Empate!" 
++            : (resultado == piedra && aleatorio == tijera) 
++                || (resultado == papel && aleatorio == piedra) 
++                || (resultado == tijera && aleatorio == papel) ? "Ganaste!" 
++            : "Perdiste";
+>>>>>>> 90b2e22638028ae60a4bc6c88bf8737fc1e8768a
 
         System.out.println(resultadoFinal);
 
