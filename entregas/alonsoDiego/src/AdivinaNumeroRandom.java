@@ -17,9 +17,7 @@ class AdivinaNumeroRandom{
         System.out.println("Dime un numero entre "+minimo+" y "+maximo+" (inclusive)");
         numeroDelUsuario = scanner.nextInt();
 
-        String veredicto;
-
-        veredicto = numeroDelUsuario == aleatorio ? "Adivino!" : "No adivino!";
+       String veredicto = numeroDelUsuario == aleatorio ? "Adivino!" : "No adivino!";
 
         System.out.println(veredicto);
 
