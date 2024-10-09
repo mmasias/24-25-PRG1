@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class JuegoClase {
     public static void main(String args[]) {
-        Scanner scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
 
         int PIEDRA = 1;
         int PAPEL = 2;
@@ -19,19 +19,13 @@ class JuegoClase {
         System.out.println("Tu eleccion: " + jugadorTexto);
         System.out.println("Eleccion de la maquina: " + maquinaTexto);
         String veredicto;
-        veredicto = (jugador == maquina) ? "Empate!" :
-        (jugador == PAPEL && maquina == PIEDRA ||
-        jugador == TIJERA && maquina == PAPEL ||
-        jugador == PIEDRA && maquina == TIJERA) ? "¡Ganaste!" : "¡Perdiste!";
+        veredicto = (jugador == maquina) ? "Empate!"
+                : (jugador == PAPEL && maquina == PIEDRA ||
+                        jugador == TIJERA && maquina == PAPEL ||
+                        jugador == PIEDRA && maquina == TIJERA) ? "¡Ganaste!" : "¡Perdiste!";
 
         System.out.println(veredicto);
 
         scanner.close();
     }
 }
-
-
-
-    
-    
-
