@@ -9,21 +9,13 @@ class PiedraPapelTijera {
 
                 int jugadaDelRobotRaw;
 
-                int MAXIMO;
-                int MINIMO;
+                int piedra;
+                int papel;
+                int tijeras;
                 
-                MAXIMO = 3;
-                MINIMO = 1;
-
-                jugadaDelRobotRaw = (int) (Math.random() * MAXIMO - MINIMO + 1) - MINIMO;
-
-                boolean robotSeleccionoPiedra;
-                boolean robotSeleccionoPapel;
-                boolean robotSeleccionoTijeras;
-
-                robotSeleccionoPiedra = (jugadaDelRobotRaw == 1);
-                robotSeleccionoPapel = (jugadaDelRobotRaw == 2);
-                robotSeleccionoTijeras = (jugadaDelRobotRaw == 3);
+                piedra = 1;
+                papel = 2;
+                tijeras = 3;
 
                 System.out.println("=========================================");
                 System.out.println("Bienvenido al juego PIEDRA PAPEL O TIJERA");
@@ -36,52 +28,72 @@ class PiedraPapelTijera {
                 System.out.println("O|===|* >________________>");
                 System.out.println("      \\|");
 
+                int MAXIMO;
+                int MINIMO;
                 
-                System.out.println("¿Con qué arma desea blandir esta pelea?");
-                System.out.println("1: piedra");
-                System.out.println("2: papel");
-                System.out.println("3: tijeras");
-                System.out.println("");
+                MAXIMO = 3;
+                MINIMO = 1;
 
-                int jugadaDelUsuarioRaw;
+                int rondaMaxima;
 
-                System.out.println("Por favor elija: ");
-                jugadaDelUsuarioRaw = input.nextInt();
+                rondaMaxima = 3;
 
-                String jugadaDelUsuario;
+                for (int ronda = 0; ronda < rondaMaxima; ronda++) {
+                        do { 
+                                jugadaDelRobotRaw = (int) (Math.random() * MAXIMO - MINIMO + 1) - MINIMO;
+                
+                                System.out.println("¿Con qué arma desea blandir " + (ronda == 0 ? "esta" : "la siguiente") + " pelea?");
+                                System.out.println(piedra + ": piedra");
+                                System.out.println(papel + ": papel");
+                                System.out.println(tijeras + ": tijeras");
+                                System.out.println("");
+                
+                                int jugadaDelUsuarioRaw;
+                
+                                
+                                System.out.println("Por favor elija: ");
+                                do {
+                                        jugadaDelUsuarioRaw = input.nextInt();
+                                } while (!(jugadaDelUsuarioRaw >= MINIMO && jugadaDelUsuarioRaw <= MAXIMO));
+                                
+                                String jugadaDelUsuario;
+                
+                                jugadaDelUsuario = jugadaDelUsuarioRaw == papel ? "papel"
+                                : jugadaDelUsuarioRaw == tijeras ? "tijeras"
+                                : "piedra";
+                
+                                System.out.println("");
+                                System.out.println("Has escogido " + jugadaDelUsuario + ".");
+                                        
+                                String jugadaDelRobot;
+                
+                                jugadaDelRobot = jugadaDelRobotRaw == papel ? "papel"
+                                        : jugadaDelRobotRaw == tijeras ? "tijeras"
+                                        : "piedra";
+                
+                                System.out.println("");
+                                System.out.println("Robotin ha sacado " + jugadaDelRobot + ".");
+                
+                                String resultado;
+                                
+                                resultado = (jugadaDelRobotRaw == jugadaDelUsuarioRaw) ? "¡EMPATE!"
+                                        : (jugadaDelUsuarioRaw == piedra && jugadaDelRobotRaw == tijeras
+                                                || jugadaDelUsuarioRaw == papel && jugadaDelRobotRaw == piedra 
+                                                || jugadaDelUsuarioRaw == tijeras && jugadaDelRobotRaw == papel) ? ("\u001B[32m ¡Has ganado! \u001B[0m")
+                                        : ("\u001B[31m ¡Has perdido! \u001B[0m");
+                
+                                System.out.println("");
+                                System.out.println(resultado);
 
-                jugadaDelUsuario = jugadaDelUsuarioRaw == 1 ? "papel"
-                                : jugadaDelUsuarioRaw == 2 ? "tijeras"
-                                : jugadaDelUsuarioRaw == 3 ? "piedra"
-                                : "Error: Elige un número entre 1 y 3.";
+                                if (resultado) {
+                                        
+                                }
 
-                boolean jugadorSeleccionoPiedra;
-                boolean jugadorSeleccionoPapel;
-                boolean jugadorSeleccionoTijeras;
+                                String Ganador;
 
-                jugadorSeleccionoPiedra = jugadaDelUsuarioRaw == 1;
-                jugadorSeleccionoPapel = jugadaDelUsuarioRaw == 2;     
-                jugadorSeleccionoTijeras = jugadaDelUsuarioRaw == 3;
-
-                String resultado;
-
-                resultado = (jugadaDelRobotRaw == jugadaDelUsuarioRaw) ? "¡EMPATE!"
-                        : (jugadorSeleccionoPiedra && robotSeleccionoTijeras) || (jugadorSeleccionoPapel && robotSeleccionoPiedra) || (jugadorSeleccionoTijeras && robotSeleccionoPapel) ? "\u001B[32m ¡Has ganado!"
-                        : "\u001B[31m ¡Has perdido!";
-
-                String jugadaDelRobot;
-
-                jugadaDelRobot = robotSeleccionoPapel ? "papel"
-                        : robotSeleccionoTijeras ? "tijeras"
-                        : "piedra";
-
-                System.out.println("");
-                System.out.println("");
-                System.out.println("Robotin ha sacado " + jugadaDelRobot + ".");
-                System.out.println("");
-                System.out.println("Has escogido " + jugadaDelUsuario + ".");
-                System.out.println("");
-                System.out.println(resultado);
+                                Ganador = ;
+                        } while (!Ganador);
+                }
 
                 input.close();
         }
