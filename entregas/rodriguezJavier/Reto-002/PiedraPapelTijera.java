@@ -13,19 +13,16 @@ public class PiedraPapelTijera {
 
         String jugadaUsuario = scanner.nextLine().toLowerCase();
 
-        // Validar la entrada del usuario
         while (!jugadaUsuario.equals("piedra") && !jugadaUsuario.equals("papel") && !jugadaUsuario.equals("tijera")) {
             System.out.println("Opción no válida. Por favor elige: piedra, papel o tijera.");
             jugadaUsuario = scanner.nextLine().toLowerCase();
         }
 
-        // Selección de la computadora
         int jugadaComputadoraIndex = random.nextInt(3);
         String jugadaComputadora = opciones[jugadaComputadoraIndex];
 
         System.out.println("La computadora eligió: " + jugadaComputadora);
 
-        // Determinar el ganador
         if (jugadaUsuario.equals(jugadaComputadora)) {
             System.out.println("¡Es un empate!");
         } else if ((jugadaUsuario.equals("piedra") && jugadaComputadora.equals("tijera")) ||
