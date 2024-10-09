@@ -10,7 +10,10 @@ public class RetoPiedraPapelOTijera {
     int papel = 2;
     int tijera = 3;
 
-    int eleccionDelOrdenador = (int) (Math.random() * (3 - 1) + 1);
+    int minimo = 3;
+    int maximo = 1;
+
+    int eleccionDelOrdenador = (int) (Math.random() * (maximo - minimo + 1)) + minimo;
 
     int eleccionUsuario;
 
@@ -23,9 +26,9 @@ public class RetoPiedraPapelOTijera {
     String veredicto;
 
     veredicto = (eleccionUsuario == eleccionDelOrdenador) ? "Empate!"
-        : (eleccionUsuario == 1 && eleccionDelOrdenador == 3) ||
-            (eleccionUsuario == 2 && eleccionDelOrdenador == 1) ||
-            (eleccionUsuario == 3 && eleccionDelOrdenador == 2) ? "¡Ganaste!" : "Perdiste.";
+        : (eleccionUsuario == piedra && eleccionDelOrdenador == tijera) ||
+            (eleccionUsuario == papel && eleccionDelOrdenador == piedra) ||
+            (eleccionUsuario == tijera && eleccionDelOrdenador == papel) ? "¡Ganaste!" : "Perdiste.";
 
     System.out.println(veredicto);
     scanner.close();
