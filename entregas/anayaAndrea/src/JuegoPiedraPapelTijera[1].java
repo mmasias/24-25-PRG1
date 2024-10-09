@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class JuegoPiedraPapelTijera {
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
 
         final int PIEDRA = 1;
         final int PAPEL = 2;

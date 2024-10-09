@@ -13,25 +13,20 @@ class Holamundo {
 
          edad = 12;
          dinero = 100;
-         nobre = "holaqtal";
+         nombre = "holaqtal";
 
 
         System.out.print(edad);
         System.out.print(dinero);
-         String nombre;
-         char Unchar;
-        System.out.print(nobre);
+        String nombre;
+        char Unchar;
+        System.out.print(nombre);
          int edad = 12;
          double dinero = 100;
          String nombre = "Andrea"
          char Unchar = 'x'
 }
 }
-
-         char Unchar;
-def get_user_info( holaqtal ): 
-
-        System.out.println("Me llamo" 'Andrea' 'tengo' 20 'años y 10 euros');
 
 
     
