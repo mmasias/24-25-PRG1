@@ -4,8 +4,10 @@ public class Clase9_10 {
         final int PAPEL=1;
         final int Tijera=2;
 
+        System.out.println("Introduzca piedra papel o tijera");
 
-        
+
+
     
     }
     
