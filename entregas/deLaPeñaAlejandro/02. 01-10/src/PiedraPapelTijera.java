@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class PiedraPapelTijera {
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         try(Scanner scanner = new Scanner(System.in)) {
         
         final int PIEDRA = 1;
