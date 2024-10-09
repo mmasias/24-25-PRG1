@@ -12,16 +12,24 @@ class PiedraPapelTijera {
     final String EMPATE = "Empataste";
     final String ERROR = "Has introducido un valor incorrecto";
 
-    Scanner entrada = new Scanner(System.in);
     int eleccion;
-    System.out.println("-----------------------");
-    System.out.println("Escoja su elección: ");
-    System.out.println("1. Piedra ");
-    System.out.println("2. Papel ");
-    System.out.println("3. Tijera ");
-    System.out.println("-----------------------");
-    eleccion = entrada.nextInt();
-    System.out.println("-----------------------");
+
+    do
+    {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("-----------------------");
+        System.out.println("Escoja su elección: ");
+        System.out.println("1. Piedra ");
+        System.out.println("2. Papel ");
+        System.out.println("3. Tijera ");
+        System.out.println("-----------------------");
+        eleccion = entrada.nextInt();
+        System.out.println("-----------------------");
+        if (eleccion < 1 || eleccion > 3)
+        {
+            System.out.println(ERROR);
+        }
+    }while(!(eleccion >= 1 && eleccion <=3));
 
     int aleatorio = (int)(Math.random()*(3-1)+1);
     
@@ -32,14 +40,16 @@ class PiedraPapelTijera {
     
     System.out.println("Elección del contrincante = " + eleccionAleatoria);
 
-    String resultado;
-        resultado = eleccion < PIEDRA ? ERROR
-            : eleccion == PIEDRA && aleatorio == TIJERA ||
-            eleccion  == PAPEL && aleatorio == PIEDRA ||
-            eleccion == TIJERA && aleatorio == PAPEL ? GANAS 
-            : eleccion == PIEDRA && aleatorio == PIEDRA ||
-            eleccion == PAPEL && aleatorio == PAPEL ||
-            eleccion == TIJERA && aleatorio == TIJERA ? EMPATE : PIERDES;
+    String resultado=PIERDES;
+
+    if (eleccion==aleatorio) {
+        resultado = EMPATE;
+    }else if ((eleccion == PIEDRA && eleccion == TIJERA || 
+                eleccion == PAPEL && aleatorio == PIEDRA ||
+                eleccion == TIJERA && aleatorio == PAPEL)){
+            resultado = GANAS;
+    }
+
 
 
     System.out.println("El resultado es: " + resultado);
