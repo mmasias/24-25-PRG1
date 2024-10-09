@@ -8,8 +8,14 @@ class PiedraPapelTijera {
                 Scanner input = new Scanner(System.in);
 
                 int jugadaDelRobotRaw;
+
+                int Maximo;
+                int Minimo;
                 
-                jugadaDelRobotRaw = (int) (Math.random() * 3) + 1;
+                Maximo = 3;
+                Minimo = 1;
+
+                jugadaDelRobotRaw = (int) (Math.random() * MAXIMO - MINIMO + 1) - MINIMO;
 
                 boolean robotSeleccionoPiedra;
                 boolean robotSeleccionoPapel;
