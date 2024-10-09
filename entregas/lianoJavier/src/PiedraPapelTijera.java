@@ -52,7 +52,7 @@ class PiedraPapelTijera {
                 int jugadaDelUsuarioRaw;
 
                 System.out.println("Por favor elija: ");
-                
+
                 do {
                     jugadaDelUsuarioRaw = input.nextInt();
                 } while (!(jugadaDelUsuarioRaw >= MINIMO && jugadaDelUsuarioRaw <= MAXIMO));
@@ -111,7 +111,6 @@ class PiedraPapelTijera {
 
                 System.out.println("");
                 System.out.println(textoResultado);
-
             }
         }
 
