@@ -9,11 +9,11 @@ class PiedraPapelTijera {
 
                 int jugadaDelRobotRaw;
 
-                int Maximo;
-                int Minimo;
+                int MAXIMO;
+                int MINIMO;
                 
-                Maximo = 3;
-                Minimo = 1;
+                MAXIMO = 3;
+                MINIMO = 1;
 
                 jugadaDelRobotRaw = (int) (Math.random() * MAXIMO - MINIMO + 1) - MINIMO;
 
