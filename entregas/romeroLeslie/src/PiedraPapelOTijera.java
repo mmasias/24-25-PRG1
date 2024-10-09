@@ -17,16 +17,16 @@ public class PiedraPapelOTijera {
         int eleccionUsuario = scanner.nextInt();
         int eleccionOrdenador = (int)(Math.random() * (MAX - MIN + 1)) + MIN;
 
-        String[] opciones = {"Piedra", "Papel", "Tijera"};
+       
 
-        System.out.println("Tu elección: " + opciones[eleccionUsuario - 1]);
-        System.out.println("Elección del ordenador: " + opciones[eleccionOrdenador - 1]);
+        System.out.println("Tu elección: " + eleccionUsuario);
+        System.out.println("Elección del ordenador: " + eleccionOrdenador);
 
 
         String resultado = (eleccionUsuario == eleccionOrdenador) ? "Empate!" :
-                           (eleccionUsuario == PIEDRA && eleccionOrdenador == TIJERA || 
-                            eleccionUsuario == PAPEL && eleccionOrdenador == PIEDRA || 
-                            eleccionUsuario == TIJERA && eleccionOrdenador == PAPEL) ? "¡Ganaste!" : "Perdiste.";
+                   (eleccionUsuario == PIEDRA && eleccionOrdenador == TIJERA || 
+                    eleccionUsuario == PAPEL && eleccionOrdenador == PIEDRA || 
+                    eleccionUsuario == TIJERA && eleccionOrdenador == PAPEL) ? "¡Ganaste!" : "Perdiste.";
                            
         System.out.println(resultado);
 
