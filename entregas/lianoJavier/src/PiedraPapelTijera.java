@@ -52,6 +52,7 @@ class PiedraPapelTijera {
                 int jugadaDelUsuarioRaw;
 
                 System.out.println("Por favor elija: ");
+                
                 do {
                     jugadaDelUsuarioRaw = input.nextInt();
                 } while (!(jugadaDelUsuarioRaw >= MINIMO && jugadaDelUsuarioRaw <= MAXIMO));
@@ -76,11 +77,12 @@ class PiedraPapelTijera {
 
                 int puntosResultado;
 
+                int puntosEmpate = 0;
                 int puntosGano = 1;
                 int puntosPerdio = -1;
 
                 if (jugadaDelRobotRaw == jugadaDelUsuarioRaw) {
-                    puntosResultado = 0;
+                    puntosResultado = puntosEmpate;
                 } else if (jugadaDelUsuarioRaw == piedra && jugadaDelRobotRaw == tijeras
                         || jugadaDelUsuarioRaw == papel && jugadaDelRobotRaw == piedra
                         || jugadaDelUsuarioRaw == tijeras && jugadaDelRobotRaw == papel) {
