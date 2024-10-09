@@ -17,6 +17,13 @@ class PiedraPapelTijera{
         System.out.println("Elige 1 para Piedra, 2 para Papel y 3 para Tijera");
         int eleccionUsuario = entrada.nextInt();
         int eleccionMaquina = (int)(Math.random()*(3)+1);
+        do
+        {
+        if(eleccionUsuario < 1 || eleccionUsuario > 3 );
+        {
+            System.out.println("ERROR");
+        }    
+        }while(!(eleccionUsuario >= 1 && eleccionUsuario <= 3));
 
         String resultado = eleccionUsuario == eleccionMaquina ? MENSAJE_EMPATE
             : eleccionUsuario == 1 && eleccionMaquina == 2 ? MENSAJE_DERROTA
