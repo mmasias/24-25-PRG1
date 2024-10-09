@@ -10,7 +10,7 @@ class PiedraPapelTijera {
         final int ELEGIR_PAPEL = 2;
         final int ELEGIR_TIJERA = 3;
 
-        int numeroOrdenador = (int) (Math.random()*(3-1) + 1);
+        int numeroOrdenador = (int) (Math.random()*(3-1+1) + 1);
         int numeroUsuario;
 
         System.out.println("Juguemos a Piedra, Papel o Tijera!");
