@@ -31,5 +31,7 @@ class Ppt {
                                         : "Has perdido";
 
         System.out.println(resultado);
+
+
     }
 }
