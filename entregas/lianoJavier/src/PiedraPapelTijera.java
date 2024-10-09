@@ -65,9 +65,9 @@ class PiedraPapelTijera {
 
                 String resultado;
 
-                resultado = (jugadorSeleccionoPiedra && robotSeleccionoTijeras) || (jugadorSeleccionoPapel && robotSeleccionoPiedra) || (jugadorSeleccionoTijeras && robotSeleccionoPapel) ? "\u001B[32m ¡Has ganado!"
-                        : (jugadorSeleccionoTijeras && robotSeleccionoPiedra) || (jugadorSeleccionoPiedra && robotSeleccionoPapel) || (jugadorSeleccionoPapel && robotSeleccionoTijeras) ? "\u001B[31m ¡Has perdido!"
-                        : "¡EMPATE!";
+                resultado = (jugadaDelRobotRaw == jugadaDelUsuarioRaw) ? "¡EMPATE!"
+                        : (jugadorSeleccionoPiedra && robotSeleccionoTijeras) || (jugadorSeleccionoPapel && robotSeleccionoPiedra) || (jugadorSeleccionoTijeras && robotSeleccionoPapel) ? "\u001B[32m ¡Has ganado!"
+                        : "\u001B[31m ¡Has perdido!";
 
                 String jugadaDelRobot;
 
