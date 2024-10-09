@@ -97,11 +97,15 @@ class PiedraPapelTijera {
                 String textoGano = "\u001B[32m ¡Has ganado! \u001B[0m";
                 String textoPerdio = "\u001B[31m ¡Has perdido! \u001B[0m";
 
-                textoResultado = (jugadaDelRobotRaw == jugadaDelUsuarioRaw) ? textoEmpate
-                        : (jugadaDelUsuarioRaw == piedra && jugadaDelRobotRaw == tijeras
+                if (jugadaDelRobotRaw == jugadaDelUsuarioRaw) {
+                    textoResultado = textoEmpate;
+                } else if (jugadaDelUsuarioRaw == piedra && jugadaDelRobotRaw == tijeras
                         || jugadaDelUsuarioRaw == papel && jugadaDelRobotRaw == piedra
-                        || jugadaDelUsuarioRaw == tijeras && jugadaDelRobotRaw == papel) ? textoGano
-                                : textoPerdio;
+                        || jugadaDelUsuarioRaw == tijeras && jugadaDelRobotRaw == papel) {
+                    textoResultado = textoGano;
+                } else {
+                    textoResultado = textoPerdio;
+                }
 
                 System.out.println("");
                 System.out.println(textoResultado);
