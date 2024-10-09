@@ -24,7 +24,15 @@ class PierdaPapelTijera {
     int eleccionOrdenador = (int) ((Math.random()*3)+1);
 
     System.out.println("La elección del ordenador es:" + eleccionOrdenador);
-    String resultado;
-    resultado = eleccionUsuario
-    System.out.println(resultado)
+
+    String resultado="Perdiste!";
+
+    if (eleccionUsuario == eleccionOrdenador) {
+        resultado = "Empate!";
+    } else if ((eleccionUsuario==PIEDRA && eleccionOrdenador==TIJERA ||
+                    eleccionUsuario==PAPEL && eleccionOrdenador==PIEDRA ||
+                    eleccionUsuario==TIJERA && eleccionOrdenador==PAPEL)){
+                resultado = "Ganaste!";
+            }
+    System.out.println( resultado );
 }
