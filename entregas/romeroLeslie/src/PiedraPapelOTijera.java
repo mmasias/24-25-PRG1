@@ -18,7 +18,6 @@ public class PiedraPapelOTijera {
         int eleccionOrdenador = (int)(Math.random() * (MAX - MIN + 1)) + MIN;
 
        
-
         System.out.println("Tu elección: " + eleccionUsuario);
         System.out.println("Elección del ordenador: " + eleccionOrdenador);
 
@@ -31,5 +30,7 @@ public class PiedraPapelOTijera {
         System.out.println(resultado);
 
         scanner.close();
-    }
+    }
 }
+                           
+ 
