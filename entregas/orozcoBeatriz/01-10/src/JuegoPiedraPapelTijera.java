@@ -20,7 +20,7 @@ public class JuegoPiedraPapelTijera {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("¡Juguemos a piedra, papel o tijera!");
-        
+      
         do {
           System.out.println("Elige: " + PIEDRA + " para Piedra, " + PAPEL + " para Papel y " +  TIJERA + " para Tijera");
           eleccion  = scanner.nextInt();
