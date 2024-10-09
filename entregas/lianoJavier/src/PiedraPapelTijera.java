@@ -35,11 +35,13 @@ class PiedraPapelTijera {
                 MINIMO = 1;
 
                 int rondaMaxima;
-
                 rondaMaxima = 3;
+                
+                int puntos;
+                puntos = 0;
 
                 for (int ronda = 0; ronda < rondaMaxima; ronda++) {
-                        do { 
+                        while (puntos > -2 || puntos < 2) { 
                                 jugadaDelRobotRaw = (int) (Math.random() * MAXIMO - MINIMO + 1) - MINIMO;
                 
                                 System.out.println("¿Con qué arma desea blandir " + (ronda == 0 ? "esta" : "la siguiente") + " pelea?");
@@ -74,25 +76,36 @@ class PiedraPapelTijera {
                                 System.out.println("");
                                 System.out.println("Robotin ha sacado " + jugadaDelRobot + ".");
                 
-                                String resultado;
-                                
-                                resultado = (jugadaDelRobotRaw == jugadaDelUsuarioRaw) ? "¡EMPATE!"
+                                int puntosResultado;
+
+                                int puntosGano = 1;
+                                int puntosPerdio = -1;
+
+                                puntosResultado = (jugadaDelRobotRaw == jugadaDelUsuarioRaw) ? 0
                                         : (jugadaDelUsuarioRaw == piedra && jugadaDelRobotRaw == tijeras
                                                 || jugadaDelUsuarioRaw == papel && jugadaDelRobotRaw == piedra 
-                                                || jugadaDelUsuarioRaw == tijeras && jugadaDelRobotRaw == papel) ? ("\u001B[32m ¡Has ganado! \u001B[0m")
-                                        : ("\u001B[31m ¡Has perdido! \u001B[0m");
+                                                || jugadaDelUsuarioRaw == tijeras && jugadaDelRobotRaw == papel) ? puntosGano
+                                        : puntosPerdio;
+
                 
+                                puntos += puntosResultado;
+
+                                String textoResultado;
+                                
+                                String textoEmpate = "¡EMPATE!";
+                                String textoGano = "\u001B[32m ¡Has ganado! \u001B[0m";
+                                String textoPerdio = "\u001B[31m ¡Has perdido! \u001B[0m";
+
+                                textoResultado = (jugadaDelRobotRaw == jugadaDelUsuarioRaw) ? textoEmpate
+                                : (jugadaDelUsuarioRaw == piedra && jugadaDelRobotRaw == tijeras
+                                        || jugadaDelUsuarioRaw == papel && jugadaDelRobotRaw == piedra 
+                                        || jugadaDelUsuarioRaw == tijeras && jugadaDelRobotRaw == papel) ? textoGano
+                                : textoPerdio;
+
                                 System.out.println("");
-                                System.out.println(resultado);
-
-                                if (resultado) {
-                                        
-                                }
-
-                                String Ganador;
-
-                                Ganador = ;
-                        } while (!Ganador);
+                                System.out.println(textoResultado);
+                                
+                        }
                 }
 
                 input.close();
