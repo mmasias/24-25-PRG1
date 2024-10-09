@@ -24,7 +24,7 @@ class Juego{
         int maximo = 3;
         int minimo = 1;
 
-        int compValue = (int) (Math.random() * (maximo-minimo) + minimo);
+        int compValue = (int) (Math.random() * (maximo-minimo+1) + minimo);
 
         String compChoice = (compValue == 1) ? "piedra"
         :(compValue == 2) ? "papel"
