@@ -30,7 +30,7 @@ class PiedraPapelTijera {
         System.out.println("O|===|* >________________>");
         System.out.println("      \\|");
 
-        int ronda = 0;
+        int ronda = 1;
 
         final int rondaMaxima;
         rondaMaxima = 3;
@@ -44,7 +44,9 @@ class PiedraPapelTijera {
         int puntosMinimos;
         puntosMinimos = -2;
 
-        while (ronda <= rondaMaxima && !(puntos <= puntosMinimos || puntos >= puntosMaximos)) {
+        boolean finalizarJuego;
+
+        do {
             int MAXIMO;
             MAXIMO = 3;
 
@@ -74,7 +76,8 @@ class PiedraPapelTijera {
             System.out.println("");
             System.out.println("Has escogido " + jugadaDelUsuario + ".");
 
-            int jugadaDelRobotRaw = Random(MAXIMO, MINIMO);
+            // int jugadaDelRobotRaw = Random(MAXIMO, MINIMO);
+            int jugadaDelRobotRaw = 1;
 
             String jugadaDelRobot;
 
@@ -128,7 +131,9 @@ class PiedraPapelTijera {
 
             ronda++;
 
-        }
+            finalizarJuego = !(ronda > rondaMaxima) && !(puntos <= puntosMinimos || puntos >= puntosMaximos);
+
+        } while (finalizarJuego);
 
         input.close();
     }
