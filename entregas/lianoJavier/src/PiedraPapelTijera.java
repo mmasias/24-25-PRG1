@@ -3,19 +3,13 @@ import java.util.Scanner;
 
 class PiedraPapelTijera {
 
+    public static int eleccionRobot(final int MAXIMO, final int MINIMO) {
+        return (int) (Math.random() * MAXIMO - MINIMO + 1) - MINIMO;
+    }
+
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-
-        int jugadaDelRobotRaw;
-
-        int piedra;
-        int papel;
-        int tijeras;
-
-        piedra = 1;
-        papel = 2;
-        tijeras = 3;
 
         System.out.println("=========================================");
         System.out.println("Bienvenido al juego PIEDRA PAPEL O TIJERA");
@@ -27,13 +21,15 @@ class PiedraPapelTijera {
         System.out.println("O|===|* >________________>");
         System.out.println("      \\|");
 
-        int MAXIMO;
-        int MINIMO;
+        final int piedra;
+        final int papel;
+        final int tijeras;
 
-        MAXIMO = 3;
-        MINIMO = 1;
+        piedra = 1;
+        papel = 2;
+        tijeras = 3;
 
-        int rondaMaxima;
+        final int rondaMaxima;
         rondaMaxima = 3;
 
         int puntos;
@@ -41,7 +37,11 @@ class PiedraPapelTijera {
 
         for (int ronda = 0; ronda < rondaMaxima; ronda++) {
             while (puntos > -2 || puntos < 2) {
-                jugadaDelRobotRaw = (int) (Math.random() * MAXIMO - MINIMO + 1) - MINIMO;
+
+                int MAXIMO;
+                MAXIMO = 3;
+                int MINIMO;
+                MINIMO = 1;
 
                 System.out.println("¿Con qué arma desea blandir " + (ronda == 0 ? "esta" : "la siguiente") + " pelea?");
                 System.out.println(piedra + ": piedra");
@@ -66,11 +66,16 @@ class PiedraPapelTijera {
                 System.out.println("");
                 System.out.println("Has escogido " + jugadaDelUsuario + ".");
 
+                int jugadaDelRobotRaw = eleccionRobot(MAXIMO, MINIMO);
+
                 String jugadaDelRobot;
 
-                jugadaDelRobot = jugadaDelRobotRaw == papel ? "papel"
-                        : jugadaDelRobotRaw == tijeras ? "tijeras"
-                                : "piedra";
+                jugadaDelRobot = switch (jugadaDelRobotRaw) {
+                    case papel -> "papel";
+                    case tijeras -> "tijeras";
+                    case piedra -> "piedra";
+                    default -> throw new AssertionError();
+                }
 
                 System.out.println("");
                 System.out.println("Robotin ha sacado " + jugadaDelRobot + ".");
