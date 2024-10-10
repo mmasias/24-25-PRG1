@@ -125,8 +125,6 @@ class PiedraPapelTijera {
 
             System.out.println("");
             System.out.println(textoResultado);
-            System.out.println("\u001B[31m " + puntos + "\u001B[0m");
-            System.out.println("\u001B[31m " + ronda + "\u001B[0m");
 
             ronda++;
 
