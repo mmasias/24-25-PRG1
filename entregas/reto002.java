@@ -28,7 +28,48 @@ class Reto002 {
         jugadaOrdenador = (int) (Math.random() * 100) % 3;
         String jugadaPersonaTexto = "";
         String jugadaOrdenadorTexto = "";
-       
+        if (jugadaPersona == PIEDRA) {
+            jugadaPersonaTexto = "piedra";
+        } else if (jugadaPersona == PAPEL) {
+            jugadaPersonaTexto = "papel";
+        } else {
+            jugadaPersonaTexto = "tijera";
+        }
+        System.out.println("Persona juega " + jugadaPersonaTexto);
+
+        if (jugadaOrdenador == PIEDRA) {
+            jugadaOrdenadorTexto = "piedra";
+        } else if (jugadaOrdenador == PAPEL) {
+            jugadaOrdenadorTexto = "papel";
+        } else {
+            jugadaOrdenadorTexto = "tijera";
+        }
+        System.out.println("Ordenador juega " + jugadaOrdenadorTexto);
+
+        if (jugadaOrdenador == jugadaPersona) {
+            System.out.println("Empate");
+        } else {
+            if (jugadaOrdenador == PIEDRA) {
+                if (jugadaPersona == PAPEL) {
+                    System.out.println("Gana persona");
+                } else {
+                    System.out.println("Gana ordenador");
+                }
+            } else if (jugadaOrdenador == PAPEL) {
+                if (jugadaPersona == TIJERA) {
+                    System.out.println("Gana persona");
+                } else {
+                    System.out.println("Gana ordenador");
+                }
+            } else if (jugadaOrdenador == TIJERA) {
+                if (jugadaPersona == PIEDRA) {
+                    System.out.println("Gana persona");
+                } else {
+                    System.out.println("Gana ordenador");
+                }
+            }
+
+        }
     }
 }
 
