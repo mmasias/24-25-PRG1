@@ -18,7 +18,7 @@ class PiedraPapelTijera{
         int eleccionUsuario = entrada.nextInt();
         int eleccionMaquina = (int)(Math.random()*(3)+1);
         do
-        {
+        { 
         if(eleccionUsuario < 1 || eleccionUsuario > 3 );
         {
             System.out.println("ERROR");
