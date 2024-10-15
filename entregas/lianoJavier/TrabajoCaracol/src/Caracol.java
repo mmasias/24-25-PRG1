@@ -18,10 +18,10 @@ class Caracol {
         do {
             System.out.println("DÍA: " + dia);
             System.out.println(SUPERFICIE);
+            int posicionCaracol = (int) (Math.random() * PROFUNDIDAD_MAXIMA_CARACOL - PROFUNDIDAD_MINIMA_CARACOL + 1) + PROFUNDIDAD_MINIMA_CARACOL;
 
             final int PROFUNDIDAD = 20;
             for (int i = 1; i <= PROFUNDIDAD; i++) {
-                int posicionCaracol = (int) (Math.random() * PROFUNDIDAD_MAXIMA_CARACOL - PROFUNDIDAD_MINIMA_CARACOL + 1) + PROFUNDIDAD_MINIMA_CARACOL;
 
                 String Dibujo;
 
