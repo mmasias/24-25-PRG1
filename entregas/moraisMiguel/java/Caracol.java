@@ -2,11 +2,11 @@ class Caracol{
     public static void main(String[]args){
 
         final int DEPTH = 20;
-        final String BASE = "_______________________";
-        final String TOP = "______           ______";
-        final String WALL = "__:.:.:.:.:.:.:.:.:.__";
-        final String WATER = "__###################__";
-        final String SNAIL = "       _@)_/       ";
+        final String BASE = "|_____________________|";
+        final String TOP = "|_____           _____|";
+        final String WALL = "|_:.:.:.:.:.:.:.:.:.:_|";
+        final String WATER = "|_###################_|";
+        final String SNAIL = "|        _@)_/        |";
 
         int waterDepth = 5;
         int snailDepth = 13;
