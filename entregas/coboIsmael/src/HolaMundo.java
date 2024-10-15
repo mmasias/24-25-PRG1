@@ -28,8 +28,4 @@ class calculoNotaFinal {
 
        System.out.println("Nota final = " + notaFinal);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f34b7228acaf0c457dfdb9a18a0e1adfcb8489a3
