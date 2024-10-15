@@ -12,23 +12,25 @@ class Caracol {
         final String POZO_AGUA = "  []~~~~~~~~~~~~~~[] _ __";
         final String POZO_CARACOL = "  []    _@)_/’    [] _ __";
 
-        int profundidadAgua = 5;
-        int profundidadCaracol = 10;
+        int profundidadAgua = 0;
+        int profundidadCaracol = (int)(Math.random()*20-10+1)+10;
+        int dia = 0;
 
-        System.out.println(POZO_TOPE);
-
-        for(int i = 0; i <= PROFUNDIDAD; i++) {
-
-            if(profundidadCaracol == i) {
+        do {
+            System.out.println("DIA "+dia);
+            System.out.println(POZO_TOPE);
+            for(int i = 0; i <= PROFUNDIDAD; i++) {
+                if(profundidadCaracol == i) {
                 System.out.println(POZO_CARACOL + i);
-            } else if(i > PROFUNDIDAD - profundidadAgua) {
+                } else if(i > PROFUNDIDAD - profundidadAgua) {
                 System.out.println(POZO_AGUA + i);
-            } else {
+                } else {
                 System.out.println(POZO_PARED + i);
+                }
             }
-        }
-        System.out.println(POZO_BASE);
-
+            System.out.println(POZO_BASE);
+            profundidadCaracol--;
+            dia++;
+        } while(profundidadCaracol>0);
     }
-
 }
