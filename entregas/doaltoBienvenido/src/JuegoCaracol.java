@@ -12,21 +12,34 @@ public class JuegoCaracol {
         final String POZO_AGUA = "||~~~~~~~~~~~~~~~~~~~||";
         final String POZO_CARACOL = "||------Caracol------||";
 
-        int profundidadAgua = 5;
-        int profundidadCaracol = 7;
+        final int PROFUNDIDAD_MAXIMA_CAIDA_CARACOL = 20;
+        final int PROFUNDIDAD_MINIMA_CAIDA_CARACOL = 10;
 
-        System.out.println(POZO_TOPE);
-        
-        for(int i=0 ; i<=PROFUNDIDAD ; i++){
-            if (profundidadCaracol==i){
-                System.out.println(POZO_CARACOL + i);
-            } else if (i > PROFUNDIDAD-profundidadAgua){
-                System.out.println(POZO_AGUA + i);
-            } else{
-                System.out.println(POZO_PARED + i);
+        int profundidadAgua = 5;
+        int profundidadCaracol = (int) (Math.random()*PROFUNDIDAD_MAXIMA_CAIDA_CARACOL-PROFUNDIDAD_MINIMA_CAIDA_CARACOL+1) + PROFUNDIDAD_MINIMA_CAIDA_CARACOL;
+        int dia = 0;
+
+        do{
+            System.out.println();
+            System.out.println("DIA: " + dia);
+            System.out.println();
+
+            System.out.println(POZO_TOPE);
+            for(int i=0 ; i<=PROFUNDIDAD ; i++){
+                if (profundidadCaracol==i){
+                    System.out.println(POZO_CARACOL + i);
+                } else if (i > PROFUNDIDAD-profundidadAgua){
+                    System.out.println(POZO_AGUA + i);
+                } else{
+                    System.out.println(POZO_PARED + i);
+                }
             }
-        }
-        System.out.println(POZO_BASE);
+            System.out.println(POZO_BASE);
+            
+            profundidadCaracol--;
+            dia++;
+        }while(profundidadCaracol>=0);
+        
 
 
 
