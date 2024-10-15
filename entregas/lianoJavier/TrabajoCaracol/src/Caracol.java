@@ -1,33 +1,44 @@
 
 class Caracol {
+
     public static void main(String[] args) {
 
-        int nivelAgua = 3;
-        int posicionCaracol = 13;
+        int dia = 0;
+        int nivelAgua = 0;
 
-        final String SUPERFICIE =           "[__]            [__]";
-        final String PAREZ_VACIA =          "  []:. :. :. :. []";
-        final String PAREZ_CON_AGUA =       "  []~~~~~~~~~~~~[]";
-        final String PAREZ_CON_CARACOL =    "  []    _@)/'   []";
-        final String BASE =                 "  [][][][][][][][]";
+        int PROFUNDIDAD_MAXIMA_CARACOL = 20;
+        int PROFUNDIDAD_MINIMA_CARACOL = 10;
+        int posicionCaracol = (int) (Math.random() * PROFUNDIDAD_MAXIMA_CARACOL - PROFUNDIDAD_MINIMA_CARACOL + 1) + PROFUNDIDAD_MINIMA_CARACOL;
 
-        System.out.println(SUPERFICIE);
+        final String SUPERFICIE = "[__]            [__]";
+        final String PAREZ_VACIA = "  []:. :. :. :. []";
+        final String PAREZ_CON_AGUA = "  []~~~~~~~~~~~~[]";
+        final String PAREZ_CON_CARACOL = "  []    _@)/'   []";
+        final String BASE = "  [][][][][][][][]";
 
-        final int PROFUNDIDAD = 20;
-        for (int i = 1; i <= PROFUNDIDAD; i++) {
+        do {
+            System.out.println("DÍA: " + dia);
+            System.out.println(SUPERFICIE);
 
-            String Dibujo;
+            final int PROFUNDIDAD = 20;
+            for (int i = 1; i <= PROFUNDIDAD; i++) {
 
-            Dibujo = i == posicionCaracol ? PAREZ_CON_CARACOL
-                    : i >= (PROFUNDIDAD - nivelAgua + 1) ? PAREZ_CON_AGUA
-                            : PAREZ_VACIA;
+                String Dibujo;
 
-            String Contrador = "_ __" + i;
+                Dibujo = i == posicionCaracol ? PAREZ_CON_CARACOL
+                        : i >= (PROFUNDIDAD - nivelAgua + 1) ? PAREZ_CON_AGUA
+                                : PAREZ_VACIA;
 
-            System.out.println(Dibujo + Contrador);
-        }
+                String Contrador = "_ __" + i;
 
-        System.out.println(BASE);
+                System.out.println(Dibujo + Contrador);
+            }
+
+            System.out.println(BASE);
+            System.out.println(posicionCaracol);
+
+            dia++;
+        } while (posicionCaracol > 0);
 
     }
 }
