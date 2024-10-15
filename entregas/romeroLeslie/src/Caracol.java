@@ -17,7 +17,7 @@ class Caracol {
       int profundidadCaracol = (int) (Math.random()* 20-10+1)+10;
       int dia = 0;
 
-      {
+      do {
          System.out.println (POZO_TOPE);
 
          for  (int i=0; i <=PROFUNDIDAD; i++){
@@ -37,7 +37,7 @@ class Caracol {
             System.out.println (POZO_BASE);
    
       
-      }
+      } while (profundidadCaracol>0);
 
 
 
