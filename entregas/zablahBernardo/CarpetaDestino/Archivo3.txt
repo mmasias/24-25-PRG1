@@ -1,0 +1,1 @@
+Modificacion de texto de Archivo3 en despues de moverlo a CarpetaDestino
