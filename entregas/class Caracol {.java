@@ -18,10 +18,11 @@ class CaracolPozo{
 
         int profundidadAgua = 5;
         int profundidadCaracol = (int) (Math.random()*20-10+1)+10;
-        int profundidadCaracol = (int) (Math.random()*MAXIMA-MINIMA+1)+MINIMA;
-        int dia = 0;
+        
+        
         System.out.println("Al inicio el caracol cae a ["+profundidadCaracol+"] metros");
 
+        
         do {
             System.out.println("DIA" + dia);
             System.out.println(POZO_TOPE);
@@ -36,6 +37,7 @@ class CaracolPozo{
             caracolSube = (int) (Math.random()*(4-1+1)+1);
             caracolBaja = (int) (Math.random()*(2-0+1)+0);
 
+            
             boolean aparcaCoche = Math.random()<=0.35;
 
             profundidadCaracol = profundidadCaracol
