@@ -27,7 +27,7 @@ class Marco {
         final String TEXTO_LLUEVE_NORMAL = "Ha llovido un poco hoy. :s";
         final String TEXTO_DIA_CLARO = "¡Hoy ha hecho buenisimo!";
 
-        double distancia = 350;
+        double distancia = 466;
         int dia = 1;
 
         System.out.println("DIARIO DEL VIAJE DE MARCO");
@@ -43,7 +43,7 @@ class Marco {
             double velocidadMarco = ((Math.random()
                     * (VELOCIDAD_PROMEDIA_DIARIO_MAXIMO - VELOCIDAD_PROMEDIA_DIARIO_MINIMO + 1))
                     + VELOCIDAD_PROMEDIA_DIARIO_MINIMO)
-                    - (isLloviendoFuerte ? REDUCCION_VELOCIDAD_LLUVIA_FUERTE : 0)
+                    * (isLloviendoFuerte ? REDUCCION_VELOCIDAD_LLUVIA_FUERTE : 1)
                     - (isLloviendoNormal ? REDUCCION_VELOCIDAD_LLUVIA_NORMAL : 0)
                     - (isMonoEnBrazos ? REDUCCION_VELOCIDAD_MONO_EN_BRAZOS : 0);
 
