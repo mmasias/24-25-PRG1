@@ -26,6 +26,7 @@ class Caracol {
         final int PROFUNDIDAD_MAXIMA_BAJAR_CARACOL = 2;
         final int PROFUNDIDAD_MINIMA_BAJAR_CARACOL = 0;
         
+        
         int posicionCaracol;
         posicionCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA_CARACOL - PROFUNDIDAD_MINIMA_CARACOL + 1))
                 + PROFUNDIDAD_MINIMA_CARACOL);
