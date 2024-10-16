@@ -1,7 +1,6 @@
 
 import java.util.Scanner;
 
-
 class Caracol {
 
     public static void main(String[] args) {
@@ -20,37 +19,47 @@ class Caracol {
         final int PROFUNDIDAD_MAXIMA_CARACOL = 10;
         final int PROFUNDIDAD_MINIMA_CARACOL = 20;
         int posicionCaracol;
-        posicionCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA_CARACOL - PROFUNDIDAD_MINIMA_CARACOL + 1)) + PROFUNDIDAD_MINIMA_CARACOL);
+        posicionCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA_CARACOL - PROFUNDIDAD_MINIMA_CARACOL + 1))
+                + PROFUNDIDAD_MINIMA_CARACOL);
 
-        int dia = 0;
+        int dia = 1;
         int nivelAgua = 0;
+        boolean isJugando = dia <= 50 && posicionCaracol > 0 && posicionCaracol <= PROFUNDIDAD_POZO - nivelAgua;
 
         do {
-            final int PROFUNDIDAD_MAXIMA_SUBE_CARACOL = 4;
-            final int PROFUNDIDAD_MINIMA_SUBE_CARACOL = 1;
-            int calculoSubeCaracol;
-            calculoSubeCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA_SUBE_CARACOL - PROFUNDIDAD_MINIMA_SUBE_CARACOL + 1)) + PROFUNDIDAD_MINIMA_SUBE_CARACOL);
 
-            int subeCaracol;
-            subeCaracol
-                    = dia == 10 && calculoSubeCaracol > 3 ? 3
-                            : dia == 20 && calculoSubeCaracol > 2 ? 2
-                                    : calculoSubeCaracol;
+            if (dia != 1) {
 
-            final int PROFUNDIDAD_MAXIMA_BAJAR_CARACOL = 2;
-            final int PROFUNDIDAD_MINIMA_BAJAR_CARACOL = 0;
-            int bajaCaracol;
-            bajaCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA_BAJAR_CARACOL - PROFUNDIDAD_MINIMA_BAJAR_CARACOL + 1)) + PROFUNDIDAD_MINIMA_BAJAR_CARACOL);
+                final int PROFUNDIDAD_MAXIMA_SUBE_CARACOL = 4;
+                final int PROFUNDIDAD_MINIMA_SUBE_CARACOL = 1;
+                int calculoSubeCaracol;
+                calculoSubeCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA_SUBE_CARACOL - PROFUNDIDAD_MINIMA_SUBE_CARACOL + 1)) + PROFUNDIDAD_MINIMA_SUBE_CARACOL);
 
-            if (dia > 1) {
-                posicionCaracol
-                    = posicionCaracol
-                    - subeCaracol
-                    + bajaCaracol;
+                int subeCaracol;
+                subeCaracol = dia == 10 && calculoSubeCaracol > 3 ? 3
+                        : dia == 20 && calculoSubeCaracol > 2 ? 2
+                                : calculoSubeCaracol;
+
+                final int PROFUNDIDAD_MAXIMA_BAJAR_CARACOL = 2;
+                final int PROFUNDIDAD_MINIMA_BAJAR_CARACOL = 0;
+                int bajaCaracol;
+                bajaCaracol = (int) ((Math.random()
+                        * (PROFUNDIDAD_MAXIMA_BAJAR_CARACOL - PROFUNDIDAD_MINIMA_BAJAR_CARACOL + 1))
+                        + PROFUNDIDAD_MINIMA_BAJAR_CARACOL);
+
+                posicionCaracol = posicionCaracol
+                        - subeCaracol
+                        + bajaCaracol;
+
+                posicionCaracol = posicionCaracol < 0 ? 0 : posicionCaracol;
+
+                        System.out.println("posición del caracol [" + posicionCaracol + "] Caracol sube [" + subeCaracol
+                                + "] Caracol baja [" + bajaCaracol + "]");
+            } else {
+                System.out.println("posición del caracol [" + posicionCaracol + "]");
             }
 
-            System.out.println("posición del caracol [" + posicionCaracol + "] Caracol sube [" + subeCaracol + "] Caracol baja ["  + bajaCaracol + "]");
-            
+
             System.out.println("---------------------");
             System.out.println("DÍA: " + dia);
             System.out.println(SUPERFICIE);
@@ -65,19 +74,18 @@ class Caracol {
             }
             System.out.println(BASE);
 
-            System.out.println(posicionCaracol);
-
             dia++;
 
-            saltarLinea.nextLine();
-        } while (dia <= 50 && posicionCaracol > 0 && posicionCaracol <= PROFUNDIDAD_POZO - nivelAgua);
+
+            if (isJugando) {saltarLinea.nextLine();}
+        } while (isJugando);
 
         boolean isCaracolInanicion = dia >= 50;
         final String CaracolInanicion = "El caracol murió de inanición.";
 
         boolean isCaracolAhogo = posicionCaracol >= PROFUNDIDAD_POZO - nivelAgua;
         final String CaracolAhogo = "El caracol se ahogó.";
-        
+
         final String CaracolSalio = "¡El caracol sobrevivió!";
 
         String resultado;
@@ -88,8 +96,9 @@ class Caracol {
         } else {
             resultado = CaracolSalio;
         }
-        
-            System.out.println(resultado);
+
+        System.out.println(resultado);
+        saltarLinea.close();
 
     }
 }
