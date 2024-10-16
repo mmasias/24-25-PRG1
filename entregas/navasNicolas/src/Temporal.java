@@ -26,21 +26,30 @@ class Temporal {
         int profundidadAgua = 0;
         int profundidadCaracol = (int) (Math.random() * (MAXIMA - MINIMA + 1) + MINIMA);
         boolean haSalido = profundidadCaracol <= 0;
-        boolean EstaVivo = dia <= 50;
+        boolean EstaVivo = true;  
         boolean bajoPorAuto = false;
 
         do {
             dia++;
 
             double probabilidadLluvia = Math.random();
-            int aparteAgua = probabilidadLluvia <= PROBABILIDAD_LLUVIA_FUERTE ? 5:
+            int aparteAgua = probabilidadLluvia <= PROBABILIDAD_LLUVIA_FUERTE ? 5 :
                                 probabilidadLluvia <= PROBABILIDAD_LLUVIA_MEDIA ? 2 : 0;
             profundidadAgua = profundidadAgua + aparteAgua;
+            
+            if (dia >= 0) {
+                caracolSube = (int) (Math.random() * (4 - 1 + 1) + 1); 
+            } else if (dia >= 10) {
+                caracolSube = (int) (Math.random() * (3 - 1 + 1) + 1);  
+            } else if (dia >= 20) {
+                caracolSube = (int) (Math.random() * (2 - 1 + 1) + 1);  
+            } else if (dia >= 30) {
+                caracolSube = (int) (Math.random());  
+            }
 
-            caracolSube = (int) (Math.random() * (4 - 1 + 1) + 1);
             caracolBaja = (int) (Math.random() * (2 - 1 + 1) + 1);
             boolean aparcarAuto = Math.random() <= 0.35;
-            
+
             bajoPorAuto = aparcarAuto;
 
             profundidadCaracol = profundidadCaracol
@@ -62,14 +71,19 @@ class Temporal {
             }
             System.out.println(POZO_INFERIOR);
             inputUsuario = entrada.nextLine();
+
+            if (profundidadCaracol >= (PROFUNDIDAD - profundidadAgua) || dia >= 40) {
+                EstaVivo = false;
+            }
+
             haSalido = profundidadCaracol <= 0;
 
         } while (!haSalido && EstaVivo);
-            if (haSalido) {
-                System.out.println("Se acabo!");
-            } else {
-                System.out.println("Se murio :(");
-            }
+
+        if (haSalido) {
+            System.out.println("¡El caracol ha salido del pozo!");
+        } else {
+            System.out.println("El caracol ha muerto :(");
+        }
     }
 }
-
