@@ -19,6 +19,13 @@ class Caracol {
 
         final int PROFUNDIDAD_MAXIMA_CARACOL = 10;
         final int PROFUNDIDAD_MINIMA_CARACOL = 20;
+
+        final int PROFUNDIDAD_MAXIMA_SUBE_CARACOL = 4;
+        final int PROFUNDIDAD_MINIMA_SUBE_CARACOL = 1;
+
+        final int PROFUNDIDAD_MAXIMA_BAJAR_CARACOL = 2;
+        final int PROFUNDIDAD_MINIMA_BAJAR_CARACOL = 0;
+        
         int posicionCaracol;
         posicionCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA_CARACOL - PROFUNDIDAD_MINIMA_CARACOL + 1))
                 + PROFUNDIDAD_MINIMA_CARACOL);
@@ -39,17 +46,13 @@ class Caracol {
             boolean isCoche = Math.random() <= PROBABILIDAD_HAYA_COCHE;
 
             boolean islluviaFuerte = Math.random() <= PROBABILIDAD_LLUVIA_FUERTE;
-
             boolean islluviaMedia = Math.random() <= PROBABILIDAD_LLUVIA_MEDIA;
 
             System.out.println("---------------------");
-
             System.out.println("DÍA: " + dia);
 
             if (dia != 1) {
 
-                final int PROFUNDIDAD_MAXIMA_SUBE_CARACOL = 4;
-                final int PROFUNDIDAD_MINIMA_SUBE_CARACOL = 1;
                 int calculoSubeCaracol;
                 calculoSubeCaracol = (int) ((Math.random()
                         * (PROFUNDIDAD_MAXIMA_SUBE_CARACOL - PROFUNDIDAD_MINIMA_SUBE_CARACOL + 1))
@@ -60,8 +63,6 @@ class Caracol {
                         : dia == 20 && calculoSubeCaracol > 2 ? 2
                                 : calculoSubeCaracol;
 
-                final int PROFUNDIDAD_MAXIMA_BAJAR_CARACOL = 2;
-                final int PROFUNDIDAD_MINIMA_BAJAR_CARACOL = 0;
                 int bajaCaracol;
                 bajaCaracol = (int) ((Math.random()
                         * (PROFUNDIDAD_MAXIMA_BAJAR_CARACOL - PROFUNDIDAD_MINIMA_BAJAR_CARACOL + 1))
