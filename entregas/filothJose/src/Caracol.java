@@ -1,7 +1,10 @@
+import java.util.Scanner;
+
 public class Caracol {
 
     public static void main(String [] args) {
         Scanner entrada = new Scanner(System.in);
+        String inputUsuario;
     
     final String POZO_BASE = "[][][][][][][][][][] _ __";
     final String POZO_TOPE = "[  ]              [  ] _ __ ";
@@ -47,7 +50,7 @@ public class Caracol {
                                 +caracolBaja
                                 +(aparcaCoche ? 2 : 0);
 
-       System.out.println("Dia|"+dia+"| - Subio|"+caracolSube+"| - Bajo|"+caracolBaja+"| - Posicion|"+profundidadCaracol+");
+       System.out.println("Dia|"+dia+"| - Subio|"+caracolSube+"| - Bajo|"+caracolBaja+"| - Posicion|"+profundidadCaracol+"");
     System.out.println(aparcaCoche?POZOZ_CON_COCHE:POZO_TOPE);
 
     for(int i=0; i <= PROFUNDIDAD; i++ ){
@@ -62,8 +65,7 @@ public class Caracol {
       }
        System.out.println(POZO_BASE);
        inputUsuario = entrada.nextLine();
-      
-    } while (profundidadCaracol>0);
+    } while (!haSalido && esteVivo);
 
 }
 }
