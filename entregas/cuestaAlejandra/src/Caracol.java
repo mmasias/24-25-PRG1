@@ -32,7 +32,7 @@ class Caracol{
 
       }
      System.out.println(POZO_BASE);
-     profundiadCaracol - 2;
+     
      dia++;
     } while (profundidadCaracol>0);
     
