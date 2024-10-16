@@ -1,37 +1,54 @@
- public class Caracol {
-    public static void main(String[] args){
+public class Caracol {
+    public static void main(String[] args) {
+        
+        final String POZO_SUPERIOR = "Superior";
+        final String POZO_PARED = "Pared";
+        final String POZO_INFERIOR = "Inferior";
+        final String POZO_AGUA = "Agua";
+        final String CARACOL = "Caracol";
 
         final int PROFUNDIDAD = 20;
-        final String POZO_BASE = "[][][][][][][][][] _ ___ ";
-        final String POZO_TOPE = "[___]         [___]     - ___";
-        final String POZO_PARED = "[]:. :. :. :. :.[ _ ___] _ ___  ";
-        final String POZO_AGUA = "[]~~~~~~~~~~~~~~~~~~~~[][] _ ___";
-        final String POZO_CARACOL = "[]  __@) __/´  [][] _ ___";
+        final int MAXIMA = 20;
+        final int MINIMA = 10;
 
         int profundidadAgua = 5;
-        int profundidadCaracol = (int)(Math.random()*20-10+1)+10;
+        int profundidadCaracol = (int) (Math.random() * (MAXIMA - MINIMA + 1)) + MINIMA;
 
-        System.out.println(POZO_TOPE);
+        int dia = 0;
+        int caracolSube;
+        int caracolBaja;
 
-        for(int i=0;i<=PROFUNDIDAD; i++){
-            
-            if(profundidadCaracol==i) {
-                System.out.println(POZO_CARACOL + i);
-            } else if (i>PROFUNDIDAD-profundidadAgua){
-                System.out.println(POZO_AGUA + i);
+        
+        
+        do {
+            dia++;
+            double probabilidadLluvia = Math.random();
+            int aporteAgua = probabilidadLluvia <= 0.05 ? 5 :
+                                probabilidadLluvia <= 0.1 ? 2 : 0;
+            profundidadAgua = profundidadAgua + aporteAgua;
+
+            caracolSube = (int) (Math.random() * (4 - 1 + 1)) + 1; 
+            caracolBaja = (int) (Math.random() * (2 - 0 + 1)); 
+
+            boolean aparcaCoche = Math.random()<=0.35;
+
+            profundidadCaracol = profundidadCaracol - caracolSube + caracolBaja;
+            System.out.println(POZO_SUPERIOR);
+        
+        
+        for (int i = 0; i < PROFUNDIDAD; i++) {
+            if (profundidadCaracol == i) {
+                System.out.println(CARACOL + " " + i);
+            } else if (i >= PROFUNDIDAD - profundidadAgua) {
+                System.out.println(POZO_AGUA + " " + i);
             } else {
-                System.out.println(POZO_PARED + i);
+                System.out.println(POZO_PARED + " " + i);
             }
-
-            if(i>PROFUNDIDAD-profundidadAgua){
-                System.out.println(POZO_AGUA + i);
-            } else {
-                System.out.println(POZO_PARED + i);
-            }
-            System.out.println(POZO_PARED + i);
-            
         }
-        System.out.println(POZO_BASE);
+        
+        System.out.println(POZO_INFERIOR);
+        } while (profundidadCaracol > 0);
+
+        
     }
-    
 }
