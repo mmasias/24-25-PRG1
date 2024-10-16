@@ -110,24 +110,13 @@ class Caracol {
             }
         } while (dia <= 50 && posicionCaracol > 0 && posicionCaracol <= PROFUNDIDAD_POZO - nivelAgua);
 
-        boolean isCaracolInanicion = dia >= 50;
         final String CaracolInanicion = "El caracol murió de inanición.";
-
-        boolean isCaracolAhogo = posicionCaracol >= PROFUNDIDAD_POZO - nivelAgua;
         final String CaracolAhogo = "El caracol se ahogó.";
-
         final String CaracolSalio = "¡El caracol sobrevivió!";
-
-        String resultado;
-        if (isCaracolAhogo) {
-            resultado = CaracolAhogo;
-        } else if (isCaracolInanicion) {
-            resultado = CaracolInanicion;
-        } else {
-            resultado = CaracolSalio;
-        }
-
-        System.out.println(resultado);
+        
+        boolean isCaracolInanicion = dia >= 50;
+        boolean isCaracolAhogo = posicionCaracol >= PROFUNDIDAD_POZO - nivelAgua;
+        System.out.println(isCaracolAhogo ? CaracolAhogo : isCaracolInanicion ? CaracolInanicion : CaracolSalio);
         saltarLinea.close();
 
     }
