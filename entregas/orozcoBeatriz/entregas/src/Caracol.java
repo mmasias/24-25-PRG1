@@ -105,9 +105,7 @@ public class Caracol {
         } else {
             System.out.println("El caracol ha logrado salir del pozo después de " + dia + " días!");
         }
-        System.out.println("Profundidad Caracol: " + profundidadCaracol);
-        System.out.println("Profundidad Agua: " + profundidadAgua);
-        System.out.println("Profundidad: " + PROFUNDIDAD);
+
         scanner.close();
     }
 }
