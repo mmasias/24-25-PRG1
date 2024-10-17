@@ -1,5 +1,5 @@
 import java.util.Scanner;
- // Lo siento muchísimo, pero soy absolutamente incapaz de hacer que el caracol se muera al ahogarse. Llevo 2 horas intentándolo, y en vez de arreglarlo, arruino el código. No sé qué hacer.
+
 public class Caracol {
 
     public static void main(String[] args) {
@@ -16,8 +16,8 @@ public class Caracol {
         int profundidadCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA - PROFUNDIDAD_MINIMA + 1)
                 + PROFUNDIDAD_MINIMA));
         int dia = 0;
-        int caracolSube = 0;
-        int caracolBaja = 0;
+        int caracolSube;
+        int caracolBaja;
         System.out.println("Al inicio el caracol cae a " + profundidadCaracol + " metros");
         int SUBIDA_MAXIMA = 4;
         int SUBIDA_MINIMA = 1;
@@ -29,7 +29,7 @@ public class Caracol {
             System.out.println("DIA " + dia);
 
             caracolSube = (int) (Math.random() * (SUBIDA_MAXIMA - SUBIDA_MINIMA + 1) + SUBIDA_MINIMA);
-            caracolBaja = (int) (Math.random() * (SUBIDA_MAXIMA - SUBIDA_MINIMA + 1) + SUBIDA_MINIMA);
+            caracolBaja = (int) (Math.random() * (BAJADA_MAXIMA - BAJADA_MINIMA + 1) + SUBIDA_MINIMA);
             boolean aparcaCoche = Math.random() <= 0.35;
             double probabilidadLluvia = Math.random();
             int aporteAgua = probabilidadLluvia <= 0.05 ? 5
@@ -85,8 +85,8 @@ public class Caracol {
 
             String entrada = scanner.nextLine(); 
 
-        } while (profundidadCaracol > 0 && dia < 50 && profundidadCaracol <= 20);
-        String resultado = dia >= 50 || profundidadCaracol > 20 ? "El caracol ha muerto. Fin de la partida."
+        } while (profundidadCaracol > 0 && dia < 50 && profundidadCaracol < (PROFUNDIDAD - profundidadAgua));
+        String resultado = dia >= 50 || profundidadCaracol >= (PROFUNDIDAD - profundidadAgua ) ? "El caracol ha muerto. Fin de la partida."
                 : ("El caracol salió del pozo. Gracias por jugar.");
 
         System.out.println(resultado);
