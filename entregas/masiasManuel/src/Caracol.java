@@ -66,13 +66,8 @@ class Caracol {
                     + profundidadCaracol + "] - Prof. agua:" + alturaAgua);
             System.out.println(aparcaCoche ? POZO_CON_COCHE : POZO_SUPERIOR);
             for (int i = 0; i <= PROFUNDIDAD; i++) {
-                if (i == profundidadCaracol) {
-                    System.out.println(CARACOL + i);
-                } else if (i > PROFUNDIDAD - alturaAgua) {
-                    System.out.println(POZO_AGUA + i);
-                } else {
-                    System.out.println(POZO_PARED + i);
-                }
+                String queImprimir = i == profundidadCaracol ? CARACOL + i : i > PROFUNDIDAD - alturaAgua ? POZO_AGUA + i : POZO_PARED + i;
+                System.out.println(queImprimir);
             }
             System.out.println(POZO_INFERIOR);
 
