@@ -5,6 +5,9 @@ import java.util.Scanner;
 class Caracol {
     public static void main(String []args){
 
+        Scanner entrada = new Scanner(System.in);
+        String inputUsuario;
+
         final int PROFUNDIDAD = 20;
 
         final String POZO_TOPE = "##              ##";
@@ -57,17 +60,9 @@ class Caracol {
             }
 
             System.out.println(POZO_BASE);
+            
             inputUsuario = entrada.nextLine();
 
         } while(profundidadCaracol>0);
-
-        entrada.close();
-        
-
-        
-
-
-
-
     }
 }
