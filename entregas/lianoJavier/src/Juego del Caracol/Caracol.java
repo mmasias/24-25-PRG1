@@ -20,13 +20,11 @@ class Caracol {
         final int PROFUNDIDAD_MAXIMA_CARACOL = 10;
         final int PROFUNDIDAD_MINIMA_CARACOL = 20;
 
-        final int PROFUNDIDAD_MAXIMA_SUBE_CARACOL = 4;
         final int PROFUNDIDAD_MINIMA_SUBE_CARACOL = 1;
 
         final int PROFUNDIDAD_MAXIMA_BAJAR_CARACOL = 2;
         final int PROFUNDIDAD_MINIMA_BAJAR_CARACOL = 0;
-        
-        
+
         int posicionCaracol;
         posicionCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA_CARACOL - PROFUNDIDAD_MINIMA_CARACOL + 1))
                 + PROFUNDIDAD_MINIMA_CARACOL);
@@ -54,15 +52,12 @@ class Caracol {
 
             if (dia != 1) {
 
-                int calculoSubeCaracol;
-                calculoSubeCaracol = (int) ((Math.random()
-                        * (PROFUNDIDAD_MAXIMA_SUBE_CARACOL - PROFUNDIDAD_MINIMA_SUBE_CARACOL + 1))
-                        + PROFUNDIDAD_MINIMA_SUBE_CARACOL);
+                int maximoSubeCaracol = dia <= 10 ? 4 : dia <= 20 ? 3 : 2;
 
                 int subeCaracol;
-                subeCaracol = dia == 10 && calculoSubeCaracol > 3 ? 3
-                        : dia == 20 && calculoSubeCaracol > 2 ? 2
-                                : calculoSubeCaracol;
+                subeCaracol = (int) ((Math.random()
+                        * (maximoSubeCaracol - PROFUNDIDAD_MINIMA_SUBE_CARACOL + 1))
+                        + maximoSubeCaracol);
 
                 int bajaCaracol;
                 bajaCaracol = (int) ((Math.random()
@@ -73,11 +68,18 @@ class Caracol {
                         - subeCaracol
                         + bajaCaracol
                         + (isCoche ? DESCENSO_COCHE : 0);
-
-                nivelAgua += (islluviaFuerte ? NIVEL_AGUA_LLUVIA_FUERTE : 0)
+                        
+                        nivelAgua += (islluviaFuerte ? NIVEL_AGUA_LLUVIA_FUERTE : 0)
                         + (islluviaMedia ? NIVEL_AGUA_LLUVIA_MEDIA : 0);
+                        
 
-                posicionCaracol = posicionCaracol < 0 ? 0 : posicionCaracol;
+                if (posicionCaracol > (PROFUNDIDAD_POZO - nivelAgua)) {
+                    posicionCaracol = (PROFUNDIDAD_POZO - nivelAgua) - 1;
+                }
+
+                if(posicionCaracol < 0) {
+                    posicionCaracol = 0;
+                }
 
                 System.out.println("posición del caracol [" + posicionCaracol + "] Caracol sube [" + subeCaracol
                         + "] Caracol baja [" + bajaCaracol + "] Nivel agua [" + nivelAgua + "]");
@@ -105,15 +107,15 @@ class Caracol {
 
             dia++;
 
-            if (dia <= 50 && posicionCaracol > 0 && posicionCaracol <= PROFUNDIDAD_POZO - nivelAgua) {
+            if (dia <= 50 && posicionCaracol > 0) {
                 saltarLinea.nextLine();
             }
-        } while (dia <= 50 && posicionCaracol > 0 && posicionCaracol <= PROFUNDIDAD_POZO - nivelAgua);
+        } while (dia <= 50 && posicionCaracol > 0);
 
         final String CaracolInanicion = "El caracol murió de inanición.";
         final String CaracolAhogo = "El caracol se ahogó.";
         final String CaracolSalio = "¡El caracol sobrevivió!";
-        
+
         boolean isCaracolInanicion = dia >= 50;
         boolean isCaracolAhogo = posicionCaracol >= PROFUNDIDAD_POZO - nivelAgua;
         System.out.println(isCaracolAhogo ? CaracolAhogo : isCaracolInanicion ? CaracolInanicion : CaracolSalio);
