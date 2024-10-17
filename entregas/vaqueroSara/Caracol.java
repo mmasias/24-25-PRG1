@@ -29,7 +29,7 @@ public class Caracol {
             System.out.println("DIA " + dia);
 
             caracolSube = (int) (Math.random() * (SUBIDA_MAXIMA - SUBIDA_MINIMA + 1) + SUBIDA_MINIMA);
-            caracolBaja = (int) (Math.random() * (BAJADA_MAXIMA - BAJADA_MINIMA + 1) + SUBIDA_MINIMA);
+            caracolBaja = (int) (Math.random() * (BAJADA_MAXIMA - BAJADA_MINIMA + 1) + BAJADA_MINIMA);
             boolean aparcaCoche = Math.random() <= 0.35;
             double probabilidadLluvia = Math.random();
             int aporteAgua = probabilidadLluvia <= 0.05 ? 5
