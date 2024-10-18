@@ -1,5 +1,7 @@
 # Ejercicios diversos, para ir practicando
 
-|Ejercicio|Concepto|Concepto|Concepto|Concepto|Concepto|Concepto|Concepto
-|-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|[Nombre del ejercicio](01-PaginaDelEjercicio.md)|☑️|☑️|☑️|🔲|🔲|🔲|😊
+|Detalle|Temas|Dificultad|
+|-|-|-|
+[Clasificación de edades](/entregas/masiasManuel/src/ClasificacionEdad.md)|Ternarios... |
+[Clasificación de conductores](/entregas/masiasManuel/src/ClasificacionConductor.md)|Ternarios... |
+
