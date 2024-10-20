@@ -8,7 +8,7 @@ class Carrera {
         final String COLOR_GREEN = "\u001B[32m";
         final String COLOR_RED = "\u001B[31m";
         final String COLOR_ORANGE = "\u001B[38;5;214m";
-        
+
         Scanner inputUser = new Scanner(System.in);
 
         final int AGUJERO_1 = 0;
@@ -28,22 +28,39 @@ class Carrera {
             System.out.println(COLOR_BLUE + "TURNO - [" + turno + "]" + COLOR_RESET);
             System.out.println(COLOR_GREEN + "Opciones: 1 | 2 | 3 | 4" + COLOR_RESET);
             System.out.print("Elige un agujero al que tirar: ");
-            
+
             int seleccionJugador;
+
             do {
                 seleccionJugador = inputUser.nextInt() - 1;
             } while (seleccionJugador < 0 || seleccionJugador > 3);
-             
+
             int avance = 0;
 
-            avance = 
-                seleccionJugador == AGUJERO_1 && Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_1] ? AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_1] :
-                seleccionJugador == AGUJERO_2 && Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_2] ? AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_2] :
-                seleccionJugador == AGUJERO_3 && Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_3] ? AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_3] :
-                seleccionJugador == AGUJERO_4 && Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_4] ? AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_4] :
-                0;
+            switch (seleccionJugador) {
+                case AGUJERO_1:
+                    if (Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_1]) {
+                        avance = AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_1];
+                    }
+                    break;
+                case AGUJERO_2:
+                    if (Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_2]) {
+                        avance = AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_2];
+                    }
+                    break;
+                case AGUJERO_3:
+                    if (Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_3]) {
+                        avance = AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_3];
+                    }
+                    break;
+                case AGUJERO_4:
+                    if (Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_4]) {
+                        avance = AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_4];
+                    }
+                    break;
+            }
 
-                espacioRecorrido += avance;
+            espacioRecorrido += avance;
 
             int recorridoRestante;
             recorridoRestante = (recorridoTotal - espacioRecorrido) >= 0 ? (recorridoTotal - espacioRecorrido) : 0;
