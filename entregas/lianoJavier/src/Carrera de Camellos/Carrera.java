@@ -12,6 +12,7 @@ class Carrera {
         Scanner inputUser = new Scanner(System.in);
 
         final double[] PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO = { 0.6, 0.4, 0.3, 0.1 };
+        final double PROBABILIDAD_DE_QUE_EL_CAMELLO_TROPIECE = 0.1;
         final int[] AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO = { 1, 2, 4, 6 };
 
         int posicionDelCamello = 0;
@@ -25,31 +26,30 @@ class Carrera {
 
             int seleccionJugador = seleccionarAgujero(inputUser);
 
-            boolean aciertaEnElAgujero = aciertaEnElAgujero(seleccionJugador, PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO);
+            boolean jugadorAciertaEnElAgujero = aciertaEnElAgujero(seleccionJugador, PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO);
 
-            int avanceDelCaballo = moverCamello(aciertaEnElAgujero, seleccionJugador, AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO);
-            posicionDelCamello += avanceDelCaballo;
-            int recorridoRestante = recorridoTotal - posicionDelCamello;
+            int avanceDelCamello = moverCamello(jugadorAciertaEnElAgujero, seleccionJugador, AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO);
 
-            fallosRealizados = gestionDeFallos(aciertaEnElAgujero, fallosRealizados);
-
+            boolean camelloTropezo = tropiezaCamello(PROBABILIDAD_DE_QUE_EL_CAMELLO_TROPIECE);
+            if (camelloTropezo) {
+                avanceDelCamello = 0;
+            }
+            
+            posicionDelCamello += avanceDelCamello;
+            
+            fallosRealizados = gestionDeFallos(jugadorAciertaEnElAgujero, fallosRealizados);
+            
             if (fallosRealizados >= 3) {
                 fallosRealizados = 0;
                 posicionDelCamello = 0;
             }
+            
+            
+            mostrarEstadoDelJuego(avanceDelCamello, recorridoTotal, posicionDelCamello);
 
-            if (recorridoRestante >= 0) {
-                recorridoRestante = 0;
-            }
+            turno = camelloTropezo ? turno + 2 : turno++;
 
-            System.out.println((avanceDelCaballo == 0 ? COLOR_RED : COLOR_ORANGE) + "Has avanzado: " + avanceDelCaballo
-                    + COLOR_RESET);
-            System.out.println((recorridoRestante == 0 ? COLOR_GREEN : COLOR_RED) + "Te quedan: " + recorridoRestante
-                    + COLOR_RESET);
-
-            turno++;
-
-        } while (posicionDelCamello < recorridoTotal);
+        } while (posicionDelCamello < recorridoTotal && turno <= 50);
 
         inputUser.close();
     }
@@ -78,10 +78,25 @@ class Carrera {
         return 0;
     }
 
+    public static boolean tropiezaCamello(double probabilidad) {
+        return Math.random() <= probabilidad;
+    }
+
     public static int gestionDeFallos(boolean acierta, int fallosRealizados) {
         if (acierta) {
             return 0;
         }
-        return fallosRealizados++;
+        return fallosRealizados + 1;
+    }
+
+    public static void mostrarEstadoDelJuego(int avanceDelCamello, int recorridoTotal, int posicionDelCamello) {
+        System.out.println((avanceDelCamello == 0 ? COLOR_RED : COLOR_ORANGE) + "Has avanzado: " + avanceDelCamello
+            + COLOR_RESET);
+            
+            int recorridoRestante = recorridoTotal - posicionDelCamello;
+            if (recorridoRestante <= 0) {
+                recorridoRestante = 0;
+            }
+            System.out.println((recorridoRestante == 0 ? COLOR_GREEN : COLOR_RED) + "Te quedan: " + recorridoRestante + COLOR_RESET);
     }
 }
