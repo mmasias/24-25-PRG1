@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
 class Carrera {
+    public static final String COLOR_RESET = "\u001B[0m";
+    public static final String COLOR_BLUE = "\u001B[34m";
+    public static final String COLOR_GREEN = "\u001B[32m";
+    public static final String COLOR_RED = "\u001B[31m";
+    public static final String COLOR_ORANGE = "\u001B[38;5;214m";
 
     public static void main(String[] args) {
-        final String COLOR_RESET = "\u001B[0m";
-        final String COLOR_BLUE = "\u001B[34m";
-        final String COLOR_GREEN = "\u001B[32m";
-        final String COLOR_RED = "\u001B[31m";
-        final String COLOR_ORANGE = "\u001B[38;5;214m";
 
         Scanner inputUser = new Scanner(System.in);
 
@@ -17,45 +17,33 @@ class Carrera {
         int posicionDelCamello = 0;
         int recorridoTotal = 60;
         int turno = 1;
-        
+        int fallosRealizados = 0;
+
         do {
             System.out.println("");
             System.out.println(COLOR_BLUE + "TURNO - [" + turno + "]" + COLOR_RESET);
-            System.out.println(COLOR_GREEN + "Opciones: 1 | 2 | 3 | 4" + COLOR_RESET);
-            System.out.println("Elige un agujero al que tirar: ");
-            
-            int seleccionJugador;
-            
-            do {
-                seleccionJugador = inputUser.nextInt() - 1;
-            } while (seleccionJugador < 0 || seleccionJugador > 3);
-            
-            boolean aciertaEnElAgujero = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO[seleccionJugador];
-            
-            int casillasQueAvanzaElCamello = 0;
-            if (aciertaEnElAgujero) {
-                casillasQueAvanzaElCamello = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO[seleccionJugador];
-                posicionDelCamello += casillasQueAvanzaElCamello;
-            }
-            
-            int fallosRealizados = 0;
-            fallosRealizados += !aciertaEnElAgujero ? 1 : 0;
 
-            if (aciertaEnElAgujero) {
-                fallosRealizados = 0;
-            }
+            int seleccionJugador = seleccionarAgujero(inputUser);
 
-            boolean demasiadosFallosSeguidos = fallosRealizados >= 3;
+            boolean aciertaEnElAgujero = aciertaEnElAgujero(seleccionJugador, PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO);
 
-            if (demasiadosFallosSeguidos) {
+            int avanceDelCaballo = moverCamello(aciertaEnElAgujero, seleccionJugador, AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO);
+            posicionDelCamello += avanceDelCaballo;
+            int recorridoRestante = recorridoTotal - posicionDelCamello;
+
+            fallosRealizados = gestionDeFallos(aciertaEnElAgujero, fallosRealizados);
+
+            if (fallosRealizados >= 3) {
                 fallosRealizados = 0;
                 posicionDelCamello = 0;
             }
 
-            int recorridoRestante;
-            recorridoRestante = (recorridoTotal - posicionDelCamello) >= 0 ? (recorridoTotal - posicionDelCamello) : 0;
+            if (recorridoRestante >= 0) {
+                recorridoRestante = 0;
+            }
 
-            System.out.println((casillasQueAvanzaElCamello == 0 ? COLOR_RED : COLOR_ORANGE) + "Has avanzado: " + casillasQueAvanzaElCamello + COLOR_RESET);
+            System.out.println((avanceDelCaballo == 0 ? COLOR_RED : COLOR_ORANGE) + "Has avanzado: " + avanceDelCaballo
+                    + COLOR_RESET);
             System.out.println((recorridoRestante == 0 ? COLOR_GREEN : COLOR_RED) + "Te quedan: " + recorridoRestante
                     + COLOR_RESET);
 
@@ -64,5 +52,36 @@ class Carrera {
         } while (posicionDelCamello < recorridoTotal);
 
         inputUser.close();
+    }
+
+    public static int seleccionarAgujero(Scanner inputUser) {
+        System.out.println(COLOR_GREEN + "Opciones: 1 | 2 | 3 | 4" + COLOR_RESET);
+        System.out.println("Elige un agujero al que tirar: ");
+
+        int seleccionJugador;
+        do {
+            seleccionJugador = inputUser.nextInt() - 1;
+        } while (seleccionJugador < 0 || seleccionJugador > 3);
+
+        return seleccionJugador;
+    }
+
+    public static boolean aciertaEnElAgujero(int seleccionJugador, double[] probabilidades) {
+        return Math.random() <= probabilidades[seleccionJugador];
+    }
+
+    public static int moverCamello(boolean acierta, int seleccionJugador, int[] avances) {
+        if (acierta) {
+            return avances[seleccionJugador];
+        }
+
+        return 0;
+    }
+
+    public static int gestionDeFallos(boolean acierta, int fallosRealizados) {
+        if (acierta) {
+            return 0;
+        }
+        return fallosRealizados++;
     }
 }
