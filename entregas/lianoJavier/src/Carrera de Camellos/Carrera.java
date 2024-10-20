@@ -1,59 +1,60 @@
 import java.util.Scanner;
 
 class Carrera {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        final String COLOR_RESET = "\u001B[0m";
+        final String COLOR_BLUE = "\u001B[34m";
+        final String COLOR_GREEN = "\u001B[32m";
+        final String COLOR_RED = "\u001B[31m";
+        final String COLOR_ORANGE = "\u001B[38;5;214m";
+        
         Scanner inputUser = new Scanner(System.in);
 
-        final double PROBABILIDAD_ACIERTO_AGUJERO_1 = 0.6;
-        final double PROBABILIDAD_ACIERTO_AGUJERO_2 = 0.4;
-        final double PROBABILIDAD_ACIERTO_AGUJERO_3 = 0.3;
-        final double PROBABILIDAD_ACIERTO_AGUJERO_4 = 0.1;
+        final int AGUJERO_1 = 0;
+        final int AGUJERO_2 = 1;
+        final int AGUJERO_3 = 2;
+        final int AGUJERO_4 = 3;
 
-        final int AVANCE_ACIERTO_AGUJERO_1 = 1;
-        final int AVANCE_ACIERTO_AGUJERO_2 = 2;
-        final int AVANCE_ACIERTO_AGUJERO_3 = 4;
-        final int AVANCE_ACIERTO_AGUJERO_4 = 6;
+        final double[] PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO = { 0.6, 0.4, 0.3, 1 };
+        final int[] AVANCE_POR_ACERTAR_EN_EL_AGUJERO = { 1, 2, 4, 6 };
 
-        int recorrido = 0;
+        int espacioRecorrido = 0;
         int recorridoTotal = 60;
-        
-        do {
-            System.out.println("Opciones: 1 | 2 | 3 | 4");
-            System.out.println("Elige un agujero al que tirar:");
-            int seleccionJugador = inputUser.nextInt();
+        int turno = 1;
 
+        do {
+            System.out.println("");
+            System.out.println(COLOR_BLUE + "TURNO - [" + turno + "]" + COLOR_RESET);
+            System.out.println(COLOR_GREEN + "Opciones: 1 | 2 | 3 | 4" + COLOR_RESET);
+            System.out.print("Elige un agujero al que tirar: ");
+            
+            int seleccionJugador;
+            do {
+                seleccionJugador = inputUser.nextInt() - 1;
+            } while (seleccionJugador < 0 || seleccionJugador > 3);
+             
             int avance = 0;
 
-            if (seleccionJugador == 1 && Math.random() <= PROBABILIDAD_ACIERTO_AGUJERO_1) {
+            avance = 
+                seleccionJugador == AGUJERO_1 && Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_1] ? AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_1] :
+                seleccionJugador == AGUJERO_2 && Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_2] ? AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_2] :
+                seleccionJugador == AGUJERO_3 && Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_3] ? AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_3] :
+                seleccionJugador == AGUJERO_4 && Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[AGUJERO_4] ? AVANCE_POR_ACERTAR_EN_EL_AGUJERO[AGUJERO_4] :
+                0;
 
-                avance = AVANCE_ACIERTO_AGUJERO_1;
+                espacioRecorrido += avance;
 
-            } else if (seleccionJugador == 2 && Math.random() <= PROBABILIDAD_ACIERTO_AGUJERO_2) {
+            int recorridoRestante;
+            recorridoRestante = (recorridoTotal - espacioRecorrido) >= 0 ? (recorridoTotal - espacioRecorrido) : 0;
 
-                avance = AVANCE_ACIERTO_AGUJERO_2;
+            System.out.println((avance == 0 ? COLOR_RED : COLOR_ORANGE) + "Has avanzado: " + avance + COLOR_RESET);
+            System.out.println((recorridoRestante == 0 ? COLOR_GREEN : COLOR_RED) + "Te quedan: " + recorridoRestante + COLOR_RESET);
 
-            } else if (seleccionJugador == 3 && Math.random() <= PROBABILIDAD_ACIERTO_AGUJERO_3) {
+            turno++;
 
-                avance = AVANCE_ACIERTO_AGUJERO_3;
-
-            } else if (Math.random() <= PROBABILIDAD_ACIERTO_AGUJERO_4) {
-
-                avance = AVANCE_ACIERTO_AGUJERO_4;
-
-            }
-
-            recorrido += avance;
-
-            int recorridoRestante; 
-            recorridoRestante = (recorridoTotal - recorrido) >= 0 ? (recorridoTotal - recorrido) : 0;
-
-            System.out.println("Has avanzado: "+ avance);
-            System.out.println("Te quedan: "+ recorridoRestante);
-
-        } while (recorrido <= recorridoTotal);
+        } while (espacioRecorrido < recorridoTotal);
 
         inputUser.close();
-
     }
 }
