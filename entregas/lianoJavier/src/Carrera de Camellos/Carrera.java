@@ -23,6 +23,8 @@ class Carrera {
         do {
             System.out.println("");
             System.out.println(COLOR_BLUE + "TURNO - [" + turno + "]" + COLOR_RESET);
+            System.out.println(COLOR_GREEN + "Opciones: 1 | 2 | 3 | 4" + COLOR_RESET);
+            System.out.println("Elige un agujero al que tirar: ");
 
             int seleccionJugador = seleccionarAgujero(inputUser);
 
@@ -38,7 +40,6 @@ class Carrera {
             }
 
             posicionDelCamello += avanceDelCamello;
-
             fallosRealizados = gestionDeFallos(jugadorAciertaEnElAgujero, fallosRealizados);
 
             if (fallosRealizados >= 3) {
@@ -48,11 +49,7 @@ class Carrera {
 
             mostrarEstadoDelJuego(avanceDelCamello, posicionDelCamello, camelloTropezo);
 
-            if (camelloTropezo) {
-                turno += 2;
-            } else {
-                turno++;
-            }
+            turno += camelloTropezo ? 2 : 1;
 
         } while (posicionDelCamello < RECORRIDO_TOTAL && turno <= 50);
 
@@ -60,9 +57,6 @@ class Carrera {
     }
 
     public static int seleccionarAgujero(Scanner inputUser) {
-        System.out.println(COLOR_GREEN + "Opciones: 1 | 2 | 3 | 4" + COLOR_RESET);
-        System.out.println("Elige un agujero al que tirar: ");
-
         int seleccionJugador;
         do {
             seleccionJugador = inputUser.nextInt() - 1;
