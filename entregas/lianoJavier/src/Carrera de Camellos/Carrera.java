@@ -11,10 +11,10 @@ class Carrera {
 
         Scanner inputUser = new Scanner(System.in);
 
-        final double[] PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO = { 0.6, 0.4, 0.3, 0.1 };
-        final int[] AVANCE_POR_ACERTAR_EN_EL_AGUJERO = { 1, 2, 4, 6 };
+        final double[] PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO = { 0.6, 0.4, 0.3, 0.1 };
+        final int[] AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO = { 1, 2, 4, 6 };
 
-        int espacioRecorrido = 0;
+        int posicionDelCamello = 0;
         int recorridoTotal = 60;
         int turno = 1;
         
@@ -30,12 +30,12 @@ class Carrera {
                 seleccionJugador = inputUser.nextInt() - 1;
             } while (seleccionJugador < 0 || seleccionJugador > 3);
             
-            boolean aciertaEnElAgujero = Math.random() <= PROBABILIDAD_ACIERTAR_EN_EL_AGUJERO[seleccionJugador];
+            boolean aciertaEnElAgujero = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO[seleccionJugador];
             
-            int avance = 0;
+            int casillasQueAvanzaElCamello = 0;
             if (aciertaEnElAgujero) {
-                avance = AVANCE_POR_ACERTAR_EN_EL_AGUJERO[seleccionJugador];
-                espacioRecorrido += avance;
+                casillasQueAvanzaElCamello = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO[seleccionJugador];
+                posicionDelCamello += casillasQueAvanzaElCamello;
             }
             
             int fallosRealizados = 0;
@@ -49,19 +49,19 @@ class Carrera {
 
             if (demasiadosFallosSeguidos) {
                 fallosRealizados = 0;
-                espacioRecorrido = 0;
+                posicionDelCamello = 0;
             }
 
             int recorridoRestante;
-            recorridoRestante = (recorridoTotal - espacioRecorrido) >= 0 ? (recorridoTotal - espacioRecorrido) : 0;
+            recorridoRestante = (recorridoTotal - posicionDelCamello) >= 0 ? (recorridoTotal - posicionDelCamello) : 0;
 
-            System.out.println((avance == 0 ? COLOR_RED : COLOR_ORANGE) + "Has avanzado: " + avance + COLOR_RESET);
+            System.out.println((casillasQueAvanzaElCamello == 0 ? COLOR_RED : COLOR_ORANGE) + "Has avanzado: " + casillasQueAvanzaElCamello + COLOR_RESET);
             System.out.println((recorridoRestante == 0 ? COLOR_GREEN : COLOR_RED) + "Te quedan: " + recorridoRestante
                     + COLOR_RESET);
 
             turno++;
 
-        } while (espacioRecorrido < recorridoTotal);
+        } while (posicionDelCamello < recorridoTotal);
 
         inputUser.close();
     }
