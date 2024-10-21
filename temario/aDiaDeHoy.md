@@ -53,3 +53,8 @@
 - Operadores de comparación.
 - Operador ternario.
 
+## Estructuras de control
+
+- Bloque de código
+- Estructuras repetitivas: while, do ... while, for
+- Estructuras altenativas: if ... else-if ... else.
