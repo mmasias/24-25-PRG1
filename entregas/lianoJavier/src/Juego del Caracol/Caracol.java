@@ -14,6 +14,7 @@ class Caracol {
         final String PARED_CON_CARACOL = "  []    _@)/'   []";
         final String BASE = "  [][][][][][][][]";
         final String SEPARADOR_ALTURA = "_ __";
+        final String DIVISION = "---------------------";
 
         final int PROFUNDIDAD_POZO = 20;
 
@@ -41,14 +42,10 @@ class Caracol {
         int nivelAgua = 0;
 
         do {
-
-            boolean isCoche = Math.random() <= PROBABILIDAD_HAYA_COCHE;
-
-            boolean islluviaFuerte = Math.random() <= PROBABILIDAD_LLUVIA_FUERTE;
-            boolean islluviaMedia = Math.random() <= PROBABILIDAD_LLUVIA_MEDIA;
-
-            System.out.println("---------------------");
+            System.out.println(DIVISION);
             System.out.println("DÍA: " + dia);
+
+            boolean hayCoche = Math.random() <= PROBABILIDAD_HAYA_COCHE;
 
             if (dia != 1) {
 
@@ -67,17 +64,18 @@ class Caracol {
                 posicionCaracol = posicionCaracol
                         - subeCaracol
                         + bajaCaracol
-                        + (isCoche ? DESCENSO_COCHE : 0);
-                        
-                        nivelAgua += (islluviaFuerte ? NIVEL_AGUA_LLUVIA_FUERTE : 0)
-                        + (islluviaMedia ? NIVEL_AGUA_LLUVIA_MEDIA : 0);
-                        
+                        + (hayCoche ? DESCENSO_COCHE : 0);
+
+                boolean llueveFuerte = Math.random() <= PROBABILIDAD_LLUVIA_FUERTE;
+                boolean llueveMedia = Math.random() <= PROBABILIDAD_LLUVIA_MEDIA;
+                nivelAgua += (llueveFuerte ? NIVEL_AGUA_LLUVIA_FUERTE : 0)
+                        + (llueveMedia ? NIVEL_AGUA_LLUVIA_MEDIA : 0);
 
                 if (posicionCaracol > (PROFUNDIDAD_POZO - nivelAgua)) {
                     posicionCaracol = (PROFUNDIDAD_POZO - nivelAgua) - 1;
-                }
-
-                if(posicionCaracol < 0) {
+                } 
+                
+                if (posicionCaracol < 0) {
                     posicionCaracol = 0;
                 }
 
@@ -87,7 +85,7 @@ class Caracol {
                 System.out.println("posición del caracol [" + posicionCaracol + "]");
             }
 
-            if (isCoche) {
+            if (hayCoche) {
                 System.out.println(SUPERFICIE_COCHE);
             } else {
                 System.out.println(SUPERFICIE);
@@ -119,6 +117,7 @@ class Caracol {
         boolean isCaracolInanicion = dia >= 50;
         boolean isCaracolAhogo = posicionCaracol >= PROFUNDIDAD_POZO - nivelAgua;
         System.out.println(isCaracolAhogo ? CaracolAhogo : isCaracolInanicion ? CaracolInanicion : CaracolSalio);
+
         saltarLinea.close();
 
     }
