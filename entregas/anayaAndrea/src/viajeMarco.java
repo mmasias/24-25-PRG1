@@ -14,10 +14,18 @@ class ViajeMarco {
             final double PROBABILIDAD_MONO_SE_CANSA=0.25;
 
             double velocidadMarco, tiempoMarco, avanceMarco;
+            double distanciaMarcoMadre=350;
             double probabilidadLluvia;
             double probabilidadSeCansa, probabilidadSeEscapa;
+            boolean seHanEncontrado=false;
+            int dias=0;
+            double avanceMadre=88;
 
-            probabilidadLluvia=Math.random();
+            while(!seHanEncontrado){
+               dias++;
+               System.out.println("La distancia con la madre es:");
+               System.out.println("DIA"+dias); 
+               probabilidadLluvia=Math.random();
             probabilidadSeCansa=Math.random();
             probabilidadSeEscapa=Math.random();
 
@@ -48,6 +56,12 @@ class ViajeMarco {
            avanceMarco=velocidadMarco*tiempoMarco;
 
            System.out.println("Avanza:"+avanceMarco);
+
+           distanciaMarcoMadre=distanciaMarcoMadre=avanceMarco+80;
+
+           seHanEncontrado=!(distanciaMarcoMadre>0);}
+
+           entrada.nextLine();
            
            entrada.close();
 
