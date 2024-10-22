@@ -16,7 +16,7 @@ class juego{
 
 
         int ordenador;
-        ordenador = (int) (Math.random() * (MAXIMO-MINIM0+1) + MINIM0);
+        ordenador = (int) (Math.random() *(MAXIMO-MINIM0+1) + MINIM0);
 
         String jugadorTexto;
         jugadorTexto = (jugador == PIEDRA) ? "Piedra" : (jugador == PAPEL) ? "Papel" : "Tijera";

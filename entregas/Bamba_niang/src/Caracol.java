@@ -6,6 +6,11 @@ class caracol{
         final String POZO_PARED = "####:. :. :. :. :.#### _ __";
         final String POZO_AGUA = "##~~~~~~~~~~~~~~~~~~~~~~## _ __";
         final String POZO_CARACOL = " ##    _@)_/`   #### _ __";
+        final String POZO_INFERIOR = "#########################";
+
+
+        String inputUsuario;
+        
 
         
 
@@ -62,8 +67,16 @@ class caracol{
         dia++;
         
     } while (profundidadcaracol>0);
+     System.out.println(POZO_INFERIOR);
+     inputUsuario = entrada.nextLine();
+
+
+
+
              
         } 
+    
+
 
           
     }
