@@ -58,7 +58,7 @@ class ViajeMarco {
 
             distanciaMarcoMadre = distanciaMarcoMadre - avanceMarco + avanceMadre;
 
-            seHanEncontrado = !(distanciaMarcoMadre > 0);
+            seHanEncontrado = distanciaMarcoMadre <= 0;
             
             entrada.nextLine();
         }
