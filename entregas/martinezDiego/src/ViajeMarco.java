@@ -19,8 +19,6 @@ public class ViajeMarco {
         final double DISTANCIA_INICIAL = 350;
 
         double velocidadMarco, trayectoMarco, avanceMarco;
-        double probabilidadLluvia = Math.random();
-        double probabilidadMono = Math.random();
         double distanciaMarco = 0;
         double distanciaMadre = DISTANCIA_INICIAL;
         double avanceMadre = 80;
@@ -32,39 +30,45 @@ public class ViajeMarco {
             scanner.nextLine();
             dia++;
             System.out.println("DIA " + dia);
+            double probabilidadLluviaFuerte = Math.random();
+            double probabilidadLluviaNormal = Math.random();
+            double probabilidadMonoCansado = Math.random();
+            double probabilidadMonoFugado = Math.random();
+            double probabilidadMonoCansadoYFugado = Math.random();
 
             velocidadMarco = Math.random() * (VELOCIDAD_MAXIMA - VELOCIDAD_MINIMA + 1) + VELOCIDAD_MINIMA;
             trayectoMarco = Math.random() * (TRAYECTO_MAXIMO - TRAYECTO_MINIMO + 1) + TRAYECTO_MINIMO;
 
-            if (probabilidadLluvia <= LLUVIA_FUERTE) {
+            if (probabilidadLluviaFuerte <= LLUVIA_FUERTE) {
                 velocidadMarco = velocidadMarco * 0.25;
                 System.out.println("Ha llovido fuerte");
-            } else if (probabilidadLluvia <= LLUVIA_NORMAL) {
+            } else if (probabilidadLluviaNormal <= LLUVIA_NORMAL) {
                 velocidadMarco = velocidadMarco * 0.75;
                 System.out.println("Ha llovido normal");
             } else
                 System.out.println("Ha hecho buen tiempo");
 
-            if (probabilidadMono <= MONO_CANSADO) {
+            if (probabilidadMonoCansado <= MONO_CANSADO) {
                 velocidadMarco = velocidadMarco * 0.9;
                 System.out.println("El mono se ha cansado");
-            } else if (probabilidadMono <= MONO_FUGADO) {
+            } else if (probabilidadMonoFugado <= MONO_FUGADO) {
                 trayectoMarco = trayectoMarco - 2;
                 System.out.println("El mono se ha fugado");
-            } else
-                System.out.println("El mono ha estado tranquilo");
-            if (probabilidadMono <= MONO_CANSADO_Y_FUGADO) {
+            } else if (probabilidadMonoCansadoYFugado <= MONO_CANSADO_Y_FUGADO) {
                 velocidadMarco = velocidadMarco * 0.9;
                 trayectoMarco = trayectoMarco - 2;
                 System.out.println("El mono se ha cansado y se ha fugado");
-            }
+
+            } else
+                System.out.println("El mono ha estado tranquilo");
 
             avanceMarco = velocidadMarco * trayectoMarco;
             distanciaMarco = distanciaMarco + avanceMarco;
-            System.out.println(" Marco ha avanzado " +  distanciaMarco + " km" + " a una velocidad de "+ velocidadMarco + " km/h " + " y con un trayecto de " + trayectoMarco + " horas");
+            System.out.println(" Marco ha avanzado " + distanciaMarco + " km" + " a una velocidad de " + velocidadMarco
+                    + " km/h " + " y con un trayecto de " + trayectoMarco + " horas");
 
             distanciaMadre = distanciaMadre + avanceMadre;
-            System.out.println(" La madre ha avanzado " +  distanciaMadre + " km ");
+            System.out.println(" La madre ha avanzado " + distanciaMadre + " km ");
 
             if (distanciaMarco >= distanciaMadre) {
                 seHanEncontrado = true;
@@ -77,6 +81,3 @@ public class ViajeMarco {
     }
 
 }
-
-
-    
