@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class ejemploClase {
+public class EjemploClase {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
        int minimo,maximo;
