@@ -49,7 +49,13 @@ class Caracol2 {
             if (profundidadAgua > PROFUNDIDAD) {
                 profundidadAgua = PROFUNDIDAD;
             }
-            
+
+            if (dia % 5 == 0) {
+                profundidadAgua = 0;
+                System.out.println(
+                        "Día " + dia + ": Se evapora toda el agua. Nivel de agua: " + profundidadAgua + " metros.");
+            }
+
             if (dia > 50) {
                 esteVivo = false;
             } else if (dia > 20) {
@@ -82,7 +88,12 @@ class Caracol2 {
             System.out.println("Día [" + dia + "] - Sube: [" + caracolSube + "] - Baja: [" + caracolBaja
                     + "] - Posición: [" + profundidadCaracol + "]");
 
-            System.out.println(aparcaCoche ? POZO_CON_COCHE : POZO_SUPERIOR);
+            if (aparcaCoche) {
+                System.out.println("¡Un coche ha aparecido en el pozo! El caracol se cayó 2 metros");
+                System.out.println(POZO_CON_COCHE);
+            } else {
+                System.out.println(POZO_SUPERIOR);
+            }
 
             for (int i = 0; i <= PROFUNDIDAD; i++) {
                 if (i == profundidadCaracol) {
