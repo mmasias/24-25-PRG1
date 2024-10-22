@@ -1,4 +1,4 @@
-import java.util.scanner;
+import java.util.Scanner;
 
 public class ViajeMarco 
 {
@@ -27,7 +27,6 @@ public class ViajeMarco
         
             dia++;
             System.out.println("DIA: " + dia);
-            System.out.println();
 
            if (probabilidadLluvia <= PROBABLIDAD_LLUVIA_FUERTE) {
             System.out.println("¡¡Hoy ha llovido muchisimo!!");
@@ -49,6 +48,7 @@ public class ViajeMarco
             tiempoMarco = tiempoMarco - 2;
            }
 
+           System.out.println("Marco avanzo " + avanceMarco + "km en " + tiempoMarco + " horas");
         
 
 
