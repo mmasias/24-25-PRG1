@@ -17,7 +17,7 @@ public class HolaMundo{
         System.out.println(dinero);
         System.out.println(nombre);
 
-        System.out.println("Me llamo" + nombre + "tengo" + edad + "años y" + dinero + "euros");
+        System.out.println("Me llamo "+ nombre + "tengo "+ edad + "años y" + dinero + "euros");
 
         dinero = dinero + 100;
 
