@@ -16,12 +16,23 @@ class ViajeMarco {
         double velocidadMarco, tiempoMarco, avanceMarco;
         double probabilidadLluvia;
         double probabilidadSecansa, probabilidadSeEscapa;
-     
+        double distanciaMarcoMadre= 350; 
+        boolean  seHanEncontrado = false;
+        int dias = 0;
+        double avanceMadre = 88;
 
+     
+        while(!seHanEncontrado){
+        dias++;
+
+        System.out.println("La distancia de la madre es : + distanciaMarcoMadre");     
+        System.out.println("DIA"+ "+dias");     
         probabilidadLluvia = Math.random();
       
     
         velocidadMarco = Math.random ()*(VELOCIDAD_MAXIMA-VELOCIDAD_MINIMA)+VELOCIDAD_MINIMA;
+        velocidadMarco = Math.random ()*(TIEMPO_MAXIMO-TIEMPO_MINIMO)+TIEMPO_MINIMO;
+
 
 
         if (probabilidadLluvia<=PROBABILIDAD_LLUVIA_FUERTE){
@@ -40,8 +51,8 @@ class ViajeMarco {
 
         probabilidadSecansa = Math.random();
 
-        if (probabilidadSeEscapa<PROBABILIDAD_MONO_ESCAPA){
-            System.out.println("El mono se escapa!");
+        if (probabilidadSecansa<PROBABILIDAD_MONO_SE_CANSA){
+            System.out.println("El mono se cansa!");
             velocidadMarco= velocidadMarco* 0.9;
         }
 
@@ -50,7 +61,7 @@ class ViajeMarco {
   
         probabilidadSeEscapa = Math.random();
 
-        if(probabilidadSecansa<PROBABILIDAD_MONO_ESCAPA){
+        if(probabilidadSeEscapa<=PROBABILIDAD_MONO_ESCAPA){
             System.out.println("El mono se escapa!");
             tiempoMarco= tiempoMarco-2;
         }
@@ -58,6 +69,12 @@ class ViajeMarco {
         avanceMarco= velocidadMarco* tiempoMarco;
 
         System.out.println("Avanza:" + avanceMarco);
+
+        seHanEncontrado= !(distanciaMarcoMadre>0);
+
+        entrada. nextLine();
+      }
         entrada.close();
+     
     }
 }
