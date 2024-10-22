@@ -3,6 +3,7 @@ import java.util.Scanner;
 class JuegoMarco {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
+        
 
           final double VELOCIDAD_MAXIMA = 15;
           final double VELOCIDAD_MINIMA = 10;
@@ -15,10 +16,18 @@ class JuegoMarco {
 
 
           double velocidadMarco, tiempoMarco, avanceMarco;
+          double distanciaMarcoMadre = 350;
           double probabilidadLluvia;
-          double probababilodadSeCansa, probabilidadSeEscapa;
+          double probabilidadSeCansa, probabilidadSeEscapa;
+          boolean seHanEncontrado = false;
+          int dia = 0;
+          double avanceMadre = 80;
 
-          probabilidadLluvia = Math.random();
+          while (!seHanEncontrado) {      
+            dia++;
+            System.out.println("DIA"+dia);
+            System.out.println("La distancia con la madre es:" + distanciaMarcoMadre);
+            probabilidadLluvia = Math.random();
 
           velocidadMarco =(Math.random()*VELOCIDAD_MAXIMA-VELOCIDAD_MINIMA)+VELOCIDAD_MINIMA;
           
@@ -34,7 +43,7 @@ class JuegoMarco {
 
           }
 
-          probababilodadSeCansa = Math.random();
+          probabilidadSeCansa = Math.random();
           if(probabilidadSeCansa<=PROBABILIDAD_MONO_CANSA) {
              System.out.println("El mono se cansa!");
              velocidadMarco = velocidadMarco * 0.9;
@@ -43,18 +52,20 @@ class JuegoMarco {
           tiempoMarco = (Math.random()*TIEMPO_MAXIMO-TIEMPO_MINIMA)+TIEMPO_MINIMA;
 
           probabilidadSeEscapa = Math.random();
-          if (probababilodadSeEscapa<=PROBABILIDAD_MONO_ESCAPA) {
+          if (probabilidadSeEscapa<=PROBABILIDAD_MONO_ESCAPA) {
             System.out.println("El mono se escapa!");
-            tiempoMarco = tiempo-2;
+            tiempoMarco = tiempoMarco - 2;
           }
           
           avanceMarco = velocidadMarco*tiempoMarco;
 
           System.out.println ("Avanza: " + avanceMarco);
 
-
-
-
+          distanciaMarcoMadre = distanciaMarcoMadre - avanceMarco + avanceMadre;
+          seHanEncontrado = !(distanciaMarcoMadre>0);
+          entrada.nextLine();
+          }
+          
 
         entrada.close();
     }
