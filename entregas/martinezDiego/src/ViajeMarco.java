@@ -61,10 +61,10 @@ public class ViajeMarco {
 
             avanceMarco = velocidadMarco * trayectoMarco;
             distanciaMarco = distanciaMarco + avanceMarco;
-            System.out.println(" Marco ha avanzado" + distanciaMarco + "km");
+            System.out.println(" Marco ha avanzado " +  distanciaMarco + " km" + " a una velocidad de "+ velocidadMarco + " km/h " + " y con un trayecto de " + trayectoMarco + " horas");
 
             distanciaMadre = distanciaMadre + avanceMadre;
-            System.out.println(" La madre ha avanzado " + distanciaMadre + "km");
+            System.out.println(" La madre ha avanzado " +  distanciaMadre + " km ");
 
             if (distanciaMarco >= distanciaMadre) {
                 seHanEncontrado = true;
