@@ -17,16 +17,16 @@ public class Caracol {
         final String POZO_PARED = "  ##:. :. :. :. :.## _ __";
         final String POZO_AGUA = "  ##~~~~~~~~~~~~~~## _ __";
         final String POZO_CARACOL = "  ##    @)_/'     ## _ __";
-        final String POZO_CON_COCHE = "  ##     O-=-O    ##";
+        final String POZO_CON_COCHE = "####     O-=-O    ####";
 
         final double P_LLUVIA_FUERTE = 0.05;
-        final double P_LLUVIA_DEBIL = 0.015;
+        final double P_LLUVIA_DEBIL = 0.15;
 
         int profundidadAgua = 0;
-        int profundidadCaracol = (int)(Math.random() * (PROFUNDIDAD - PROFUNDIDAD_MIN) + 1) + PROFUNDIDAD_MIN;;
+        int profundidadCaracol = (int)(Math.random() * (PROFUNDIDAD - PROFUNDIDAD_MIN) + 1) + PROFUNDIDAD_MIN;
         int subidaCaracol;
         int bajadaCaracol;
-        int dia = 0;
+        int dia = 1;
         int aporteAgua;
 
         boolean esteVivo = true;
@@ -39,7 +39,6 @@ public class Caracol {
             dia++;
 
             double probabilidadLluvia = Math.random();
-
             if (probabilidadLluvia <= P_LLUVIA_FUERTE) {
                 aporteAgua = 5;
             } else if (probabilidadLluvia <= P_LLUVIA_FUERTE + P_LLUVIA_DEBIL) {
@@ -48,8 +47,12 @@ public class Caracol {
                 aporteAgua = 0;
             }
 
-            profundidadAgua += aporteAgua;
-
+            if ((dia%5) == 0) {
+                profundidadAgua = 0;
+            } else {
+                profundidadAgua += aporteAgua;
+            }
+            
             bajadaCaracol = (int)(Math.random() * (MAX_BAJADA - MIN_BAJADA + 1)) + MIN_BAJADA;
             if (dia <= 10) {
                 subidaCaracol = (int)(Math.random() * (MAX_SUBIDA -  MIN_SUBIDA + 1)) + MIN_SUBIDA;
@@ -98,14 +101,15 @@ public class Caracol {
                 esteVivo = false;
                 System.out.println("Causa de muerte: Hambre");
             }
+
         } while (!haSalido && esteVivo);
 
         if (!esteVivo) {
             System.out.println("El caracol ha muerto a -" + profundidadCaracol + " metros de profundidad.");
         } else {
-            System.out.println("El caracol ha logrado salir del pozo después de " + dia + " días!");
+            System.out.println("El caracol ha tardado en salir del pozo en " + dia + " días");
         }
-
+        
         scanner.close();
     }
 }
