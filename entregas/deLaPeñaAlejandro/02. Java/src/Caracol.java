@@ -3,7 +3,6 @@ import java.util.Scanner;
 class Caracol{
     public static void main(String[] args) {
      try (Scanner entrada = new Scanner(System.in)) {
-        String inputUsuario;
 
         System.out.println("Sube Caracol!!");
         final int PROFUNDIDAD = 20;
@@ -59,7 +58,7 @@ class Caracol{
             }
             System.out.println(POZO_BASE);
             haSalido = profundidadCaracol <= 0;
-            inputUsuario = entrada.nextLine();
+            String inputUsuario = entrada.nextLine();
 
         } while (!haSalido && esteVivo);
     } 
