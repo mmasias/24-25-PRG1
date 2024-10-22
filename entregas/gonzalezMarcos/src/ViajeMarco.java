@@ -46,7 +46,6 @@ class ViajeMarco {
             tiempoMarco = tiempoMarco -2;
         }
 
-
         tiempoMarco = (Math.random()*TIEMPO_MAXIMO-TIEMPO_MINIMO+1)+TIEMPO_MINIMO;
         avanceMarco = velocidadMarco * tiempoMarco;
 
