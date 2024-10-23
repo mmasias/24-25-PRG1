@@ -8,6 +8,7 @@ class ppt {
 
         int numeroDeVictorias = 0;
         int numeroDePerdidas = 0;
+        int numeroDeEmpates = 0;
         int jugada = 1;
 
         do {
@@ -23,13 +24,17 @@ class ppt {
             final int PIEDRA = 0;
             final int PAPEL = 1;
             final int TIJERA = 2;
-            victoria = !(jugadaDelRobot == jugadaDelUsuario)
-                    || (jugadaDelUsuario == PAPEL && jugadaDelRobot == PIEDRA)
+            victoria = (jugadaDelUsuario == PAPEL && jugadaDelRobot == PIEDRA)
                     || (jugadaDelUsuario == PIEDRA && jugadaDelRobot == TIJERA)
                     || (jugadaDelUsuario == TIJERA && jugadaDelRobot == PAPEL);
+            
+            boolean empate;
+            empate = jugadaDelRobot == jugadaDelUsuario;
 
             if (victoria) {
                 numeroDeVictorias++;
+            } else if (empate) {
+                numeroDeEmpates++;
             } else {
                 numeroDePerdidas++;
             }
@@ -47,8 +52,22 @@ class ppt {
             System.out.println("JUGADA: " + jugada);
             System.out.println("Elección del Jugador: " + textoJugadaUsuario);
             System.out.println("Elección del Robot: " + textoJugadaRobot);
-            System.out.println(
-                    "Victorias - [" + numeroDeVictorias + "] Derrotas - [" + numeroDePerdidas + "]");
+
+            if (victoria) {
+                System.out.println("Has ganado!");
+            }
+
+            if (empate) {
+                System.out.println("Habeis empatado!");
+            }
+
+            if (!(victoria || empate)) {
+                System.out.println("Has perdido!");
+            }
+
+            System.out.println("Victorias - [" + numeroDeVictorias + "] "
+                    + "Derrotas - [" + numeroDePerdidas + "] "
+                    + "Empates - [" + numeroDeEmpates + "]");
             System.out.println("");
 
         } while (numeroDeVictorias < 2 || jugada < 3);
