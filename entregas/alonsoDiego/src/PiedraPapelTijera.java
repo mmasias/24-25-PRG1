@@ -22,6 +22,7 @@ class PiedraPapelTijera{
         int eleccionOrdenador;
 
         System.out.println("PIEDRA, PAPEL O TIJERA");
+        System.out.println("======================");
 
         for(int turno=0 ; turno<3 ; turno++){
             do{
