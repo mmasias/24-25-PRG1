@@ -1,0 +1,44 @@
+    package entregas.caicedoEsteban;
+
+import java.util.Scanner;
+
+class CarreraCamellos {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        int posicion=0;
+        int posicionSegundo = 3;
+
+        final String CAMELLO = ",--,^";
+        final String PISTA = "...";
+
+        final int MAXIMO = 4;
+        final int MINIMO = 1;
+
+        final int FINAL = 30;
+
+
+        boolean enCarrea = true;
+        int turno = 0;
+        
+        while (enCarrea) {
+            turno++;
+            int avance = (int) (Math.random()*MAXIMO-MINIMO+1)+MINIMO;
+            posicion = posicion+avance;
+            System.out.println("===".repeat(FINAL +1));
+            System.out.println("Turno:"+turno);
+            
+            System.out.println(PISTA.repeat(posicion)+CAMELLO);
+            System.out.println(PISTA.repeat(posicionSegundo)+CAMELLO);
+            
+            enCarrea = posicion<FINAL;
+            
+            entrada.nextLine();
+
+            System.out.println("Ha ganado el " + (posicion > posicionSegundo ? "primero"
+                : (posicion == posicionSegundo ? "empate" : "segundo")));
+
+
+        }
+    }
+}
