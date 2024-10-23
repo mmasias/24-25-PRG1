@@ -18,22 +18,32 @@ class ViajeMarco{
         rain_chance=Math.random();
         speed = Math.random()*(max_speed-min_speed)+min_speed;
        
-        if (probabilidadLluvia <= PROBABILIDAD_LLUVIA_FUERTE) {
-            System.out.println("Lluvia fuerte");
-            velocidadMarco = velocidadMarco * 0.25;
-        } else if (probabilidadLluvia <= PROBABILIDAD_LLUVIA_NORMAL) {
-            System.out.println("Lluvia fina");
-            velocidadMarco = velocidadMarco * 0.75;
-        } else {
-            System.out.println("Buen tiempo");
-        }
         
         if (rain_chance<=strong_rain_chance){
             System.out.println("strong rain happened");
             speed=speed*0.25;
         }else if (rain_chance<=normal_rain_chance){
-        }else{
             System.out.println("average rain bruh");
+        }else{
+            System.out.println("No rain!!");
         }
+
+        tired_chance=Math.random();
+        if (tired_chance<monkey_tired){
+            System.out.println("monkey is tired");
+            speed=speed*0.9;
+        }
+
+        time=Math.random()*(max_time-min_time)+min_time;
+
+        scape_chance=Math.random();
+        if(scape_chance<=monkey_escape){
+            System.out.println("monkey has escaped!!!!!!!");
+            time=time-2;
+        }
+        advancement=speed*time;
+        System.out.println("Advancement is ["+advancement+"]");
+        scan.close();
+
     }
 }
