@@ -58,7 +58,7 @@ class Caracol{
             }
             System.out.println(POZO_BASE);
             haSalido = profundidadCaracol <= 0;
-            String inputUsuario = entrada.nextLine();
+            entrada.nextLine();
 
         } while (!haSalido && esteVivo);
     } 
