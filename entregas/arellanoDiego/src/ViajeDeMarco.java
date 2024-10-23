@@ -14,53 +14,53 @@ class ViajeDeMarco {
             final double PROBABILIDAD_MONO_ESCAPE = 0.15; 
             final double PROBABILIDAD_MONO_SE_CANSA = 0.25;
 
-            double distanciaMarcoMadre = 350;
             double velocidadMarco, tiempoMarco, avanceMarco;
+            double distanciaMarcoMadre = 350;
             double probabilidadLluvia;
             double probabilidadSeCansa, probabilidadSeEscapa;
             boolean seHanEncontrado = false;
             int dias = 0;
+            double avanceMadre = 80;
 
 
             while(!seHanEncontrado) {
-            dias++;
-            
-            System.out.println("La distancia con la madre es: "+distanciaMarcoMadre);
-            System.out.println("DIA" + dias);
-            probabilidadLluvia = Math.random();
+                dias++;
+                System.out.println("La distancia con la madre es: "+distanciaMarcoMadre);
+                System.out.println("DIA" + dias);
+                probabilidadLluvia = Math.random();
 
-            velocidadMarco = Math.random()*(VELOCIDAD_MAXIMA-VELOCIDAD_MINIMA)+VELOCIDAD_MINIMA;
-            tiempoMarco = Math.random()*(TIEMPO_MAXIMO-TIEMPO_MINIMO)+TIEMPO_MINIMO;
+                velocidadMarco = Math.random()*(VELOCIDAD_MAXIMA-VELOCIDAD_MINIMA)+VELOCIDAD_MINIMA;
+                tiempoMarco = Math.random()*(TIEMPO_MAXIMO-TIEMPO_MINIMO)+TIEMPO_MINIMO;
 
-            if (probabilidadLluvia<=PROBABILIDAD_LLUVIA_FUERTE){
-                System.out.println("Lluvia fuerte");
-                velocidadMarco = velocidadMarco*0.25;
-            } else if (probabilidadLluvia<=PROBABILIDAD_LLUVIA_NORMAL){
-                System.out.println("Lluvia fina");
-            } else {
-                System.out.println("Buen tiempo");
-            }
+                if (probabilidadLluvia<=PROBABILIDAD_LLUVIA_FUERTE){
+                    System.out.println("Lluvia fuerte");
+                    velocidadMarco = velocidadMarco*0.25;
+                } else if (probabilidadLluvia<=PROBABILIDAD_LLUVIA_NORMAL){
+                    System.out.println("Lluvia fina");
+                } else {
+                    System.out.println("Buen tiempo");
+                }
 
-            probabilidadSeCansa = Math.random();
-            if (probabilidadSeCansa<PROBABILIDAD_MONO_SE_CANSA){
-                System.out.println("El mono se cansa");
-                velocidadMarco = velocidadMarco * 0.9;
-            }
+                probabilidadSeCansa = Math.random();
+                if (probabilidadSeCansa<PROBABILIDAD_MONO_SE_CANSA){
+                    System.out.println("El mono se cansa");
+                    velocidadMarco = velocidadMarco * 0.9;
+                }
 
-            probabilidadSeEscapa = Math.random();
-            if (probabilidadSeEscapa<PROBABILIDAD_MONO_ESCAPE){
+                probabilidadSeEscapa = Math.random();
+                if (probabilidadSeEscapa<=PROBABILIDAD_MONO_ESCAPE){
                 System.out.println(" Mono se escapa ");
                 tiempoMarco = tiempoMarco-2;
             } 
 
-            avanceMarco = velocidadMarco*tiempoMarco; 
+                avanceMarco = velocidadMarco*tiempoMarco; 
 
-            System.out.println("Avanza: " + avanceMarco);
+                System.out.println("Avanza: " + avanceMarco);
 
-            distanciaMarcoMadre = distanciaMarcoMadre - avanceMarco + 80;
-            
-            seHanEncontrado = !(distanciaMarcoMadre<=0);
-            entrada.nextLine();
+                distanciaMarcoMadre = distanciaMarcoMadre - avanceMarco + avanceMadre;
+                
+                seHanEncontrado = !(distanciaMarcoMadre>0);
+                entrada.nextLine();
         }
 
         entrada.close();
