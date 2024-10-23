@@ -1,4 +1,4 @@
-package entregas.PerozoDiego;
+package src;
 
 import java.util.Scanner;
 
