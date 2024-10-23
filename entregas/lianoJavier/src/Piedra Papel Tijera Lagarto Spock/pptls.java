@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-class ppt {
+class pptls {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -13,21 +13,30 @@ class ppt {
 
         do {
             System.out.println("Elige entre: ");
-            System.out.println("Piedra [0] | Papel [1] | Tijera [2]");
+            System.out.println("Piedra [0] | Papel [1] | Tijera [2] | LAGARTO - [3] | SPOCK - [4]");
             int jugadaDelUsuario = entrada.nextInt();
 
             final int VALOR_MINIMO = 0;
-            final int VALOR_MAXIMO = 2;
+            final int VALOR_MAXIMO = 4;
             int jugadaDelRobot = (int) (Math.random() * (VALOR_MAXIMO - VALOR_MINIMO + 1) + VALOR_MINIMO);
 
             boolean victoria;
             final int PIEDRA = 0;
             final int PAPEL = 1;
             final int TIJERA = 2;
+            final int LAGARTO = 3;
+            final int SPOCK = 4;
             victoria = (jugadaDelUsuario == PAPEL && jugadaDelRobot == PIEDRA)
+                    || (jugadaDelUsuario == PAPEL && jugadaDelRobot == SPOCK)
                     || (jugadaDelUsuario == PIEDRA && jugadaDelRobot == TIJERA)
-                    || (jugadaDelUsuario == TIJERA && jugadaDelRobot == PAPEL);
-            
+                    || (jugadaDelUsuario == PIEDRA && jugadaDelRobot == LAGARTO)
+                    || (jugadaDelUsuario == TIJERA && jugadaDelRobot == PAPEL)
+                    || (jugadaDelUsuario == TIJERA && jugadaDelRobot == LAGARTO)
+                    || (jugadaDelUsuario == LAGARTO && jugadaDelRobot == PAPEL)
+                    || (jugadaDelUsuario == LAGARTO && jugadaDelRobot == SPOCK)
+                    || (jugadaDelUsuario == SPOCK && jugadaDelRobot == PIEDRA)
+                    || (jugadaDelUsuario == SPOCK && jugadaDelRobot == TIJERA);
+
             boolean empate;
             empate = jugadaDelRobot == jugadaDelUsuario;
 
@@ -43,11 +52,15 @@ class ppt {
 
             String textoJugadaUsuario = jugadaDelUsuario == PAPEL ? "Papel"
                     : jugadaDelUsuario == PIEDRA ? "Piedra"
-                            : "Tijera";
+                            : jugadaDelUsuario == TIJERA ? "Tijera"
+                                    : jugadaDelUsuario == LAGARTO ? "Lagarto"
+                                            : "Spock";
 
-            String textoJugadaRobot = jugadaDelRobot == PAPEL ? "Papel"
-                    : jugadaDelRobot == PIEDRA ? "Piedra"
-                            : "Tijera";
+            String textoJugadaRobot = jugadaDelUsuario == PAPEL ? "Papel"
+                    : jugadaDelUsuario == PIEDRA ? "Piedra"
+                            : jugadaDelUsuario == TIJERA ? "Tijera"
+                                    : jugadaDelUsuario == LAGARTO ? "Lagarto"
+                                            : "Spock";
 
             System.out.println("JUGADA: " + jugada);
             System.out.println("Elección del Jugador: " + textoJugadaUsuario);
