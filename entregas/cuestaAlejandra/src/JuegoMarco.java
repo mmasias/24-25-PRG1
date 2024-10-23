@@ -25,19 +25,19 @@ class JuegoMarco {
 
           while (!seHanEncontrado) {      
             dia++;
-            System.out.println("DIA"+dia);
+            System.out.println("DIA" + dia);
             System.out.println("La distancia con la madre es:" + distanciaMarcoMadre);
             probabilidadLluvia = Math.random();
 
-          velocidadMarco =(Math.random()*VELOCIDAD_MAXIMA-VELOCIDAD_MINIMA)+VELOCIDAD_MINIMA;
+          velocidadMarco =(Math.random() * VELOCIDAD_MAXIMA-VELOCIDAD_MINIMA)+VELOCIDAD_MINIMA;
           
 
           if (probabilidadLluvia<=PROBABILIDAD_LLUVIA_FUERTE){
              System.out.println("Lluvia fuerte");
-             velocidadMarco = velocidadMarco*0.25;
+             velocidadMarco = velocidadMarco * 0.25;
           } else if (probabilidadLluvia<=PROBABILIDAD_LLUVIA_NORMAL) {
              System.out.println("Lluvia fina");
-             velocidadMarco = velocidadMarco*0.75;
+             velocidadMarco = velocidadMarco * 0.75;
           } else{
             System.out.println("Buen tiempo");
 
@@ -49,7 +49,7 @@ class JuegoMarco {
              velocidadMarco = velocidadMarco * 0.9;
           }
 
-          tiempoMarco = (Math.random()*TIEMPO_MAXIMO-TIEMPO_MINIMA)+TIEMPO_MINIMA;
+          tiempoMarco = (Math.random()*TIEMPO_MAXIMO - TIEMPO_MINIMA) + TIEMPO_MINIMA;
 
           probabilidadSeEscapa = Math.random();
           if (probabilidadSeEscapa<=PROBABILIDAD_MONO_ESCAPA) {
@@ -57,9 +57,9 @@ class JuegoMarco {
             tiempoMarco = tiempoMarco - 2;
           }
           
-          avanceMarco = velocidadMarco*tiempoMarco;
+          avanceMarco = velocidadMarco * tiempoMarco;
 
-          System.out.println ("Avanza: " + avanceMarco);
+          System.out.println ("Marco avanza: " + avanceMarco);
 
           distanciaMarcoMadre = distanciaMarcoMadre - avanceMarco + avanceMadre;
           seHanEncontrado = !(distanciaMarcoMadre>0);
