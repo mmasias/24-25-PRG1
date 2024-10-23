@@ -14,19 +14,21 @@ class ViajeMarco {
         final double PROBABILIDAD_MONO_SE_CANSA = 0.25;
 
         double velocidadMarco, tiempoMarco, avanceMarco;
+        double distanciaMarcoMadre = 350;
         double probabilidadLluvia;
         double probabilidadSeCansa, probabilidadSeEscapa;
-        int dia = 0;
-        double avanceMadre = 80;
         boolean seHanEncontrado = false;
+        int dias = 0;
+        double avanceMadre = 80;
 
         while (!seHanEncontrado) {
-            dia++;
-            System.out.println("DIA: " + dia);
+            dias++;
+            System.out.println("La distancia con la madre es: "+distanciaMarcoMadre);
+            System.out.println("DIA "+dias);
             probabilidadLluvia = Math.random();
-            probabilidadSeEscapa = Math.random();
 
-            velocidadMarco = (Math.random() * VELOCIDAD_MAXIMA - VELOCIDAD_MINIMA + 1) + VELOCIDAD_MINIMA;
+            velocidadMarco = Math.random() * (VELOCIDAD_MAXIMA - VELOCIDAD_MINIMA) + VELOCIDAD_MINIMA;
+            tiempoMarco = Math.random() * (TIEMPO_MAXIMO - TIEMPO_MINIMO) + TIEMPO_MINIMO;
 
             if (probabilidadLluvia <= PROBABILIDAD_LLUVIA_FUERTE) {
                 System.out.println("Lluvia fuerte");
@@ -39,26 +41,28 @@ class ViajeMarco {
             }
 
             probabilidadSeCansa = Math.random();
-            if (probabilidadSeCansa < PROBABILIDAD_MONO_SE_CANSA) {
+            if (probabilidadSeCansa <= PROBABILIDAD_MONO_SE_CANSA) {
                 System.out.println("El mono se cansa!");
                 velocidadMarco = velocidadMarco * 0.9;
             }
 
-            tiempoMarco = Math.random() * (TIEMPO_MAXIMO - TIEMPO_MINIMO) + TIEMPO_MINIMO;
-
-            if (probabilidadSeEscapa < PROBABILIDAD_MONO_ESCAPA) {
+            probabilidadSeEscapa = Math.random();
+            if (probabilidadSeEscapa <= PROBABILIDAD_MONO_ESCAPA) {
                 System.out.println("El mono se escapa!");
                 tiempoMarco = tiempoMarco - 2;
             }
 
-            tiempoMarco = (Math.random() * TIEMPO_MAXIMO - TIEMPO_MINIMO + 1) + TIEMPO_MINIMO;
             avanceMarco = velocidadMarco * tiempoMarco;
 
-            System.out.println("Avanza " + avanceMarco + " metros");
+            System.out.println("Avanza: " + avanceMarco);
 
+            distanciaMarcoMadre = distanciaMarcoMadre - avanceMarco + avanceMadre;
+
+            seHanEncontrado = distanciaMarcoMadre <= 0;
             
-            entrada.close();
-
+            entrada.nextLine();
         }
+
+        entrada.close();
     }
 }
