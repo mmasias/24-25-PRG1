@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
-public class Temporal.java {
-        public static void main(String[] args) {
+public class Marco {
+    
+public static void main(String[] args) {
             Scanner entrada = newScanner(System.in);
             String inputUsuario;
     
@@ -68,4 +69,6 @@ public class Temporal.java {
           
         }
     }
+
+    
 }
