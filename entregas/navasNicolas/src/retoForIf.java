@@ -1,4 +1,4 @@
-class RetoForIf {
+class retoForIf {
     public static void main(String[] args) {
 
         int dimension = 21;
