@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 class Carrera {
@@ -10,16 +11,28 @@ class Carrera {
         final String COLOR_ORANGE = "\u001B[38;5;214m";
         final int RECORRIDO_TOTAL = 60;
 
+        final String CAMELLO = ",---,^";
+        final String PISTA = "__";
+
         Scanner inputUser = new Scanner(System.in);
 
-        final double[] PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO = { 0.6, 0.4, 0.3, 0.1 };
-        final double PROBABILIDAD_DE_QUE_EL_CAMELLO_TROPIECE = 0.1;
-        final int[] AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO = { 1, 2, 4, 6 };
+        final double PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_1 = 0.6,
+                PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_2 = 0.4,
+                PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_3 = 0.3,
+                PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_4 = 0.1;
 
-    do {
-        int posicionDelCamello = 0;
+        final double PROBABILIDAD_DE_QUE_EL_CAMELLO_TROPIECE = 0.1;
+
+        final int AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_1 = 1,
+                AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_2 = 2,
+                AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_3 = 4,
+                AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_4 = 6;
+
+        int posicionDelCamelloUsuario = 0;
+        int posicionDelCamelloRobot = 0;
         int turno = 1;
-        int fallosRealizados = 0;
+        do {
+            int fallosRealizados = 0;
             System.out.println("");
             System.out.println(COLOR_BLUE + "TURNO - [" + turno + "]" + COLOR_RESET);
             System.out.println(COLOR_GREEN + "Opciones: 1 | 2 | 3 | 4" + COLOR_RESET);
@@ -28,47 +41,89 @@ class Carrera {
             int seleccionJugador;
 
             do {
-                seleccionJugador = inputUser.nextInt() - 1;
-            } while (seleccionJugador < 0 || seleccionJugador > 3);
+                seleccionJugador = inputUser.nextInt();
+            } while (seleccionJugador < 1 || seleccionJugador > 4);
 
-            boolean jugadorAciertaEnElAgujero = Math
-                    .random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO[seleccionJugador];
+            final int SELECCION_MAXIMA_ROBOT = 1;
+            final int SELECCION_MINIMA_ROBOT = 4;
 
-            int avanceDelCamello = jugadorAciertaEnElAgujero
-                    ? AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO[seleccionJugador]
-                    : 0;
+            int seleccionRobot = (int) (Math.random() * (SELECCION_MAXIMA_ROBOT - SELECCION_MINIMA_ROBOT) + SELECCION_MINIMA_ROBOT);
 
-            boolean camelloTropezo = Math.random() <= PROBABILIDAD_DE_QUE_EL_CAMELLO_TROPIECE;
-            if (camelloTropezo) {
-                avanceDelCamello = 0;
+            boolean AciertaEnElAgujeroUsuario;
+            int avanceDelCamelloUsuario;
+
+            switch (seleccionJugador) {
+                case 1 -> {
+                    AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_1;
+                    avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_1;
+                }
+                case 2 -> {
+                    AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_2;
+                    avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_2;
+                }
+                case 3 -> {
+                    AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_3;
+                    avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_3;
+                }
+                default -> {
+                    AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_4;
+                    avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_4;
+                }
             }
 
-            posicionDelCamello += avanceDelCamello;
-            fallosRealizados = jugadorAciertaEnElAgujero ? 0 : fallosRealizados++;
+            int avanceDelCamelloRobot;
+
+            switch (seleccionRobot) {
+                case 1 ->
+                    avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_1;
+                case 2 ->
+                    avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_2;
+                case 3 ->
+                    avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_3;
+                default ->
+                    avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_4;
+            }
+
+            boolean camelloTropezo = Math.random() <= PROBABILIDAD_DE_QUE_EL_CAMELLO_TROPIECE;
+
+            if (camelloTropezo) {
+                avanceDelCamelloUsuario = 0;
+            }
+
+            posicionDelCamelloUsuario += avanceDelCamelloUsuario;
+            posicionDelCamelloRobot += avanceDelCamelloRobot;
+
+            if (!(AciertaEnElAgujeroUsuario)) {
+                fallosRealizados++;
+            }
 
             if (fallosRealizados >= 3) {
                 fallosRealizados = 0;
-                posicionDelCamello = 0;
+                posicionDelCamelloUsuario = 0;
             }
 
             if (camelloTropezo) {
                 System.out.println("El camello se tropezó.");
             }
 
-            System.out.println((avanceDelCamello == 0 ? COLOR_RED : COLOR_ORANGE) + "Has avanzado: " + avanceDelCamello
+            System.out.println((avanceDelCamelloUsuario == 0 ? COLOR_RED : COLOR_ORANGE) + "Has avanzado: " + avanceDelCamelloUsuario
                     + COLOR_RESET);
 
-            int recorridoRestante = RECORRIDO_TOTAL - posicionDelCamello;
+            int recorridoRestante = RECORRIDO_TOTAL - posicionDelCamelloUsuario;
             if (recorridoRestante <= 0) {
                 recorridoRestante = 0;
             }
             System.out.println(
                     (recorridoRestante == 0 ? COLOR_GREEN : COLOR_RED) + "Te quedan: " + recorridoRestante
-                            + COLOR_RESET);
+                    + COLOR_RESET);
+
+            System.out.println(PISTA.repeat(posicionDelCamelloUsuario) + CAMELLO);
+            System.out.println("---------------------------");
+            System.out.println(PISTA.repeat(posicionDelCamelloRobot) + CAMELLO);
 
             turno += camelloTropezo ? 2 : 1;
 
-        } while (posicionDelCamello < RECORRIDO_TOTAL && turno <= 50);
+        } while ((posicionDelCamelloUsuario < RECORRIDO_TOTAL && posicionDelCamelloRobot < RECORRIDO_TOTAL) && turno <= 50);
 
         inputUser.close();
     }
