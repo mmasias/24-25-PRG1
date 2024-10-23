@@ -21,7 +21,7 @@ int caracolBaja=0;
 int PROFUNDIDAD=20;
 int profundidadAgua = 0;
 int profundidadCaracol = (int)(Math.random()*PROFUNDIDAD_MAX-PROFUNDIDAD_MIN + 1) + PROFUNDIDAD_MAX;
-System.out.print("Al incio el caracol cae a ["+profundidadCaracol+"] metros");
+System.out.println("Al incio el caracol cae a ["+profundidadCaracol+"] metros");
 
 do {
 dia++; 
@@ -31,17 +31,17 @@ caracolBaja = (int)(Math.random()*(2-0+1)+0);
 
 profundidadCaracol= profundidadCaracol - caracolSube + caracolBaja;
 
-System.out.println("Dia|"+dia+"| - Subio|"+caracolSube+"| - Bajo|"+caracolBaja+"| - Posicion|"+profundidadCaracol+"")
+System.out.println("Dia|"+dia+"| - Subio|"+caracolSube+"| - Bajo|"+caracolBaja+"| - Posicion|"+profundidadCaracol+"");
 
-System.out.print(POZO_SUPERIOR);
+System.out.println(POZO_SUPERIOR);
 for(int i=0;i<=PROFUNDIDAD;i++)
 if (i== profundidadCaracol){
-System.out.print(POZO_CARACOL + i);}
+System.out.println(POZO_CARACOL + i);}
 else if (i>PROFUNDIDAD-profundidadAgua) {
-System.out.print(POZO_AGUA + i);}
+System.out.println(POZO_AGUA + i);}
 else {
-    System.out.print(POZO_PARED + i);
+    System.out.println(POZO_PARED + i);
 } System.out.println(POZO_INFERIOR);
 }  while (profundidadCaracol>0);
-}
+} 
 } 
