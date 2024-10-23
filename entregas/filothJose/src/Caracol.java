@@ -11,7 +11,7 @@ public class Caracol {
     final String POZO_PARED = "[]:. :. :. :. :.[] _ __ ";
     final String POZO_AGUA = "~~~~~~~~~~~~ _ __";
     final String POZO_CARACOL = "[]    _@)_/'    [] _ __";
-    final String POZOZ_CON_COCHE = "[  ]    COCHE      [  ] _ __ "
+    final String POZOZ_CON_COCHE = "[  ]    COCHE      [  ] _ __ ";
 
     final int PROFUNDIDAD_MAXIMA = 20;
     final int PROFUNDIDAD_MINIMA = 10;
