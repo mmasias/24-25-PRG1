@@ -34,7 +34,7 @@ class CarreraCamellos {
             System.out.println("Turno:" + turno);
             System.out.println(PISTA.repeat(posicionPrimero) + CAMELLO);
             System.out.println(PISTA.repeat(posicionSegundo) + CAMELLO);
-            enCarrera = posicionPrimero < FINAL;
+            enCarrera = (posicionPrimero < FINAL && posicionSegundo < FINAL);
             entrada.nextLine();
         }
 
