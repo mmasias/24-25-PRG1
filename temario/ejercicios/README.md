@@ -13,5 +13,5 @@
 |[Juego de la herradura](https://github.com/puntoReflex/.github/blob/main/retos%26proyectos/juegoHerradura.md)
 |[Whac-a-mole](https://github.com/puntoReflex/.github/blob/main/retos%26proyectos/whacAMole.md)
 |[Adivinación](https://github.com/puntoReflex/.github/blob/main/retos%26proyectos/adivinacion.md)
-|[Carrera de camellos](https://github.com/puntoReflex/.github/blob/main/retos%26proyectos/carreraCamellos.md)
+|[Carrera de camellos](https://github.com/puntoReflex/.github/blob/main/retos%26proyectos/carreraCamellos.md)|[📝](/entregas/masiasManuel/src/CarreraCamellos.java)|Agregar una (o varias) posiciones en las que el camello si cae vuelve al inicio.
 |[RetoForIf](https://github.com/puntoReflex/.github/blob/main/retos%26proyectos/forIf.md)
