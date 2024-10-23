@@ -1,74 +1,70 @@
-import java.util.Scanner;
+    import java.util.Scanner;
 
-public class Marco {
-    
-public static void main(String[] args) {
-            Scanner entrada = newScanner(System.in);
-            String inputUsuario;
-    
-            final String POZO_SUPERIOR = "[__]              [__]";
-            final String POZO_CON_COCHE ="[__]   COCHE      [__]";
-            final String POZO_PARED = "[]:. :. :. :. :.[] _ __";
-            final String POZO_INFERIOR = " [][][][][][][][][] ";
-            final String POZO_AGUA = "[]~~~~~~~~~~~~~~[] _ __ ";
-            final String CARACOL = "[]    _@)_/’    [] _ __ ";
+    public class Marco {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
 
-             final int PROFUNDIDAD = 20;
-             final int MAXIMA =20;
-             final int MINIMA =10;
+        final double VELOCIDAD_MAXIMA = 15;
+        final double VELOCIDAD_MINIMA = 10;
+        final double TIEMPO_MAXIMO = 10;
+        final double TIEMPO_MINIMO = 8;
+        final double PROBABILIDAD_LLUVIA_FUERTE = 0.1;
+        final double PROBABILIDAD_LLUVIA_NORMAL = 0.4;
+        final double PROBABILIDAD_MONO_ESCAPA = 0.15;
+        final double PROBABILIDAD_MONO_SE_CANSA = 0.25;
 
-             final int PROBABILIDAD_LLUVIA_FUERTE = 0.05;
-             final int PROBABILIDAD_LLUVIA_MEDIA = 0.15;
+        double velocidadMarco, tiempoMarco, avanceMarco;
+        double distanciaMarcoMadre = 350;
+        double probabilidadLluvia;
+        double probabilidadSeCansa, probabilidadSeEscapa;
+        boolean seHanEncontrado = false;
+        int dias = 0;
+        double avanceMadre = 80;
 
-                  
-            int dia=0;
-            int caracolSube=0;
-            int caracolBaja=0;
+        while (!seHanEncontrado) {
+            dias++;
+            System.out.println("La distancia con la madre es: "+distanciaMarcoMadre);
+            System.out.println("DIA "+dias);
+            probabilidadLluvia = Math.random();
 
-            int profundidadAgua =0;
-            int profundidadCaracol = (int)(Math.random()*MAXIMA-MINIMA+1)+MINIMA;
-            System.out.println("Al inicio el caracol cae a ["+profundidadCaracol+"]metros");
+            velocidadMarco = Math.random() * (VELOCIDAD_MAXIMA - VELOCIDAD_MINIMA) + VELOCIDAD_MINIMA;
+            tiempoMarco = Math.random() * (TIEMPO_MAXIMO - TIEMPO_MINIMO) + TIEMPO_MINIMO;
 
-            do{
-                dia++;
+            if (probabilidadLluvia <= PROBABILIDAD_LLUVIA_FUERTE) {
+                System.out.println("Lluvia fuerte");
+                velocidadMarco = velocidadMarco * 0.25;
+            } else if (probabilidadLluvia <= PROBABILIDAD_LLUVIA_NORMAL) {
+                System.out.println("Lluvia fina");
+                velocidadMarco = velocidadMarco * 0.75;
+            } else {
+                System.out.println("Buen tiempo");
+            }
 
-                double probabilidadLluvia = Math.random();
-                int aporteAgua = probabilidadLluvia <=PROBABILIDAD_LLUVIA_FUERTE ? 5 :
-                                     probabilidadLluvia <= PROBABILIDAD_LLUVIA_MEDIA ? 2 : 0;
-                profundidadAgua = profundidadAgua + aporteAgua;
+            probabilidadSeCansa = Math.random();
+            if (probabilidadSeCansa <= PROBABILIDAD_MONO_SE_CANSA) {
+                System.out.println("El mono se cansa!");
+                velocidadMarco = velocidadMarco * 0.9;
+            }
 
+            probabilidadSeEscapa = Math.random();
+            if (probabilidadSeEscapa <= PROBABILIDAD_MONO_ESCAPA) {
+                System.out.println("El mono se escapa!");
+                tiempoMarco = tiempoMarco - 2;
+            }
 
-                caracolSube = (int)(Math.random()*(4-1+1)+1);
-                caracolBaja = (int)(Math.random()*(2-0+1)+0);
+            avanceMarco = velocidadMarco * tiempoMarco;
 
-                boolean aparcaCoche = Math.random()<=0.35;
+            System.out.println("Avanza: " + avanceMarco);
 
-                profundidadCaracol = profundidadCaracol
-                                      -caracolSube
-                                      +caracolBaja
-                                      +(aparcaCoche ? 2 :0);
-                
-                System.out.println("Dia["+dia+"]- Subio["+caracolSube+" - Bajo["+caracolBaja+"] - Posicion["+profundidadCaracol+"]");
-                System.out.println(aparcaCoche?POZO_CON_COCHE:POZO_SUPERIOR);
-                for(int i=0;i<=PROFUNDIDAD;i++){
-                  if (i==profundidadCaracol) {
-                    System.out.println(CARACOL +i);
-                }else if (i>PROFUNDIDAD-profundidadAgua) {
-                    System.out.println(POZO_AGUA + i);
-                }else {
-                    System.out.println(POZO_PARED + i);
-                }
-            } 
-            System.out.println(POZO_INFERIOR);
-            inputUsuario = entrada.nextLine();
+            distanciaMarcoMadre = distanciaMarcoMadre - avanceMarco + avanceMadre;
 
-            haSalido = profundidadCaracol<=0;
-
-        }while(!haSalido);
-
-          
+            seHanEncontrado = distanciaMarcoMadre <= 0;
+            
+            entrada.nextLine();
         }
-    }
 
-    
+        entrada.close();
+    }
 }
+    
+
