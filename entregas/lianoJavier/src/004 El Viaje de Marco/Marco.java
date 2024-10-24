@@ -108,8 +108,7 @@ class Marco {
                         if (distancia < 50) {
                                 final double PROBABILIDAD_ENCONTRAR_ALGUIEN_VIO_MADRE = 0.5;
 
-                                boolean marcoEncontroAAlguienQueVioASuMadre = Math
-                                                .random() >= PROBABILIDAD_ENCONTRAR_ALGUIEN_VIO_MADRE;
+                                boolean marcoEncontroAAlguienQueVioASuMadre = Math.random() >= PROBABILIDAD_ENCONTRAR_ALGUIEN_VIO_MADRE;
 
                                 if (marcoEncontroAAlguienQueVioASuMadre) {
                                         distancia -= 25;
