@@ -7,35 +7,30 @@ class Caracol {
 
         Scanner saltarLinea = new Scanner(System.in);
 
-        final String SUPERFICIE = "[__]            [__]";
-        final String SUPERFICIE_COCHE = "[__]    O-=-O   [__]";
-        final String PARED_VACIA = "  []:. :. :. :. []";
-        final String PARED_CON_AGUA = "  []~~~~~~~~~~~~[]";
-        final String PARED_CON_CARACOL = "  []    _@)/'   []";
-        final String BASE = "  [][][][][][][][]";
-        final String SEPARADOR_ALTURA = "_ __";
+        final String SUPERFICIE = "[__]            [__]",
+                SUPERFICIE_COCHE = "[__]    O-=-O   [__]",
+                PARED_VACIA = "  []:. :. :. :. []",
+                PARED_CON_AGUA = "  []~~~~~~~~~~~~[]",
+                PARED_CON_CARACOL = "  []    _@)/'   []",
+                BASE = "  [][][][][][][][]",
+                SEPARADOR_ALTURA = "_ __";
 
         final int PROFUNDIDAD_POZO = 20;
 
-        final int PROFUNDIDAD_MAXIMA_CARACOL = 10;
-        final int PROFUNDIDAD_MINIMA_CARACOL = 20;
+        final int PROFUNDIDAD_MAXIMA_CARACOL = 10, PROFUNDIDAD_MINIMA_CARACOL = 20;
 
         final int PROFUNDIDAD_MINIMA_SUBE_CARACOL = 1;
 
-        final int PROFUNDIDAD_MAXIMA_BAJAR_CARACOL = 2;
-        final int PROFUNDIDAD_MINIMA_BAJAR_CARACOL = 0;
+        final int PROFUNDIDAD_MAXIMA_BAJAR_CARACOL = 2, PROFUNDIDAD_MINIMA_BAJAR_CARACOL = 0;
 
         int posicionCaracol;
-        posicionCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA_CARACOL - PROFUNDIDAD_MINIMA_CARACOL + 1))
-                + PROFUNDIDAD_MINIMA_CARACOL);
+        posicionCaracol = (int) ((Math.random() * (PROFUNDIDAD_MAXIMA_CARACOL - PROFUNDIDAD_MINIMA_CARACOL + 1)) + PROFUNDIDAD_MINIMA_CARACOL);
 
         final int DESCENSO_COCHE = 2;
-        final int NIVEL_AGUA_LLUVIA_FUERTE = 5;
-        final int NIVEL_AGUA_LLUVIA_MEDIA = 2;
+        final int NIVEL_AGUA_LLUVIA_FUERTE = 5, NIVEL_AGUA_LLUVIA_MEDIA = 2;
 
         final double PROBABILIDAD_HAYA_COCHE = 0.35;
-        final double PROBABILIDAD_LLUVIA_FUERTE = 0.05;
-        final double PROBABILIDAD_LLUVIA_MEDIA = 0.1;
+        final double PROBABILIDAD_LLUVIA_FUERTE = 0.05, PROBABILIDAD_LLUVIA_MEDIA = 0.1;
 
         int dia = 1;
         int nivelAgua = 0;
@@ -44,8 +39,8 @@ class Caracol {
 
             boolean isCoche = Math.random() <= PROBABILIDAD_HAYA_COCHE;
 
-            boolean islluviaFuerte = Math.random() <= PROBABILIDAD_LLUVIA_FUERTE;
-            boolean islluviaMedia = Math.random() <= PROBABILIDAD_LLUVIA_MEDIA;
+            boolean lluveFuerte = Math.random() <= PROBABILIDAD_LLUVIA_FUERTE;
+            boolean lluveMedia = Math.random() <= PROBABILIDAD_LLUVIA_MEDIA;
 
             System.out.println("---------------------");
             System.out.println("DÍA: " + dia);
@@ -68,21 +63,28 @@ class Caracol {
                         - subeCaracol
                         + bajaCaracol
                         + (isCoche ? DESCENSO_COCHE : 0);
-                        
-                        nivelAgua += (islluviaFuerte ? NIVEL_AGUA_LLUVIA_FUERTE : 0)
-                        + (islluviaMedia ? NIVEL_AGUA_LLUVIA_MEDIA : 0);
-                        
+
+                nivelAgua += (lluveFuerte ? NIVEL_AGUA_LLUVIA_FUERTE : 0)
+                        + (lluveMedia ? NIVEL_AGUA_LLUVIA_MEDIA : 0);
 
                 if (posicionCaracol > (PROFUNDIDAD_POZO - nivelAgua)) {
                     posicionCaracol = (PROFUNDIDAD_POZO - nivelAgua) - 1;
                 }
 
-                if(posicionCaracol < 0) {
+                if (posicionCaracol < 0) {
                     posicionCaracol = 0;
                 }
 
-                System.out.println("posición del caracol [" + posicionCaracol + "] Caracol sube [" + subeCaracol
-                        + "] Caracol baja [" + bajaCaracol + "] Nivel agua [" + nivelAgua + "]");
+                boolean evaporaciónDelAgua = dia % 5 == 1;
+
+                if (evaporaciónDelAgua) {
+                    nivelAgua = 0;
+                }
+
+                System.out.println("posición del caracol [" + posicionCaracol + "]");
+                System.out.print("Caracol sube [" + subeCaracol + "]");
+                System.out.print("Caracol baja [" + bajaCaracol + "]");
+                System.out.print("Nivel agua [" + nivelAgua + "]");
             } else {
                 System.out.println("posición del caracol [" + posicionCaracol + "]");
             }
