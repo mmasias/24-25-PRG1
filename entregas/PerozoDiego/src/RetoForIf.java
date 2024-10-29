@@ -337,20 +337,18 @@ class RetoForIf {
                 
                 // PATRON NUMERO 21:
 
-                
-
-                if (
-                //El código desde aqui *********************************
-                
-                // El código hasta aquí *********************************
-                ) {
-                System.out.print("(*)");
-                } else {
-                System.out.print(" . ");
-                }
-                }
-                System.out.println();
-                }
+                // if (
+                // //El código desde aqui *********************************
+                // Math.abs(Math.sqrt(Math.pow(i - 11, 2) + Math.pow(j - 11, 2)) - 5) < 0.5
+                // // El código hasta aquí *********************************
+                // ) {
+                // System.out.print("(*)");
+                // } else {
+                // System.out.print(" . ");
+                // }
+                // }
+                // System.out.println();
+                // }
         }
     }
 
