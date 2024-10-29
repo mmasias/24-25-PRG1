@@ -13,8 +13,16 @@ public class MercadonaASCII {
         int unaFila = 0;
         int minutosFilaVacia = 0;
         int caja1 = 0, caja2 = 0, caja3 = 0, caja4 = 0;
+        int horas=9, minutos=0;
 
         for (int tiempoActual = 1; tiempoActual <= TIEMPO_TOTAL; tiempoActual++) {
+            
+            minutos++;
+            if(minutos>=60){
+                horas++;
+                minutos=0;
+            }
+            
             int llegaAlguien = Math.random() <= PROBABILIDAD_LLEGADA ? 1 : 0;
             unaFila = unaFila + llegaAlguien;
 
@@ -53,13 +61,14 @@ public class MercadonaASCII {
             boolean haEstadoVacia = (unaFila == 0 && llegaAlguien == 0);
             minutosFilaVacia = minutosFilaVacia + (haEstadoVacia ? 1 : 0);
 
-            System.out.println("Tiempo: " + tiempoActual);
+            System.out.println("Tiempo: [" + horas + "]:[" + minutos + "]");
             System.out.println((llegaAlguien > 0 ? "   ===>" : "       ") + PERSONA.repeat(unaFila));
             System.out.println("CAJA 1 " + PRODUCTO.repeat(caja1));
             System.out.println("CAJA 2 " + PRODUCTO.repeat(caja2));
             System.out.println("CAJA 3 " + PRODUCTO.repeat(caja3));
             System.out.println("CAJA 4 " + PRODUCTO.repeat(caja4));
             System.out.println("---------------------------------------------");
+            for(int i=0;i<1000000000;i++){}
         }
 
         System.out.println("Al final de la jornada, la fila ha estado " + minutosFilaVacia + " minutos vacia");
