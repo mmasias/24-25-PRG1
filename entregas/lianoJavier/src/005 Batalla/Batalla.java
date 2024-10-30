@@ -10,6 +10,9 @@ class Batalla {
         int turno = 0;
 
         while (viven) {
+            
+        
+            viven = poderGuerrero > 0 && poderVampiro > 0;
             turno++;
         }
     }
