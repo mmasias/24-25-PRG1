@@ -11,7 +11,7 @@ El repositorio de materiales y proyectos de la asignatura **Programación I** de
 - Evaluaciones
   - Evaluación continua: [Retos!](evaluaciones/retos/README.md)
   - Exámenes
-    - [testPreParcial](https://classroom.github.com/a/-PtrV32T) - Para hacer una simulación de entrega.
+    - [testPreParcial, second try](https://classroom.github.com/a/Hw3gmTIH) - Para hacer una simulación de entrega.
     - Parcial: [Enunciado](evaluaciones/examenes/examenParcial/README.md) | Repositorio de trabajo y entrega.
     - Final: [Enunciado](evaluaciones/examenes/examenFinal/README.md) | Repositorio de trabajo y entrega.
     - Extraordinario: [Enunciado](evaluaciones/examenes/examenExtraordinario/README.md) | Repositorio de trabajo y entrega.
