@@ -1,5 +1,5 @@
-public class JuegoBatalla {
-    class JuegoBatalla
+ class JuegoBatalla {
+    
     // Clase base Personaje
 abstract class Personaje {
     protected String nombre;
@@ -105,5 +105,5 @@ public class Batalla {
         System.out.println("\n¡La batalla ha terminado!");
     }
 }
-
+}
 
