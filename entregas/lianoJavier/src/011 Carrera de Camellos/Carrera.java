@@ -52,36 +52,29 @@ class Carrera {
             boolean AciertaEnElAgujeroUsuario;
             int avanceDelCamelloUsuario;
 
-            switch (seleccionJugador) {
-                case 1 -> {
-                    AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_1;
-                    avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_1;
-                }
-                case 2 -> {
-                    AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_2;
-                    avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_2;
-                }
-                case 3 -> {
-                    AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_3;
-                    avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_3;
-                }
-                default -> {
-                    AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_4;
-                    avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_4;
-                }
+            if (seleccionJugador == 1) {
+                AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_1;
+                avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_1;
+            } else if (seleccionJugador == 2) {
+                AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_2;
+                avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_2;
+            } else if (seleccionJugador == 3) {
+                AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_3;
+                avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_3;
+            } else {
+                AciertaEnElAgujeroUsuario = Math.random() <= PROBABILIDAD_DE_ACIERTAR_EN_EL_AGUJERO_4;
+                avanceDelCamelloUsuario = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_4;
             }
-
             int avanceDelCamelloRobot;
 
-            switch (seleccionRobot) {
-                case 1 ->
-                    avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_1;
-                case 2 ->
-                    avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_2;
-                case 3 ->
-                    avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_3;
-                default ->
-                    avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_4;
+            if (seleccionRobot == 1) {
+                avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_1;
+            } else if (seleccionRobot == 2) {
+                avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_2;
+            } else if (seleccionRobot == 3) {
+                avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_3;
+            } else {
+                avanceDelCamelloRobot = AVANCE_DEL_CAMELLO_POR_ACERTAR_EN_EL_AGUJERO_4;
             }
 
             boolean camelloTropezo = Math.random() <= PROBABILIDAD_DE_QUE_EL_CAMELLO_TROPIECE;
@@ -123,7 +116,8 @@ class Carrera {
 
             turno += camelloTropezo ? 2 : 1;
 
-        } while ((posicionDelCamelloUsuario < RECORRIDO_TOTAL && posicionDelCamelloRobot < RECORRIDO_TOTAL) && turno <= 50);
+        } while ((posicionDelCamelloUsuario < RECORRIDO_TOTAL && posicionDelCamelloRobot < RECORRIDO_TOTAL) && turno
+                <= 50);
 
         inputUser.close();
     }
