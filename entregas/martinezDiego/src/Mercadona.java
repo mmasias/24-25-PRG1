@@ -33,7 +33,7 @@ public class Mercadona {
                 numeroProductos = (int) (Math.random() * (MAXIMO_PRODUCTOS - MINIMO_PRODUCTOS + 1) + MINIMO_PRODUCTOS);
                 System.out.println("Caja1:" + "[" + numeroProductos + "]");
                 contadorProductos = numeroProductos;
-                contadorProductos = (!caja1Abierta)
+                
                 
 
 
