@@ -22,7 +22,7 @@ class mercadona {
 			if (llegaAlguien) {
 				cola++;
 			}
-
+			
 			boolean caja1Vacia = caja1 == 0;
 			colaVacia = cola <= 0;
 			if (caja1Vacia && !colaVacia) {
