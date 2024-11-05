@@ -4,7 +4,6 @@ class HolaMundo {
         double dinero= 100;
         String nombre = "Firibicundio";
         char unChar = 'x';
-        int fgfhfh;
 
         System.out.println("Inicio: ");
         System.out.println(edad);
