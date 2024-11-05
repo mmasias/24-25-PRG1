@@ -14,7 +14,7 @@ public class Edificio {
         final String VENTANA_CERRADA = "[ ]";
         final String LUZ_APAGADA = "[º]";
         final String LUZ_ENCENDIDA = "[*]";
-        final String INTERMEDIO = "[    ]";
+        final String INTERMEDIO = "[   ]";
         final String TECHO_HOTEL = "====================================";
         final String TECHO_HOTEL_2 = "  |    |    |  |####|  |    |    |  ";
         final String TECHO_HOTEL_3 = "               __/\\__             ";
@@ -34,7 +34,7 @@ public class Edificio {
                 System.out.println(TECHO_HOTEL_2);
                 System.out.println(TECHO_HOTEL);
                 for (int y = PLANTAS; y >= 1; y--){
-                    System.out.print("::");
+                    System.out.print(":");
                     for (int x = 0; x < HABITACIONES; x++) {
                         double probabilidadPersianaBajada = Math.random();
                         double probabilidadLuzEncendida = Math.random();
