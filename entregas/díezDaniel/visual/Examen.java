@@ -1,9 +1,17 @@
 public class Examen {
     public static void main(String args[]) {
-    //candies de cada nino
-        int c1 = 0;
-      int c2 = 0;
-            int c3 = 0;
+
+
+    //Caramelos para cada niño
+        static final int MAX_CARAMELOS = 20;
+
+        int[] caramelos = new int[3];
+        boolean[] bolsasLlenas = new boolean[3];
+
+        int piso = 1;
+        int casasVisitadas = 0;
+
+        
     
     //bolsas llenas?
         boolean b1 = false;
