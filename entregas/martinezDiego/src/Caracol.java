@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import java.util.Scanner;
 
 public class Caracol {
@@ -61,7 +61,7 @@ public class Caracol {
 
 
 
-=======
+
 import java.util.Scanner;
 
 public class Caracol {
@@ -124,4 +124,4 @@ public class Caracol {
 
 
 
->>>>>>> bc47d5cad1fdf9ec046309a7574490e656f86c32
+
