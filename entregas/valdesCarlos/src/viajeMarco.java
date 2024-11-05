@@ -21,5 +21,6 @@ class viajeMarco {
         avanceMarco = velocidadMarco*tiempoMarco;
 
         System.out.println("Avanza: " + avanceMarco);
+        
     }
 }
