@@ -35,5 +35,6 @@ public class juegoCamello {
         }
 
         scanner.close();
+        
     }
 }
