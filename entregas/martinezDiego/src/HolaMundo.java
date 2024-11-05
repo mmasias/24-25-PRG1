@@ -7,6 +7,7 @@ class HolaMundo {
         double dinero;
         String nombre;
         char unChar;
+        int uno;
 
         edad = 12;
         dinero = 100.0;
