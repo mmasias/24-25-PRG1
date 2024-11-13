@@ -14,22 +14,22 @@ public class MetodosStaticos {
             int llegaAlguien = Math.random() <= PROBABILIDAD_LLEGADA ? 1 : 0;
             unaFila = unaFila + llegaAlguien;
 
-            if (puedePasar(caja1, unaFila)) {
+            if (poderPasar(caja1, unaFila)) {
                 unaFila = unaFila - 1;
                 caja1 = generarProductos();
             }
 
-            if (puedePasar(caja2, unaFila)) {
+            if (poderPasar(caja2, unaFila)) {
                 unaFila = unaFila - 1;
                 caja2 = generarProductos();
             }
 
-            if (puedePasar(caja3, unaFila)) {
+            if (poderPasar(caja3, unaFila)) {
                 unaFila = unaFila - 1;
                 caja3 = generarProductos();
             }
 
-            if (puedePasar(caja4, unaFila)) {
+            if (poderPasar(caja4, unaFila)) {
                 unaFila = unaFila - 1;
                 caja4 = generarProductos();
             }
@@ -64,7 +64,7 @@ public class MetodosStaticos {
         for(int i=0;i<1000000000;i++){}
     }
 
-    static boolean puedePasar(int unaCaja, int laFila){
+    static boolean poderPasar(int unaCaja, int laFila){
         return(unaCaja <= 0 && laFila > 0);
     }
 
@@ -76,13 +76,14 @@ public class MetodosStaticos {
 
     static void darLaHora(int tiempoActual){
         int hora = (int) (tiempoActual/60) + 9;
-        int minutos = tiempoActual%60;
+        int minutos = tiempoActual % 60;
 
-        System.out.println("["+hora+"]:["+minutos+"]");
+        System.out.println("[" +hora+ "]:[" +minutos+ "]");
     }
 
     static int atender(int unaCaja){
 
-        return unaCaja<=0?0:unaCaja--;
+        return(unaCaja<=0?0:unaCaja--);
     }
+
 }
