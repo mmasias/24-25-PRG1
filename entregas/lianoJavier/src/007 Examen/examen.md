@@ -15,4 +15,3 @@
     Resultado:
     - >5 : 
 3. Salir del sistema.
-## 
