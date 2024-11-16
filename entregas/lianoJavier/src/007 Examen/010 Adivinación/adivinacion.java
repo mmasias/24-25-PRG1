@@ -6,7 +6,16 @@ class adivinacion {
 
     int numeroOrdenador = eleccionOrdenador(NUMERO_MAXIMO, NUMERO_MINIMO);
     int numeroUsuario = eleccionUsuario(NUMERO_MAXIMO, NUMERO_MINIMO);
+    imprimirResumen(numeroUsuario, numeroOrdenador);
 
+  }
+
+  private static void imprimirResumen(int numeroUsuario, int numeroOrdenador) {
+    boolean acierta = numeroOrdenador == numeroUsuario;
+    String resultado = "No has acertado";
+    if (acierta)
+      resultado = "Acertaste!";
+    System.out.println(resultado);
   }
 
   private static int eleccionUsuario(int numeroMaximo, int numeroMinimo) {
