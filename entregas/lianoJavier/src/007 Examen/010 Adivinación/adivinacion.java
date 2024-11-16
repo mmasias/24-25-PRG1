@@ -10,12 +10,8 @@ class adivinacion {
 
   }
 
-  private static void imprimirResumen(int numeroUsuario, int numeroOrdenador) {
-    boolean acierta = numeroOrdenador == numeroUsuario;
-    String resultado = "No has acertado";
-    if (acierta)
-      resultado = "Acertaste!";
-    System.out.println(resultado);
+  private static int eleccionOrdenador(int numeroMaximo, int numeroMinimo) {
+    return (int) ((Math.random() * numeroMaximo - numeroMinimo + 1) + numeroMinimo);
   }
 
   private static int eleccionUsuario(int numeroMaximo, int numeroMinimo) {
@@ -35,7 +31,12 @@ class adivinacion {
     return numero;
   }
 
-  private static int eleccionOrdenador(int numeroMaximo, int numeroMinimo) {
-    return (int) ((Math.random() * numeroMaximo - numeroMinimo + 1) + numeroMinimo);
+  private static void imprimirResumen(int numeroUsuario, int numeroOrdenador) {
+    boolean acierta = numeroOrdenador == numeroUsuario;
+    String resultado = "No has acertado";
+    if (acierta)
+      resultado = "Acertaste!";
+    System.out.println(resultado);
   }
+
 }
