@@ -1,18 +1,19 @@
 import java.util.Scanner;
 
 class adivinacion {
+  private static final int NUMERO_MAXIMO = 100, NUMERO_MINIMO = 1;
+
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    final int NUMERO_MAXIMO = 100, NUMERO_MINIMO = 1;
 
-    int numeroOrdenador = eleccionOrdenador(NUMERO_MAXIMO, NUMERO_MINIMO);
+    int numeroOrdenador = eleccionOrdenador();
 
     int numeroUsuario;
     final int MAXIMO_NUMERO_INTENTOS = 4;
     int intento = 0;
     boolean acierta;
     do {
-      numeroUsuario = eleccionUsuario(input, NUMERO_MAXIMO, NUMERO_MINIMO);
+      numeroUsuario = eleccionUsuario(input);
       acierta = numeroOrdenador == numeroUsuario;
       if (!acierta)
         darPista(numeroUsuario, numeroOrdenador);
@@ -31,11 +32,11 @@ class adivinacion {
     System.out.println(pista);
   }
 
-  private static int eleccionOrdenador(int numeroMaximo, int numeroMinimo) {
-    return (int) ((Math.random() * numeroMaximo - numeroMinimo + 1) + numeroMinimo);
+  private static int eleccionOrdenador() {
+    return (int) ((Math.random() * NUMERO_MAXIMO - NUMERO_MINIMO + 1) + NUMERO_MINIMO);
   }
 
-  private static int eleccionUsuario(Scanner input, int numeroMaximo, int numeroMinimo) {
+  private static int eleccionUsuario(Scanner input) {
     int numero;
     boolean numeroCorrecto;
     System.out.println("Elija un número entre 1 y 100. Ambos incluidos.");
@@ -43,7 +44,7 @@ class adivinacion {
     do {
       numero = input.nextInt();
 
-      numeroCorrecto = numero >= numeroMinimo && numero <= numeroMaximo;
+      numeroCorrecto = numero >= NUMERO_MINIMO && numero <= NUMERO_MAXIMO;
       if (!numeroCorrecto)
         System.out.println("Numero no valido.");
     } while (!numeroCorrecto);
