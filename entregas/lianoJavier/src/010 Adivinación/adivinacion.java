@@ -18,16 +18,17 @@ class adivinacion {
     int numero;
     boolean numeroCorrecto;
     System.out.println("Elija un número entre 1 y 100. Ambos incluidos.");
-    do {
 
-      Scanner input = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
+    do {
       numero = input.nextInt();
-      input.close();
 
       numeroCorrecto = numero >= numeroMinimo && numero <= numeroMaximo;
       if (!numeroCorrecto)
         System.out.println("Numero no valido.");
-    } while (numeroCorrecto);
+    } while (!numeroCorrecto);
+    input.close();
+
     return numero;
   }
 
