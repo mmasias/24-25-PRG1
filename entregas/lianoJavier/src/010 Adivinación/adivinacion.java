@@ -5,8 +5,17 @@ class adivinacion {
     final int NUMERO_MAXIMO = 100, NUMERO_MINIMO = 1;
 
     int numeroOrdenador = eleccionOrdenador(NUMERO_MAXIMO, NUMERO_MINIMO);
-    int numeroUsuario = eleccionUsuario(NUMERO_MAXIMO, NUMERO_MINIMO);
-    imprimirResumen(numeroUsuario, numeroOrdenador);
+
+    int numeroUsuario;
+    int intento = 0;
+    boolean acierta;
+    do {
+      numeroUsuario = eleccionUsuario(NUMERO_MAXIMO, NUMERO_MINIMO);
+      intento++;
+      acierta = numeroOrdenador == numeroUsuario;
+    } while (!acierta || intento <= 4);
+
+    imprimirResumen(acierta, numeroUsuario, numeroOrdenador);
 
   }
 
@@ -32,8 +41,7 @@ class adivinacion {
     return numero;
   }
 
-  private static void imprimirResumen(int numeroUsuario, int numeroOrdenador) {
-    boolean acierta = numeroOrdenador == numeroUsuario;
+  private static void imprimirResumen(boolean acierta, int numeroUsuario, int numeroOrdenador) {
     String resultado = "No has acertado";
     if (acierta)
       resultado = "Acertaste!";
