@@ -21,6 +21,7 @@ class adivinacion {
   private static int eleccionUsuario(int numeroMaximo, int numeroMinimo) {
     int numero;
     boolean numeroCorrecto;
+    System.out.println("Elija un número entre 1 y 100. Ambos incluidos.");
     do {
 
       Scanner input = new Scanner(System.in);
@@ -28,6 +29,8 @@ class adivinacion {
       input.close();
 
       numeroCorrecto = numero >= numeroMinimo && numero <= numeroMaximo;
+      if (!numeroCorrecto)
+        System.out.println("Numero no valido.");
     } while (numeroCorrecto);
     return numero;
   }
