@@ -25,10 +25,10 @@ class adivinacion {
   }
 
   private static void darPista(int numeroUsuario, int numeroOrdenador) {
+    String pista = "shh! es menor.";
     if (numeroOrdenador > numeroUsuario)
-      System.out.println("shh! es mayor.");
-    if (numeroOrdenador < numeroUsuario)
-      System.out.println("shh! es menor.");
+      pista = "shh! es mayor.";
+    System.out.println(pista);
   }
 
   private static int eleccionOrdenador(int numeroMaximo, int numeroMinimo) {
