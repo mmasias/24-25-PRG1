@@ -8,7 +8,7 @@ class adivinacion {
     int numeroOrdenador = eleccionOrdenador(NUMERO_MAXIMO, NUMERO_MINIMO);
 
     int numeroUsuario;
-    final int NUMERO_INTENTOS = 4;
+    final int MAXIMO_NUMERO_INTENTOS = 4;
     int intento = 0;
     boolean acierta;
     do {
@@ -17,7 +17,7 @@ class adivinacion {
       if (!acierta)
         darPista(numeroUsuario, numeroOrdenador);
       intento++;
-    } while (!acierta && intento <= NUMERO_INTENTOS - 1);
+    } while (!acierta && intento <= MAXIMO_NUMERO_INTENTOS - 1);
 
     imprimirResumen(acierta, numeroOrdenador);
 
