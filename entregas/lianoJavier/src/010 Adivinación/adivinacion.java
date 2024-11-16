@@ -38,6 +38,8 @@ class adivinacion {
     if (acierta)
       resultado = "Acertaste!";
     System.out.println(resultado);
+    System.out.println("Numero elegido por el Jugador: " + numeroUsuario);
+    System.out.println("Numero elegido por el Ordenador: " + numeroOrdenador);
   }
 
 }
