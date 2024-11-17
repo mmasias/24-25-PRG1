@@ -1,10 +1,26 @@
 public class herradura {
-  public static void main(String[] args) {
-    String resultadoNaneh = tirarHerradura();
-    String resultadoArmand = tirarHerradura();
+  private final static String Persona1 = "Naneh";
+  private final static String Persona2 = "Armand";
 
-    System.out.println(resultadoNaneh);
-    System.out.println(resultadoArmand);
+  private final static String valorPrimerTramo = "muy cerca";
+  private final static String valorSegundoTramo = "cerca";
+  private final static String valorTercerTramo = "lejos";
+  private final static String valorFueraPista = "fuera de pista";
+
+  public static void main(String[] args) {
+    String resultado;
+
+    resultado = tirarHerradura();
+    if (Acierta(resultado))
+      System.out.println(Persona1 + " aciertó.");
+
+    resultado = tirarHerradura();
+    if (Acierta(resultado))
+      System.out.println(Persona2 + " aciertó.");
+  }
+
+  private static boolean Acierta(String resultado) {
+    return resultado == valorPrimerTramo;
   }
 
   private static String tirarHerradura() {
@@ -15,13 +31,13 @@ public class herradura {
     boolean segundoTramo = precision >= PROBABILIDAD_PRIMER_TRAMO && precision <= PROBABILIDAD_SEGUNDO_TRAMO;
     boolean tercerTramo = precision >= PROBABILIDAD_SEGUNDO_TRAMO && precision <= PROBABILIDAD_TERCER_TRAMO;
 
-    String resultado = "fuera de pista";
+    String resultado = valorFueraPista;
     if (primerTramo) {
-      resultado = "muy cerca";
+      resultado = valorPrimerTramo;
     } else if (segundoTramo) {
-      resultado = "cerca";
+      resultado = valorSegundoTramo;
     } else if (tercerTramo) {
-      resultado = "lejos";
+      resultado = valorTercerTramo;
     }
     return resultado;
   }
