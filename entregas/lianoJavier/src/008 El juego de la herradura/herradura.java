@@ -1,7 +1,10 @@
 public class herradura {
   public static void main(String[] args) {
-    String resultado = tirarHerradura();
-    System.out.println(resultado);
+    String resultadoNaneh = tirarHerradura();
+    String resultadoArmand = tirarHerradura();
+
+    System.out.println(resultadoNaneh);
+    System.out.println(resultadoArmand);
   }
 
   private static String tirarHerradura() {
