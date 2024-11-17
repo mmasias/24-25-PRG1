@@ -8,15 +8,24 @@ public class herradura {
   private final static String valorFueraPista = "fuera de pista";
 
   public static void main(String[] args) {
-    String resultado;
 
-    resultado = tirarHerradura();
-    if (Acierta(resultado))
-      System.out.println(Persona1 + " aciertó.");
+    String resultadoPersona1 = tirarHerradura();
+    String resultadoPersona2 = tirarHerradura();
 
-    resultado = tirarHerradura();
-    if (Acierta(resultado))
-      System.out.println(Persona2 + " aciertó.");
+    if (Empatan(resultadoPersona1, resultadoPersona2)) {
+      System.out.println("Empataron.");
+    } else {
+      if (Acierta(resultadoPersona1))
+        System.out.println(Persona1 + " aciertó.");
+
+      if (Acierta(resultadoPersona2))
+        System.out.println(Persona2 + " aciertó.");
+    }
+
+  }
+
+  private static boolean Empatan(String resultadoPersona1, String resultadoPersona2) {
+    return resultadoPersona1 == resultadoPersona2;
   }
 
   private static boolean Acierta(String resultado) {
