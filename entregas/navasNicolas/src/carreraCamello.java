@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class carreraCamello {
+class CarreraCamello {
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
         int posicionPrimero = 0;
