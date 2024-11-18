@@ -2,9 +2,9 @@ public class herradura {
   private final static String Persona1 = "Naneh";
   private final static String Persona2 = "Armand";
 
-  private final static String valorPrimerTramo = "muy cerca";
-  private final static String valorSegundoTramo = "cerca";
-  private final static String valorTercerTramo = "lejos";
+  private final static String valorPrimerTramo = "Tramo 1";
+  private final static String valorSegundoTramo = "Tramo 2";
+  private final static String valorTercerTramo = "Tramo 3";
   private final static String valorFueraPista = "fuera de pista";
 
   public static void main(String[] args) {
@@ -12,24 +12,12 @@ public class herradura {
     String resultadoPersona1 = tirarHerradura();
     String resultadoPersona2 = tirarHerradura();
 
-    if (Empatan(resultadoPersona1, resultadoPersona2)) {
-      System.out.println("Empataron.");
-    } else {
-      if (Acierta(resultadoPersona1))
-        System.out.println(Persona1 + " aciertó.");
-
-      if (Acierta(resultadoPersona2))
-        System.out.println(Persona2 + " aciertó.");
-    }
+    imprimirResultado(resultadoPersona1, resultadoPersona2);
 
   }
 
-  private static boolean Empatan(String resultadoPersona1, String resultadoPersona2) {
-    return resultadoPersona1 == resultadoPersona2;
-  }
-
-  private static boolean Acierta(String resultado) {
-    return resultado == valorPrimerTramo;
+  private static void imprimirResultado(String resultadoPersona1, String resultadoPersona2) {
+    System.out.println(Persona1 + ": [" + resultadoPersona1 + "]" + Persona2 + ": [" + resultadoPersona2 + "]");
   }
 
   private static String tirarHerradura() {
