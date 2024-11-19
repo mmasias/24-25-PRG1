@@ -18,7 +18,7 @@ class viajeMarco{
     double probabilidadLluvia;
     double probabilidadSeCansa;
     double probabilidadSeEscapa;
-    boolean seHanEncontrado = false;
+    boolean seHanEncontrado = true;
     int dias = 0;
     double avanceMadre = 80;
 
