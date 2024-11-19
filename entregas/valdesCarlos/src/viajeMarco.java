@@ -2,7 +2,6 @@ import java.util.scanner;
 
 class viajeMarco {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
 
         final double VELOCIDAD_MAXIMA = 15;
         final double VELOCIDAD_MINIMA = 0;
