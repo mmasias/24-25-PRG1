@@ -11,6 +11,7 @@ public class AdivinaElNumero {
         boolean hacertrampa= false;
         boolean esCaliente= false;
         boolean calienteAnterior= false;
+
         
 
         while (estaJugando) {
@@ -42,6 +43,7 @@ static int PedirNumero (){
 }
 
 static void darPista (int numeroOrdenador, int numeroUsuario){
+    System.out.println(numeroOrdenador>numeroUsurario ?  "Es menor: Es mayor");
     int diferencia =  Math.abs(numeroOrdenador -numeroOrdenador);
     System.out.println (diferencia<=5? "Caliente": diferencia<=10? "Tibio": "frio");
 
