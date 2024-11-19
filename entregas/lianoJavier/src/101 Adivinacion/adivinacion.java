@@ -4,20 +4,25 @@ class adivinacion {
         final int NUMERO_MINIMO = 1;
         int resultado = tiraDado(NUMERO_MINIMO, NUMERO_MAXIMO);
         int numeroAAdivinar = tiraDado(NUMERO_MINIMO, NUMERO_MAXIMO);
-        daPista(resultado, numeroAAdivinar);
+        imprimirResumen(resultado, numeroAAdivinar);
     }
 
     static int tiraDado(int numeroMinimo, int numeroMaximo) {
         return (int) (Math.random() * (numeroMaximo - numeroMinimo) + numeroMinimo);
     }
 
-    private static void daPista(int resultado, int numeroAAdivinar) {
+    static void imprimirResumen(int resultado, int numeroAAdivinar) {
         String mensaje = "acertó!";
-        if (numeroAAdivinar > resultado) {
-            mensaje = "es menor";
-        } else if (numeroAAdivinar < resultado) {
-            mensaje = "es mayor";
-        }
+        boolean acierta = resultado == numeroAAdivinar;
+        if (!acierta) mensaje = daPista(resultado, numeroAAdivinar);
         System.out.println(mensaje);
+    }
+
+    static String daPista(int resultado, int numeroAAdivinar) {
+        String mensaje = "es mayor";
+        if (numeroAAdivinar > resultado) 
+            mensaje = "es menor";
+        
+        return mensaje;
     }
 }
