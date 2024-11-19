@@ -21,10 +21,6 @@ public class CalculaNotaFinal {
         final double EC_PORCENTAJE = 0.2;
         final double EPR_PORCENTAJE = 0.05;
 
-        examenParcial = 6;
-        examenFinal = 6;
-        evalucaionContinua = 3;
-        notaProfesor = 5;
 
         double notaFinal;
 
