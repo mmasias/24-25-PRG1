@@ -9,8 +9,6 @@ public class AdivinaElNumero {
         int turno = 0;
         int vecesCaliente = 0;
 
-        System.out.println("Número secreto generado para depuración: " + unidadAleatoria);
-
         while (jugando) {
             turno++;
             int numeroUsuario = pedirNumero();
@@ -22,7 +20,6 @@ public class AdivinaElNumero {
 
                 if (vecesCaliente >= 2) {
                     unidadAleatoria = pensarNumero();
-                    System.out.println("El número secreto ha cambiado.");
                     vecesCaliente = 0;
                 }
                 jugando = !adivino && turno < NUMERO_TURNOS;
@@ -46,7 +43,7 @@ public class AdivinaElNumero {
 
     static int darPista(int unidadAleatoria, int numeroUsuario, int vecesCaliente) {
         int diferencia = Math.abs(unidadAleatoria - numeroUsuario);
-        System.out.println(diferencia<=5?"Caliente":diferencia<=10?"TIbio":"Frio");
+        System.out.println(diferencia <= 5 ? "Caliente" : diferencia <= 10 ? "TIbio" : "Frio");
         return vecesCaliente + 1;
     }
 }
