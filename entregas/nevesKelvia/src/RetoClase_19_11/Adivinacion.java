@@ -19,6 +19,22 @@ public class Adivinacion {
             numeroUsuario = scanner.nextInt();
             intentos++;  
 
+            if (numeroUsuario == numeroSecreto) {
+                adivinado = true; 
+                System.out.println("¡Felicidades! Adivinaste el número en el intento " + intentos + ".");
+
+            } else {
+                
+                int diferencia = Math.abs(numeroSecreto - numeroUsuario); 
+
+                if (diferencia <= 5) {
+                    System.out.println("¡Caliente!");
+                } else if (diferencia <= 10) {
+                    System.out.println("¡Tibio!");
+                } else {
+                    System.out.println("¡Frío!");
+                }
+
             if (numeroUsuario > numeroSecreto) {
                 System.out.println("Es menor.");
             } else if (numeroUsuario < numeroSecreto) {
