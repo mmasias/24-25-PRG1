@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 class ViajeMarco {
+    
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         double distanciaMarcoMadre = 350;
