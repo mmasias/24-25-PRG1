@@ -24,20 +24,22 @@ public class Edificio {
         final String ESCALERA_3 = " ================================== ";
 
         int dia = 0;
-
+        double probabilidadPersianaBajada;
+        double probabilidadLuzEncendida;
+        
         do { 
             for (int j = 0; j < DIAS; j++) {
                 dia++;
                 for (int i = 0; i < HORAS;  i++) {
                     System.out.println("Dia: " + dia + " - " + i + ":00h");
-                System.out.println(TECHO_HOTEL_3);
-                System.out.println(TECHO_HOTEL_2);
-                System.out.println(TECHO_HOTEL);
-                for (int y = PLANTAS; y >= 1; y--){
+                    System.out.println(TECHO_HOTEL_3);
+                    System.out.println(TECHO_HOTEL_2);
+                    System.out.println(TECHO_HOTEL);
+                for (int y = PLANTAS; y >= 1; y--) {
                     System.out.print(":");
                     for (int x = 0; x < HABITACIONES; x++) {
-                        double probabilidadPersianaBajada = Math.random();
-                        double probabilidadLuzEncendida = Math.random();
+                        probabilidadPersianaBajada = Math.random();
+                        probabilidadLuzEncendida = Math.random();
                         if (x == 3) {
                             System.out.print(INTERMEDIO);
                         } else if (probabilidadPersianaBajada >  PH_PERSIANA) {
