@@ -1,26 +1,27 @@
 package entregas.caicedoEsteban;
 
-import java.util.Scanner;
+Scanner entrada=new Scanner(System.in);
+
 
 class Adivinacion {
+    
     public static void main(String[] args) {
         final int NUMERO_DE_TURNOS = 10;
-        Scanner entrada = new Scanner(System.in);
-        
-
+    
         boolean estaJugando = true;
         int numeroComputadora = pensarNumero();
         int turno = 0;
 
-        while (estaJugando) {
+        while(estaJugando){
             turno++;
             System.out.println("Turno" + turno);
             int numeroUsuario = pensarNumero();
             boolean adivino = numeroUsuario == numeroComputadora;
-            algunasPistas(numeroUsuario, numeroComputadora);
-            System.out.println(adivino);
+            algunasPistas (numeroUsuario, numeroComputadora);
+            estaJugando = !adivino && turno NUMERO_DE_TURNOS;
+            
         }
-        String estadoFinal = (turno < NUMERO_DE_TURNOS) ? "Ganaste" : "Perdiste";
+        String estadoFinal = ( turno < NUMERO_DE_TURNOS) ? "Ganaste" : "Perdiste";
         System.out.println(estadoFinal);
     }
 
@@ -40,5 +41,7 @@ class Adivinacion {
         } else {
             System.out.println("Frio");
         }
+    
     }
+    entrada.close();
 }
