@@ -11,12 +11,15 @@ public class AdivinaNumero {
         boolean estaJugando = true;
         int numeroOrdenador = pensarNumero();
         int turno = 0;
+        boolean calienteAnterior = false;
 
         while (estaJugando) {
             turno++;
             int numeroUsuario = pedirNumero();
             boolean adivino = numeroOrdenador == numeroUsuario;
             darPista(numeroOrdenador, numeroUsuario);
+            if(calienteAnterior == serCaliente(numeroOrdenador, numeroUsuario));
+                numeroOrdenador = hacerTrampa(numeroOrdenador);
             estaJugando = !adivino && turno < INTENTOS_MAXIMOS;
         }
 
@@ -42,10 +45,15 @@ public class AdivinaNumero {
         System.out.println(diferencia <= 5 ? "Caliente" : diferencia <= 10 ? "templado" : "frio");
     }
 
-    static int hacerTrampas(int numeroOrdenador, int numeroUsuario){
-        if{  
-         Math.abs(numeroOrdenador-numeroUsuario) <= 5
-        }
+    static boolean serCaliente(int numeroOrdenador, int numeroUsuario){
+        int diferencia = Math.abs(numeroOrdenador - numeroUsuario);
+        return 
+    
+    }
+
+    static int hacerTrampa(int numeroOrdenador){
+        int signo = Math.random()<0.5?-1:1;
+
     }
 
 }
