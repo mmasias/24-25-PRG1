@@ -6,12 +6,16 @@ class Adivinacion {
         boolean estaJugando = true;
         int numeroOrdenador = pensarNumero();
         int turno = 0;
+        boolean calienteAnterior = false;
         while (estaJugando){
             turno++;
             int numeroUsuario = pedirNumero();
             comprobarNumero(numeroOrdenador, numeroUsuario);
             boolean adivino = numeroUsuario == numeroOrdenador;
             darPista(numeroOrdenador, numeroUsuario);
+            if (calienteAnterior == esCaliente(numeroOrdenador, numeroUsuario))
+                numeroOrdenador = hacerTrampa(numeroOrdenador);
+            
             estaJugando = !adivino && turno < NUMERO_TURNOS ;
         }
         String estadoFinal = (turno < NUMERO_TURNOS ? "" : "no") + " ganó, el número era: ";
@@ -38,8 +42,17 @@ class Adivinacion {
             System.out.println("El número es menor");
         }
     }
-
-
+    static boolean esCaliente(int numeroOrdenador, int numeroUsuario){
+        int diferencia = Math.abs(numeroOrdenador-numeroUsuario);
+        return diferencia<5;
+    }
+    static int hacerTrampa(int numeroOrdenador){
+        int signo = Math.random()<0.5?-1:1;
+        int numero = (int)(Math.random()*5+1);
+        numero = numero * signo;
+        numeroOrdenador = numeroOrdenador + numero;
+        return numeroOrdenador;
+    }
 
 
 
