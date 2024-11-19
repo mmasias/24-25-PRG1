@@ -9,7 +9,7 @@ class AdivinaNumero {
         final int INTENTOS = 10;
         
         int turno = 1;
-        int numeroOrdenador = generarNumeroAleatorio(NUMERO_MAXIMO, NUMERO_MINIMO);
+        int numeroOrdenador = 100;
         int numeroUsuario;
         boolean calienteRondaAnterior = false;
         boolean calienteRondaActual;
@@ -22,7 +22,8 @@ class AdivinaNumero {
             numeroUsuario = obtenerNumeroUsuario(NUMERO_MAXIMO, NUMERO_MINIMO);
             noAdivino = numeroUsuario!=numeroOrdenador;
             if (noAdivino) {
-                calienteRondaActual = darPista(numeroOrdenador, numeroUsuario);
+                darPista(numeroOrdenador, numeroUsuario);
+                calienteRondaActual = estaCaliente(numeroOrdenador, numeroUsuario);
                 if (calienteRondaActual && calienteRondaAnterior) hacerTrampas(numeroOrdenador, NUMERO_MAXIMO, NUMERO_MINIMO);
                 calienteRondaAnterior = calienteRondaActual;
             }
@@ -56,11 +57,16 @@ class AdivinaNumero {
         return numeroUsuario;
     }
 
-    static boolean darPista(int numeroOrdenador, int numeroUsuario) {
+    static void darPista(int numeroOrdenador, int numeroUsuario) {
         final int CALIENTE_RANGO = 5;
         final int TIBIO_RANGO = 10;
         int diferenacia = Math.abs(numeroOrdenador-numeroUsuario);
         System.out.println("| >  Uyyy, que "+ ((diferenacia<=CALIENTE_RANGO)? "caliente" : diferenacia<=TIBIO_RANGO ? "tibio" : "frio" ) +" estas, sigue asi");
+    }
+
+    static boolean estaCaliente(int numeroOrdenador, int numeroUsuario) {
+        final int CALIENTE_RANGO = 5;
+        int diferenacia = Math.abs(numeroOrdenador-numeroUsuario);
         return diferenacia<=CALIENTE_RANGO;
     }
 
