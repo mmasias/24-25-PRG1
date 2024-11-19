@@ -9,6 +9,7 @@ class Adivinacion {
         while (estaJugando){
             turno++;
             int numeroUsuario = pedirNumero();
+            comprobarNumero(numeroOrdenador, numeroUsuario);
             boolean adivino = numeroUsuario == numeroOrdenador;
             darPista(numeroOrdenador, numeroUsuario);
             estaJugando = !adivino && turno < NUMERO_TURNOS ;
@@ -29,6 +30,13 @@ class Adivinacion {
     static void darPista(int numeroOrdenador, int numeroUsuario){
         int diferencia = Math.abs(numeroOrdenador-numeroUsuario);
         System.out.println(diferencia<=5?"-> Caliente <-":diferencia<=10?"-> Tibio <-":"-> Frío <-");
+    }
+    static void comprobarNumero(int numeroOrdenador, int numeroUsuario){
+        if (numeroUsuario < numeroOrdenador) {
+            System.out.println("El número es mayor");
+        } else if (numeroUsuario > numeroOrdenador) {
+            System.out.println("El número es menor");
+        }
     }
 
 
