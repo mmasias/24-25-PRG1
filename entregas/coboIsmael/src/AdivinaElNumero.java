@@ -36,4 +36,5 @@ static void darPista(int numeroOrdenador, int numeroUsuario) {
     int diferencia = Math.abs(numeroOrdenador - numeroUsuario);
     System.out.println(diferencia <= 5 ? "Caliente" : diferencia <= 10 ? "Tibio" : "frio");
 }
+
 }
