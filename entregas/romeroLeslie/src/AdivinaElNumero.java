@@ -8,7 +8,9 @@ public class AdivinaElNumero {
         boolean estaJugando = true;
         int numeroOrdenador= pensarNumero();
         int turno=0;
-        boolean calienteanterior= false;
+        boolean hacertrampa= false;
+        boolean esCaliente= false;
+        boolean calienteAnterior= false;
         
 
         while (estaJugando) {
@@ -16,7 +18,9 @@ public class AdivinaElNumero {
             int numeroUsuario= PedirNumero();
             boolean adivino = numeroUsuario == numeroOrdenador;
             darPista (numeroOrdenador, numeroUsuario);
-            if calienteAnterior = esCaliente (numeroOrdenador, numeroUsuario);
+            if (calienteAnterior == true && esCaliente (numeroOrdenador, numeroUsuario)== true);
+              numeroOrdenador = hacerTrampa(numeroOrdenador)
+            calienteAnterior = esCaliente (numeroOrdenador, numeroUsuario));
             estaJugando = !adivino && turno <NUMERO_TURNOS;
         }
 
@@ -46,6 +50,12 @@ static boolean esCaliente(int numeroOrdenador, int numeroUsuario){
     int diferencia= Math.abs(numeroOrdenador-numeroUsuario)
 
 
+static int hacerTrampa (int numeroOrdenador){
+    int signo = (int)(Math.random() <0.5 ? - 1 : 1>);
+    int numero = (int)(Math.random()*5+1);
+    numero = signo * numero;
+    numeroOrdenador = numeroOrdenador + numero;
+    System.out.println("Atchis!")
 
+    return numeroOrdenador;}
 }
-    }
