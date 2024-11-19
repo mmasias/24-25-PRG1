@@ -5,6 +5,7 @@ class adivinacion {
         final int NUMERO_MAXIMO = 100;
         final int NUMERO_MINIMO = 1;
         int resultado = tiraDado(NUMERO_MINIMO, NUMERO_MAXIMO);
+        int numeroAAdivinar = tiraDado(NUMERO_MINIMO, NUMERO_MAXIMO);
 }
 
     static int tiraDado(int numeroMinimo, int numeroMaximo) {
