@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Adivina {
+public class Adivinacion {
     public static void main(String[] args) {
         final int OPORTUNIDADES_ADIVINAR_NUMERO = 10;
         final int NUMERO_MAXIMO = 100;
@@ -62,6 +62,11 @@ public class Adivina {
             System.out.println("Tibio");
         } else {
             System.out.println("Frío");
+        }
+    }
+    private static int trampas (int numeroAleatorio, int numeroUsuario) {
+        int diferenciaNumeros = Math.abs(numeroAleatorio - numeroUsuario);
+        if (diferencia ) {
         }
     }
 }
