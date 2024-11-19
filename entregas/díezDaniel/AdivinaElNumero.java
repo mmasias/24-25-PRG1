@@ -2,7 +2,7 @@ package entregas.díezDaniel;
 
 import java.util.Scanner;
 
-public class Adivina {
+public class AdivinaElNumero {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -88,3 +88,4 @@ public class Adivina {
         return (int) (Math.random() * 100) + 1;
     }
 }
+
