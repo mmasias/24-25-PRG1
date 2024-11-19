@@ -14,6 +14,20 @@ class adivinacion {
             intento++;
 
             int numeroUsuario = preguntarUsuario(NUMERO_MINIMO, NUMERO_MAXIMO);
+            int diferencia = calculaDiferencia(numeroUsuario, numeroAAdivinar);
+            boolean haEstadoCaliente;
+            if (estaCaliente(diferencia)) {
+                if (haEstadoCaliente) {
+                    numeroAAdivinar += modificaNumero(numeroMaximo, numeroMinimo);
+                }
+                System.out.println("Caliente");
+                haEstadoCaliente = true;
+            } else {
+                haEstadoCaliente = false;
+                if (estaTibio(diferencia)) {
+                    System.out.println("Tibio");
+                }
+            }
             imprimirResumen(numeroUsuario, numeroAAdivinar);
             acierta = numeroAAdivinar == numeroUsuario;
         } while (intento <= INTENTOS_MAXIMOS && !acierta);
@@ -35,7 +49,7 @@ class adivinacion {
     }
 
     static int tiraDado(int numeroMinimo, int numeroMaximo) {
-        return (int) (Math.random() * (numeroMaximo - numeroMinimo) + numeroMinimo);
+        return (int) (Math.random() * (numeroMaximo - numeroMinimo + 1) + numeroMinimo);
     }
 
     static void imprimirResumen(int resultado, int numeroAAdivinar) {
@@ -49,7 +63,46 @@ class adivinacion {
         String mensaje = "es mayor";
         if (numeroAAdivinar < resultado) 
             mensaje = "es menor";
-        
+        daPistaAvanzada(resultado, numeroAAdivinar);
+                
         return mensaje;
+    }
+        
+    static void daPistaAvanzada(int resultado, int numeroAAdivinar) {
+        int DISTANCIA_TIBIO = 10;
+
+        int diferencia = (resultado - numeroAAdivinar) > 0 ? resultado - numeroAAdivinar : numeroAAdivinar - resultado;
+        boolean caliente = diferencia <= DISTANCIA_CALIENTE;
+        boolean tibio = diferencia <= DISTANCIA_TIBIO;
+
+        String mensaje = "frio";
+        if (caliente) {
+            mensaje = "caliente";
+            if (haEstadoCaliente)
+            haEstadoCaliente = true;
+        } else {
+            haEstadoCaliente = false;
+            if (tibio) mensaje = "tibio";
+        } 
+
+        System.out.println(mensaje);
+    }
+
+    static int calculaDiferencia(int numeroUsuario, int numeroAAdivinar) {
+        return (numeroUsuario - numeroAAdivinar) > 0 ? numeroUsuario - numeroAAdivinar : numeroAAdivinar - numeroUsuario;
+    }
+
+    static boolean estaCaliente(int diferencia) {
+        int DISTANCIA_CALIENTE = 5;
+        return diferencia <= DISTANCIA_CALIENTE;
+    }
+    
+    static boolean estaTibio(int diferencia) {
+        int DISTANCIA_TIBIO = 10;
+        return diferencia <= DISTANCIA_TIBIO;
+    }
+
+    static int modificaNumero(int numeroMaximo, int numeroMinimo) {
+        return (int) (Math.random() * (numeroMaximo - numeroMinimo + 1) + numeroMinimo);
     }
 }
