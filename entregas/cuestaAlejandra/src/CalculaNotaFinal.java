@@ -1,5 +1,6 @@
 import java.util.Scanner;
-class CalculaNotaFinal {
+
+public class CalculaNotaFinal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
