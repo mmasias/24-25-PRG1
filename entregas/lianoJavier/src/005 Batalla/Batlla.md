@@ -1,0 +1,1 @@
+- [ ] Implementar Interacción del jugador.
