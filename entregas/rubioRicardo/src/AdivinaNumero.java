@@ -5,7 +5,7 @@ public class AdivinaNumero {
      public static void main(String[] args){
         final int NUMERO_DE_TURNOS = 10;
         boolean estaJugando = true;
-        int NumeroOrdenador = pensarNumero();
+        int NumeroOrdenador = pensarNumero(); 
         int turno = 0;
         while(estaJugando) {
             turno++;
