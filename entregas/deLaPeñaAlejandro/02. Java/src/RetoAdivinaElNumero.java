@@ -13,15 +13,15 @@ public class RetoAdivinaElNumero {
         final double MITAD = 0.5;
 
         int numeroSecreto = (int) (Math.random() * MAXIMO) + MINIMO; 
-        int intentos = 5; 
+        final int NUMERO_INTENTOS = 5; 
         int calientesConsecutivos = 0;
         boolean adivinado = false;
 
         System.out.println("¡Bienvenido al juego 'Adivina el número'!");
         System.out.println("Estoy pensando en un número entre 1 y 100.");
-        System.out.println("Tienes " + intentos + " oportunidades para adivinarlo.");
+        System.out.println("Tienes " + NUMERO_INTENTOS + " oportunidades para adivinarlo.");
 
-        for (int intento = 1; intento <= intentos; intento++) {
+        for (int intento = 1; intento <= NUMERO_INTENTOS; intento++) {
             System.out.print("Intento " + intento + ": Ingresa un número: ");
             int usuario = scanner.nextInt();
 
