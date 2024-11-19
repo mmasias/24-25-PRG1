@@ -11,32 +11,40 @@ class Adivinancia {
         boolean estaJuagando = true;
         int  turno = 0;
         
+        int ordenador = (int)(Math.random()* MAXIMO-MINIMO +1)+MINIMO;
+       
         while (estaJuagando) {
             turno++;
             
             System.out.println("Elige un numero enrtre 1y 100 ");
             int usuario = entrada.nextInt();
             System.out.println("Elegiste " + usuario);
-            int ordenador = (int)(Math.random()* MAXIMO-MINIMO +1)+MINIMO;
-            System.out.println("El ordednador eligio " +ordenador);
-            boolean adivino = usuario == ordenador;
-            if (adivino){
-                System.out.println("adivinaste ");
-            }else{
-                System.out.println("No adivinaste");
+            String resultado ;
+            resultado = (usuario == ordenador) ? "adivinaste" 
+                      : (usuario > MAXIMO) ? "Error "
+                      : "No adivinaste";
 
-            }
+            System.out.println(resultado); 
             
-         }
-        
-        
+            
+            
+            
 
-
-
-
-
+        }
+       
+       
         entrada.close();
-    }
-}
+
+
+       }
+   }
+    
+        
+            
+            
+            
+
+
+
     
 
