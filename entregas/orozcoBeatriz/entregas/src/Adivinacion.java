@@ -7,7 +7,7 @@ public class Adivinacion {
         final int NUMERO_MINIMO = 1;
         final int DIFERENCIA_NUMEROS_CALIENTE = 5;
         final int DIFERENCIA_NUMEROS_TIBIO = 10;
-        boolean estaJugando = true, haAdivinado;
+        boolean estaJugando = true, haAdivinado = true, calienteAnterior = false;
         int numeroAleatorio, numeroUsuario;
         int oportunidades = 0;
 
@@ -21,7 +21,7 @@ public class Adivinacion {
             numeroUsuario = pedirNumero();
             haAdivinado = adivinaNumero(numeroAleatorio, numeroUsuario);
             if (numeroUsuario < NUMERO_MINIMO || numeroUsuario > NUMERO_MAXIMO) {
-                System.out.println("El número elegido tiene que estar en el rango 1 y 100");
+                System.out.println("El número elegido tiene que estar en el rango 1 y 100. Inténtelo de nuevo.");
             } else {
                 if (haAdivinado) {
                     System.out.println("Has adivinado el número!");
@@ -29,6 +29,10 @@ public class Adivinacion {
                 }
                 if (!haAdivinado) {
                     darPista(numeroAleatorio, numeroUsuario, DIFERENCIA_NUMEROS_CALIENTE, DIFERENCIA_NUMEROS_TIBIO);
+                    if (calienteAnterior == true && esCaliente(numeroAleatorio, numeroUsuario)) {
+                        numeroAleatorio = hacerTrampa(numeroAleatorio);
+                    }
+                    calienteAnterior = esCaliente(numeroAleatorio, numeroUsuario);
                 }
             }
             
@@ -64,9 +68,17 @@ public class Adivinacion {
             System.out.println("Frío");
         }
     }
-    private static int trampas (int numeroAleatorio, int numeroUsuario) {
+    
+    private static boolean esCaliente (int numeroAleatorio, int numeroUsuario) {
         int diferenciaNumeros = Math.abs(numeroAleatorio - numeroUsuario);
-        if (diferencia ) {
-        }
+        return diferenciaNumeros <= 5;
+    }
+
+    private static int hacerTrampa (int numeroAleatorio) {
+        int signo = Math.random() < 0.5 ? -1 : 1;
+        int numeroTrampa = (int)(Math.random() * 5 + 1) * signo;
+        numeroAleatorio = numeroAleatorio + numeroTrampa;
+        System.out.println("Achís!");
+        return numeroAleatorio;
     }
 }
