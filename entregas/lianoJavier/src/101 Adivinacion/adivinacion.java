@@ -8,7 +8,7 @@ class adivinacion {
         int numeroAAdivinar = tiraDado(NUMERO_MINIMO, NUMERO_MAXIMO);
 
         int intento = 0;
-        final int INTENTOS_MAXIMOS = 5;
+        final int INTENTOS_MAXIMOS = 10;
         boolean acierta;
         do { 
             intento++;
