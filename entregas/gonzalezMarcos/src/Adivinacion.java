@@ -13,8 +13,8 @@ class Adivinacion {
             darPista(numeroOrdenador, numeroUsuario);
             estaJugando = !adivino && turno < NUMERO_TURNOS ;
         }
-        String estadoFinal = (turno < NUMERO_TURNOS ? "" : "no") + " ganó";
-        System.out.println(estadoFinal);
+        String estadoFinal = (turno < NUMERO_TURNOS ? "" : "no") + " ganó, el número era: ";
+        System.out.println("---- "+ estadoFinal + numeroOrdenador +" ----");
     }
     static int pensarNumero(){
         final int MAXIMO = 1;
@@ -22,13 +22,13 @@ class Adivinacion {
         return (int)(Math.random()*(MAXIMO-MINIMO)+MINIMO);
     }
     static int pedirNumero(){
-        System.out.println("Dime un numero entre el 1 y el 100");
+        System.out.println("---- Dime un numero entre el 1 y el 100 ----");
         Scanner entradaUsuario = new Scanner(System.in);
         return entradaUsuario.nextInt();
     }
     static void darPista(int numeroOrdenador, int numeroUsuario){
         int diferencia = Math.abs(numeroOrdenador-numeroUsuario);
-        System.out.println(diferencia<=5?"Caliente":diferencia<=10?"Tibio":"Frio");
+        System.out.println(diferencia<=5?"-> Caliente <-":diferencia<=10?"-> Tibio <-":"-> Frío <-");
     }
 
 
