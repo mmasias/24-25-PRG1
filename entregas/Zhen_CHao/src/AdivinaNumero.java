@@ -1,44 +1,56 @@
 import java.util.Scanner;
+
 public class AdivinaNumero {
+
+    
+     final int MINIMO = 1;
+     final int MAXIMO = 100;
+     final int NUMERO_TURNOS = 10;
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-            final int MINIMO = 1;
-            final int MAXIMO = 100;
-            final int NUMERO_TURNOS = 10;
-            
-
-            int numeroMaquina = (int) (Math.random()*(MAXIMO-MINIMO+1)+MINIMO);
-            int turno = 0;
-            
-            do { 
-              turno ++;
-              System.out.println(" Dime un numero");
-              int numeroUsuario = entrada.nextInt();
-              final int DIFERENCIA = Math.abs(numeroMaquina-numeroUsuario);
-              if (numeroMaquina == numeroUsuario ){
-                System.out.println("adivino");
-                
-              }else if (numeroMaquina >numeroUsuario ) {
-                System.out.println("es mayor");
-                
-              } else if (numeroMaquina <numeroUsuario){
-                System.out.println("es menor");
-              }else{
-                System.out.println("no adivino");
-              }
-
-              if (DIFERENCIA<=5) {
-                  System.out.println("CALIENTE");
-              } else if (DIFERENCIA <=10){
-                System.out.println("tibio");
-              }else{
-                System.out.println("frio");
-              }
-
-            } while (turno>NUMERO_TURNOS);
-
         
+        int numeroMaquina = generarNumeroAleatorio();
+
+        int turno = 0;
+        boolean adivinado = false;
+
+       
+        while (turno < NUMERO_TURNOS && !adivinado) {
+            turno++;
+            System.out.print("Dime un número: ");
+            int numeroUsuario = entrada.nextInt();
+
+            if (numeroUsuario == numeroMaquina) {
+                System.out.println("¡Has adivinado el número!");
+                adivinado = true;  
+            } else {
+                if (numeroUsuario < numeroMaquina) {
+                    System.out.println("Es mayor.");
+                } else {
+                    System.out.println("Es menor.");
+                }
+
+                
+                int diferencia = Math.abs(numeroMaquina - numeroUsuario);
+                if (diferencia <= 5) {
+                    System.out.println("¡CALIENTE!");
+                } else if (diferencia <= 10) {
+                    System.out.println("TIBIO");
+                } else {
+                    System.out.println("FRÍO");
+                }
+            }
+        }
+
+        if (!adivinado) {
+            System.out.println("Fin del juego. El número era: " + numeroMaquina);
+        }
     }
 
+    
+    private static int generarNumeroAleatorio(MAXIMO,MINIMO) {
+        return (int) (Math.random() * (MAXIMO - MINIMO + 1) + MINIMO);
+    }
 }
