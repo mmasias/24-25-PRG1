@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 class AdivinaNumero {
     public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
         final String ADIVINO = "| > Enhorabuena, adivinaste el numero!";
         final String NO_ADIVINO = "| > Una pena, no adivinaste el numero, este era: ";
         final int NUMERO_MAXIMO = 100;
@@ -19,7 +20,7 @@ class AdivinaNumero {
 
         do {
             System.out.println("| Turno " + turno + " de " + INTENTOS);
-            numeroUsuario = obtenerNumeroUsuario(NUMERO_MAXIMO, NUMERO_MINIMO);
+            numeroUsuario = obtenerNumeroUsuario(NUMERO_MAXIMO, NUMERO_MINIMO, entrada);
             noAdivino = numeroUsuario!=numeroOrdenador;
             if (noAdivino) {
                 darPista(numeroOrdenador, numeroUsuario);
@@ -31,14 +32,14 @@ class AdivinaNumero {
         } while (turno <= INTENTOS && noAdivino);
 
         System.out.println(noAdivino ? (NO_ADIVINO + numeroOrdenador) : ADIVINO );
+        entrada.close();
     }
 
     static int generarNumeroAleatorio(int maximo, int minimo) {
         return ((int) (Math.random()*(maximo-minimo+1)+minimo));
     }
 
-    static int obtenerNumeroUsuario(int maximo, int minimo) {
-        Scanner entrada = new Scanner(System.in);
+    static int obtenerNumeroUsuario(int maximo, int minimo, Scanner entrada) {
         final String ERROR = "| >  Porfavor introduzca un numero dentro del intervalo de [1,100]∈ N";
         final String EMBELLECEDOR = "| >  ";
         int numeroUsuario;
