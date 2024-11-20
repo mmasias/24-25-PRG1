@@ -40,6 +40,8 @@ public class AdivinaElNumero {
         int diferencia = Math.abs(NUMERO_A_ADIVINAR - entradaUsuario);
         System.out.println(diferencia <= 5 ? "Caliente" : diferencia <= 10 ? "Tibio" : "Frio");
         }
+
+
         
         
 }
