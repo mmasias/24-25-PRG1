@@ -1,16 +1,12 @@
 import java.util.Scanner;
 
 public class AdivinaNumero {
-
-    
-     final int MINIMO = 1;
-     final int MAXIMO = 100;
-     final int NUMERO_TURNOS = 10;
+ 
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        
+        final int NUMERO_TURNOS = 10;
         int numeroMaquina = generarNumeroAleatorio();
 
         int turno = 0;
@@ -50,7 +46,10 @@ public class AdivinaNumero {
     }
 
     
-    private static int generarNumeroAleatorio(MAXIMO,MINIMO) {
+    private static int generarNumeroAleatorio() {
+        final int MINIMO = 1;
+        final int MAXIMO = 100;
+        
         return (int) (Math.random() * (MAXIMO - MINIMO + 1) + MINIMO);
     }
 }
