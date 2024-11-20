@@ -9,7 +9,7 @@ class AdivinaNumero {
         final int INTENTOS = 10;
         
         int turno = 1;
-        int numeroOrdenador = 100;
+        int numeroOrdenador = generarNumeroAleatorio(NUMERO_MAXIMO, NUMERO_MINIMO);
         int numeroUsuario;
         boolean calienteRondaAnterior = false;
         boolean calienteRondaActual;
@@ -24,7 +24,7 @@ class AdivinaNumero {
             if (noAdivino) {
                 darPista(numeroOrdenador, numeroUsuario);
                 calienteRondaActual = estaCaliente(numeroOrdenador, numeroUsuario);
-                if (calienteRondaActual && calienteRondaAnterior) hacerTrampas(numeroOrdenador, NUMERO_MAXIMO, NUMERO_MINIMO);
+                if (calienteRondaActual && calienteRondaAnterior) numeroOrdenador = hacerTrampas(numeroOrdenador, NUMERO_MAXIMO, NUMERO_MINIMO);
                 calienteRondaAnterior = calienteRondaActual;
             }
             turno++;
