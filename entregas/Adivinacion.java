@@ -1,23 +1,31 @@
-import java.util.Random;
 import java.util.Scanner;
-
 public class Adivinacion {
+    
+    static int MAXIMO = 100;
+    static int MINIMO = 1;
+    static int intentosRestantes = 10;
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
+        instrucciones();
+        int numeroPensado = obtenerNumero();
+        jugar(numeroPensado);
+    }
 
-        int numeroPensado = random.nextInt(100) + 1; 
-        int intentosRestantes = 10;
-        boolean haGanado = false; 
-
+    public static void instrucciones (){
         System.out.println("¡Bienvenido al juego de Adivina el Número!");
-        System.out.println("Estoy pensando en un número entre 1 y 100.");
-        System.out.println("Tienes 10 intentos para adivinarlo. ¡Buena suerte!");
+        System.out.println("Estoy pensando en un número entre "+MINIMO+" y "+MAXIMO);
+        System.out.println("Tienes "+intentosRestantes +"intentos para adivinarlo. ¡Buena suerte!");
+    }
 
+    public static int obtenerNumero(){
+        return (int)(Math.random()* (MAXIMO - MINIMO+1))+ MINIMO ; 
+    }
+
+    public static void jugar (int numeroPensado){
+       
+        boolean haGanado = false; 
         while (intentosRestantes > 0 && !haGanado) {
             System.out.println("\nIntentos restantes: " + intentosRestantes);
-            System.out.print("Introduce tu número: ");
-            int numeroUsuario = scanner.nextInt();
+            int numeroUsuario = preguntarNumero();
             int diferencia = Math.abs(numeroPensado - numeroUsuario);
 
             if (numeroUsuario == numeroPensado) {
@@ -38,36 +46,24 @@ public class Adivinacion {
                     System.out.println("Tibio. Te estás acercando.");
                 } else {
                     System.out.println("Frío. Aún estás lejos.");
-                }
-
-                
-                if (diferencia <= 5 && intentosRestantes <= 9) { 
-                    numeroPensado = ajustarNumeroPensado(numeroPensado, random);
-                    System.out.println("¡Atchís! El ordenador ha estornudado.");
-                }
-            }
-
-            
+                } }
             intentosRestantes--;
         }
 
         
         if (!haGanado) {
             System.out.println("\nLo siento, se han agotado los intentos. El número era: " + numeroPensado);
-        }
-
-        scanner.close();
+     }        
     }
 
-    
-    private static int ajustarNumeroPensado(int numeroActual, Random random) {
-        int ajuste = random.nextInt(5) + 1; 
-        if (random.nextBoolean()) {
-            numeroActual += ajuste; 
-        } else {
-            numeroActual -= ajuste; 
-        }
-        
-        return Math.max(1, Math.min(100, numeroActual));
-    }
+    public static int preguntarNumero (){
+        Scanner scanner = new Scanner(System.in);
+        int numeroUsuario =0;
+        do { 
+             System.out.print("Introduce tu número: ");
+             numeroUsuario = scanner.nextInt();
+             System.out.println((numeroUsuario<MINIMO || numeroUsuario>MAXIMO)?"Número no válido":"");
+        } while (numeroUsuario<MINIMO || numeroUsuario>MAXIMO);
+        return numeroUsuario;
+    }    
 }
