@@ -41,4 +41,5 @@ public class AdivinaElNumero {
         System.out.println(diferencia <= 5 ? "Caliente" : diferencia <= 10 ? "Tibio" : "Frio");
         }
         
+        
 }
