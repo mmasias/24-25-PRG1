@@ -9,7 +9,7 @@ class AdivinaNumero {
         final int INTENTOS = 10;
         
         int turno = 1;
-        int numeroOrdenador = 100;
+        int numeroOrdenador = generarNumeroAleatorio(NUMERO_MAXIMO,NUMERO_MINIMO);
         int numeroUsuario;
         boolean calienteRondaAnterior = false;
         boolean calienteRondaActual;
