@@ -5,24 +5,18 @@ public class EsconditeEnElParque {
         Scanner entrada = new Scanner(System.in);
         final int MAXIMO = 6;
         final int MINIMO = 1;
-        final int ARBOL = 1;
-        final int BANCO = 2;
-        final int ARBUSTO = 3;
-        final int COLUMPIO = 4;
-        final int CASETA = 5;
-        final int TOBOGAN = 6;
         final double PROBABILIDAD_OCULTARSE = 0.1;
         boolean encontradoEnEstaBusqueda = false;
-        boolean intentosRestantes = 12 ; 
+        final int INTENTOS_RESTANTES  = 12 ; 
         
         final int PROBABILIDAD_NIÑO_1 = (int)(Math.random()*MAXIMO-MINIMO+1)+MINIMO;;
         int PROBABILIDAD_NIÑO_2 = (int)(Math.random()*MAXIMO-MINIMO+1)+MINIMO;;
         int PROBABILIDAD_NIÑO_3 = (int)(Math.random()*MAXIMO-MINIMO+1)+MINIMO;; 
         boolean encontradoNiño1 =false,encontradoNiño2 =false,encontradoNiño3 =false;
 
-        while (intentosRestantes > 0 && !(encontradoNiño1 && encontradoNiño2 && encontradoNiño3)){
-        System.out.println("Donde quiere buscar 1-Árbol 2-Banco 3-Arbusto 4-Columpio 5-Caseta 6-Tobogan");
-        int respuestaUsuario = entrada.nextInt();
+        while (INTENTOS_RESTANTES  > 0 && !(encontradoNiño1 && encontradoNiño2 && encontradoNiño3)){
+            System.out.println("Donde quiere buscar 1-Árbol 2-Banco 3-Arbusto 4-Columpio 5-Caseta 6-Tobogan");
+            int respuestaUsuario = entrada.nextInt();
 
             if (PROBABILIDAD_NIÑO_1 == respuestaUsuario && !encontradoNiño1){
                 if (Math.random() < PROBABILIDAD_OCULTARSE) {
@@ -54,6 +48,11 @@ public class EsconditeEnElParque {
                 }
 
             }
+            if (!encontradoEnEstaBusqueda) {
+                System.out.println("No has encontrado a ningún niño en el lugar " + respuestaUsuario + ".");
+            }
+
+            INTENTOS_RESTANTES --;
         
         }
         
