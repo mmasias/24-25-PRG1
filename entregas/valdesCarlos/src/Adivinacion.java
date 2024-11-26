@@ -17,7 +17,7 @@ public class Adivinacion {
         System.out.println(estadoFinal);
 
     }
-    
+
     static int pensarNumero(){
         final int MAXIMO = 1;
         final int MINIMO = 100;
@@ -31,12 +31,12 @@ public class Adivinacion {
         Scanner entradaUsuario = new Scanner (System.in);
         return entradaUsuario.nextInt();
     }
-        
+
     static void darPista(int numeroMaquina, int numeroUsuario) {
         int diferencia = Math.abs(numeroMaquina - numeroUsuario);
         System.out.println(diferencia <= 5 ? "Caliente" : diferencia <= 10 ? "Tibio" : "Frio");
     }
-        
-    
+
+
 
 }
