@@ -5,6 +5,7 @@ public class EsconditeEnElParque {
         Scanner entrada = new Scanner(System.in);
         final int MAXIMO = 6;
         final int MINIMO = 1;
+        final int MINIMO_INTENTOS_RESTANTES = 0;
         final double PROBABILIDAD_OCULTARSE = 0.1;
         boolean encontradoEnEstaBusqueda = false;
         int intentosRestantes  = 12 ; 
@@ -14,7 +15,7 @@ public class EsconditeEnElParque {
         int PROBABILIDAD_NIÑO_3 = (int)(Math.random()*MAXIMO-MINIMO+1)+MINIMO;; 
         boolean encontradoNiño1 =false,encontradoNiño2 =false,encontradoNiño3 =false;
 
-        while (intentosRestantes  > 0 && !(encontradoNiño1 && encontradoNiño2 && encontradoNiño3)){
+        while (intentosRestantes  > MINIMO_INTENTOS_RESTANTES && !(encontradoNiño1 && encontradoNiño2 && encontradoNiño3)){
             System.out.println("Donde quiere buscar 1-Árbol 2-Banco 3-Arbusto 4-Columpio 5-Caseta 6-Tobogan");
             int respuestaUsuario = entrada.nextInt();
 
