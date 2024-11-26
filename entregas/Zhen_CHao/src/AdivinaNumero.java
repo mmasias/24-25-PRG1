@@ -22,13 +22,12 @@ public class AdivinaNumero {
                 System.out.println("¡Has adivinado el número!");
                 adivinado = true;  
             } else {
-                if (numeroUsuario < numeroMaquina) {
-                    System.out.println("Es mayor.");
-                } else {
-                    System.out.println("Es menor.");
-                }
+            if (numeroUsuario < numeroMaquina) {
+                System.out.println("Es mayor.");
+            } else {
+                System.out.println("Es menor.");
+            }
 
-                
                 int diferencia = Math.abs(numeroMaquina - numeroUsuario);
                 if (diferencia <= 5) {
                     System.out.println("¡CALIENTE!");
@@ -46,10 +45,12 @@ public class AdivinaNumero {
     }
 
     
-    private static int generarNumeroAleatorio() {
+    public  static int generarNumeroAleatorio() {
         final int MINIMO = 1;
         final int MAXIMO = 100;
         
         return (int) (Math.random() * (MAXIMO - MINIMO + 1) + MINIMO);
     }
 }
+
+
