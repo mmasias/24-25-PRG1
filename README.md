@@ -11,7 +11,8 @@ El repositorio de materiales y proyectos de la asignatura **Programación I** de
 - Evaluaciones
   - Evaluación continua: [Retos!](evaluaciones/retos/README.md)
   - Exámenes
-    - Parcial: [Enunciado](evaluaciones/examenes/examenParcial/README.md) | Repositorio de trabajo y entrega.
+    - Parcial: [Enunciado](https://github.com/mmasias/24-25-PRG1-ExamenParcial) | [Repositorio de trabajo y entrega](https://classroom.github.com/a/jr1Cr8Jh).
+    - Parcial II: [Enunciado](https://github.com/mmasias/24-25-PRG1-ExamenParcial-II) | [Repositorio de trabajo y entrega](https://classroom.github.com/a/A3K63jWj)
     - Final: [Enunciado](evaluaciones/examenes/examenFinal/README.md) | Repositorio de trabajo y entrega.
     - Extraordinario: [Enunciado](evaluaciones/examenes/examenExtraordinario/README.md) | Repositorio de trabajo y entrega.
 
