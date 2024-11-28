@@ -8,7 +8,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui *********************************
-                  !(i == 11 && j == 11)
+                  !(i == 11 || j == 11)
                 // El código hasta aquí *********************************
                 ) {
                     System.out.print("(*)");
