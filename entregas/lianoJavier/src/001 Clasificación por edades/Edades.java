@@ -2,23 +2,10 @@ import java.util.Scanner;
 
 class Edades {
   public static void main(String[] args) {
-    int añoUsuario = pedirAño();
-
-    boolean pertenecePrimeraInfancia = añoUsuario <= 5,
-        perteneceInfancia = añoUsuario <= 11,
-        perteneceAdolescencia = añoUsuario <= 18,
-        perteneceJuventud = añoUsuario <= 25,
-        perteneceAdultez = añoUsuario <= 59;
-
-    String aQueEtapaPertenece = pertenecePrimeraInfancia ? "Primera Infancia"
-        : perteneceInfancia ? "Infancia"
-            : perteneceAdolescencia ? "Adolescencia"
-                : perteneceJuventud ? "Juventud"
-                    : perteneceAdultez ? "Adultez"
-                        : "Persona mayor";
+    int añosUsuario = pedirAño();
 
     System.out.println("Perteneces a la etapa de la vida:");
-    System.out.println(aQueEtapaPertenece);
+    System.out.println(calificarEdad(añosUsuario));
   }
 
   static int pedirAño() {
@@ -29,5 +16,23 @@ class Edades {
     if (!añoCorrecto)
       año = pedirAño();
     return año;
+  }
+
+  static String calificarEdad(int edad) {
+    String etapa;
+    if (edad <= 5)
+      etapa = "primera infancia";
+    else if (edad <= 11)
+      etapa = "infancia";
+    else if (edad <= 18)
+      etapa = "adolescencia";
+    else if (edad <= 25)
+      etapa = "juventud";
+    else if (edad <= 59)
+      etapa = "adultez";
+    else
+      etapa = "persona mayor";
+
+    return etapa;
   }
 }
