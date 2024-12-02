@@ -1,17 +1,21 @@
 import java.util.Scanner;
 
 class Edades {
+  static Scanner entrada = new Scanner(System.in);
+
   public static void main(String[] args) {
     int añosUsuario = pedirAño();
 
     System.out.println("Perteneces a la etapa de la vida:");
     System.out.println(calificarEdad(añosUsuario));
+
+    entrada.close();
   }
 
   static int pedirAño() {
     System.out.println("¿Cuál es tu edad?");
     int año;
-    año = new Scanner(System.in).nextInt();
+    año = entrada.nextInt();
     boolean añoCorrecto = año < 100 && año > 0;
     if (!añoCorrecto)
       año = pedirAño();
