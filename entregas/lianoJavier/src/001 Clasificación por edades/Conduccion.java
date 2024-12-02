@@ -3,18 +3,8 @@ import java.util.Scanner;
 class Conduccion {
   public static void main(String[] args) {
 
-    boolean tieneCarnetDeConducir;
     int edad;
-
     edad = pedirEdad();
-
-    tieneCarnetDeConducir = entrada.nextBoolean();
-
-    boolean menorDeEdad = edad < 18;
-    boolean mayorSinLicencia = edad >= 18 && !tieneCarnetDeConducir;
-    boolean conductorNovel = edad <= 19 && tieneCarnetDeConducir;
-    boolean conductorExperimentado = edad <= 27 && tieneCarnetDeConducir;
-    boolean conductorJubilado = edad >= 65 && tieneCarnetDeConducir;
 
     boolean tieneCarnet = pedirCarnet();
     if (tieneCarnet) {
