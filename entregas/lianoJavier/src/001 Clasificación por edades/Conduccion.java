@@ -8,7 +8,7 @@ class Conduccion {
 
     boolean tieneCarnet = pedirCarnet();
     if (tieneCarnet) {
-      mensaje = evaluar(edad);
+      mensaje = "Eres" + evaluar(edad) + ".";
     } else {
       mensaje = "No puedes conducir sin carnet de conductor."
     }
