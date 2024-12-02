@@ -8,7 +8,6 @@ class Conduccion {
 
     edad = pedirEdad();
 
-    System.out.println("¿Tiene licencia de conducir? (true/false):");
     tieneCarnetDeConducir = entrada.nextBoolean();
 
     boolean menorDeEdad = edad < 18;
@@ -17,23 +16,48 @@ class Conduccion {
     boolean conductorExperimentado = edad <= 27 && tieneCarnetDeConducir;
     boolean conductorJubilado = edad >= 65 && tieneCarnetDeConducir;
 
-    String resultado = menorDeEdad ? "Eres menor"
-    : mayorSinLicencia ? "No tiene licencia"
-    : conductorNovel ? "Conductor Novel"
-    : conductorExperimentado ? "Conductor Experimentado"
-    : "Conductor Senior";
-
-    System.out.println(
-      "Clasificación: " + resultado + ". " +
-    ((!tieneCarnetDeConducir || conductorJubilado)
-      ? "No puede conducir"
-      : "Puede conducir"));
+    boolean tieneCarnet = pedirCarnet();
+    if (tieneCarnet) {
+      mensaje = evaluar(edad);
+    } else {
+      mensaje = "No puedes conducir sin carnet de conductor."
+    }
+    System.out.println(mensaje);
 
   }
   static int pedirEdad() {
+    int edad;
+
     System.out.println("Ingrese su edad:");
-    respuesta = new Scanner(System.in).nextInt();
-    // if(evaluarRespuesta(respuesta) == "error") respuesta = pedirEdad();
-    return respuesta;
+
+    edad = new Scanner(System.in).nextInt();
+
+    if (evaluar(edad) == "error") edad = pedirEdad();
+
+    return edad;
+  }
+  static boolean pedirCarnet() {
+    int edad;
+
+    System.out.println("¿Tiene licencia de conducir? (true/false):");
+
+    edad = new Scanner(System.in).nextBoolean();
+
+    if (evaluar(edad) == "error") edad = pedirEdad();
+
+    return edad;
+  }
+  static void evaluar(
+    int edad
+  ) {
+    final String ERROR = "error";
+    String mensaje;
+    if (edad <= 0) mensaje = ERROR;
+    if (edad < 18) mensaje = "menor de edad"; else
+    if (edad <= 19) mensaje = "conductor novel"; else
+    if (edad <= 27) mensaje = "conductor experimentado"; else
+    if (edad <= 64) mensaje = "conducor senior"; else 
+    if (edad < 100) mensaje = "conductor juvilado" else mensaje = ERROR;
+    return mensaje;
   }
 }
