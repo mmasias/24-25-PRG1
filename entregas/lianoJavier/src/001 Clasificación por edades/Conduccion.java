@@ -7,10 +7,11 @@ class Conduccion {
     edad = pedirEdad();
 
     boolean tieneCarnet = pedirCarnet();
+    String mensaje;
     if (tieneCarnet) {
-      mensaje = "Eres" + evaluar(edad) + ".";
+      mensaje = "Eres " + evaluar(edad) + ".";
     } else {
-      mensaje = "No puedes conducir sin carnet de conductor."
+      mensaje = "No puedes conducir sin carnet de conductor.";
     }
     System.out.println(mensaje);
 
@@ -27,17 +28,10 @@ class Conduccion {
     return edad;
   }
   static boolean pedirCarnet() {
-    int edad;
-
     System.out.println("¿Tiene licencia de conducir? (true/false):");
-
-    edad = new Scanner(System.in).nextBoolean();
-
-    if (evaluar(edad) == "error") edad = pedirEdad();
-
-    return edad;
+    return new Scanner(System.in).nextBoolean();
   }
-  static void evaluar(
+  static String evaluar(
     int edad
   ) {
     final String ERROR = "error";
@@ -47,7 +41,7 @@ class Conduccion {
     if (edad <= 19) mensaje = "conductor novel"; else
     if (edad <= 27) mensaje = "conductor experimentado"; else
     if (edad <= 64) mensaje = "conducor senior"; else 
-    if (edad < 100) mensaje = "conductor juvilado" else mensaje = ERROR;
+    if (edad < 100) mensaje = "conductor juvilado"; else mensaje = ERROR;
     return mensaje;
   }
 }
