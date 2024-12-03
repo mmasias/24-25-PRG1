@@ -3,17 +3,15 @@ import java.util.Scanner;
 class Temperaturas {
     public static void main(String[] args) {
 
-        double dia1 = pedirTemperatura();
-        double dia2 = pedirTemperatura();
-        double dia3 = pedirTemperatura();
-        double dia4 = pedirTemperatura();
-        double dia5 = pedirTemperatura();
-        double dia6 = pedirTemperatura();
-        double dia7 = pedirTemperatura();
+        double[] temperaturas = new double[7];
 
-        double media = calcularMedia(dia1, dia2, dia3, dia4, dia5, dia6, dia7);
-        double maxima = calcularMaxima(dia1, dia2, dia3, dia4, dia5, dia6, dia7);
-        double minima = calcularMinima(dia1, dia2, dia3, dia4, dia5, dia6, dia7);
+        for (int dia = 0; dia < 7; dia++) {
+            temperaturas[dia] = pedirTemperatura();
+        }
+
+        double media = calcularMedia(temperaturas);
+        double maxima = calcularMaxima(temperaturas);
+        double minima = calcularMinima(temperaturas);
 
         contarHistoria(media, maxima, minima);
     }
@@ -25,34 +23,31 @@ class Temperaturas {
         System.out.println("La mínima fue [" + minima + "]");
     }
 
-    static double calcularMinima(double dia1, double dia2, double dia3, double dia4, double dia5, double dia6,
-            double dia7) {
-        double laMinima = dia1;
-        laMinima = dia2 < laMinima ? dia2 : laMinima;
-        laMinima = dia3 < laMinima ? dia3 : laMinima;
-        laMinima = dia4 < laMinima ? dia4 : laMinima;
-        laMinima = dia5 < laMinima ? dia5 : laMinima;
-        laMinima = dia6 < laMinima ? dia6 : laMinima;
-        laMinima = dia7 < laMinima ? dia7 : laMinima;
+    static double calcularMinima(double[] valores) {
+        final int DIAS = 7;
+        double laMinima = valores[0];
+        for (int i = 1; i < DIAS; i++) {
+            laMinima = laMinima > valores[i] ? valores[i] : laMinima;
+        }
         return laMinima;
     }
 
-    static double calcularMaxima(double dia1, double dia2, double dia3, double dia4, double dia5, double dia6,
-            double dia7) {
-        double laMaxima = dia1;
-        laMaxima = dia2 > laMaxima ? dia2 : laMaxima;
-        laMaxima = dia3 > laMaxima ? dia3 : laMaxima;
-        laMaxima = dia4 > laMaxima ? dia4 : laMaxima;
-        laMaxima = dia5 > laMaxima ? dia5 : laMaxima;
-        laMaxima = dia6 > laMaxima ? dia6 : laMaxima;
-        laMaxima = dia7 > laMaxima ? dia7 : laMaxima;
+    static double calcularMaxima(double[] valores) {
+        final int DIAS = 7;
+        double laMaxima = valores[0];
+        for (int i = 1; i < DIAS; i++) {
+            laMaxima = laMaxima < valores[i] ? valores[i] : laMaxima;
+        }
         return laMaxima;
     }
 
-    static double calcularMedia(double dia1, double dia2, double dia3, double dia4, double dia5, double dia6,
-            double dia7) {
+    static double calcularMedia(double[] valores) {
         final int DIAS = 7;
-        return (dia1 + dia2 + dia3 + dia4 + dia5 + dia6 + dia7) / DIAS;
+        double total = 0;
+        for (int i = 0; i < DIAS; i++) {
+            total = total + valores[i];
+        }
+        return total / DIAS;
     }
 
     static double pedirTemperatura() {
