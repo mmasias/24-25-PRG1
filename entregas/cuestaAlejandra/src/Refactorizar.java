@@ -47,6 +47,7 @@ public class Refactorizar {
 
             darHora(tiempoActual);
             contarHistoria(unaFila, caja1, caja2, caja3, caja4);
+            for(int i=0;i<1000000000;i++){}
 
         }
 
@@ -63,7 +64,7 @@ public class Refactorizar {
         System.out.println("CAJA 3 " + PRODUCTO.repeat(caja3));
         System.out.println("CAJA 4 " + PRODUCTO.repeat(caja4));
         System.out.println("---------------------------------------------");
-        for(int i=0;i<1000000000;i++){}
+        
      }  
         static boolean puedePasar(int unaCaja, int laFila){
             return unaCaja <= 0 && laFila > 0;
