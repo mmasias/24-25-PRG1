@@ -26,6 +26,9 @@
     - Bloque de código
     - Estructuras repetitivas: while, do ... while, for
     - Estructuras altenativas: if ... else-if ... else.
+    - Programación modular: métodos estáticos.
+      - Ámbito de variables.
+      - Responsabilidades
 - Clean code
   - Nombres adecuados a las clases y variables. Nombre del archivo.
   - Orden del código, indentación, espacios.
