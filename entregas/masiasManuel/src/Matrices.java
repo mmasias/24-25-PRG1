@@ -23,6 +23,11 @@ class Matrices {
         matriz[9] = otraMiniMatriz;
         
         imprime(matriz);
+
+        System.out.println("System.out.println(matriz); imprime " + matriz);
+        System.out.println("System.out.println(matriz[0]); imprime " + matriz[0]);
+        System.out.println("System.out.println(matriz[0][0]); imprime " + matriz[0][0]);
+
     }
 
     static void imprime(int[][] unaMatriz) {
