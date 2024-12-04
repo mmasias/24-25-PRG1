@@ -31,7 +31,7 @@ class ascensor{
                 }
                 System.out.println(ascensor+pisoActual);
                 
-                for(int i=pisoActual;i>0;){
+                for(int i=(pisoActual-1);i>-1;){
                     System.out.println(textura+i); 
                     i=i-1;
                 }
