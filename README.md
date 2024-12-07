@@ -16,7 +16,7 @@ El repositorio de materiales y proyectos de la asignatura **Programación I** de
     - Final: [Enunciado](evaluaciones/examenes/examenFinal/README.md) | Repositorio de trabajo y entrega.
     - Extraordinario: [Enunciado](evaluaciones/examenes/examenExtraordinario/README.md) | Repositorio de trabajo y entrega.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Los repositorios de entrega de exámenes estarán disponible días antes del examen. El repositorio con el enunciado del examen se activa al inicio del examen y permitirá entregas hasta la finalización del mismo.
 
 ## 🔧 Herramientas et al
