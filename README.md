@@ -29,7 +29,7 @@ El repositorio de materiales y proyectos de la asignatura **Programación I** de
 - [Google suite](https://drive.google.com/drive/u/0/my-drive)
 - [Plantillas](/documentos/plantillas.md)
 
-## Bibliografía & enlaces interesantes
+## 📖 Bibliografía & enlaces interesantes
 
 NOTA: *Algunos enlaces podrían requerir **credenciales de acceso al campus** o a otros espacios colaborativos.*
 
