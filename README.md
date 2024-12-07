@@ -31,7 +31,8 @@ El repositorio de materiales y proyectos de la asignatura **Programación I** de
 
 ## 📖 Bibliografía & enlaces interesantes
 
-NOTA: *Algunos enlaces podrían requerir **credenciales de acceso al campus** o a otros espacios colaborativos.*
+> [!NOTE] 
+> Algunos enlaces podrían requerir *credenciales de acceso al campus* o a otros espacios colaborativos.
 
 - [Hoja de asistencia et-al](https://docs.google.com/spreadsheets/d/1FsM1GnRFzQe0zcetTVmi7zsrLkx0iUEfCV3gNkwSSgY/edit?usp=sharing)
 - [Classroom de la asignatura](https://classroom.github.com/classrooms/150588315-24-25-programacion-1)
