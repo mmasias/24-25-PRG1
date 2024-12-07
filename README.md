@@ -1,8 +1,8 @@
-# Programación I
+# 👨‍💻 Programación I
 
 El repositorio de materiales y proyectos de la asignatura **Programación I** del [Grado de Ingeniería Informática](https://www.uneatlantico.es/escuela-politecnica-superior/estudios-grado-oficial-en-ingenieria-informatica) la [Universidad Europea del Atlántico](https://www.uneatlantico.es).
 
-## Curso *[24][25]*
+## ⏰ Curso *[24][25]*
 
 - Repo con el [temario](https://github.com/mmasias/PRG1)
   - [A día de hoy, deberíamos saber...](temario/aDiaDeHoy.md)
@@ -19,7 +19,7 @@ El repositorio de materiales y proyectos de la asignatura **Programación I** de
 > [!NOTE]
 > Los repositorios de entrega de exámenes estarán disponible días antes del examen. El repositorio con el enunciado del examen se activa al inicio del examen y permitirá entregas hasta la finalización del mismo.
 
-## Herramientas et al
+## 🔧 Herramientas et al
 
 - [GIT](https://git-scm.com/) & [GitHub](https://github.com/)
 - [Visual Studio Code](https://code.visualstudio.com/)
