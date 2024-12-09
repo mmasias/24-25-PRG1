@@ -16,10 +16,8 @@ class Carrera {
   }
 
   static int calcularAvance(int agujero) {
-    final int[] AVANCE = {1,2,4,6};
-    if (isAcierto()) {
-      return AVANCE[agujero]
-    }
+    final int[] AVANCE = { 1, 2, 4, 6 };
+    return isAcierto(agujero) ? AVANCE[agujero] : 0;
   }
   
   static boolean isAcierto(int agujero) {
