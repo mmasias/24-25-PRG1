@@ -21,7 +21,7 @@ class Carrera {
   
   static boolean isAcierto(int agujero) {
     double[] PROBABILIDAD_ACIERTO = {0.6, 0.4, 0.3, 0.1};
-    return math.random() <= PROBABILIDAD_ACIERTO[agujero];
+    return Math.random() <= PROBABILIDAD_ACIERTO[agujero];
   }
 
 }
