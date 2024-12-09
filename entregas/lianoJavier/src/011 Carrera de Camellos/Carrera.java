@@ -4,8 +4,7 @@ class Carrera {
     int casillaActual = 0;
 
     int agujeroElegido = preguntarJugador();
-    casillaActual += calcularAvance();
-    evaluarResulrado(casillaActual);
+    casillaActual += calcularAvance(agujeroElegido);
   }
 
   static int preguntarJugador() {
