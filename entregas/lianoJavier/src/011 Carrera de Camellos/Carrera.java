@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class Carrera {
   public static void main(String[] args) {
     int casillaActual = 0;
@@ -18,9 +19,9 @@ class Carrera {
     final int[] AVANCE = { 1, 2, 4, 6 };
     return isAcierto(agujero) ? AVANCE[agujero] : 0;
   }
-  
+
   static boolean isAcierto(int agujero) {
-    double[] PROBABILIDAD_ACIERTO = {0.6, 0.4, 0.3, 0.1};
+    double[] PROBABILIDAD_ACIERTO = { 0.6, 0.4, 0.3, 0.1 };
     return Math.random() <= PROBABILIDAD_ACIERTO[agujero];
   }
 
