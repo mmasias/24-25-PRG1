@@ -22,7 +22,7 @@ class Matrices {
       "...",
       "[-]"
     };
-    return skins[pixel];
+    return SKINS[pixel];
   }
 
   static void imprimir(int[][] mapa) {
