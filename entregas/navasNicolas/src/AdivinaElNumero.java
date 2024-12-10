@@ -12,7 +12,8 @@ public class AdivinaElNumero {
         while (jugando) {
             turno++;
             int numeroUsuario = pedirNumero();
-            if (numeroUsuario >= 101 || numeroUsuario <= 0) {
+            
+            if (!numeroValido(numeroUsuario)) {
                 System.out.println("Del 1 al 100!");
             } else {
                 boolean adivino = numeroUsuario == unidadAleatoria;
@@ -25,8 +26,7 @@ public class AdivinaElNumero {
                 jugando = !adivino && turno < NUMERO_TURNOS;
             }
         }
-        String estadoFinal = (turno < NUMERO_TURNOS ? "" : "no") + "Gano!";
-        System.out.println(estadoFinal);
+        resultadoFinal(turno < NUMERO_TURNOS);
     }
 
     static int pedirNumero() {
@@ -41,9 +41,22 @@ public class AdivinaElNumero {
         return (int) (Math.random() * (MAXIMO - MINIMO + 1) + MINIMO);
     }
 
+    static boolean numeroValido(int numero) {
+        return numero >= 1 && numero <= 100;
+    }
+
     static int darPista(int unidadAleatoria, int numeroUsuario, int vecesCaliente) {
         int diferencia = Math.abs(unidadAleatoria - numeroUsuario);
-        System.out.println(diferencia <= 5 ? "Caliente" : diferencia <= 10 ? "TIbio" : "Frio");
-        return vecesCaliente + 1;
+        System.out.println(estaCaliente(diferencia) ? "Caliente" : diferencia <= 10 ? "Tibio" : "Frio");
+        return estaCaliente(diferencia) ? vecesCaliente + 1 : vecesCaliente;
+    }
+
+   static boolean estaCaliente(int diferencia) {
+        return diferencia <= 5;
+    }
+
+    static void resultadoFinal(boolean gano) {
+        String estadoFinal = gano ? "¡Gano!" : "¡No Gano!";
+        System.out.println(estadoFinal);
     }
 }
