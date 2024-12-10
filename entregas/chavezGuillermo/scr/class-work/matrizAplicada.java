@@ -13,4 +13,4 @@ class matrizAplicada{
     int[][] t=new int[10][100]
     //se hace la priumera memoria de t
     // esta hace referwncia y se hace el espacio para guardar 10 espacios de 100 variables integros
-    //11 referencias para 
+    //11 referencias para espacios y dentro de estos las variables
