@@ -23,6 +23,7 @@ public class Matrices {
             }
             System.out.println();
         }
+        System.out.println("===", repeat(matriz[0].length));
     }
 
     static String parse(int valor) {
