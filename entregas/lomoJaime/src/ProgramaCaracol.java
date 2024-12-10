@@ -2,11 +2,8 @@
  * ProgramaCaracol
  */
  class ProgramaCaracol {
-
     public static void main(String[] args){
-        final int PROFUNDIDAD = 20;
-        final int PROFUNDIDAD_MAXIMA =
-        final int PROFUNDIDAD_MINIMA =
+        final int PROFUNDIDAD = 20 ;
         final String POZO_BASE = "[] [] [] [] [] [] [] [] []";
         final String POZO_TOPE = "# # # #           # # # #";
         final String POZO_PARED = "  ##:. :. :. :. :.## _ __";
@@ -14,8 +11,10 @@
         final String POZO_CARACOL = "  ##   _@}_/      ## _ __";
      
         int profundidadAgua = 0;
-        int profundidadCaracol = (int)(Math.random()*20-10+1)+10;
-        int dia =0;
+        final int MAXIMA = 20;
+        final int MINIMA = 20;
+        int profundidadCaracol = (int)(Math.random()*MAXIMA-MINIMA+1)+MINIMA;
+        int dia = 0;
         do{
         System.out.println("DIA " + dia);
         System.out.println(POZO_TOPE);
