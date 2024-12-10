@@ -12,18 +12,25 @@ class Matrices {
             {0,0,0,0,1,0,0,0,0},
             
         };
-
-        imprime(dibujo);
+        int x=0, y=0;
+        
+        imprime(dibujo, x, y);
     }
 
-    static void imprime(int[][] matriz){
+    static void imprime(int[][] matriz, int posX, int posY){
+        final int PERSONAJE = 0;
         for (int fila = 0; fila < matriz.length; fila ++){
             for (int columna = 0; columna < matriz[fila].length; columna++){
-                System.out.print( parse(matriz[fila][columna]));
+                if (posY == fila && posX == columna) {
+                    System.out.println(parse(PERSONAJE));
+                } else {
+                    System.out.print( parse(matriz[fila][columna]));
+                }
+                }
+                System.out.println();
             }
-        System.out.println();
-        }
     }
+    
 
     static String parse(int valor){
         final String[] TILES = {
@@ -33,6 +40,7 @@ class Matrices {
             "$",
             "!",
             "¡",
+            "p",
         };
         return(TILES[valor]);
     }
