@@ -52,6 +52,7 @@ class RetoAdivinaElNumero2 {
     static boolean darPista(int numeroOrdenador, int numeroUsuario) {
         final int CALIENTE_RANGO = 5;
         final int TIBIO_RANGO = 10;
+        System.out.println(numeroOrdenador<numeroUsuario?"Es menor" : "Es mayor");
         int diferenacia = Math.abs(numeroOrdenador-numeroUsuario);
         System.out.println("| >  Uyyy, que "+ ((diferenacia<=CALIENTE_RANGO)? "caliente" : diferenacia<=TIBIO_RANGO ? "tibio" : "frio" ) +" estas, sigue asi");
         return diferenacia<=CALIENTE_RANGO;
