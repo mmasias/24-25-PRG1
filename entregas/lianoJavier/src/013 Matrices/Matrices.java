@@ -30,7 +30,7 @@ class Matrices {
       for (int pixel : columna) {
         System.out.print(parse(pixel));
       }
-System.out.println();
+      System.out.println();
     }
   }
 }
