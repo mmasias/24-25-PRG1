@@ -1,81 +1,96 @@
-import java.util.Scanner;
 
-class Mercadona {
+public class Mercadona {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
 
         final int HORAS_ABIERTO = 12;
-        final int MINUTOS_HORAS = 60;
-        final int TIEMPO_TOTAL = HORAS_ABIERTO * MINUTOS_HORAS;
-        final double PROBABILIDAD_LLEGADA = 0.4;
-        final int PACK_MINIMO = 5, PACK_MAXIMO = 15;
+        final int MINUTOS_HORA = 60;
+        final int TIEMPO_TOTAL = HORAS_ABIERTO * MINUTOS_HORA;
 
-        int Fila = 0;
-        int MinFilaVacia = 0;
+        int unaFila = 0;
+        int minutosFilaVacia = 0;
         int caja1 = 0, caja2 = 0, caja3 = 0, caja4 = 0;
 
         for (int tiempoActual = 1; tiempoActual <= TIEMPO_TOTAL; tiempoActual++) {
-            System.out.println("Tiempo: " + tiempoActual);
 
-            int llegaAlguien = Math.random() <= PROBABILIDAD_LLEGADA ? 1 : 0;
-            Fila = Fila + llegaAlguien;
+            int llegaAlguien = calcularLlegada();
+            unaFila = unaFila + llegaAlguien;
 
-            if (caja1 <= 0 && Fila > 0) {
-                Fila = Fila - 1;
-                caja1 = (int) (Math.random() * (PACK_MAXIMO - PACK_MINIMO + 1) + PACK_MINIMO);
-                System.out.println("Pasa una persona a la caja 1 y pone " + caja1 + " productos");
+            if (puedePasar(caja1, unaFila)) {
+                unaFila = unaFila - 1;
+                caja1 = generarProductos();
             }
 
-            if (caja2 <= 0 && Fila > 0) {
-                Fila = Fila - 1;
-                caja2 = (int) (Math.random() * (PACK_MAXIMO - PACK_MINIMO + 1) + PACK_MINIMO);
-                System.out.println("Pasa una persona a la caja 2 y pone " + caja2 + " productos");
+            if (puedePasar(caja2, unaFila)) {
+                unaFila = unaFila - 1;
+                caja2 = generarProductos();
             }
 
-            if (caja3 <= 0 && Fila > 0) {
-                Fila = Fila - 1;
-                caja3 = (int) (Math.random() * (PACK_MAXIMO - PACK_MINIMO + 1) + PACK_MINIMO);
-                System.out.println("Pasa una persona a la caja 3 y pone " + caja3 + " productos");
+            if (puedePasar(caja3, unaFila)) {
+                unaFila = unaFila - 1;
+                caja3 = generarProductos();
             }
 
-            if (caja4 <= 0 && Fila > 0) {
-                Fila = Fila - 1;
-                caja4 = (int) (Math.random() * (PACK_MAXIMO - PACK_MINIMO + 1) + PACK_MINIMO);
-                System.out.println("Pasa una persona a la caja 4 y pone " + caja4 + " productos");
+            if (puedePasar(caja4, unaFila)) {
+                unaFila = unaFila - 1;
+                caja4 = generarProductos();
             }
 
-            if (caja1 > 0) {
-                caja1 = caja1 - 1;
-                System.out.println("La caja 1 procesa 1 producto... le quedan " + caja1);
-            }
+            caja1 = atender(caja1);
 
-            if (caja2 > 0) {
-                caja2 = caja2 - 1;
-                System.out.println("La caja 2 procesa 1 producto... le quedan " + caja2);
-            }
+            caja2 = atender(caja2);
 
-            if (caja3 > 0) {
-                caja3 = caja3 - 1;
-                System.out.println("La caja 3 procesa 1 producto... le quedan " + caja3);
-            }
+            caja3 = atender(caja3);
 
-            if (caja4 > 0) {
-                caja4 = caja4 - 1;
-                System.out.println("La caja 4 procesa 1 producto... le quedan " + caja4);
-            }
+            caja4 = atender(caja4);
 
-            boolean cajaVacia = (Fila == 0 && llegaAlguien == 0);
-            MinFilaVacia = MinFilaVacia + (cajaVacia ? 1 : 0);
+            boolean haEstadoVacia = (unaFila == 0 && llegaAlguien == 0);
+            minutosFilaVacia = minutosFilaVacia + (haEstadoVacia ? 1 : 0);
 
-            System.out.println("LLegan a mercadona " + llegaAlguien);
-            System.out.println("En fila hay  " + Fila);
-            System.out.println("--------------------------------------------- ");
+            darLaHora(tiempoActual);
+            contarHistoria(unaFila, caja1, caja2, caja3, caja4);
 
         }
 
-        System.out.println("Al final del dia, la fila ha estado " + MinFilaVacia + " minutos vacia ");
-        System.out.println("y quedan " + Fila + " personas esperando");
+        System.out.println("Al final de la jornada, la fila ha estado " + minutosFilaVacia + " minutos vacia");
+        System.out.println("y quedan " + unaFila + " personas esperando");
 
-        entrada.close();
+    }
+
+    static void contarHistoria(int unaFila, int caja1, int caja2, int caja3, int caja4) {
+        final String PERSONA = "_O_ ", PRODUCTO = "[]";
+        System.out.println(PERSONA.repeat(unaFila));
+        System.out.println("CAJA 1 " + PRODUCTO.repeat(caja1));
+        System.out.println("CAJA 2 " + PRODUCTO.repeat(caja2));
+        System.out.println("CAJA 3 " + PRODUCTO.repeat(caja3));
+        System.out.println("CAJA 4 " + PRODUCTO.repeat(caja4));
+        System.out.println("---------------------------------------------");
+        for (int i = 0; i < 1000000000; i++) {
+        }
+
+    }
+
+    static void darLaHora(int tiempoActual) {
+        int hora = (int) (tiempoActual / 60) + 9;
+        int minutos = tiempoActual % 60;
+
+        System.out.println("[" + hora + "]:[" + minutos + "]");
+    }
+
+    static boolean puedePasar(int unaCaja, int laFila) {
+        return unaCaja <= 0 && laFila > 0;
+    }
+
+    static int calcularLlegada() {
+        final double PROBABILIDAD_LLEGADA = 0.4;
+        return Math.random() <= PROBABILIDAD_LLEGADA ? 1 : 0;
+    }
+
+    static int generarProductos() {
+        final int MINIMO_PRODUCTOS = 5, MAXIMO_PRODUCTOS = 15;
+        return (int) (Math.random() * (MAXIMO_PRODUCTOS - MINIMO_PRODUCTOS + 1) + MINIMO_PRODUCTOS);
+    }
+
+    static int atender(int unaCaja) {
+        return unaCaja <= 0 ? 0 : unaCaja--;
     }
 }
