@@ -1,18 +1,20 @@
 import java.util.Scanner;
+
 class Matrices {
   public static void main(String[] args) {
 
     int[][] mapa = {
-      {1,1,0,0,0,0,0,2,2,2},
-      {1,2,0,2,2,2,2,1,1,1},
-      {1,2,0,2,0,2,0,2,1,0},
-      {2,2,1,0,0,2,2,0,1,2},
-      {2,0,0,0,1,1,2,0,2,2},
-      {2,2,0,2,0,0,1,2,2,2},
-      {0,2,2,1,1,0,1,2,2,1},
-      {0,2,0,1,1,1,0,1,1,2},
-      {1,2,2,1,0,2,2,1,0,0},
-      {1,0,1,0,2,1,2,2,2,1}
+        { 1, 1, 0, 0, 0, 0, 0, 2, 2, 2 },
+        { 1, 1, 0, 0, 0, 0, 0, 2, 2, 2 },
+        { 1, 2, 0, 2, 2, 2, 2, 1, 1, 1 },
+        { 1, 2, 0, 2, 0, 2, 0, 2, 1, 0 },
+        { 2, 2, 1, 0, 0, 2, 2, 0, 1, 2 },
+        { 2, 0, 0, 0, 1, 1, 2, 0, 2, 2 },
+        { 2, 2, 0, 2, 0, 0, 1, 2, 2, 2 },
+        { 0, 2, 2, 1, 1, 0, 1, 2, 2, 1 },
+        { 0, 2, 0, 1, 1, 1, 0, 1, 1, 2 },
+        { 1, 2, 2, 1, 0, 2, 2, 1, 0, 0 },
+        { 1, 0, 1, 0, 2, 1, 2, 2, 2, 1 }
     };
 
     int[] posicion = constructorPosicion();
@@ -25,7 +27,7 @@ class Matrices {
     int posicionX = pedirPosicion();
     System.out.print("Dame el valor de Y: ");
     int posicionY = pedirPosicion();
-    int[] posicion = {posicionX, posicionY};
+    int[] posicion = { posicionX, posicionY };
     return posicion;
   }
 
@@ -35,10 +37,10 @@ class Matrices {
 
   static String parse(int pixel) {
     final String[] SKINS = {
-      "[ ]",
-      "...",
-      "[-]",
-      "_O_"
+        "[ ]",
+        "...",
+        "[-]",
+        "_O_"
     };
     return SKINS[pixel];
   }
