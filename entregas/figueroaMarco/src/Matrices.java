@@ -28,7 +28,7 @@ public class Matrices {
     }
 
     public static String parse(int valueArary){
-        final String[] TILES = {"  ","[#]","-","(",")","|","/","\\","[","]","{","}","<",">","*","&","^","%","$","#","@","!"};
+        final String[] TILES = {"  ","[#]"," -  ","(^^)"," | "," /  ","\\","[---]"," <  ","  >  ","*","^","$","#","@","!"};
         return TILES[valueArary];
     }
 }
