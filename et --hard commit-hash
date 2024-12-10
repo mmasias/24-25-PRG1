@@ -1,0 +1,171 @@
+[33mcommit 4e872aa8a8c5678ddfb7231dc5d15c1da13e2a79[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Tue Oct 1 22:54:05 2024 +0200
+
+    Añadir configuración de VSCode
+
+[33mcommit 70bd4918d8de67caf17545bc635e1ae2d4e16ab7[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Tue Oct 1 22:42:38 2024 +0200
+
+    CalcularNota Bien hecho
+
+[33mcommit 1e460d907d84cffe56642388f65e89345f60a67d[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Tue Oct 1 22:25:27 2024 +0200
+
+    CalcularNota bien hecho
+
+[33mcommit 51dff9a390ee157e52323445c096fc507f3ce0e8[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Tue Oct 1 14:03:16 2024 +0200
+
+    Avances
+
+[33mcommit e588d4eaa1be73cf6ebd63c232f157fcd3fb0ed5[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Tue Oct 1 12:41:16 2024 +0200
+
+    creacion archivo HolaMundo
+
+[33mcommit fbcda584ced1c3d8f4fd38a803aa0d1291c9c706[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Tue Oct 1 12:39:34 2024 +0200
+
+    Creacion Carpeta src y archivo
+
+[33mcommit 0b2592309ef87dfbe424bfaf4833b1c98184f4eb[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Tue Sep 24 20:40:27 2024 +0200
+
+    Creacion carpeta valdesCarlos y meti dentro las otras dos
+
+[33mcommit 781fffa9088e303759e279749cbf39b5f901ab3c[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Thu Sep 19 18:26:16 2024 +0200
+
+    Quinto commit
+
+[33mcommit 233c775fe9acc703ea7673175ff88a30bc6d900e[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Thu Sep 19 18:22:10 2024 +0200
+
+    Cuarto commit
+
+[33mcommit 04237d95a7c6366ed16cfeafa83569dd9a8ddc52[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Thu Sep 19 18:02:25 2024 +0200
+
+    Tercer commit
+
+[33mcommit 4f1d30b06a45d300581b9c25d0b50d8c1eae405f[m
+Author: carlos.valdes <carlos.valdes@alumnos.uneatlantico.es>
+Date:   Thu Sep 19 17:56:45 2024 +0200
+
+    Segundo commit
+
+[33mcommit 44ec1014ce0c1d31f760de50e011680e52dd719a[m
+Author: Carlos Vald�s Barqu�n <carlos.valdes@unealum.local>
+Date:   Thu Sep 19 13:42:18 2024 +0200
+
+    Hice mal el commit, ahora estan las dos carpetas
+
+[33mcommit 20572019d6d54cd3fda07bc746eaf72190ee063e[m
+Author: Carlos Vald�s Barqu�n <carlos.valdes@unealum.local>
+Date:   Thu Sep 19 13:39:16 2024 +0200
+
+    Primer commit
+
+[33mcommit e0ddbc213034cbe3ab78d4a7e4ff3858bb0c9a50[m
+Author: Manuel Masías <mmasias@users.noreply.github.com>
+Date:   Wed Sep 18 13:19:53 2024 +0200
+
+    Autobombo
+
+[33mcommit 766327b778cba2d1bb49cd9141ab7589ce418e2e[m
+Author: Manuel Masías <mmasias@users.noreply.github.com>
+Date:   Wed Sep 18 13:17:26 2024 +0200
+
+    Ajuste demo
+
+[33mcommit 64a38f56145537852c273a53a6958b7a012daa14[m
+Author: manuel@AIO.universidad <manuel@masiasweb.com>
+Date:   Tue Sep 17 11:55:48 2024 +0200
+
+    microAjuste estético
+
+[33mcommit 45f536e47e6ab11c0b079806d53d49c04076e467[m
+Author: manuel@AIO.universidad <manuel@masiasweb.com>
+Date:   Tue Sep 17 11:33:53 2024 +0200
+
+    Detalle reto 001
+
+[33mcommit ac34c64b3e3561b0fd7e496a0cbfb6d03f208dea[m
+Author: manuel@AIO.universidad <manuel@masiasweb.com>
+Date:   Tue Sep 17 11:30:36 2024 +0200
+
+    Extension del reto 001
+
+[33mcommit d10254bd4b904df56adef423db9439d711daeed5[m
+Author: manuel@AIO.universidad <manuel@masiasweb.com>
+Date:   Wed Sep 11 14:27:05 2024 +0200
+
+    Ampliación del temario del curso
+    
+    - Se añadió el tema de "Abstracción".
+    - Se añadió el tema de "Fundamentos de conocimiento y complejidad".
+    - Se añadió el tema de "Definición de Sistema, información, sistemas de información: sistemas complejos".
+    - Se añadió el tema de "CRUD o el tratamiento de la información".
+    - Se añadió el tema de "Consola (terminal o línea de comandos): Invocación, CRUD, limpieza. Reconocimiento de los elementos que aparecen en ella. Comandos, etc...".
+
+[33mcommit 3ab89dea2ae8f96e860c8d783f1fa6852826063d[m
+Author: manuel@AIO.universidad <manuel@masiasweb.com>
+Date:   Wed Sep 11 11:16:20 2024 +0200
+
+    Reto 000
+
+[33mcommit d6ee711012139f5b263a93068cd6358ecdcc0c30[m
+Author: manuel@AIO.universidad <manuel@masiasweb.com>
+Date:   Wed Sep 11 10:23:20 2024 +0200
+
+    Link al classroom
+
+[33mcommit 316f17928b1dd88324a2c8dea850c66d06fbb0dc[m
+Author: manuel@AIO.universidad <manuel@masiasweb.com>
+Date:   Wed Sep 11 09:20:42 2024 +0200
+
+    Actualización de temario.
+
+[33mcommit 39f34ab84e8dc9e2b7cfea357748d5f9510e2c0b[m
+Author: manuel@AIO.universidad <manuel@masiasweb.com>
+Date:   Tue Sep 10 11:48:42 2024 +0200
+
+    Algunos enlaces más
+
+[33mcommit d6a053875f4ca94c4c25dafd9fb1a357ed68757d[m
+Author: manuel@sdf1 <manuel@masiasweb.com>
+Date:   Tue Sep 10 00:00:18 2024 +0200
+
+    Actualización de enlaces
+    
+    - Actualizado el enlace del temario al repositorio remoto.
+    - Añadido enlace directo a la hoja de asistencia y a los libros de la asignatura.
+
+[33mcommit eb6c2c9fe674c0847fc99ae80acb089c0ac775c2[m
+Author: manuel@sdf1.kde <manuel@masiasweb.com>
+Date:   Fri Aug 23 13:09:31 2024 +0200
+
+    Actualización general del contenido del curso
+    
+    - Cambiado el nombre del repositorio de "NombreAsignatura" a "Programación I".
+    - Actualizado el año del curso a [24][25].
+    - Simplificada la lista de herramientas, combinando las entradas de diagramas en una sola línea.
+    - Cambiado "Google Docs" por "Google suite" para referencias de herramientas.
+    - Reestructurado el temario, reemplazando temas marcados con "x" por una lista de temas planificados sin marcar, agregando nuevos temas como Lenguajes de programación, Programación imperativa y estructurada, Introducción a la orientación a objetos.
+    - Eliminada la sección de artículos varios recopilados, indicando solamente Artículos varios con un estado pendiente.
+
+[33mcommit 3d23869a71923f4be2ad21b7857f156421a9f434[m
+Author: Manuel Masías <mmasias@users.noreply.github.com>
+Date:   Fri Aug 23 01:29:56 2024 +0200
+
+    Initial commit
