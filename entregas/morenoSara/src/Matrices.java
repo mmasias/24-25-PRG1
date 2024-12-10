@@ -51,9 +51,14 @@ class Matrices{
         --------------------
         int[][] x = {
             {1,2,3},
-            null, //referencia a nada  pero existe
+            null, //referencia a donde no hay nada  pero existe
             {3,2,3,4,5},
             {5,6,7},
         }
+
+        
+
+
+
     }
 }
