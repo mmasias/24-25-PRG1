@@ -1,42 +1,80 @@
-// public class Caracol {
-//     /* */
-//     public static void main(String[] args) {
-//         System.out.println("El caracol");
+import java.util.Scanner;
 
-//         final int PROFUNDIDAD = 20;
-//         final String POZO_BASE = "[][][][][][][][][][][][][]";
-//         final String POZO_TOPE = "[][][][]          [][][][]";
-//         final String POZO_PARED = "  [][]: .: .: .: .: .[][] _ __";
-//         final String POZO_AGUA = "   [][]~~~~~~~~~~~~~~~~~~~~~~~~~~ [][]";
-//         final String POZO_CARACOL = "  [][]     @/'          [][]  _ __";
+class Caracol {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
 
-//         final int PROFUNDIDADMAXIMA = 20;
-//         final int PROFUNDIDADMINIMA = 10;
+        final String POZO_SUPERIOR = "[__]              [__]";
+        final String POZO_CON_COCHE = "[__]    COCHE     [__]";
+        final String POZO_PARED = "  []:. :. :. :. :.[] _ __ ";
+        final String POZO_INFERIOR = "  [][][][][][][][][]";
+        final String POZO_AGUA = "  []~~~~~~~~~~~~~~[] _ __ ";
+        final String CARACOL = "  []    _@)_/’    [] _ __ ";
 
-//         int profundidadAgua = 0;
-//         int profundidadCaracol = (int) (Math.random() * 20 - 10 + 1) + 10;
-//         int dia = 0;
+        final int PROFUNDIDAD = 20;
+        final int MAXIMA = 20;
+        final int MINIMA = 10;
 
-//         do {
-//             System.out.println(POZO_TOPE);
+        final double PROBABILIDAD_LLUVIA_FUERTE = 0.05;
+        final int CRECIDA_LLUVIA_FUERTE = 5;
+        final double PROBABILIDAD_LLUVIA_MEDIA = 0.15;
+        final int CRECIDA_LLUVIA_MEDIA = 2;
 
-//             for (int i = 0; i <= PROFUNDIDAD; i++) {
-//                 if (profundidadCaracol) {
+        final double PROBABILIDAD_APARCAMIENTO_COCHE = 0.35;
+        final int CAIDA_POR_COCHE = 2;
 
-//                 } else if (i > PROFUNDIDAD - profundidadAgua) {
-//                     System.out.println(POZO_AGUA + i);
+        int dia = 0;
+        int caracolSube = 0;
+        int caracolBaja = 0;
+        int velocidadMaximaSubidaCaracol = 4;
+        final int VELOCIDAD_MINIMA_SUBIDA_CARACOL = 1;
+        final int VELOCIDAD_MAXIMA_CAIDA_CARACOL = 2;
+        final int VELOCIDAD_MINIMA_CAIDA_CARACOL = 0;
 
-//                 } else {
-//                     System.out.println(POZO_PARED + i);
+        int alturaAgua = 0;
+        int profundidadCaracol = (int) ((Math.random() * (MAXIMA - MINIMA + 1)) + MINIMA);
+        boolean haSalido = profundidadCaracol <= 0;
+        boolean estaVivo = true;
 
-//                 }
+        System.out.println("Al inicio el caracol cae a [" + profundidadCaracol + "] metros");
 
-//             }
+        do {
+            dia++;
 
-//             System.out.println(POZO_BASE);
+            double probabilidadLluvia = Math.random();
+            int aporteAgua = probabilidadLluvia <= PROBABILIDAD_LLUVIA_FUERTE ? CRECIDA_LLUVIA_FUERTE
+                    : probabilidadLluvia <= PROBABILIDAD_LLUVIA_MEDIA ? CRECIDA_LLUVIA_MEDIA : 0;
+            alturaAgua = alturaAgua + aporteAgua;
 
-//         } while (profundidadCaracol > 0);
+            velocidadMaximaSubidaCaracol = dia < 10 ? 4 : dia < 20 ? 3 : 2;
+            estaVivo = dia <= 50;
 
-//     }
+            caracolSube = (int) (Math.random() * (velocidadMaximaSubidaCaracol - VELOCIDAD_MINIMA_SUBIDA_CARACOL + 1)
+                    + VELOCIDAD_MINIMA_SUBIDA_CARACOL);
+            caracolBaja = (int) (Math.random() * (VELOCIDAD_MAXIMA_CAIDA_CARACOL - VELOCIDAD_MINIMA_CAIDA_CARACOL + 1)
+                    + VELOCIDAD_MINIMA_CAIDA_CARACOL);
 
-// }
+            boolean aparcaCoche = Math.random() <= PROBABILIDAD_APARCAMIENTO_COCHE;
+
+            profundidadCaracol = profundidadCaracol - caracolSube + caracolBaja + (aparcaCoche ? CAIDA_POR_COCHE : 0);
+
+            profundidadCaracol = profundidadCaracol + alturaAgua > PROFUNDIDAD ? PROFUNDIDAD - alturaAgua
+                    : profundidadCaracol;
+
+            System.out.println("Dia[" + dia + "], " + (aporteAgua > 0 ? "Llueve" : "No llueve") + " - Subio["
+                    + caracolSube + "] - Bajo[" + caracolBaja + "] - Posicion["
+                    + profundidadCaracol + "] - Prof. agua:" + alturaAgua);
+            System.out.println(aparcaCoche ? POZO_CON_COCHE : POZO_SUPERIOR);
+            for (int i = 0; i <= PROFUNDIDAD; i++) {
+                String queImprimir = i == profundidadCaracol ? CARACOL + i : i > PROFUNDIDAD - alturaAgua ? POZO_AGUA + i : POZO_PARED + i;
+                System.out.println(queImprimir);
+            }
+            System.out.println(POZO_INFERIOR);
+
+            haSalido = profundidadCaracol <= 0;
+            String inputUsuario = entrada.nextLine();
+        } while (!haSalido && estaVivo);
+
+        System.out.println((!estaVivo ? "El caracol murió" : "El caracol salió el dia " + dia));
+    }
+}

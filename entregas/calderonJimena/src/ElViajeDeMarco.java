@@ -21,10 +21,9 @@ class ElViajeDeMarco {
         boolean seHanEncontrado = false;
         int dias = 0;
         double avanceMadre = 80;
-         
 
         while (seHanEncontrado) {
-            dias++; 
+            dias++;
             System.out.println("La distancia con la madre es: " + distanciaMarcoMadre);
             System.out.println("Dia" + dias);
             propabilidadLluvia = Math.random();
