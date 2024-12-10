@@ -17,7 +17,7 @@ class Matrices {
   }
 
   static String parse(int pixel) {
-    final String[] skins = {
+    final String[] SKINS = {
       "[ ]",
       "...",
       "[-]"
