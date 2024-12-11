@@ -28,7 +28,7 @@ public class Matrices {
     }
 
     static String parse(int i) {
-        final String[] CARACTER = {"   ", "[#]", "---", "%%%"};
+        final String[] CARACTER = { "   ", "[#]", "---", "%%%" };
         return CARACTER[i];
     }
 
