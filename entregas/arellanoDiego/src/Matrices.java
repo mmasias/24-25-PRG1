@@ -15,20 +15,13 @@ public class Matrices {
 
         };
 
-        int[][] matriz2 = {
-            {0,1,1,},
-            {0,1},
-
-        };
-
         imprimir(matriz1);
-        imprimir(matriz2);
-
     }
 
     static void imprimir(int[][] unaMatriz) {
+        int longitudMax = getLongitudMax(unaMatriz);
         final String BORDE = "=";
-        System.out.println(BORDE.repeat(unaMatriz[0].length));
+        System.out.println(BORDE.repeat(longitudMax));
         for (int fila = 0; fila < unaMatriz.length; fila++) {
             for (int columna = 0; columna < unaMatriz[fila].length; columna++) {
                 System.out.print(parse(unaMatriz[fila][columna]));
@@ -39,8 +32,20 @@ public class Matrices {
 
     }
 
+    static int getLongitudMax(int[][] unaMatriz){
+        int longitud=0;
+        for(int fila=0;fila<unaMatriz.length;fila++){
+            if(unaMatriz[fila].length>longitud){
+                longitud = unaMatriz[fila].length;
+
+            }
+        }
+        return longitud;
+
+    }
+
     static String parse(int valor) {
-        final String [] ELM = {
+        final String [] ELEMENTOS = {
             "|",
             "!",
             "x",
@@ -51,8 +56,9 @@ public class Matrices {
             ".",
             "¬",
             "_"
+            
         };
-        return ELM[valor];
+        return ELEMENTOS[valor];
     }
 
 }
