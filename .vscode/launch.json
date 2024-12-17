@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Repaso",
+            "request": "launch",
+            "mainClass": "Repaso",
+            "projectName": "24-25-PRG1_f9b3a47a"
+        },
+        {
+            "type": "java",
             "name": "Mercadona",
             "request": "launch",
             "mainClass": "Mercadona",
