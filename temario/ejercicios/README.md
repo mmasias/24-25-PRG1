@@ -15,4 +15,5 @@
 |[Adivinación](https://github.com/puntoReflex/.github/blob/main/retos%26proyectos/adivinacion.md)
 |[Carrera de camellos](https://github.com/puntoReflex/.github/blob/main/retos%26proyectos/carreraCamellos.md)|1. [📝](/entregas/masiasManuel/src/CarreraCamellos.java)|Agregar una (o varias) posiciones en las que el camello si cae vuelve al inicio.
 |[RetoForIf](https://github.com/puntoReflex/.github/blob/main/retos%26proyectos/forIf.md)
-[pyMundo](https://github.com/puntoReflex/pyMundo/blob/main/enunciado.md)|[vPRG1](https://github.com/puntoReflex/pyMundo/tree/main/src/vPRG1)|Con todo lo que hemos visto hasta ahora!!!
+|[pyMundo](https://github.com/puntoReflex/pyMundo/blob/main/enunciado.md)|[vPRG1](https://github.com/puntoReflex/pyMundo/tree/main/src/vPRG1)|Con todo lo que hemos visto hasta ahora!!!
+|[pyEdlin](https://github.com/puntoReflex/pyEdlin/blob/main/enunciado.md)|||Con todo lo que hemos visto hasta ahora!!!
