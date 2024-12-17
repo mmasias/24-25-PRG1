@@ -35,6 +35,7 @@ public class MatricesMapa {
             default -> {
             }
         }
+        
     }
 
     static void imprime(int[][] mapa, int[] coordenabaPersonaje) {
