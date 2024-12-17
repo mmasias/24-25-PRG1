@@ -27,6 +27,7 @@ public class Mapa {
             " ",
             "X",
             "O", 
+            "_o_"
             
     };
     return TILES[valor];
