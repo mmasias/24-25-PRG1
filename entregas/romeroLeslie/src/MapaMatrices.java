@@ -34,8 +34,16 @@ public class MapaMatrices {
 }
 
 static String parse(int valor){
+<<<<<<< HEAD
     final String[]ICONOS = {"*I*", "~~~" ,"O^O", "...", "---", "*/*", "^^^", "w^w", "===", " --/" };
     return ICONOS[valor];
 }
 
 }
+=======
+    final String[]ICONOS = {"*l*", "~~~" ,"O^O", "...", "---", "*/*", "^^^", "w^w", "===", " --/", " <^>-" };
+    return ICONOS[valor];
+}
+
+}
+>>>>>>> 2f800921414013ec83dd2ce3c7a642288bd0434a
