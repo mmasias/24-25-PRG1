@@ -27,7 +27,7 @@ public class Repaso {
 
     static int pedirPieza() {
         System.out.println("Elige entre 0 y  2");
-        return new Scanner(System.in).nextInt();
+        return new Scanner (System.in).nextInt();
     }
 
 }
