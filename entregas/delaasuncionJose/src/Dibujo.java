@@ -73,7 +73,7 @@ class Dibujo {
         boolean isPlaying = true;
 
         while(isPlaying){
-            moverPersonaje(posicion, entrada);
+            moverPersonaje(posicion, entrada, mapa);
             int[][] dibujo = dibujarSeccionMapa(mapa,posicion[0],posicion[1]);
             escribir(dibujo);
         }
@@ -100,18 +100,20 @@ class Dibujo {
 
     private static int[][] dibujarSeccionMapa(int[][] mapa, int posX, int posY) {
         final int DISTANCIA_VER = 4;
-        int[][] dibujo = new int[DISTANCIA_VER * 2 + 1][DISTANCIA_VER * 2 + 1];
+        final int TAMAÑO_LADOS = DISTANCIA_VER * 2 + 1;
+        int[][] dibujo = new int[TAMAÑO_LADOS][TAMAÑO_LADOS];
 
         for (int fila = 0; fila < dibujo.length; fila++) {
             for (int columna = 0; columna < dibujo[fila].length; columna++) {
-                dibujo[fila][columna] = mapa[fila + posY - DISTANCIA_VER][columna + posX - DISTANCIA_VER];
+                dibujo[fila][columna] = mapa[obtenerModuloConRango(fila + posY - DISTANCIA_VER, mapa.length)][obtenerModuloConRango((columna + posX - DISTANCIA_VER), mapa[fila].length)];
             }
         }
+
         dibujo[DISTANCIA_VER][DISTANCIA_VER] = 10;
         return dibujo;
     }
 
-    private static void moverPersonaje(int[] posicion, Scanner entrada) {
+    private static void moverPersonaje(int[] posicion, Scanner entrada, int[][] mapa) {
         String input = entrada.next();
         switch (input) {
             case "w" -> posicion[1]--;
@@ -119,6 +121,12 @@ class Dibujo {
             case "d" -> posicion[0]++;
             case "a" -> posicion[0]--;
         }
+        posicion[0] = obtenerModuloConRango(posicion[0], mapa.length);
+        posicion[1] = obtenerModuloConRango(posicion[1], mapa[0].length);
+    }
+    
+    private static int obtenerModuloConRango(int numero,int rango) {
+        return ((numero % rango)+ rango) % rango;
     }
 
     /*
