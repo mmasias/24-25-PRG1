@@ -92,7 +92,7 @@ public class Vampiro {
             }
             if (vidaVampiro <= 0) {
                 vampiroVivo = false;
-                System.out.println("el heroe ha ganado");
+                System.out.println("el HEROE ha ganado");
             }
 
         }
