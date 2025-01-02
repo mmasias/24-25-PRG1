@@ -89,5 +89,6 @@ public class Mercadona {
 
             System.out.println();
         }
+        scanner.close();
     }
 }

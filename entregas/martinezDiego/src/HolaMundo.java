@@ -6,12 +6,11 @@ class HolaMundo {
         int edad;
         double dinero;
         String nombre;
-        char unChar;
 
         edad = 12;
         dinero = 100.0;
         nombre = "Juan";
-        unChar = 'x';
+        
 
         System.out.println(edad);
         System.out.println(dinero);
@@ -19,11 +18,11 @@ class HolaMundo {
 
         System.out.println(" me llamo " + nombre + " tengo " + edad + " años y " + dinero + " euros");
 
-        dinero = dinero = 120;
+        dinero = 120;
 
         System.out.println("ahora tengo " + dinero + " euros");
 
-        dinero = dinero = 50;
+        dinero = 50;
 
         System.out.println("ahora tengo " + dinero + " euros");
 

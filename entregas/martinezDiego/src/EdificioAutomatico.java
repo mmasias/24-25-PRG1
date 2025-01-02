@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-public class Edificio {
+public class EdificioAutomatico {
 
     public static void main(String[] args) {
 
@@ -9,13 +7,16 @@ public class Edificio {
         final int HORAS_TOTALES = 168;
         final double PROBABILIDAD_PERSIANA_ABIERTA = 0.7;
         final double PROBABILIDAD_LUZ_ENCENDIDA = 0.6;
-       
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter para avanzar las horas");
+        System.out.println("El programa avanza automáticamente las horas");
 
         for (int hora = 1; hora <= HORAS_TOTALES; hora++) {
-            scanner.nextLine();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             System.out.printf("Hora " + hora);
             System.out.println("     __/\\__");
             System.out.println("   |    |  |####|  |    |   ");
@@ -35,14 +36,12 @@ public class Edificio {
                     } else {
                         System.out.print(luzEncendida ? "[*] " : "[ ] ");
                     }
-
                 }
                 System.out.println();
             }
             System.out.println("----------------------------");
             System.out.println("============================");
         }
-        scanner.close();
     }
-    
 }
+

@@ -24,13 +24,19 @@ public class Vampiro {
         boolean heroeVivo = true;
         boolean vampiroVivo = true;
 
+        
         int turno = 0;
         System.out.println(" Eres el heroe, los controles para las armas son 1,2,3");
         while (heroeVivo && vampiroVivo) {
             System.out.println("pulsa enter para avanzar el turno");
             entrada.nextLine();
 
-            turno++;
+            turno ++;
+            System.out.println("------------------");
+            System.out.println("------------------");
+            System.out.println( " TURNO: " +  turno);
+            System.out.println("------------------");
+            System.out.println("------------------");
 
             System.out.println(" turno del heroe, elige arma");
             
@@ -90,6 +96,7 @@ public class Vampiro {
             }
 
         }
+        entrada.close();
 
     }
 

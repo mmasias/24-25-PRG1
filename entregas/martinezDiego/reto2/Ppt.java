@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 class Ppt {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         final int PIEDRA = 1;
         final int PAPEL = 2;
@@ -13,7 +14,7 @@ class Ppt {
 
         System.out.println("Elige: 1 para Piedra, 2 para Papel, 3 para Tijera.");
 
-        int eleccionJugador = new Scanner(System.in).nextInt();
+        int eleccionJugador = scanner.nextInt();
 
         String eleccionComputadoraTexto = numeroComputadora == PIEDRA ? "Piedra"
                 : numeroComputadora == PAPEL ? "Papel" : "Tijera";
@@ -31,6 +32,8 @@ class Ppt {
                                         : "Has perdido";
 
         System.out.println(resultado);
+        
+        scanner.close();
 
 
     }

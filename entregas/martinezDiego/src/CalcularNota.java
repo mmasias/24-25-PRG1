@@ -30,7 +30,9 @@ class CalcularNota {
 
         System.out.println("Nota final =" + notaFinal);
         
+        scanner.close();
     }
+    
 } 
 
 

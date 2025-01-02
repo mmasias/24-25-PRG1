@@ -35,7 +35,7 @@ public class Carrera {
                 scanner.nextLine();
 
             }
-            System.out.println("ha ganado el " + (posicionPrimero > posicionSegundo) ?);
+            System.out.println("ha ganado el " + (posicionPrimero > posicionSegundo) );
         }
     }
    
