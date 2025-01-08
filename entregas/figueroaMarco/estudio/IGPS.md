@@ -1,5 +1,3 @@
-¡Claro! Aquí tienes el mismo archivo de estudio, pero en español, para que te sirva mejor en tu preparación para el examen final:
-
 **Archivo de Estudio Maestro: Introducción a la Gestión de Proyectos de Software (IGPS)**
 
 **I. Conceptos Clave de Software e Ingeniería**
