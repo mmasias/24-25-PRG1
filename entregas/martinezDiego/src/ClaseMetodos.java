@@ -1,19 +1,14 @@
 public class ClaseMetodos {
 
-
     public static void main(String[] args) {
-
-        double miPromedio;
-        miPromedio
 
         saludar();
         quejar();
         despedir();
-        
+
     }
 
-
-    private static void saludar(){
+    private static void saludar() {
         System.out.println("Hola");
     }
 
@@ -21,12 +16,8 @@ public class ClaseMetodos {
         System.out.println("sanchez dimision");
     }
 
-    private static void despedir(){
+    private static void despedir() {
         System.out.println("adios");
     }
 
-    
-    
-
-    
 }
