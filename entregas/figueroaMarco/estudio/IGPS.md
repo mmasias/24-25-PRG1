@@ -202,5 +202,3 @@
 *   Estudia el proceso de innovación.
 *   Familiarízate con las diferentes técnicas de priorización.
 *   Revisa los casos de estudio y ejemplos incluidos en cada presentación.
-
-Este "archivo de estudio" te servirá como guía para tu preparación. Asegúrate no solo de conocer las definiciones, sino también de entender cómo se aplican estos conceptos en escenarios reales de desarrollo de software. ¡Mucho éxito en tu examen!
