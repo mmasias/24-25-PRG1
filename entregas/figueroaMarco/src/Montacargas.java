@@ -1,42 +1,50 @@
+import java.util.Scanner;
+
 class Montacargas {
     public static void main(String[] args) {
-        situarMontacargas();
+        final int PLANTA_FINAL = 0;
+        int plantaActual = 9;
+        boolean montacargaDetenido = true;
+        int pisoActualMontacargas = 0;
+        int plantaIngresada = 0;
+        printBuilding(plantaActual, PLANTA_FINAL, montacargaDetenido, pisoActualMontacargas);
+        plantaIngresada = askForInput();
+        for(int plantaActualViaje = 0;)
+
     }
 
-    public static void situarMontacargas(){
-        final int PLANTA_MAXIMA = 9;
-        int plantaMontacargas = 0;
-        int pisoActual = 9;
-        final int PLANTA_INICIAL_MONTACARGAS = 0;
-       
-       
-        int plantaAImprimir = 9;
-        String stringAImprimir = "";
+    public static void printBuilding (int plantaActual, int plantaDestino, boolean montacargaDetenido, int pisoActualMontacargas) {
+        final String PLANTA_VACIA = "|        |";
+        for(plantaActual=9;plantaActual >= plantaDestino;plantaActual--){
+            if(pisoActualMontacargas != plantaActual){
+                System.out.println(plantaActual + "  " + PLANTA_VACIA + " ");
+            } else {
+                String aImprimir = printMontacargas(plantaActual, montacargaDetenido);
+                System.out.println(plantaActual + "  " + aImprimir + " ");
+            }
+    }
+    }
+
+    public static String printMontacargas(int planta, boolean montacargaDetenido) {
         
-        for (pisoActual = PLANTA_INICIAL_MONTACARGAS; pisoActual < PLANTA_MAXIMA; pisoActual++ ) {
-            stringAImprimir = imprimirPlanta(plantaAImprimir, plantaMontacargas, pisoActual, PLANTA_INICIAL_MONTACARGAS);
-            System.out.println(stringAImprimir);
+        final String MONTACARGA_DETENIDO = " [ --- ] ";
+        String montacargaEnPiso = "[^ " + planta + "^]";
+        String aImprimir = "";
+        if(montacargaDetenido == true){
+            aImprimir = MONTACARGA_DETENIDO;
+        } else {
+            aImprimir = montacargaEnPiso;
         }
+        return(aImprimir);
     }
-    public static String imprimirPlanta(int plantaAImprimir, int plantaMontacargas,int pisoActual, int PLANTA_INICIAL_MONTACARGAS){
-        String stringAImprimir = "";
-        String pisoVacio = " |   |";
-        String montacargaDetenido = "[ --- ]";
-        String montacargaEnPiso = "[" + pisoActual + "]";
-        String piso = "";
-        if(plantaAImprimir != plantaMontacargas){
-            piso = pisoVacio;
-            stringAImprimir = pisoActual + " " + piso + " ";
-        } else if (plantaAImprimir == plantaMontacargas && plantaAImprimir == PLANTA_INICIAL_MONTACARGAS) {
-            piso = montacargaDetenido;
-            stringAImprimir = pisoActual + " " + piso + " ";
-        } else if (plantaAImprimir == plantaMontacargas) {
-            piso = montacargaEnPiso;
-            stringAImprimir = pisoActual + " " + piso + " ";
-        }
-        return stringAImprimir;
-    }
-    
-}
 
+    public static int askForInput(){
+        Scanner inputInt = new Scanner(System.in);
+        System.out.println("Ingresa la planta a la que te quieres trasladar");
+        int savingInput = 0;
+        savingInput = inputInt.nextInt();
+        inputInt.close();
+        return savingInput;
+    }
+}
 
