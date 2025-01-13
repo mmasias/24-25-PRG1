@@ -1,6 +1,6 @@
 package RetoforIf;
 
-class RetoforIf_8 {
+class RetoforIf_13 {
     public static void main(String[] args) {
 
         int dimension = 21;
@@ -10,7 +10,7 @@ class RetoforIf_8 {
 
                 if (
                 // El código desde aqui *********************************
-                 (i-j) >= dimension-1
+                (i==j || i+j == dimension+1)
                 // El código hasta aquí *********************************
                 ) {
                     System.out.print("(*)");
