@@ -23,6 +23,7 @@ class Batalla {
             entrada.nextLine();
         }
         
+        System.out.println("Ha ganado el " + (poderGuerrero > poderVampiro ? "Guerrero" : "Vampiro"));
 
 
 
