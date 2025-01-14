@@ -46,9 +46,9 @@ public class ClasificacionConductor {
 
     public static void outputPrinting(boolean hasLicense, String ageClasification) {
       if(!hasLicense){
-        System.out.println("El " + ageClasification + "no tiene licencia, es un peaton.");
+        System.out.println("El " + ageClasification + " no tiene licencia, es un peaton.");
       } else {
-        System.out.println("El " + ageClasification + "tiene licencia, es un conductor.");
+        System.out.println("El " + ageClasification + " tiene licencia, es un conductor.");
       }
     };
 
