@@ -2,7 +2,7 @@
 //    INT = Números
 //    LONG = entero de mayor tamaño
 //    FLOAT = números decimales
-//    BOUBLE = números decimales
+//    DOUBLE = números decimales
 //    BOOLEAN = TRUE / FALSE
 //    CHAR = Caracterres individuales o letras
 //OPERADORES:
@@ -66,5 +66,20 @@
 //          }
 //        
 //    -DO WHILE:
-//
-//
+//          Similar al ciclo while, repite el bucle hasta que la condición sea falsa
+//          Se ejecuta minimo una vez,independientemente de la condición (entrada del usuario requerida)
+//          Estructua:
+//              do{
+//                instrucción que se repetirá
+//            }While (expresión lógica) -> Haz eso mientras...
+// ARREGLOS/ARRAYS:
+//  Es una variable que puede almacenar múltiples valores.
+//      -Unidimensionales ( vectores): Almacenan conjuntos de datos homogéneos
+//          Declara array:tipo_de_variable nombre_del_array [] = new tipo_de_variable[dimensión] / {1,2,3,4,7}
+//          nombre_del_array.length -> numero máx de elemntos fila 
+//          Posición en un array= nª-1       
+//      -Tres dimesiones (matrices)
+//          Más de una dimensión filas x columnas
+//          Elementos del mismo tipo 
+//          Declararlo. tipo_de_dato nombre_matriz = new tipo_de_dato [filas][columnas]
+//          número total de elementos = nª filas * nª columnas
