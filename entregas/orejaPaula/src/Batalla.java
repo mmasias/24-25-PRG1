@@ -11,16 +11,27 @@ class Batalla {
         int turno = 0;
         boolean viven = (poderGuerrero * poderVampiro) > 0;
 
-
-
-
-
-
-
-
-
-
+        while(viven){
+            turno++;
         
+            poderVampiro = poderVampiro - (Math.random() < exitoGuerrero ? ataqueGuerrero : 0);
+            poderGuerrero = poderGuerrero - (Math.random() < exitoVampiro ? ataqueVampiro : 0);
+        
+            System.out.println("Turno [" + turno + "]: HP Guerrero [" + poderGuerrero + "] - HP Vampiro [" + poderVampiro + "]");
+        
+            viven = (poderGuerrero * poderVampiro) > 0;
+            entrada.nextLine();
+        }
+        
+
+
+
+
+
+
+
+
+
 
         entrada.close();
     }
