@@ -27,9 +27,24 @@ public class ClasificacionConductor {
         return hasLicense;
     };
 
-    public static string ageClasification(int ageInput) {
-        
-    };
+    public static String ageClasification(int ageInput) {
+        String ageClasification;
+        if (ageInput < 18) {
+            ageClasification = "Menor de edad";
+        } else if (ageInput >= 18 && ageInput <= 19) {
+            ageClasification = "Joven";
+        } else if (ageInput > 20 && ageInput <= 27) {
+            ageClasification = "Joven adulto";
+        } else if (ageInput >= 28 && ageInput <= 64) {
+            ageClasification = "Adulto en edad de plata";
+        } else if (ageInput >= 65) {
+            ageClasification = "Adulto mayor";
+        } else {
+            ageClasification = "No se puede clasificar!";
+        }
+        return ageClasification;
+     };
 
-    public static void outputPrinting(boolean hasLicense, string ageClasification) {
-      };
+    public static void outputPrinting(boolean hasLicense, String ageClasification) {
+      
+    };
