@@ -6,7 +6,6 @@ public class ClasificacionConductor {
         int[] inputs;
         inputs = userInput();
         outputPrinting(hasLicense(inputs[1]),ageClasification(inputs[0]));  
-
     }
     
     public static int[] userInput() {
@@ -46,5 +45,11 @@ public class ClasificacionConductor {
      };
 
     public static void outputPrinting(boolean hasLicense, String ageClasification) {
-      
+      if(!hasLicense){
+        System.out.println("El " + ageClasification + "no tiene licencia, es un peaton.");
+      } else {
+        System.out.println("El " + ageClasification + "tiene licencia, es un conductor.");
+      }
     };
+
+}
