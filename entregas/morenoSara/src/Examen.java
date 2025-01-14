@@ -14,29 +14,40 @@ public class Examen {
 
         boolean examinandose = true;
 
-        System.out.println("1.Configuración");
-        System.out.println("2.Ejecucción del Test");
-        System.out.println("3.Salir del sistema");
-
-        eleccionUsuario = scanner.nextInt();
-
-        int resultado;
+        
+        
         while (examinandose) {
-            if (eleccionUsuario == CONFIGURACION) {
-                primerFactor = configuraciónPrimerFactor();
-                nivelDificultad = configuraciónNivelDificultad();
-   
-            }else if (eleccionUsuario == TEST) {
-                if (primerFactor == 0 && nivelDificultad == 0) {
-                    System.out.println("Configura primero el examen.");
-                    examinandose = false;
+            eleccionUsuario = 0;
+            while (eleccionUsuario == 0) {
+                System.out.println("-----------EXAMEN TABLAS DE MULTIPLICAR-----------");
+                System.out.println("");
+                System.out.println("1.Configuración del examen.");
+                System.out.println("");
+                System.out.println("2.Realizar Test.");
+                System.out.println("");
+                System.out.println("3.Salir del examen.");
+                System.out.println("");
+                System.out.println("--------------------------------------------------");
+                eleccionUsuario = scanner.nextInt();
+
+                if (eleccionUsuario == CONFIGURACION) {
+                    primerFactor = configuraciónPrimerFactor();
+                    nivelDificultad = configuraciónNivelDificultad();
+                    eleccionUsuario = 0;
+                }else if (eleccionUsuario == TEST) {
+                    if (primerFactor == 0 && nivelDificultad == 0) {
+                        System.out.println("Configura primero el examen.");
+                        examinandose = false;
+                    }else{
+                        preguntasTest(nivelDificultad, primerFactor);
+                    }
+                    eleccionUsuario = 0;
                 }else{
-                    preguntasTest(nivelDificultad, primerFactor);
+                    examinandose = false;
                 }
-            }else{
-                examinandose = false;
-            }
+            } 
         }
+        
     
         scanner.close();
     }
@@ -45,8 +56,10 @@ public class Examen {
         Scanner scanner = new Scanner(System.in);
         
         int primerFactor;
+        System.out.println("-----------CONFIGURACIÓN DEL EXAMEN-----------");
+        System.out.println("Elige un número entre el 2 y el 10 para seleccionar la tabla de multiplicar que se te pregintará:");
+        System.out.println("");
 
-        System.out.println("Elige un número entre el 2 y el 10 para realizar la evaluación:");
         primerFactor = scanner.nextInt();
 
         return (primerFactor);
@@ -57,9 +70,17 @@ public class Examen {
 
         int nivelDificultadElige;
 
-        System.out.println("Elige el nivel de dificultad: 1 Fácil 2 Normal 3 Avanzado");
+        System.out.println("Elige el nivel de dificultad:");
+        System.out.println("");
+        System.out.println("1.Fácil");
+        System.out.println("");
+        System.out.println("2.Normal");
+        System.out.println("");
+        System.out.println("3.Avanzado");
+        System.out.println("");
+        System.out.println("---------------------------------------------");
         nivelDificultadElige = scanner.nextInt();
-
+        
         return (nivelDificultadElige);
     }
         
