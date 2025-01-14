@@ -1,12 +1,11 @@
 public class Prueba {
     public static void main(String[] args) {
-        String name = "Gabriel";
-        System.out.println(name);
-        final int myNum = 25;
-        System.out.println(myNum);
-        float myFloat = 9.84f;
-        System.out.println(myFloat);
-        char myChar = 'D';
-        System.out.println(myChar);
+        String firstName = "Gabriel ";
+        String lastName = "Béjar";
+        String fullName = firstName + lastName;
+        System.out.println(fullName);
+        int x = 5;
+        int y = 7;
+        System.out.println(x + y);
     }
 }
