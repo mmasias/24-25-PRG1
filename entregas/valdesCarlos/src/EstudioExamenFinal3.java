@@ -14,7 +14,7 @@ public class EstudioExamenFinal3 {
         scanner.close();
     }
 
- 
+    
     static boolean jugarUnaPartida(Scanner scanner) {
         int numeroSecreto = (int) (Math.random() * 100) + 1;
         int intentos = 0;
