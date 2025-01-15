@@ -104,9 +104,7 @@ public class Examen {
         operacionElegida = scanner.nextInt();
 
         return (operacionElegida);
-    }
-
-        
+    }   
     static void preguntasTest ( int  nivelDificultad,int primerFactor, int operacionElegida){
         Scanner scanner = new Scanner(System.in);
 
