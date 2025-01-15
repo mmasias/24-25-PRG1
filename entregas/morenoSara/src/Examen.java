@@ -97,6 +97,8 @@ public class Examen {
         System.out.println("");
         System.out.println("2.Multiplicaión");
         System.out.println("");
+        System.out.println("3.Aleatorio");
+        System.out.println("");
         System.out.println("---------------------------------------------");
 
         operacionElegida = scanner.nextInt();
@@ -114,9 +116,11 @@ public class Examen {
 
         final int SUMA = 1;
         final int MULTIPLICAR = 2;
+        final int ALEATORIO = 3;
 
         int segundoFactor;
         int resultadoTest;
+        int operacionAleatoria= 0;
 
         double puntuacionUsuario = 0;
         
@@ -132,15 +136,30 @@ public class Examen {
                 numeroPregunta ++;
                 int solucionPregunta;
                 int respuestaUsurario;
+
                 if (operacionElegida == MULTIPLICAR ) {
                     segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
                     System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
-                }else{
+                }else if (operacionElegida == SUMA) {
                     segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
                     System.out.println("Cuanto es:"+ primerFactor + " + "+ segundoFactor);
+                }else{
+                    operacionAleatoria = (int) (Math.random() * MULTIPLICAR - SUMA + 1) + MULTIPLICAR;
+
+                    if (operacionAleatoria == MULTIPLICAR ) {
+                        segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                        System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
+                        operacionAleatoria = MULTIPLICAR;
+                    }else{
+                        segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                        System.out.println("Cuanto es:"+ primerFactor + " + "+ segundoFactor);
+                        operacionAleatoria = SUMA;
+                    }
                 }
+
                 respuestaUsurario = scanner.nextInt();
-                if (operacionElegida == MULTIPLICAR ) {
+
+                if (operacionElegida == MULTIPLICAR || operacionAleatoria == MULTIPLICAR) {
                     solucionPregunta = primerFactor*segundoFactor;
 
                 }else{
@@ -170,14 +189,26 @@ public class Examen {
                 if (operacionElegida == MULTIPLICAR ) {
                     segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
                     System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
-                }else{
+                }else if (operacionElegida == SUMA) {
                     segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
                     System.out.println("Cuanto es:"+ primerFactor + " + "+ segundoFactor);
+                }else{
+                    operacionAleatoria = (int) (Math.random() * MULTIPLICAR - SUMA + 1) + MULTIPLICAR;
+
+                    if (operacionAleatoria == MULTIPLICAR ) {
+                        segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                        System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
+                        operacionAleatoria = MULTIPLICAR;
+                    }else{
+                        segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                        System.out.println("Cuanto es:"+ primerFactor + " + "+ segundoFactor);
+                        operacionAleatoria = SUMA;
+                    }
                 }
 
                 respuestaUsurario = scanner.nextInt();
 
-                if (operacionElegida == MULTIPLICAR ) {
+                if (operacionElegida == MULTIPLICAR || operacionAleatoria == MULTIPLICAR) {
                     solucionPregunta = primerFactor*segundoFactor;
 
                 }else{
@@ -195,7 +226,7 @@ public class Examen {
             }
             
         }else {
-            int maximo =10;
+            int maximo = 10;
             int minimo = 4;
             int numeroPregunta = 0;
 
@@ -207,27 +238,30 @@ public class Examen {
                 if (operacionElegida == MULTIPLICAR ) {
                     segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
                     System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
-                }else{
+                }else if (operacionElegida == SUMA) {
                     segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
                     System.out.println("Cuanto es:"+ primerFactor + " + "+ segundoFactor);
+                }else{
+                    operacionAleatoria = (int) (Math.random() * MULTIPLICAR - SUMA + 1) + MULTIPLICAR;
+
+                    if (operacionAleatoria == MULTIPLICAR ) {
+                        segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                        System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
+                        operacionAleatoria = MULTIPLICAR;
+                    }else{
+                        segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                        System.out.println("Cuanto es:"+ primerFactor + " + "+ segundoFactor);
+                        operacionAleatoria = SUMA;
+                    }
                 }
 
                 respuestaUsurario = scanner.nextInt();
 
-                if (operacionElegida == MULTIPLICAR ) {
-                    solucionPregunta = primerFactor*segundoFactor;
+                if (operacionElegida == MULTIPLICAR || operacionAleatoria == MULTIPLICAR) {
+                    solucionPregunta = primerFactor * segundoFactor;
 
                 }else{
-                    solucionPregunta = primerFactor+segundoFactor;
-                }
-
-                if (numeroPregunta == 5) {
-                    preguntando = false;
-                }
-                if (respuestaUsurario == solucionPregunta) {
-                    puntuacionUsuario = puntuacionUsuario + 2;
-                }else{
-                    puntuacionUsuario = puntuacionUsuario - 0.5;
+                    solucionPregunta = primerFactor + segundoFactor;
                 }
 
                 if (numeroPregunta == 5) {
@@ -238,8 +272,11 @@ public class Examen {
                 }else{
                     puntuacionUsuario = puntuacionUsuario - 0.5;
                 }
+
+
             }
         }
+
         System.out.println("Puntuación:" + puntuacionUsuario);
         if (puntuacionUsuario > 5) {
             System.out.println("Aprobado");
