@@ -9,6 +9,7 @@ public class Examen {
         final int SALIR = 3;
 
         int eleccionUsuario;
+        int operacionElegida = 0;
         int primerFactor = 0;
         int nivelDificultad = 0;
 
@@ -19,6 +20,7 @@ public class Examen {
         while (examinandose) {
             eleccionUsuario = 0;
             while (eleccionUsuario == 0) {
+
                 System.out.println("-----------EXAMEN TABLAS DE MULTIPLICAR-----------");
                 System.out.println("");
                 System.out.println("1.Configuración del examen.");
@@ -33,16 +35,17 @@ public class Examen {
                 if (eleccionUsuario == CONFIGURACION) {
                     primerFactor = configuraciónPrimerFactor();
                     nivelDificultad = configuraciónNivelDificultad();
+                    operacionElegida = configuraciónOperacion();
                     eleccionUsuario = 0;
                 }else if (eleccionUsuario == TEST) {
-                    if (primerFactor == 0 && nivelDificultad == 0) {
+                    if (primerFactor == 0 || nivelDificultad == 0 || operacionElegida == 0) {
                         System.out.println("Configura primero el examen.");
                         examinandose = false;
                     }else{
-                        preguntasTest(nivelDificultad, primerFactor);
+                        preguntasTest(nivelDificultad, primerFactor, operacionElegida);
                     }
                     eleccionUsuario = 0;
-                }else{
+                }else{ 
                     examinandose = false;
                 }
             } 
@@ -83,13 +86,34 @@ public class Examen {
         
         return (nivelDificultadElige);
     }
+    static int configuraciónOperacion (){
+        Scanner scanner = new Scanner(System.in);
         
-    static void preguntasTest ( int  nivelDificultad,int primerFactor){
+        int operacionElegida;
+
+        System.out.println("Elige la operación con la que te quieres evaluar:");
+        System.out.println("");
+        System.out.println("1.Suma");
+        System.out.println("");
+        System.out.println("2.Multiplicaión");
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+
+        operacionElegida = scanner.nextInt();
+
+        return (operacionElegida);
+    }
+
+        
+    static void preguntasTest ( int  nivelDificultad,int primerFactor, int operacionElegida){
         Scanner scanner = new Scanner(System.in);
 
         final int FACIL = 1;
         final int NORMAL = 2;
         final int DIFÍCIL = 3;
+
+        final int SUMA = 1;
+        final int MULTIPLICAR = 2;
 
         int segundoFactor;
         int resultadoTest;
@@ -103,18 +127,26 @@ public class Examen {
             int minimo = 1;
             int numeroPregunta = 0;
 
+
             while (preguntando) {
                 numeroPregunta ++;
                 int solucionPregunta;
                 int respuestaUsurario;
-
-                segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
-                System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
-
+                if (operacionElegida == MULTIPLICAR ) {
+                    segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                    System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
+                }else{
+                    segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                    System.out.println("Cuanto es:"+ primerFactor + " + "+ segundoFactor);
+                }
                 respuestaUsurario = scanner.nextInt();
+                if (operacionElegida == MULTIPLICAR ) {
+                    solucionPregunta = primerFactor*segundoFactor;
 
-                solucionPregunta = primerFactor*segundoFactor;
-
+                }else{
+                    solucionPregunta = primerFactor+segundoFactor;
+                }
+                
                 if (numeroPregunta == 5) {
                     preguntando = false;
                 }
@@ -135,12 +167,22 @@ public class Examen {
                 int solucionPregunta;
                 int respuestaUsurario;
 
-                segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
-                System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
+                if (operacionElegida == MULTIPLICAR ) {
+                    segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                    System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
+                }else{
+                    segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                    System.out.println("Cuanto es:"+ primerFactor + " + "+ segundoFactor);
+                }
 
                 respuestaUsurario = scanner.nextInt();
+                
+                if (operacionElegida == MULTIPLICAR ) {
+                    solucionPregunta = primerFactor*segundoFactor;
 
-                solucionPregunta = primerFactor*segundoFactor;
+                }else{
+                    solucionPregunta = primerFactor+segundoFactor;
+                }
 
                 if (numeroPregunta == 5) {
                     preguntando = false;
@@ -162,12 +204,31 @@ public class Examen {
                 int solucionPregunta;
                 int respuestaUsurario;
 
-                segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
-                System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
+                if (operacionElegida == MULTIPLICAR ) {
+                    segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                    System.out.println("Cuanto es:"+ primerFactor + " x "+ segundoFactor);
+                }else{
+                    segundoFactor = (int) (Math.random() * maximo - minimo + 1) + minimo;
+                    System.out.println("Cuanto es:"+ primerFactor + " + "+ segundoFactor);
+                }
 
                 respuestaUsurario = scanner.nextInt();
 
-                solucionPregunta = primerFactor*segundoFactor;
+                if (operacionElegida == MULTIPLICAR ) {
+                    solucionPregunta = primerFactor*segundoFactor;
+
+                }else{
+                    solucionPregunta = primerFactor+segundoFactor;
+                }
+
+                if (numeroPregunta == 5) {
+                    preguntando = false;
+                }
+                if (respuestaUsurario == solucionPregunta) {
+                    puntuacionUsuario = puntuacionUsuario + 2;
+                }else{
+                    puntuacionUsuario = puntuacionUsuario - 1;
+                }
 
                 if (numeroPregunta == 5) {
                     preguntando = false;
