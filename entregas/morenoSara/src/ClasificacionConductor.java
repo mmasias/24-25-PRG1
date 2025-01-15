@@ -4,7 +4,7 @@ public class ClasificacionConductor {
     public static void main(String[] args) {
 
         Scanner entradaUsuario = new Scanner(System.in);
-        
+
         int edadUsuario;
         int edadCarnetUsuario;
         int añosConCarnet;
@@ -21,14 +21,8 @@ public class ClasificacionConductor {
         System.out.println("Ingrese su edad:");
         edadUsuario =entradaUsuario.nextInt();
 
-        
-
         System.out.println("¿Tiene licencia de conducir? (true/false)");
         licencia = entradaUsuario.nextBoolean();
-
-    
-
-        
 
         if (licencia == false) {
 
