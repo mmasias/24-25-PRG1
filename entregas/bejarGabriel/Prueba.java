@@ -1,12 +1,12 @@
 public class Prueba {
     public static void main(String[] args) {
-        int myAge = 20;
-        int voteAge = 18;
-        
-        if (myAge>=voteAge){
-            System.out.println("You are old enough to vote!");
+        int x = 20;
+        int y = 48;
+
+        if (x >= y){
+            System.out.println(x + " es mas grande que " + y);
         } else{
-            System.out.println("You are not old enough to vote.");
+            System.out.println(y + " es mas grande que " + x);
+        }
         }
     }
-}
