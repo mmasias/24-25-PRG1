@@ -4,8 +4,11 @@ public class ClasificacionConductor {
 
     public static void main(String[] args) {
         int[] inputs;
+        String[] ages = {};
         inputs = userInput();
-        outputPrinting(hasLicense(inputs[1]),ageClasification(inputs[0]));  
+        final int PERSON_ID = 0;
+        final int DRIVER_ID = 1;
+        outputPrinting(hasLicense(inputs[DRIVER_ID]), PERSON_ID, DRIVER_ID, ages);  
     }
     
     public static int[] userInput() {
@@ -16,7 +19,6 @@ public class ClasificacionConductor {
         int licenseUserInput = input.nextInt();
         input.close();
         int[] inputs = {age, licenseUserInput};
-
         return inputs;
     };
 
@@ -26,29 +28,40 @@ public class ClasificacionConductor {
         return hasLicense;
     };
 
-    public static String ageClasification(int ageInput) {
-        String ageClasification;
+    public static void personClasification(int ageInput, String[] ages) {
+        String personClasification;
+        String driverClasification;
         if (ageInput < 18) {
-            ageClasification = "Menor de edad";
+            personClasification = "Menor de edad";
+            driverClasification = "Menor de edad que quiso una licencia";
         } else if (ageInput >= 18 && ageInput <= 19) {
-            ageClasification = "Joven";
+            personClasification = "Joven";
+            driverClasification = "Conductor Novel";
         } else if (ageInput > 20 && ageInput <= 27) {
-            ageClasification = "Joven adulto";
+            personClasification = "Joven adulto";
+            driverClasification = "Conductor Experimentado";
         } else if (ageInput >= 28 && ageInput <= 64) {
-            ageClasification = "Adulto en edad de plata";
+            personClasification = "Adulto en edad de plata";
+            driverClasification = "Conductor senior";
         } else if (ageInput >= 65) {
-            ageClasification = "Adulto mayor";
+            personClasification = "Adulto mayor";
+            driverClasification = "Conductor jubilado";
         } else {
-            ageClasification = "No se puede clasificar!";
+            personClasification = "El peaton tiene una edad invalida";
+            driverClasification = "El conductor tiene una edad invalida";
         }
-        return ageClasification;
+        ages[0] = driverClasification;
+        ages[1] = personClasification;
+
      };
 
-    public static void outputPrinting(boolean hasLicense, String ageClasification) {
-      if(!hasLicense){
-        System.out.println("El " + ageClasification + " no tiene licencia, es un peaton.");
+    public static void outputPrinting(boolean hasLicense,int personId, int driverId, String[] ages) {
+        String personClasification = ages[personId];
+        String driverClasification = ages[driverId];
+        if(!hasLicense){
+        System.out.println("El " + personClasification + " no tiene licencia, es un peaton.");
       } else {
-        System.out.println("El " + ageClasification + " tiene licencia, es un conductor.");
+        System.out.println("El " + driverClasification + " tiene licencia, es un conductor.");
       }
     };
 
