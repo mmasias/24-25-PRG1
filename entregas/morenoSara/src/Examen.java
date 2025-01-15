@@ -118,7 +118,7 @@ public class Examen {
         int segundoFactor;
         int resultadoTest;
 
-        int puntuacionUsuario = 0;
+        double puntuacionUsuario = 0;
         
         boolean preguntando = true;
         
@@ -153,7 +153,7 @@ public class Examen {
                 if (respuestaUsurario == solucionPregunta) {
                     puntuacionUsuario = puntuacionUsuario + 2;
                 }else{
-                    puntuacionUsuario = puntuacionUsuario - 1;
+                    puntuacionUsuario = puntuacionUsuario - 0.5;
                 }
             }
     
@@ -176,7 +176,7 @@ public class Examen {
                 }
 
                 respuestaUsurario = scanner.nextInt();
-                
+
                 if (operacionElegida == MULTIPLICAR ) {
                     solucionPregunta = primerFactor*segundoFactor;
 
@@ -190,7 +190,7 @@ public class Examen {
                 if (respuestaUsurario == solucionPregunta) {
                     puntuacionUsuario = puntuacionUsuario + 2;
                 }else{
-                    puntuacionUsuario = puntuacionUsuario - 1;
+                    puntuacionUsuario = puntuacionUsuario - 0.5;
                 }
             }
             
@@ -227,7 +227,7 @@ public class Examen {
                 if (respuestaUsurario == solucionPregunta) {
                     puntuacionUsuario = puntuacionUsuario + 2;
                 }else{
-                    puntuacionUsuario = puntuacionUsuario - 1;
+                    puntuacionUsuario = puntuacionUsuario - 0.5;
                 }
 
                 if (numeroPregunta == 5) {
@@ -236,7 +236,7 @@ public class Examen {
                 if (respuestaUsurario == solucionPregunta) {
                     puntuacionUsuario = puntuacionUsuario + 2;
                 }else{
-                    puntuacionUsuario = puntuacionUsuario - 1;
+                    puntuacionUsuario = puntuacionUsuario - 0.5;
                 }
             }
         }
