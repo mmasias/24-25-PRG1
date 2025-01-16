@@ -78,7 +78,7 @@ public class halloweenremake {
             actualFloor = actualFloor + 1;
             actualHouse = 1;
         }
-        System.out.println("The amount of candies that each child got is");
+        System.out.println("The amount of candies that each child got is ");
         System.out.println("The amount of candies that child one got is: " + kidBagOne);
         System.out.println("The amount of candies that child two got is: " + kidBagTwo);
         System.out.println("The amount of candies that child three got is: " + kidBagThree);
