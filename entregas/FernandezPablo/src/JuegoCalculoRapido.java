@@ -52,6 +52,25 @@ public class JuegoCalculoRapido {
                 
             }
 
+            long finTiempo = System.currentTimeMillis();
+            long tiempoTotal = (finTiempo - inicioTiempo) / 1000; 
+
+            System.out.println("Has respondido " + numeroDePreguntas + " preguntas.");
+            System.out.println("Respuestas correctas: " + respuestasCorrectas + "/" + numeroDePreguntas);
+            System.out.println("Tiempo total: " + tiempoTotal + " segundos.");
+
+            
+            System.out.print("¿Quieres jugar de nuevo? (Sí/No): ");
+            scanner.nextLine(); 
+            String respuesta = scanner.nextLine().toLowerCase();
+
+            if (!respuesta.equals("sí")) {
+                jugarDeNuevo = false;
+
+            }
+
+
+
         }
 
 
