@@ -1,10 +1,13 @@
 public class Prueba {
     public static void main(String[] args) {
-        int cuentaRegresiva = 3;
-        while (cuentaRegresiva > 0){
-            System.out.println(cuentaRegresiva);
-            cuentaRegresiva--;
+        int dado = 1;
+        while (dado <= 6){
+            if (dado < 6){
+                System.out.println("No Yatzy.");
+            }else{
+                System.out.println("Yatzy!");
+            }
+            dado = dado + 1;
         }
-        System.out.println("Feliz año nuevo!");
         }
     }
