@@ -1,7 +1,5 @@
-
 import java.util.Scanner;
-
-public class Halloween {
+public class halloweenremake {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -42,20 +40,20 @@ public class Halloween {
                         if (fullBagOne) {
                             System.out.println("Kid One bag is full");
                         } else {
-                            int candy = GiveCandies(MAX_CANDY_PER_HOUSE, MIN_CANDY_PER_HOUSE);
-                            kidBagOne = kidBagOne + candy;
+                            
+                            kidBagOne = kidBagOne + candyCalculation(MAX_CANDY_PER_HOUSE,MIN_CANDY_PER_HOUSE);
                         }
                         if (fullBagTwo) {
                             System.out.println("Kid Two bag is full");
                         } else {
-                            int candy = GiveCandies(MAX_CANDY_PER_HOUSE, MIN_CANDY_PER_HOUSE);
-                            kidBagTwo = kidBagTwo + candy;
+                            
+                            kidBagTwo = kidBagTwo + candyCalculation(MAX_CANDY_PER_HOUSE,MIN_CANDY_PER_HOUSE);
                         }
                         if (fullBagThree) {
                             System.out.println("Kid Three bag is full");
                         } else {
-                            int candy = GiveCandies(MAX_CANDY_PER_HOUSE, MIN_CANDY_PER_HOUSE);
-                            kidBagThree = kidBagThree + candy;
+                            
+                            kidBagThree = kidBagThree + candyCalculation(MAX_CANDY_PER_HOUSE,MIN_CANDY_PER_HOUSE);
                         }
                     }
                     if (kidBagOne >= MAX_CANDIES) {
@@ -87,8 +85,8 @@ public class Halloween {
         scanner.close();
     }
 
-    static int GiveCandies(int MAX_CANDY_PER_HOUSE, int MIN_CANDY_PER_HOUSE) {
-        int calculateCandy = (int) (Math.random() * (MAX_CANDY_PER_HOUSE - MIN_CANDY_PER_HOUSE + 1) + MIN_CANDY_PER_HOUSE);
+    static int candyCalculation(int max, int min) {
+        int calculateCandy = (int) (Math.random() * (max-min+ 1) + min);
         System.out.println(calculateCandy);
         return (calculateCandy);
     }
