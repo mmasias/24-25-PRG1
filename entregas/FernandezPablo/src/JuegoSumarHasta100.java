@@ -31,11 +31,11 @@ public class JuegoSumarHasta100 {
 
         if (!respuesta.equals("sí")) {
                 jugarDeNuevo = false;
+
         }
 
-
-
-
+        System.out.println("Gracias por jugar. ¡Hasta la próxima!");
+        scanner.close();
 
 
     }
