@@ -38,7 +38,7 @@ public class unExamen {
             }
         } while (opcion != 3);
 
-        scanner.close(); // Close the scanner
+        scanner.close(); 
     }
 
     public static void configurar(Scanner scanner) {
