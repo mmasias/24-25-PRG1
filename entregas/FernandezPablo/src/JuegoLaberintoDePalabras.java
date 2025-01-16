@@ -27,6 +27,21 @@ public class JuegoLaberintoDePalabras {
                     System.out.println("La palabra debe tener " + palabraSecreta.length() + " letras.");
                     continue;
                 }    
+
+                if (intento.equals(palabraSecreta)) {
+                    adivinada = true;
+                    System.out.println("¡Felicidades! Adivinaste la palabra secreta: " + palabraSecreta);
+                } else {
+                    int letrasCorrectas = 0;
+                    for (int i = 0; i < palabraSecreta.length(); i++) {
+                        if (intento.charAt(i) == palabraSecreta.charAt(i)) {
+                            letrasCorrectas++;
+                        }
+                    }
+                    intentosRestantes--;
+                    System.out.println("Resultado: " + letrasCorrectas + " letras en la posición correcta.");
+                    System.out.println("Intentos restantes: " + intentosRestantes);
+                }
             }
 
 
