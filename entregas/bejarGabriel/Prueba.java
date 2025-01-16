@@ -1,8 +1,11 @@
+import java.util.Scanner;
+
 public class Prueba {
     public static void main(String[] args) {
-        int number = 2;
-        for (int i = 1; i <= 10; i++){
-        System.out.println(number + " x " + i + " = " + (number * i));
-        }
+        Scanner entrada = new Scanner (System.in);
+        double numero;
+        System.out.println("Digite un número: ");
+        numero = entrada.nextDouble();
+        System.out.println("Su número es: "+numero);
     }
 }
