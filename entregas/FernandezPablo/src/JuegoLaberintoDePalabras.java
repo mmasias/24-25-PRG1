@@ -2,17 +2,17 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class JuegoLaberintoDePalabras {
-    public static void main (String args[]){
+    public static void main(String args[]) {
 
         final int NUMERO_INTENTOS = 6;
-        String[] palabras = {"gato", "mesa", "cielo", "nube", "piedra", "flor", "luz", "río"};
+        String[] palabras = { "gato", "mesa", "cielo", "nube", "piedra", "flor", "luz", "río" };
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
         boolean jugarDeNuevo = true;
 
         System.out.println("¡Bienvenido al Laberinto de Palabras!");
 
-        while(jugarDeNuevo){
+        while (jugarDeNuevo) {
             String palabraSecreta = palabras[random.nextInt(palabras.length)];
             int intentosRestantes = 6;
             boolean adivinada = false;
@@ -26,7 +26,7 @@ public class JuegoLaberintoDePalabras {
                 if (intento.length() != palabraSecreta.length()) {
                     System.out.println("La palabra debe tener " + palabraSecreta.length() + " letras.");
                     continue;
-                }    
+                }
 
                 if (intento.equals(palabraSecreta)) {
                     adivinada = true;
@@ -43,7 +43,7 @@ public class JuegoLaberintoDePalabras {
                     System.out.println("Intentos restantes: " + intentosRestantes);
                 }
             }
-            
+
             if (!adivinada) {
                 System.out.println("Lo siento, no adivinaste la palabra. La palabra secreta era: " + palabraSecreta);
             }
@@ -55,9 +55,8 @@ public class JuegoLaberintoDePalabras {
             }
         }
 
-        
-       
-        
+        System.out.println("Gracias por jugar. ¡Hasta la próxima!");
+        scanner.close();
 
     }
 }
