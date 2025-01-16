@@ -43,9 +43,18 @@ public class JuegoLaberintoDePalabras {
                     System.out.println("Intentos restantes: " + intentosRestantes);
                 }
             }
+            
+            if (!adivinada) {
+                System.out.println("Lo siento, no adivinaste la palabra. La palabra secreta era: " + palabraSecreta);
+            }
 
-
+            System.out.print("¿Quieres jugar de nuevo? (Sí/No): ");
+            String respuesta = scanner.nextLine();
+            if (!respuesta.equals("sí")) {
+                jugarDeNuevo = false;
+            }
         }
+
         
        
         
