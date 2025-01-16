@@ -23,6 +23,14 @@ public class ContadorDeVocales {
                 }
             }
 
+            System.out.println("Resultado: " + contadorVocales + " vocales.");
+
+            System.out.print("¿Quieres contar las vocales de otra palabra o frase? (Sí/No): ");
+            String respuesta = scanner.nextLine().toLowerCase();
+
+            if (!respuesta.equals("sí")) {
+                contarDeNuevo = false;
+
 
 
     }
