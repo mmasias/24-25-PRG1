@@ -45,4 +45,15 @@ class Matrices {
         return(TILES[valor]);
     }
 
+
+    
+    static void imprime1(int[][] unaMatriz) {
+        for (int fila = 0; fila < unaMatriz.length; fila++) {
+            for (int columna = 0; columna < unaMatriz[fila].length; columna++) {
+                System.out.print("|" + unaMatriz[fila][columna]);
+            }
+            System.out.println("|");
+        }
+        System.out.println("=".repeat(40));
+    }
 }
