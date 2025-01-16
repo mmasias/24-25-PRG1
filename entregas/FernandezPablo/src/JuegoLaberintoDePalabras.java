@@ -18,13 +18,17 @@ public class JuegoLaberintoDePalabras {
             boolean adivinada = false;
 
             System.out.println("He seleccionado una palabra secreta. Tienes 6 intentos para adivinarla.");
+
+            while (intentosRestantes > 0 && !adivinada) {
+                System.out.print("Introduce tu palabra: ");
+                String intento = scanner.nextLine();
+            }
+
+
         }
-
-
-
         
        
-    } 
+        
 
-    
+    }
 }
