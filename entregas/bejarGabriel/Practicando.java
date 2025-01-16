@@ -1,12 +1,18 @@
 public class Practicando {
     public static void main(String[] args) {
-        int ages[] = {20, 22, 18, 35, 48, 26, 87, 70};
-        double avg, sum = 0;
-        int length = ages.length;
-        for (int age : ages){
-            sum += age;
+        int[] numeros = {1, 2, 3, 4, 5};
+        int numeroBuscado = 2;
+        boolean encontrado = false;
+        for (int numero : numeros){
+            if (numero == numeroBuscado){
+                encontrado = true;
+                break;
+            }
         }
-        avg = sum/length;
-        System.out.println("The average age is: "+avg);
+        if (encontrado){
+            System.out.println("El número se encontró!");
+        } else{
+            System.out.println("El número no se encontró");
+        }
     }
 }
