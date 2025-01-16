@@ -40,6 +40,13 @@ public class Halloween {
                         System.out.println(calculateCandyChildOne);
                         kidBagOne = kidBagOne + calculateCandyChildOne;
 
+                        int calculateCandyChildTwo = (int) (Math.random() * (MAX_CANDY_PER_HOUSE - MIN_CANDY_PER_HOUSE + 1) + MIN_CANDY_PER_HOUSE);
+                        System.out.println(calculateCandyChildTwo);
+                        kidBagTwo = kidBagTwo + calculateCandyChildTwo;
+
+                        int calculateCandyChildThree = (int) (Math.random() * (MAX_CANDY_PER_HOUSE - MIN_CANDY_PER_HOUSE + 1) + MIN_CANDY_PER_HOUSE);
+                        System.out.println(calculateCandyChildThree);
+                        kidBagThree = kidBagThree + calculateCandyChildThree;
                     }
                 }
                 actualHouse = actualHouse + 1;
@@ -47,7 +54,10 @@ public class Halloween {
             actualFloor = actualFloor + 1;
             actualHouse = 1;
         }
-    System.out.println("Candies per child: " +kidBagOne)
+        System.out.println("The amount of candies that each child got is");
+        System.out.println("The amount of candies that child one got is: " + kidBagOne);
+        System.out.println("The amount of candies that child two got is: " + kidBagTwo);
+        System.out.println("The amount of candies that child three got is: " + kidBagThree);
 
     }
 }
