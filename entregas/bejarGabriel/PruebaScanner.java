@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Prueba {
+public class PruebaScanner {
     public static void main(String[] args) {
         Scanner entrada = new Scanner (System.in);
         double numero;
