@@ -1,6 +1,6 @@
 public class Prueba {
     public static void main(String[] args) {
-        int dia = 4;
+        int dia = 6;
         switch (dia){
             case 1:
             System.out.println("Lunes");
@@ -17,12 +17,8 @@ public class Prueba {
             case 5:
             System.out.println("Viernes");
             break;
-            case 6:
-            System.out.println("Sabado");
-            break;
-            case 7:
-            System.out.println("Domingo");
-            break;
+            default:
+            System.out.println("Fin de semana!");
         }
         }
     }
