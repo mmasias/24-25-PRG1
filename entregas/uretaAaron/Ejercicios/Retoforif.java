@@ -8,7 +8,7 @@ class RetoForIf {
 
                 if (
                 // El código desde aqui *********************************
-                    i<22 && j==20
+                    i>7 && i<15 && j<22
                 // El código hasta aquí *********************************
                 ) {
                     System.out.print("(*)");
