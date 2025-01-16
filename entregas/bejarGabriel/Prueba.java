@@ -1,9 +1,10 @@
 public class Prueba {
     public static void main(String[] args) {
-        int i = 0;
-        do { 
-            System.out.println(i);
-            i++;
-        } while (i < 5);
+        int cuentaRegresiva = 3;
+        while (cuentaRegresiva > 0){
+            System.out.println(cuentaRegresiva);
+            cuentaRegresiva--;
+        }
+        System.out.println("Feliz año nuevo!");
         }
     }
