@@ -37,14 +37,20 @@ public class JuegoAdivinaElNumeroVersionSimplificada {
                     System.out.println("¡Felicidades! Adivinaste el número.");
                 }
             }
+         
+
+         System.out.print("¿Quieres jugar de nuevo? (Sí/No): ");
+            String respuesta = scanner.next().toLowerCase();
+
+            if (!respuesta.equals("sí")) {
+                estaJugando = false;
+            }
         }
 
-
-
-
-
-
+        System.out.println("Gracias por jugar. ¡Hasta la próxima!");
+        scanner.close();
 
     }
+ 
     
 }
