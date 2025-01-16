@@ -22,6 +22,11 @@ public class JuegoLaberintoDePalabras {
             while (intentosRestantes > 0 && !adivinada) {
                 System.out.print("Introduce tu palabra: ");
                 String intento = scanner.nextLine();
+
+                if (intento.length() != palabraSecreta.length()) {
+                    System.out.println("La palabra debe tener " + palabraSecreta.length() + " letras.");
+                    continue;
+                }    
             }
 
 
