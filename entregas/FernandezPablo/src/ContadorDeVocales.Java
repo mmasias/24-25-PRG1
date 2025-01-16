@@ -30,8 +30,12 @@ public class ContadorDeVocales {
 
             if (!respuesta.equals("sí")) {
                 contarDeNuevo = false;
+            }
 
+        }
 
+        System.out.println("Gracias por usar el Contador de Vocales. ¡Hasta la próxima!");
+        scanner.close();
 
     }
 }
