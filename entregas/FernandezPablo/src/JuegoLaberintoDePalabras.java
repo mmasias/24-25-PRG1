@@ -10,6 +10,17 @@ public class JuegoLaberintoDePalabras {
         Scanner scanner = new Scanner(System.in);
         boolean jugarDeNuevo = true;
 
+        System.out.println("¡Bienvenido al Laberinto de Palabras!");
+
+        while(jugarDeNuevo){
+            String palabraSecreta = palabras[random.nextInt(palabras.length)];
+            int intentosRestantes = 6;
+            boolean adivinada = false;
+
+            System.out.println("He seleccionado una palabra secreta. Tienes 6 intentos para adivinarla.");
+        }
+
+
 
         
        
