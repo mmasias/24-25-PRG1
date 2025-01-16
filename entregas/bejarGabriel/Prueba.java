@@ -1,13 +1,7 @@
 public class Prueba {
     public static void main(String[] args) {
-        int dado = 1;
-        while (dado <= 6){
-            if (dado < 6){
-                System.out.println("No Yatzy.");
-            }else{
-                System.out.println("Yatzy!");
-            }
-            dado = dado + 1;
+        for(int i = 1; i < 5; i++){
+            System.out.println(i);
         }
         }
     }
