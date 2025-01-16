@@ -20,7 +20,7 @@ class EjmploTernario {
         String veredicto;
         veredicto = numeroDelUsuario != aleatorio ? "No adivino!" : "Adivino";
 
-        System.out.println(veredicto)
+        System.out.println(veredicto);
 
         scanner.close();
 

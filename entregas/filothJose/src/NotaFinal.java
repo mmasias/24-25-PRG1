@@ -30,5 +30,7 @@ public class NotaFinal {
         
         System.out.println("Nota Final =" + notaFinal);
 
+        scanner.close();
+
 }
 }
