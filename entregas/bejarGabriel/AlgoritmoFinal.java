@@ -4,5 +4,7 @@ public class AlgoritmoFinal {
         int sumaPares = 0;
         int sumaImpares = 0;
 
+        for (int i = 0; i < carne.length; i++) {
+        }
     }
 }
