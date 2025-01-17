@@ -1,0 +1,1 @@
+# Se puede hacer que un metodo estatic arroje 2 tipos de datos diferentes?
