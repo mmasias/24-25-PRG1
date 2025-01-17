@@ -37,7 +37,7 @@ class CarreraCamellos{
         }
 
         System.out.println("Ha ganado el " + (posicionPrimero > posicionSegundo ? "primero"
-         : (posicionPrimero == posicionSegundo ? "empate" : "segundo")));
+        : (posicionPrimero == posicionSegundo ? "empate" : "segundo")));
 
         entrada.close();
 
