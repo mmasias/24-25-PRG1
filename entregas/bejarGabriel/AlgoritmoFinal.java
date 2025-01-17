@@ -4,11 +4,11 @@ public class AlgoritmoFinal {
         int sumaPares = 0;
         int sumaImpares = 0;
 
-        for (int i = 0; i < carne.length; i++) {
+        for (int i = 0; i < numCarnet.length; i++) {
             if (i % 2 == 0){
-                sumaPares += carne[i];
+                sumaPares += numCarnet[i];
             } else{
-                sumaImpares += carne [i];
+                sumaImpares += numCarnet [i];
             }
         }
         System.out.println("Suma de los digitos en posiciones pares: " + sumaPares);
@@ -17,5 +17,9 @@ public class AlgoritmoFinal {
         int numero1 = (sumaPares % 6) + 1;
         int numero2 = (sumaImpares % 6) + 1;
         int numero3 = ((sumaPares + sumaImpares) % 6) + 1;
+
+        System.out.println("Número 1: " + numero1);
+        System.out.println("Número 2: " + numero2);
+        System.out.println("Número 3: " + numero3);
     }
 }
