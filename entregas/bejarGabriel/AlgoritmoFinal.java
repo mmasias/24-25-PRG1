@@ -5,6 +5,11 @@ public class AlgoritmoFinal {
         int sumaImpares = 0;
 
         for (int i = 0; i < carne.length; i++) {
+            if (i % 2 == 0){
+                sumaPares += carne[i];
+            } else{
+                sumaImpares += carne [i];
+            }
         }
     }
 }
