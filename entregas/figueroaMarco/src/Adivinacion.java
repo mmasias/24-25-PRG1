@@ -43,8 +43,8 @@ class Adivinacion {
     private static int pedirNumero() {
         System.out.println("Dime un numero entre 1 y 100");
         Scanner input = new Scanner(System.in);
+        input.close();
         return input.nextInt();
-
     }
 
     private static String darPista(int numeroAlmacenado, int numeroUsuario) {
