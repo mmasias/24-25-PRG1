@@ -6,11 +6,11 @@ public class Elavador {
 
         int currentFloor = 0;
         FLOORS[currentFloor]=1;
-        int destiny=0;
+        int destiny;
         int userDestiny=0;
         String direction="-";        
         
-        askfloor(userDestiny,destiny);
+        destiny=askfloor(userDestiny);
 
         
         printing(currentFloor,destiny,FLOORS,direction,userDestiny);
@@ -41,7 +41,7 @@ public class Elavador {
                     direction=directionMaking(currentFloor,destiny);
                     System.out.println(elevatorPrint+"-> "+parse(FLOORS[elevatorPrint],destiny,direction));
                     elevatorPrint=elevatorPrint-1;}
-            askfloor(userDestiny, destiny);
+            destiny=askfloor(userDestiny);
         }
     }
     static String parse(int change, int destiny, String direction){
@@ -60,11 +60,11 @@ public class Elavador {
         else{
             return "-";}}
 
-    static void askfloor(int userDestiny, int destiny) {
+    static int askfloor(int userDestiny) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Select the floor: ");
         userDestiny = scanner.nextInt();
-        destiny = userDestiny;
+        return userDestiny;
     }
 }
         
