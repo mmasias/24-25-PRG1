@@ -6,6 +6,174 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RetoForIf20",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf20",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf19",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf19",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf18",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf18",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf17",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf17",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf16",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf16",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf15",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf15",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf14",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf14",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf13",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf13",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf12",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf12",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf11",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf11",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf10",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf10",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf9",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf9",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "Retoforifprueba",
+            "request": "launch",
+            "mainClass": "RetosForIf.Retoforifprueba",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf8",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf8",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf7",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf7",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf6",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf6",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf5",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf5",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf4",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf4",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf3",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf3",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf2",
+            "request": "launch",
+            "mainClass": "RetosForIf.RetoForIf2",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "RetoForIf",
+            "request": "launch",
+            "mainClass": "RetoForIf",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "JuegosFor",
+            "request": "launch",
+            "mainClass": "JuegosFor",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "Arrays",
+            "request": "launch",
+            "mainClass": "Arrays",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
+            "name": "Rescate",
+            "request": "launch",
+            "mainClass": "Rescate",
+            "projectName": "24-25-PRG1_dcf57312"
+        },
+        {
+            "type": "java",
             "name": "Rescate",
             "request": "launch",
             "mainClass": "Rescate",
