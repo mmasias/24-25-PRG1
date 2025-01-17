@@ -13,7 +13,7 @@ El repositorio de materiales y proyectos de la asignatura **Programación I** de
   - Exámenes
     - **Parcial**: [Enunciado](https://github.com/mmasias/24-25-PRG1-ExamenParcial) | [Repositorio de trabajo y entrega](https://classroom.github.com/a/jr1Cr8Jh).
     - **Parcial II**: [Enunciado](https://github.com/mmasias/24-25-PRG1-ExamenParcial-II) | [Repositorio de trabajo y entrega](https://classroom.github.com/a/A3K63jWj)
-    - **Final**: [Enunciado](evaluaciones/examenes/examenFinal/README.md) | [Repositorio de trabajo y entrega](https://classroom.github.com/a/pvGS-KnB).
+    - **Final**: [Enunciado]([evaluaciones/examenes/examenFinal/README.md](https://github.com/mmasias/24-25-PRG1-ExamenFinal)) | [Repositorio de trabajo y entrega](https://classroom.github.com/a/pvGS-KnB).
     - **Extraordinario**: [Enunciado](evaluaciones/examenes/examenExtraordinario/README.md) | Repositorio de trabajo y entrega.
 
 > [!IMPORTANT]
