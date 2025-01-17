@@ -11,5 +11,8 @@ public class AlgoritmoFinal {
                 sumaImpares += carne [i];
             }
         }
+        System.out.println("Suma de los digitos en posiciones pares: " + sumaPares);
+        System.out.println("Suma de los digitos en posiciones impares: " + sumaImpares);
+
     }
 }
