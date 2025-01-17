@@ -62,7 +62,7 @@ public class JuegoCalculoRapido {
             
             System.out.print("¿Quieres jugar de nuevo? (Sí/No): ");
             scanner.nextLine(); 
-            String respuesta = scanner.nextLine().toLowerCase();
+            String respuesta = scanner.nextLine();
 
             if (!respuesta.equals("sí")) {
                 jugarDeNuevo = false;
