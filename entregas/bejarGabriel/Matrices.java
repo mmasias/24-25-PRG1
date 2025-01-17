@@ -18,9 +18,9 @@ public class Matrices {
     }
     static void imprime( int[][] matriz){
         System.out.println("===".repeat(matriz[0].length));
-        for(int fila=0;fila<matriz.length;fila++){
-            for(int columna=0;columna<matriz[fila].length;columna++){
-                System.out.println(parse(matriz[fila][columna]));
+        for (int[] matriz1 : matriz) {
+            for (int columna = 0; columna < matriz1.length; columna++) {
+                System.out.println(parse(matriz1[columna]));
             }
             System.out.println();
         }
