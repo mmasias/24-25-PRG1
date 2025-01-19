@@ -4,7 +4,7 @@ class CalcularPreguntas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        int[][] matrizCarne = new int[10][10];
+        int[] matrizCarne = new int[9];
         int sumaPares;
         int sumaImpares;
         int preguntaUno;
@@ -13,34 +13,34 @@ class CalcularPreguntas {
         
         
         System.out.println("Ingrese el primer digito de su carne: "); 
-        (matrizCarne[0][0])= scanner.nextInt();
+        (matrizCarne[0])= scanner.nextInt();
 
         System.out.println("Ingrese el segundo digito de su carne: "); 
-        (matrizCarne[1][0])= scanner.nextInt();
+        (matrizCarne[1])= scanner.nextInt();
 
         System.out.println("Ingrese el tercer digito de su carne: "); 
-        (matrizCarne[2][0])= scanner.nextInt();
+        (matrizCarne[2])= scanner.nextInt();
 
         System.out.println("Ingrese el cuarto digito de su carne: "); 
-        (matrizCarne[3][0])= scanner.nextInt();
+        (matrizCarne[3])= scanner.nextInt();
 
         System.out.println("Ingrese el quinto digito de su carne: "); 
-        (matrizCarne[4][0])= scanner.nextInt();
+        (matrizCarne[4])= scanner.nextInt();
 
         System.out.println("Ingrese el sexto digito de su carne: "); 
-        (matrizCarne[5][0])= scanner.nextInt();
+        (matrizCarne[5])= scanner.nextInt();
 
         System.out.println("Ingrese el septimo digito de su carne: "); 
-        (matrizCarne[6][0])= scanner.nextInt();
+        (matrizCarne[6])= scanner.nextInt();
 
         System.out.println("Ingrese el octavo digito de su carne: "); 
-        (matrizCarne[7][0])= scanner.nextInt();
+        (matrizCarne[7])= scanner.nextInt();
 
         System.out.println("Ingrese el noveno digito de su carne: "); 
-        (matrizCarne[8][0])= scanner.nextInt();
+        (matrizCarne[8])= scanner.nextInt();
 
         System.out.println("Ingrese el decimo digito de su carne: "); 
-        (matrizCarne[9][0])= scanner.nextInt();
+        (matrizCarne[9])= scanner.nextInt();
 
         sumaPares = calcularPar(matrizCarne);
         sumaImpares= calcularImpar(matrizCarne);
@@ -68,13 +68,13 @@ class CalcularPreguntas {
         
     }
 
-    static int calcularPar(int[][] matrizCarne) {
-        int suma = matrizCarne[8][0] + matrizCarne[6][0] + matrizCarne[4][0] + matrizCarne[2][0] +matrizCarne[0][0];
+    static int calcularPar(int[] matrizCarne) {
+        int suma = matrizCarne[8] + matrizCarne[6] + matrizCarne[4] + matrizCarne[2] +matrizCarne[0];
         return suma;
     }
 
-    static int calcularImpar(int[][] matrizCarne) {
-        int suma = matrizCarne[9][0] + matrizCarne[7][0] + matrizCarne[5][0] + matrizCarne[3][0] +matrizCarne[1][0];
+    static int calcularImpar(int[] matrizCarne) {
+        int suma = matrizCarne[9] + matrizCarne[7] + matrizCarne[5] + matrizCarne[3] +matrizCarne[1];
         return suma;
     }
 }
