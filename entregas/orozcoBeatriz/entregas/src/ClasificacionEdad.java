@@ -1,6 +1,5 @@
 import java.util.Scanner;
-
-class ClasificacionEdad {
+public class ClasificacionEdad {
     public static void main(String[] args) {
 
         final int LIMITE_INFERIOR = 0;
