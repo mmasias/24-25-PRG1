@@ -3,13 +3,13 @@ import java.util.Scanner;
 class ClasificacionEdad {
     public static void main(String[] args) {
 
-        final int LIMITE_INFERIOR = 0;
+        final int EDAD_MINIMA= 0;
         final int PRIMERA_INFANCIA = 5;
         final int INFANCIA = 11;
         final int ADOLESCENCIA = 18;
         final int JUVENTUD = 26;
         final int ADULTEZ = 59;
-        final int LIMITE_SUPERIOR = 100;
+        final int EDAD_MAXIMA = 100;
 
         final String PRIMERA_INFANCIA_DESCRIPTOR = "Primera infancia";
         final String INFANCIA_DESCRIPTOR = "Infancia";
@@ -25,13 +25,13 @@ class ClasificacionEdad {
         edad = entrada.nextInt();
 
         String descriptor;
-        descriptor = edad < LIMITE_INFERIOR ? ERROR_DESCRIPCION
+        descriptor = edad < EDAD_MINIMA ? ERROR_DESCRIPCION
             : edad <= PRIMERA_INFANCIA ? PRIMERA_INFANCIA_DESCRIPTOR
             : edad <= INFANCIA ? INFANCIA_DESCRIPTOR
             : edad <= ADOLESCENCIA ? ADOLESCENCIA_DESCRIPTOR
             : edad < JUVENTUD ? JUVENTUD_DESCRIPTOR
             : edad < ADULTEZ ? ADULTEZ_DESCRIPTOR
-            : edad > LIMITE_SUPERIOR ? ERROR_DESCRIPCION : MAYOR_DESCRIPTOR;
+            : edad > EDAD_MAXIMA ? ERROR_DESCRIPCION : MAYOR_DESCRIPTOR;
 
         System.out.println("> " + descriptor);
         entrada.close();
