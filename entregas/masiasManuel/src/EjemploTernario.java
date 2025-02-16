@@ -10,6 +10,7 @@ class EjemploTernario {
 
         System.out.println(numeroAleatorio);
 
+        @SuppressWarnings("resource")
         int entrada = new Scanner(System.in).nextInt();
 
         String respuesta = numeroAleatorio == entrada ? "Adivinó" : "No adivinó";
