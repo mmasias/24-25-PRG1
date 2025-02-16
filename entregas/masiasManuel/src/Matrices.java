@@ -1,4 +1,4 @@
-class Matrices {
+class Matrices1 {
     public static void main(String[] args) {
         int[][] matriz = {
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
